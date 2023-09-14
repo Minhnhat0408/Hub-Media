@@ -1,0 +1,20 @@
+{
+    "navigation": {
+      "home": "Trang chủ",
+      "about": "Giới thiệu"
+    },
+    "metadata":{
+        "title": "Hub Media - Kết nối thương hiệu",
+        "description": "Kết nối thương hiệu"
+    },
+    "page": {
+      "home": {
+        "title": "Xin chào thế giới",
+        "description": "Đây là trang chủ"
+      },
+      "about": {
+        "title": "Giới thiệu",
+        "description": "Đây là trang giới thiệu"
+      }
+    }
+  }
