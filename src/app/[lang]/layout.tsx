@@ -16,21 +16,16 @@ export async function generateMetadata(
   return {
     title: metadata.title,
     openGraph: {
-      type: "website",
-      url: "https://pbhubmedia.vercel.app/",
-      siteName: "Hub Media",
-      images: [{
-        url: "../backlog.jpg",
-      }],
-      description: metadata.description,
-    }
+      images: ['../backlog.jpg'],
+    },
+    description: metadata.description,
   }
 }
 export async function generateStaticParams() {
   return i18n.locales.map(locale => ({ lang: locale }))
 }
 
-export default function RootLayout({
+export default function LangLayout({
   children,
   params
 }: {
