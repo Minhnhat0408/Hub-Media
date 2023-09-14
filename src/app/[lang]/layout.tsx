@@ -1,11 +1,10 @@
-import './globals.css'
 import type { Metadata } from 'next'
 import { Prompt } from 'next/font/google'
-import { Locale,i18n } from '@/i18n.config'
+import { Locale, i18n } from '@/i18n.config'
 import Header from '@/components/header'
 import { getDictionary } from '@/lib/dictionary'
 const prompt = Prompt({
-  subsets: ['vietnamese','latin'],
+  subsets: ['vietnamese', 'latin'],
   weight: ['400', '600', '700', '800'],
 })
 
@@ -15,11 +14,16 @@ export async function generateMetadata(
 
   const { metadata } = await getDictionary(params.lang)
   return {
-    title: metadata.title,  
+    title: metadata.title,
     openGraph: {
-      images: ['../../../public/backlog.jpg'],
-    },
-    description: metadata.description,
+      type: "website",
+      url: "https://pbhubmedia.vercel.app/",
+      siteName: "Hub Media",
+      images: [{
+        url: "../backlog.jpg",
+      }],
+      description: metadata.description,
+    }
   }
 }
 export async function generateStaticParams() {
