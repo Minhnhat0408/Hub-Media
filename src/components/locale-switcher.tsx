@@ -1,13 +1,12 @@
 'use client'
-
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+import { Locale, i18n } from '@/i18n.config'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 
-import { i18n } from '@/i18n.config'
-
-export default function LocaleSwitcher() {
+export default function LocaleSwitcher({ lang }: { lang: Locale }) {
   const pathName = usePathname()
-
+  const router = useRouter()
   const redirectedPathName = (locale: string) => {
     if (!pathName) return '/'
     const segments = pathName.split('/')
@@ -16,19 +15,27 @@ export default function LocaleSwitcher() {
   }
 
   return (
-    <ul className='flex gap-x-3'>
-      {i18n.locales.map(locale => {
-        return (
-          <li key={locale}>
-            <Link
-              href={redirectedPathName(locale)}
-              className='rounded-md border bg-black px-3 py-2 text-white'
-            >
-              {locale}
-            </Link>
-          </li>
-        )
-      })}
-    </ul>
+    <div className='w-20'>
+      <Select onValueChange={(value) => {
+        router.push(redirectedPathName(value))
+      }}>
+        <SelectTrigger >
+          <SelectValue placeholder={lang} className='text-foreground' />
+        </SelectTrigger>
+        <SelectContent >
+          {i18n.locales.map(locale => {
+            if (locale !== lang) {
+              return (
+                <SelectItem key={locale} value={locale} >
+                  {locale}
+                </SelectItem>
+              )
+            }
+          })}
+        </SelectContent>
+      </Select>
+    </div>
+
+
   )
 }

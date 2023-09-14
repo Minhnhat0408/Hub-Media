@@ -30,6 +30,10 @@ module.exports = {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        gradient: {
+          DEFAULT: "var(--gradient)",
+          foreground: "var(--gradient-foreground)",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

@@ -1,7 +1,13 @@
 {
     "navigation": {
-      "home": "Trang chủ",
-      "about": "Giới thiệu"
+      "home": "TRANG CHỦ",
+      "about": "GIỚI THIỆU",
+      "services": "DỊCH VỤ",
+      "livestream": "LIVESTREAM",
+      "founder": "FOUNDER'S FRIDAY",
+      "customers": "KHÁCH HÀNG",
+      "blog": "BLOG",
+      "contact": "LIÊN HỆ"
     },
     "metadata":{
         "title": "Hub Media - Kết nối thương hiệu",

@@ -8,6 +8,20 @@ body,
   height: 100%;
 }
 
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 4px;
+}
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--dark-theme);
+}
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: var(--bg-dark-theme);
+  
+}
+
 .super {
   background: linear-gradient(to top left, #159957, #155799);
   background-clip: text;
@@ -22,6 +36,30 @@ body,
 
 .cl-internal-b3fm6y {
   visibility: hidden;
+}
+
+.fadeIn {
+  animation: fadeInDown 0.75s ease-in-out;
+}
+
+.bg-header {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255,0.04));
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @layer base {
