@@ -9,8 +9,8 @@
     },
     "page": {
       "home": {
-        "title": "Welcome to NextJs i18n",
-        "description": "Internationalization in NextJs 13 App router"
+        "title": "Welcome to Hub Media",
+        "description": "Connect your brand to the world"
       },
       "about": {
         "title": "About Us",

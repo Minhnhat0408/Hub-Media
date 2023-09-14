@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { Locale } from '@/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
 

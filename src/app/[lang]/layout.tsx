@@ -1,5 +1,5 @@
 import './globals.css'
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 import { Prompt } from 'next/font/google'
 import { Locale,i18n } from '@/i18n.config'
 import Header from '@/components/header'
@@ -8,16 +8,11 @@ const prompt = Prompt({
   subsets: ['vietnamese','latin'],
   weight: ['400', '600', '700', '800'],
 })
-type Props = {
-  params: { lang: Locale }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+
 export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata
+  { params }: { params: { lang: Locale } },
 ): Promise<Metadata> {
-  // read route params
-  // console.log(params)
+
   const { metadata } = await getDictionary(params.lang)
   return {
     title: metadata.title,  
