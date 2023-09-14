@@ -16,14 +16,6 @@ export async function generateMetadata(
   const { metadata } = await getDictionary(params.lang)
   return {
     title: metadata.title,
-    openGraph: {
-      images: [
-          {
-          url: '/backlog.jpg',
-          width: 800,
-          height: 600,
-      }],
-  },
     description: metadata.description,
   }
 }
