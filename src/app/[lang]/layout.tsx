@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Prompt } from 'next/font/google'
 import { Locale, i18n } from '@/i18n.config'
 import Header from '@/components/header'
+import '@/app/globals.css'
 import { getDictionary } from '@/lib/dictionary'
 const prompt = Prompt({
   subsets: ['vietnamese', 'latin'],
@@ -16,8 +17,13 @@ export async function generateMetadata(
   return {
     title: metadata.title,
     openGraph: {
-      images: ['../backlog.jpg'],
-    },
+      images: [
+          {
+          url: '/backlog.jpg',
+          width: 800,
+          height: 600,
+      }],
+  },
     description: metadata.description,
   }
 }
