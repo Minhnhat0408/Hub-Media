@@ -23,7 +23,7 @@ function MobileSidebar({ lang, navigation }: { lang: Locale, navigation: any }) 
     return (
         <Sheet>
             <SheetTrigger >
-                <Button variant={"ghost"} size={"icon"} className="xl:hidden justify-end" >
+                <Button variant={"ghost"} size={"icon"} className="xl:hidden justify-center " >
                     <Menu />
                 </Button>
             </SheetTrigger>

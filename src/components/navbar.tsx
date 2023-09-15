@@ -1,14 +1,15 @@
 'use client'
 import { Locale } from "@/i18n.config";
 import { routes } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 function NavBar({ lang, navigation }: { lang: Locale, navigation: any }) {
     const location = usePathname();
     return (
-        <nav className=' flex items-center justify-between py-5 bg-transparent   '>
-            <ul className='flex gap-x-8 uppercase tracking-widest '>
+        <nav className=' items-center justify-between py-5 bg-transparent hidden xl:flex'>
+            <ul className={cn('flex uppercase tracking-widest ',lang === 'vi' ? ' gap-x-4' : ' gap-x-6')}>
                 {
                     routes.map((route, index) => (
                         <li key={index} className='my-2'>

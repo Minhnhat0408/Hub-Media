@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Prompt } from 'next/font/google'
 import { Locale, i18n } from '@/i18n.config'
-import Header from '@/components/header'
+import Header from '@/components/server-components/header-data'
 import { getDictionary } from '@/lib/dictionary'
 const prompt = Prompt({
   subsets: ['latin'],

@@ -9,18 +9,9 @@ body,
 }
 
 html *::-webkit-scrollbar {
-  border-radius: 0;
-  width: 4px;
+  display:none
 }
-html *::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: var(--dark-theme);
-}
-html *::-webkit-scrollbar-track {
-  border-radius: 0;
-  background-color: var(--bg-dark-theme);
-  
-}
+
 
 .super {
   background: linear-gradient(to top left, #159957, #155799);
