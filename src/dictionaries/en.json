@@ -2,11 +2,11 @@
     "navigation": {
       "home": "HOME",
       "services": "SERVICES",
-      "livestream": "LIVESTREAM",
+      "livestream": "HUBLIVE",
       "founder": "FOUNDER'S FRIDAY",
       "customers": "CUSTOMERS",
       "blog": "BLOG",
-      "contact": "CONTACT",
+      "contact": "Contact",
       "about": "ABOUT US"
     },
     "metadata":{
@@ -15,8 +15,8 @@
     },
     "page": {
       "home": {
-        "title": "Welcome to Hub Media",
-        "description": "Connect your brand to the world"
+        "title": "Connect your brand to the world",
+        "description": "Hub Media is a company that provides marketing solutions for businesses targeting the youth demographic"
       },
       "about": {
         "title": "About Us",

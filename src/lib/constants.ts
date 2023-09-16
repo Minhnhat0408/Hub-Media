@@ -15,18 +15,18 @@ export const routes = [
       tag: "about"
     },
     {
-      label: 'LIVESTREAM',
-      // icon: ImageIcon,
-      color: "text-pink-700",
-      href: '/livestream',
-      tag: "livestream"
-    },
-    {
       label: 'SERVICES',
       // icon: VideoIcon,
       color: "text-orange-700",
       href: '/services',
       tag: "services"
+    },
+    {
+      label: 'LIVESTREAM',
+      // icon: ImageIcon,
+      color: "text-pink-700",
+      href: '/livestream',
+      tag: "livestream"
     },
     {
       label: "FOUNDER'S FRIDAY",

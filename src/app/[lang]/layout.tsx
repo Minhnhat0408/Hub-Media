@@ -2,11 +2,11 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Prompt } from 'next/font/google'
 import { Locale, i18n } from '@/i18n.config'
-import Header from '@/components/server-components/header-data'
+import Header from '@/components/header/header-server'
 import { getDictionary } from '@/lib/dictionary'
 const prompt = Prompt({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400','500', '700'],
 })
 
 export async function generateMetadata(

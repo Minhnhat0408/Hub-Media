@@ -3,11 +3,11 @@
       "home": "TRANG CHỦ",
       "about": "GIỚI THIỆU",
       "services": "DỊCH VỤ",
-      "livestream": "LIVESTREAM",
+      "livestream": "HUBLIVE",
       "founder": "FOUNDER'S FRIDAY",
       "customers": "KHÁCH HÀNG",
       "blog": "BLOG",
-      "contact": "LIÊN HỆ"
+      "contact": "Liên hệ"
     },
     "metadata":{
         "title": "Hub Media - Kết nối thương hiệu",
@@ -16,7 +16,7 @@
     "page": {
       "home": {
         "title": "Xin chào thế giới",
-        "description": "Đây là trang chủ"
+        "description": "Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ."
       },
       "about": {
         "title": "Giới thiệu",
