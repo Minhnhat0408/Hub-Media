@@ -1,4 +1,5 @@
 import HomeHero from '@/components/home/home-hero'
+import Portfolio from '@/components/home/portfolio'
 import { Locale } from '@/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
 
@@ -11,6 +12,7 @@ export default async function Home({
   return (
     <main className="flex min-h-screen flex-col items-center h-[2000px]">
       <HomeHero page={page} />
+      <Portfolio />
     </main>
   )
 }

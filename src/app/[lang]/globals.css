@@ -64,6 +64,20 @@ html *::-webkit-scrollbar {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+.animate-moveup{
+  animation: moveup 1s ease-in-out;
+}
+
+@keyframes moveup {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes heartbeat {
   0% {
     transform: scale(var(--scaleStart));
@@ -78,6 +92,15 @@ html *::-webkit-scrollbar {
   }
 }
 
+@keyframes pingbig {
+  75%, 100% {
+      transform: scale(2.5);
+      opacity: 0;
+  }
+}
+.animate-ping-big {
+  animation: pingbig 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
 @layer base {
   :root {
     /* Name: custom color palette

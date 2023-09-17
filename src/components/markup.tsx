@@ -17,17 +17,19 @@ function Mark({
         <>
             {horizontal ? (
                 flip ? (
-                    <div className={cn('flex w-28 items-center ')}>
+                    <div className={cn('flex items-center ')}>
                         <div
                             className={cn(
                                 'mr-2 inline-flex h-[10px] w-[10px] rounded-full bg-gradient',
-                                dotanimate && ' dot',
+                                dotanimate && ' dot', {
+                                    "dot": dotanimate
+                                }
                             )}
                         ></div>
                         <div className={cn('h-[1px] w-16 bg-muted-foreground')}></div>
                     </div>
                 ) : (
-                    <div className={cn('flex w-28 items-center ')}>
+                    <div className={cn('flex items-center ')}>
                         <div className={cn('h-[1px] w-16 bg-muted-foreground')}></div>
                         <div
                             className={cn(

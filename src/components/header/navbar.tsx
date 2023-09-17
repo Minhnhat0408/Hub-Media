@@ -13,6 +13,7 @@ function NavBar({ lang, navigation }: { lang: Locale; navigation: any }) {
                 {routes.map((route, index) => (
                     <li key={index} className="my-2 duration-1000 hover:text-gradient">
                         <Link
+                        locale={lang}
                             href={`/${lang + route.href}`}
                             className={'px-5 ' + (location === `/${lang + route.href}` ? ' text-gradient' : '')}
                         >

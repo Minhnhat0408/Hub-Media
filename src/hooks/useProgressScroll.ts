@@ -1,10 +1,13 @@
 "use client"
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react"
 
 const useProgressScroll = () => {
   const [completion, setCompletion] = useState(0);
-
+  const pathname = usePathname();
   useEffect(() => {
+    
+    setCompletion(0)
     const updateScrollCompletion = () => {
       const currentProgress = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
@@ -21,7 +24,7 @@ const useProgressScroll = () => {
       window.removeEventListener('scroll', updateScrollCompletion);
     }
 
-  }, []);
+  }, [pathname]);
 
   return completion;
 }
