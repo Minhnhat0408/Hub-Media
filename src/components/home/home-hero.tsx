@@ -10,9 +10,7 @@ function HomeHero({ page }: { page: any }) {
                 <div className="flex w-1/5 flex-col items-center">
                     <ul className="flex flex-col  text-4xl text-muted-foreground duration-1000">
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <a href="">
-                                <TbBrandFacebook />
-                            </a>
+                            <TbBrandFacebook />
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
                             <TbBrandInstagram />

@@ -15,7 +15,18 @@ export async function generateMetadata(
 
   const { metadata } = await getDictionary(params.lang)
   return {
+    metadataBase: new URL("https://pbhubmedia.vercel.app"),
+    alternates: {
+      canonical: '/',
+      languages: {
+        'en': '/en',
+        'vi': '/vi',
+      },
+    },
     title: metadata.title,
+    openGraph:{
+      images: ['/images/backlog.png'],
+    },
     description: metadata.description,
   }
 }
