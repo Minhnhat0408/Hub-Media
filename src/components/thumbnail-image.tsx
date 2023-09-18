@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn, pathRemainLang } from '@/lib/utils';
 
-function ThumbNail({
+function ThumbNailImage({
     href,
     title,
     description,
@@ -37,4 +37,4 @@ function ThumbNail({
     );
 }
 
-export default ThumbNail;
+export default ThumbNailImage;

@@ -5,12 +5,15 @@ function Mark({
     lineanimate,
     horizontal = false,
     flip = false,
-
+    classLine,
+    classDot,
 }: {
     dotanimate?: boolean;
     lineanimate?: boolean;
     horizontal?: boolean;
     flip?: boolean;
+    classLine?: string;
+    classDot?: string;
 
 }) {
     return (
@@ -21,20 +24,22 @@ function Mark({
                         <div
                             className={cn(
                                 'mr-2 inline-flex h-[10px] w-[10px] rounded-full bg-gradient',
-                                dotanimate && ' dot', {
-                                    "dot": dotanimate
-                                }
+                                {
+                                    dot: dotanimate,
+                                },classDot
+                            
                             )}
                         ></div>
-                        <div className={cn('h-[1px] w-16 bg-muted-foreground')}></div>
+                        <div className={cn('h-[1px] w-16 bg-muted-foreground',classLine )}></div>
                     </div>
                 ) : (
                     <div className={cn('flex items-center ')}>
-                        <div className={cn('h-[1px] w-16 bg-muted-foreground')}></div>
+                        <div className={cn('h-[1px] w-16 bg-muted-foreground',classLine )}></div>
                         <div
                             className={cn(
                                 'ml-2 inline-flex h-[10px] w-[10px] rounded-full bg-gradient',
-                                dotanimate && ' dot',
+                                dotanimate && ' dot',classDot
+                           
                             )}
                         ></div>
                     </div>
@@ -45,9 +50,16 @@ function Mark({
                         className={cn(
                             'mb-2 inline-flex h-[10px] w-[10px] rounded-full bg-gradient',
                             dotanimate && ' dot',
+                            classDot
                         )}
                     ></div>
-                    <div className={cn('h-16 w-[2px] bg-muted-foreground', lineanimate && ' line-shrink')}></div>
+                    <div
+                        className={cn(
+                            'h-16 w-[2px] bg-muted-foreground',
+                            lineanimate && ' line-shrink',classLine
+                       
+                        )}
+                    ></div>
                 </div>
             )}
         </>

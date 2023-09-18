@@ -1,15 +1,32 @@
+import Reveal from '../animations/reveal';
 import Heading from '../heading';
-import ThumbNail from '../thumbnail';
+import ThumbNailImage from '../thumbnail-image';
 function Portfolio() {
     return (
-        <section className="flex w-full flex-col py-20 bg-background">
+        <Reveal className="flex w-full flex-col bg-background pt-20">
             <Heading title={'Gallery'} description={'Our Products'} />
             <div className="flex gap-x-8">
-                <ThumbNail href='/about'  title='Hub Live' description='The livestreaming services' src='https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-1.jpg'/>
-                <ThumbNail href='/services' flex={2}  title='Marketing agency' description='All the services to connect your brand to the world' src='/images/backlog.jpg'/>
-                <ThumbNail href='/about' title='Hub Live' description='The livestreaming services' src='https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-1.jpg'/>
+                <ThumbNailImage
+                    href="/about"
+                    title="Hub Live"
+                    description="The livestreaming services"
+                    src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-1.jpg"
+                />
+                <ThumbNailImage
+                    href="/services"
+                    flex={2}
+                    title="Marketing agency"
+                    description="All the services to connect your brand to the world"
+                    src="/images/backlog.jpg"
+                />
+                <ThumbNailImage
+                    href="/about"
+                    title="Hub Live"
+                    description="The livestreaming services"
+                    src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-1.jpg"
+                />
             </div>
-        </section>
+        </Reveal>
     );
 }
 
