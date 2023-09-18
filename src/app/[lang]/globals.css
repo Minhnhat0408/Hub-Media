@@ -13,6 +13,9 @@ html *::-webkit-scrollbar {
   display: none
 }
 
+.text-stroke{
+  -webkit-text-stroke: 1px white;
+}
 
 .super {
   background: linear-gradient(to top left, #ea896a, #d9658c, #49ced3);

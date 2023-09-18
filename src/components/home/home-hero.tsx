@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Mark from '../markup';
 function HomeHero({ page }: { page: any }) {
     return (
-        <section className="flex w-full pb-20 pl-20 ">
+        <section className="flex w-[100vw] pb-20 pl-20 bg-background  ">
             <div className="flex flex-1 pt-52">
                 <div className="flex w-1/5 flex-col items-center">
                     <ul className="flex flex-col  text-4xl text-muted-foreground duration-1000">
@@ -53,7 +53,8 @@ function HomeHero({ page }: { page: any }) {
                 width={600}
                 height={300}
                 alt="bl"
-                className="heartbeat flex-1"
+                style={{ overflowClipMargin:"content-box"}}
+                className="heartbeat flex-1 overflow-clip"
             />
         </section>
     );

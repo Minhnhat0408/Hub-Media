@@ -15,7 +15,7 @@ export async function generateMetadata(
 
   const { metadata } = await getDictionary(params.lang)
   return {
-    metadataBase: new URL("https://pbhubmedia.vercel.app"),
+    metadataBase: new URL("https://localhost:3000"),
     alternates: {
       canonical: '/',
       languages: {
