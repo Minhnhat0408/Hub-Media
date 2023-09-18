@@ -3,9 +3,9 @@ import Heading from '../heading';
 import ThumbNailImage from '../thumbnail-image';
 function Portfolio() {
     return (
-        <Reveal className="flex w-full flex-col bg-background pt-20">
+        <section className="flex w-full flex-col bg-background pt-20">
             <Heading title={'Gallery'} description={'Our Products'} />
-            <div className="flex gap-x-8">
+            <Reveal hiddenY={100} className="flex gap-x-8">
                 <ThumbNailImage
                     href="/about"
                     title="Hub Live"
@@ -25,8 +25,8 @@ function Portfolio() {
                     description="The livestreaming services"
                     src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-1.jpg"
                 />
-            </div>
-        </Reveal>
+            </Reveal>
+        </section>
     );
 }
 
