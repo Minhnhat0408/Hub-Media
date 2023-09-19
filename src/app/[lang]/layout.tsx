@@ -1,21 +1,20 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Prompt } from 'next/font/google'
-import { Locale, i18n } from '@/i18n.config'
-import Header from '@/components/header/header-server'
-import { getDictionary } from '@/lib/dictionary'
+import type { Metadata } from 'next';
+import { Prompt } from 'next/font/google';
+import { Locale, i18n } from '@/i18n.config';
+import Header from '@/components/header/header-server';
+import { getDictionary } from '@/lib/dictionary';
 const prompt = Prompt({
-  subsets: ['latin'],
-  weight: ['400','500', '700'],
-})
+    subsets: ['latin'],
+    weight: ['400', '500', '700'],
+});
 
 export async function generateMetadata(
   { params }: { params: { lang: Locale } },
 ): Promise<Metadata> {
-
+  console.log(params.lang)
   const { metadata } = await getDictionary(params.lang)
   return {
-    metadataBase: new URL("https://localhost:3000"),
+    metadataBase: new URL("https://pbhubmedia.vercel.app/"),
     alternates: {
       canonical: '/',
       languages: {
@@ -30,25 +29,18 @@ export async function generateMetadata(
     description: metadata.description,
   }
 }
+
 export async function generateStaticParams() {
-  return i18n.locales.map(locale => ({ lang: locale }))
+    return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function LangLayout({
-  children,
-  params
-}: {
-  children: React.ReactNode
-  params: { lang: Locale }
-}) {
-  return (
-    <html lang={params.lang}>
-      <body className={prompt.className}>
-        <Header lang={params.lang} />{children}</body>
-    </html>
-  )
+export default function LangLayout({ children, params }: { children: React.ReactNode; params: { lang: Locale } }) {
+    return (
+        <html lang={params.lang}>
+            <body className={prompt.className}>
+                <Header lang={params.lang} />
+                {children}
+            </body>
+        </html>
+    );
 }
-
-
-
-

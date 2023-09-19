@@ -32,7 +32,7 @@ function Counter({
 
             return () => controls.stop();
         }
-    }, [from, to, inView]);
+    }, [from, to, inView,duration]);
 
     return (
         <div ref={ref} className="flex flex-col items-center justify-center">

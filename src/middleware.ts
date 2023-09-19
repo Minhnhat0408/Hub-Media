@@ -5,17 +5,23 @@ import { i18n } from './i18n.config'
 
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
+import { type } from 'os'
 
 function getLocale(request: NextRequest): string | undefined {
-  const negotiatorHeaders: Record<string, string> = {}
-  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
 
-  // @ts-ignore locales are readonly
-  const locales: string[] = i18n.locales
-  const languages = new Negotiator({ headers: negotiatorHeaders }).languages()
+    const negotiatorHeaders: Record<string, string> = {}
+    request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
+  
+    // @ts-ignore locales are readonly
+    const locales: string[] = i18n.locales
+    let languages = new Negotiator({ headers: negotiatorHeaders }).languages()
+    if(typeof languages === 'undefined' || typeof languages === 'string') return i18n.defaultLocale
+  
+    // console.log(languages,locales,i18n.defaultLocale)
+    const locale = matchLocale(languages, locales, i18n.defaultLocale)
+    return locale
 
-  const locale = matchLocale(languages, locales, i18n.defaultLocale)
-  return locale
+
 }
 
 export function middleware(request: NextRequest) {

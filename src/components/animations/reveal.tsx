@@ -1,5 +1,5 @@
 'use client';
-import { motion, useInView, useAnimation, useIsPresent } from 'framer-motion';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 function Reveal({
@@ -14,9 +14,6 @@ function Reveal({
     animate = 'visible',
     preanimation = false,
     className,
-    div = true,
-    section = false,
-    article = false,
 }: {
     children: React.ReactNode;
     opacity?: number;
@@ -29,9 +26,6 @@ function Reveal({
     animate?: string;
     preanimation?: boolean;
     className?: string;
-    div?: boolean;
-    section?: boolean;
-    article?: boolean;
 }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -42,7 +36,7 @@ function Reveal({
             mainControls.start('visible');
             slideControls.start('visible');
         }
-    }, [isInView]);
+    }, [isInView, mainControls, slideControls]);
 
     return (
         <>
