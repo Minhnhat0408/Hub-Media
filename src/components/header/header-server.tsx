@@ -1,9 +1,8 @@
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 import HeaderUI from './header-client';
-import { headers } from "next/headers";
-
 import ProgressIndicator from './progress-indicator';
+
 export default async function Header({lang} : {lang: Locale}) {
   
     const { navigation } = await getDictionary(lang);

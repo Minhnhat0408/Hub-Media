@@ -10,7 +10,6 @@ export default function LocaleSwitcher({ lang }: { lang: Locale }) {
     if (!pathName) return '/'
     const segments = pathName.split('/')
     segments[1] = locale
-    console.log(segments)
     return segments.join('/')
   }
   

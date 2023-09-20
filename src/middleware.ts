@@ -1,12 +1,9 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-
 import { i18n } from './i18n.config'
-
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { type } from 'os'
-import path from 'path'
 
 function getLocale(request: NextRequest): string | undefined {
 
@@ -18,7 +15,6 @@ function getLocale(request: NextRequest): string | undefined {
     let languages = new Negotiator({ headers: negotiatorHeaders }).languages()
     if(typeof languages === 'undefined' || typeof languages === 'string') return i18n.defaultLocale
   
-    // console.log(languages,locales,i18n.defaultLocale)
     const locale = matchLocale(languages, locales, i18n.defaultLocale)
     return locale
 

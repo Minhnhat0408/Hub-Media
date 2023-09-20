@@ -4,14 +4,10 @@ import { routes } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
 
 function NavBar({ lang, navigation }: { lang: Locale; navigation: any }) {
     const location = usePathname();
-    useEffect(() => {
-        console.log(location
-            )
-    }, [location])
+
     return (
         <nav className=" hidden items-center justify-between bg-transparent  py-5 text-sm xl:flex">
             <ul className={cn('flex uppercase tracking-widest ', lang === 'vi' ? ' gap-x-4' : ' gap-x-6')}>
