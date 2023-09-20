@@ -13,7 +13,7 @@ export default function LocaleSwitcher({ lang }: { lang: Locale }) {
     console.log(segments)
     return segments.join('/')
   }
-
+  
   return (
 
     <Select onValueChange={(value) => {

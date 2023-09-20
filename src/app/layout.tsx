@@ -1,29 +1,24 @@
+import Header from '@/components/header/header-server';
 import './globals.css';
 import type { Metadata } from 'next';
+import { Prompt } from 'next/font/google';
+// import { Locale, i18n } from '@/i18n.config';
+// import Header from '@/components/header/header-server';
+// import { getDictionary } from '@/lib/dictionary';
+const prompt = Prompt({
+    subsets: ['latin'],
+    weight: ['400', '500', '700'],
+});
 
-
-// export async function generateMetadata(
-//   { params }: { params: { lang: Locale } },
-// ): Promise<Metadata> {
-//   console.log(params.lang)
-//   const { metadata } = await getDictionary(params.lang)
-//   return {
-//     metadataBase: new URL("https://pbhubmedia.vercel.app/"),
-//     alternates: {
-//       canonical: '/',
-//       languages: {
-//         'en': '/en',
-//         'vi': '/vi',
-//       },
-//     },
-//     title: metadata.title,
-//     openGraph:{
-//       images: ['/images/backlog.png'],
-//     },
-//     description: metadata.description,
-//   }
-// }
 export const metadata: Metadata = {
+    metadataBase: new URL("https://pbhubmedia.vercel.app/"),
+    alternates: {
+      canonical: '/',
+      languages: {
+        'en': '/en',
+        'vi': '/vi',
+      },
+    },
     title: 'Hub Media - Connect your brand to the world',
     openGraph: {
         images: ['/images/backlog.png'],
@@ -38,8 +33,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html>
-          {children}
+        <html lang="en">
+            <body className={prompt.className}>
+                {children}
+            </body>
         </html>
     );
 }

@@ -11,3 +11,9 @@ export function pathRemainLang({pathname,newpath} : {pathname: string, newpath: 
   const lang = path[1]
   return `/${lang + newpath}`
 }
+
+export function getCurrentLocale(pathname: string) {
+  const path = pathname.split('/')
+  const lang = path[1]
+  return lang
+}
