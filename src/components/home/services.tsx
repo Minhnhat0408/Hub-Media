@@ -8,25 +8,25 @@ function Services() {
             <div className="flex">
                 <ThumbNailText
                     href="/about"
-                    title="SEO Optimization"
+                    title="Brand Design"
                     description="The seo optimization that not only you need but also your entire enterprise"
                     src="/images/backlog.png"
                 />
                 <ThumbNailText
                     href="/about"
-                    title="SEO Optimization"
+                    title="Event Photography"
                     description="The seo optimization that not only you need but also your entire enterprise"
                     src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-1.jpg"
                 />
                 <ThumbNailText
                     href="/about"
-                    title="SEO Optimization"
+                    title="Reporting - Trailer"
                     description="The seo optimization that not only you need but also your entire enterprise"
                     src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-1.jpg"
                 />
                 <ThumbNailText
                     href="/about"
-                    title="SEO Optimization"
+                    title="Event Organizer"
                     description="The seo optimization that not only you need but also your entire enterprise"
                     src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-1.jpg"
                 />

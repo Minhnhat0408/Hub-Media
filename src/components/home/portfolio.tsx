@@ -3,27 +3,29 @@ import Heading from '../heading';
 import ThumbNailImage from '../thumbnail-image';
 function Portfolio() {
     return (
-        <section className="flex w-full flex-col bg-background pt-20">
-            <Heading title={'Gallery'} description={'Our Products'} />
+        <section className="flex w-full flex-col bg-background pt-28">
+            <Heading title={'Gallery'} description={'Our Project Portfolio'} />
             <Reveal hiddenY={100} className="flex gap-x-8">
                 <ThumbNailImage
                     href="/about"
-                    title="Hub Live"
-                    description="The livestreaming services"
-                    src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-1.jpg"
-                />
-                <ThumbNailImage
-                    href="/services"
-                    flex={2}
-                    title="Marketing agency"
-                    description="All the services to connect your brand to the world"
+                    title="HUB AGENCY"
+                    description="Provide various customized marketing services for your business"
                     src="/images/backlog.jpg"
+                    className='w-[30%]'
                 />
                 <ThumbNailImage
-                    href="/about"
-                    title="Hub Live"
+                    href="/founder"
+                    title="Founder's Friday"
+                    description="Founder Fridays là cầu nối giữa startup founder với các bạn trẻ có niềm đam mê với kinh doanh khởi thông qua các câu chuyện, chia sẻ của họ."
+                    src="/images/ff.jpg"
+                    className='w-[40%]'
+                />
+                <ThumbNailImage
+                    href="/livestream"
+                    title="HUB LIVE"
                     description="The livestreaming services"
-                    src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-portfolio-1.jpg"
+                    src="/images/IMG_5715.jpg"
+                    className='w-[30%]'
                 />
             </Reveal>
         </section>

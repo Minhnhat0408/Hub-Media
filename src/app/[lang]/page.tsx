@@ -12,7 +12,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
     return (
         <main className="flex h-[2000px] min-h-screen flex-col items-center ">
             <Image
-                src={'/images/backlog.png'}
+                src={'/images/IMG_5712.jpg'}
                 alt="img"
                 width="0"
                 height="0"
@@ -21,7 +21,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
             />
             <HomeHero page={page} />
             <Portfolio />
-            <MagicNumber />
+            {/* <MagicNumber /> */}
             <Services />
         </main>
     );

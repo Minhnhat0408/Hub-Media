@@ -1,26 +1,29 @@
 'use client';
-import { TbBrandFacebook, TbBrandInstagram, TbBrandTiktok, TbBrandYoutube } from 'react-icons/tb';
+import { TbBrandFacebook, TbBrandInstagram, TbBrandLinkedin, TbBrandTiktok, TbBrandYoutube } from 'react-icons/tb';
 import TypeWriter from 'typewriter-effect';
 import Image from 'next/image';
 import Mark from '../markup';
 import Reveal from '../animations/reveal';
+import Link from 'next/link';
+import MarkupButton from '../markup-button';
 function HomeHero({ page }: { page: any }) {
     return (
         <section className="flex w-[100vw] pb-20 pl-20 bg-background overflow-x-clip ">
-            <div className="flex flex-1  pt-52">
+            <div className="flex flex-1  pt-60">
                 <Reveal hiddenY={100} className="flex w-1/5 flex-col items-center">
                     <ul className="flex flex-col items-center  text-4xl text-muted-foreground duration-1000">
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <TbBrandFacebook />
+                            <Link href={'https://www.facebook.com/HubMediaVN'} target='_blank'><TbBrandFacebook />
+                            </Link>
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <TbBrandInstagram />
+                            <Link href={'http://linkedin.com/company/hub-media-vietnam'} target='_blank'><TbBrandLinkedin /></Link>
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <TbBrandYoutube />
+                            <Link href={'https://youtube.com/@HubMedia-Vietnam/'} target='_blank'><TbBrandYoutube /></Link>
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <TbBrandTiktok />
+                            <Link href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}><TbBrandTiktok /></Link>
                         </li>
                     </ul>
                     <Mark dotanimate lineanimate />
@@ -47,6 +50,10 @@ function HomeHero({ page }: { page: any }) {
                         />
                     </div>
                     <p className="text-muted-foreground max-w-[550px]">{page.home.description}</p>
+                    <div className='mt-10'>
+                            <MarkupButton href='/' title='Get started'/>
+                            
+                    </div>
                 </Reveal>
             </div>
             <Image
@@ -54,7 +61,7 @@ function HomeHero({ page }: { page: any }) {
                 width={600}
                 height={300}
                 alt="bl"
-                className="heartbeat flex-1 object-cover h-full"
+                className="heartbeat flex-1  w-fit h-[110%]"
             />
         </section>
     );
