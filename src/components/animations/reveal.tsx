@@ -1,29 +1,30 @@
 'use client';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-
+type Animate = {
+    opacity: number;
+    y?: number;
+    x?: number;
+    scale?: number;
+}
 function Reveal({
     children,
-    opacity = 0,
-    hiddenY = 0,
-    hiddenX = 0,
+    hiddenY,
+    hiddenX,
     duration = 0.8,
-    scale = 1,
-    delay = 0.25,
+    scale,
+    delay,
     initial = 'hidden',
-    animate = 'visible',
     preanimation = false,
     className,
 }: {
     children: React.ReactNode;
-    opacity?: number;
     hiddenY?: number;
     hiddenX?: number;
     duration?: number;
     scale?: number;
     delay?: number;
     initial?: string;
-    animate?: string;
     preanimation?: boolean;
     className?: string;
 }) {
@@ -38,19 +39,47 @@ function Reveal({
         }
     }, [isInView, mainControls, slideControls]);
 
+    function getVariant(){
+        let variants = {
+            hidden: { opacity: 0 } ,
+            visible: {opacity: 1},
+        }
+
+        if(hiddenY){
+            variants.hidden = {...variants.hidden, y: hiddenY} as Animate
+            variants.visible = {...variants.visible, y: 0} as Animate
+        }
+        if(hiddenX){
+            variants.hidden = {...variants.hidden, x: hiddenX} as Animate
+            variants.visible = {...variants.visible, x: 0} as Animate
+        } 
+        if(scale){
+            variants.hidden = {...variants.hidden, scale: scale} as Animate
+            variants.visible = {...variants.visible, scale: 1} as Animate
+        }  
+        return variants  
+    }
+    function getTransition(){
+        let transition = { }
+        if(duration){
+            transition = {...transition, duration: duration}
+        }
+        if(delay){
+            transition = {...transition, delay: delay}
+        }
+
+        return transition
+    }
     return (
         <>
             <motion.div 
-                variants={{
-                    hidden: { opacity: opacity, y: hiddenY, x: hiddenX, scale: scale },
-                    visible: { opacity: 1, y: 0, x: 0, scale: 1 },
-                }}
+                variants={getVariant()}
                 initial={initial}
                 animate={mainControls}
                 exit={'hidden'}
                 ref={ref}
                 className={className || 'relative w-fit'}
-                transition={{ duration: duration, delay: delay }}
+                transition={getTransition()}
             >
                 {children}
             </motion.div>

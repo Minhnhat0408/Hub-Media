@@ -1,3 +1,5 @@
+import { Footer } from '@/components/footer';
+import Characteristics from '@/components/home/characteristics';
 import HomeHero from '@/components/home/home-hero';
 import MagicNumber from '@/components/home/magic-number';
 import Portfolio from '@/components/home/portfolio';
@@ -10,7 +12,7 @@ import Image from 'next/image';
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
     const { page } = await getDictionary(lang);
     return (
-        <main className="flex h-[2000px] min-h-screen flex-col items-center ">
+        <main className="flex min-h-screen flex-col items-center ">
             <Image
                 src={'/images/IMG_5712.jpg'}
                 alt="img"
@@ -20,9 +22,12 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 className=" fixed -z-10 h-[100vh]  w-[100vw] bg-black"
             />
             <HomeHero page={page} />
+            <Characteristics/>
             <Portfolio />
             {/* <MagicNumber /> */}
             <Services />
+
         </main>
+        
     );
 }

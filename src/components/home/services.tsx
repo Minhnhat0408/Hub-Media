@@ -3,7 +3,7 @@ import ThumbNail from '../thumbnail-image';
 import ThumbNailText from '../thumbnail-text';
 function Services() {
     return (
-        <section className="flex w-full flex-col bg-black/80 py-20 pt-36">
+        <section id='services' className="flex w-full flex-col bg-black/80 py-20 pt-36">
             <Heading title={'Services'} description={'What We Have to Offer'} />
             <div className="flex">
                 <ThumbNailText

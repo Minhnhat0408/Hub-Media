@@ -3,7 +3,7 @@ import Heading from '../heading';
 import ThumbNailImage from '../thumbnail-image';
 function Portfolio() {
     return (
-        <section className="flex w-full flex-col bg-background pt-28">
+        <section id="portfolio" className="flex w-full flex-col bg-background pt-28">
             <Heading title={'Gallery'} description={'Our Project Portfolio'} />
             <Reveal hiddenY={100} className="flex gap-x-8">
                 <ThumbNailImage

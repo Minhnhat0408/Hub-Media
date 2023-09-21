@@ -8,6 +8,7 @@ body,
   height: 100%;
   /* font-size: 14px; */
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html *::-webkit-scrollbar {
@@ -41,7 +42,7 @@ html *::-webkit-scrollbar {
 
 .heartbeat {
   --scaleStart: 1;
-  --scaleEnd: 1.1;
+  --scaleEnd: 1.2;
   animation: heartbeat 10s infinite;
 }
 

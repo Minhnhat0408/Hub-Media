@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Locale, i18n } from '@/i18n.config';
 import Header from '@/components/header/header-server';
 import { getDictionary } from '@/lib/dictionary';
+import { Footer } from '@/components/footer';
 
 
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
@@ -24,6 +25,7 @@ export default function LangLayout({ children, params }: { children: React.React
         <>
             <Header lang={params.lang} />
             {children}
+            <Footer />
         </>
     );
 }

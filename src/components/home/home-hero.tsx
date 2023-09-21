@@ -8,9 +8,9 @@ import Link from 'next/link';
 import MarkupButton from '../markup-button';
 function HomeHero({ page }: { page: any }) {
     return (
-        <section className="flex w-[100vw] pb-20 pl-20 bg-background overflow-x-clip ">
-            <div className="flex flex-1  pt-60">
-                <Reveal hiddenY={100} className="flex w-1/5 flex-col items-center">
+        <section id='home-hero' className="flex w-[100vw] pb-20 pl-20 bg-background overflow-x-clip ">
+            <div className="flex flex-1  pt-64">
+                <Reveal hiddenY={100} className="flex w-1/5 h-fit flex-col items-center">
                     <ul className="flex flex-col items-center  text-4xl text-muted-foreground duration-1000">
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
                             <Link href={'https://www.facebook.com/HubMediaVN'} target='_blank'><TbBrandFacebook />
@@ -27,11 +27,11 @@ function HomeHero({ page }: { page: any }) {
                         </li>
                     </ul>
                     <Mark dotanimate lineanimate />
-                    <span className=" -rotate-90 cursor-pointer text-xl font-bold tracking-widest text-gradient">
-                        Scroll
-                    </span>
+                    <Link  href={'#portfolio'} className=" -rotate-90 cursor-pointer text-base tracking-widest text-gradient">
+                        SCROLL
+                    </Link>
                 </Reveal>
-                <Reveal hiddenX={100} className="w-4/5">
+                <Reveal hiddenX={100}  className="w-4/5">
                     <div className="flex">
                         <Mark dotanimate lineanimate horizontal />
                         <p className="ml-3 text-2xl tracking-wider text-muted-foreground">Innovative Idea.</p>
