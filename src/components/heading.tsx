@@ -21,7 +21,6 @@ function Heading({ title, description }: { title: string; description: string })
                         <span key={index} className="mr-4 flex">
                             {word.split('').map((char, ind) => {
                                 time.current += 80;
-                                // let delay = `delay-[${time.current}]`;
                                 return (
                                     <span
                                         className={cn("opacity-0 translate-x-[50px] scale-150 duration-700  " ,isInView && ' flex opacity-1 translate-x-0  super scale-100')}
