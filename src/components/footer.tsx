@@ -8,7 +8,7 @@ export async function Footer() {
             <div className="md-max:pb-5 flex w-full  pb-14">
                 <div className="-ml-20 flex w-[35%]  items-center justify-center ">
                     <Image
-                        src={'/images/logo.png'}
+                        src={'/logo/logo.png'}
                         alt="ava"
                         width={0}
                         height={0}
@@ -116,10 +116,10 @@ export async function Footer() {
                         <div className="phone:flex-wrap phone:mb-2 mb-1 flex">
                             <div className="phone:w-full mr-2 flex min-w-[120px]">
                                 <FaLocationDot className="mr-3 mt-1 text-base text-white" />
-                                <div className="font-bold">Địa điểm: </div>
+                                <div className="font-bold">Địa chỉ: </div>
                             </div>
                             <div className="phone:w-full leading-7 text-muted-foreground">
-                                Tầng 3, HUB Building, D12A Giảng Võ, Ba Đình, HN
+                                Tầng 3, D12, Giảng Võ, Ba Đình, Hà Nội
                             </div>
                         </div>
                         <div className="phone:flex-wrap phone:mb-2 mb-1 flex">
@@ -129,11 +129,9 @@ export async function Footer() {
                             </div>
                             <div>
                                 <div className="leading-7 text-muted-foreground">
-                                    {`0966 888 615 (Mr. Hieu / CEO Top CV / President of GSC)`}
+                                    {` Ms. Thu Phuong (0965053420)`}
                                 </div>
-                                <div className="phone:w-full leading-7 text-muted-foreground">
-                                    {`0979 128 351 (Mr. Long / President of Hub Network)`}
-                                </div>
+                           
                             </div>
                         </div>
                         <div className="phone:flex-wrap phone:mb-2 mb-1 flex">
@@ -142,8 +140,7 @@ export async function Footer() {
                                 <div className="font-bold">Email: </div>
                             </div>
                             <div className="phone:w-full">
-                                <div className="leading-7 text-muted-foreground">hieutran@topcv.vn</div>
-                                <div className="leading-7 text-muted-foreground">longngh.hubnetwork@gmail.com</div>
+                                <div className="leading-7 text-muted-foreground">hubmedia.vietnam@gmail.com</div>
                             </div>
                         </div>
                         <div className="phone:flex-wrap phone:mb-2 mb-1 flex">
@@ -161,18 +158,12 @@ export async function Footer() {
                                 </svg>
                                 <div className="font-bold">Fanpage: </div>
                             </div>
-                            <div className="phone:w-full leading-7 text-blue-600 ">
+                            <div className="phone:w-full leading-7 text-gradient ">
                                 <a
-                                    className="phone:mt-1 block no-underline hover:text-white hover:underline"
+                                    className="phone:mt-1 block no-underline hover:text-white  hover:underline"
                                     href="https://www.facebook.com/GlobalShapersHanoiHub"
                                 >
-                                    WEF Global Shapers Hanoi Hub
-                                </a>
-                                <a
-                                    className="no-underline hover:text-white hover:underline"
-                                    href="https://www.facebook.com/unihubnetwork"
-                                >
-                                    Hub Network
+                                   Hub Media
                                 </a>
                             </div>
                         </div>

@@ -15,7 +15,7 @@ html *::-webkit-scrollbar {
   display: none
 }
 
-.text-stroke{
+.text-stroke {
 
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: hsl(var(--muted-foreground));
@@ -23,8 +23,24 @@ html *::-webkit-scrollbar {
 }
 
 
-.text-norm{
-  -webkit-text-stroke-width: 0px !important ;
+.text-norm {
+  -webkit-text-stroke-width: 0px !important;
+}
+
+
+
+@keyframes fadeLeft {
+  0% {
+
+    transform: translateX(50px);
+    scale: 1.4;
+  }
+
+  100% {
+
+    transform: translateX(0);
+    scale: 1;
+  }
 }
 
 .super {
@@ -77,7 +93,7 @@ html *::-webkit-scrollbar {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-.animate-moveup{
+.animate-moveup {
   animation: moveup 1s ease-in-out;
 }
 
@@ -106,14 +122,18 @@ html *::-webkit-scrollbar {
 }
 
 @keyframes pingbig {
-  75%, 100% {
-      transform: scale(2.5);
-      opacity: 0;
+
+  75%,
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
   }
 }
+
 .animate-ping-big {
   animation: pingbig 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
+
 @layer base {
   :root {
     /* Name: custom color palette
@@ -126,8 +146,9 @@ html *::-webkit-scrollbar {
     --background: 225 19% 8%;
     --foreground: -21 100% 100%;
 
-    --muted: 223 14% 10%; 
-    --muted-foreground: 0 0% 71%; /* gray*/
+    --muted: 223 14% 10%;
+    --muted-foreground: 0 0% 71%;
+    /* gray*/
 
     --popover: -21 53% 8.06%;
     --popover-foreground: -21 6% 98.1%;

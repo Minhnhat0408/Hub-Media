@@ -39,14 +39,15 @@ function HomeHero({ page }: { page: any }) {
                     <h1 className="mt-6 text-6xl   font-bold">
                         <span className="super">Hub Media</span> offer
                     </h1>
-                    <div className="super mb-8 text-6xl font-bold max-w-[550px]">
+                    <div className="super mb-8 text-6xl pb-6 font-bold max-w-[600px]">
                         <TypeWriter
                             options={{
-                                strings: ['Logo Designing.', 'Livestreaming.', 'Web Develop.'],
+                                strings: ['Branding Design.', 'Event Photography.', 'Web Development.','Reports & Trailer.'],
                                 autoStart: true,
                                 loop: true,
                                 deleteSpeed: 20,
                             }}
+                        
                         />
                     </div>
                     <p className="text-muted-foreground max-w-[550px]">{page.home.description}</p>
