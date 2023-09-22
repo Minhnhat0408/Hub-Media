@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react"
 
-const useProgressScroll = () => {
+const useProgressScroll = (all = false)  => {
   const [completion, setCompletion] = useState(0);
   const pathname = usePathname();
   useEffect(() => {
@@ -12,9 +12,14 @@ const useProgressScroll = () => {
       const currentProgress = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
       if(scrollHeight) {
-        setCompletion(
-          Number((currentProgress / scrollHeight).toFixed(2)) * 100
-        );
+        if(all) {
+          setCompletion(Number(currentProgress));
+        }else{
+          setCompletion(
+            Number((currentProgress / scrollHeight).toFixed(2)) * 100
+          );
+        }
+   
       }
     }
 

@@ -11,7 +11,7 @@ function Characteristics() {
                 <div className="flex w-64 flex-col">
                     <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient">Advanced Tools</h1>
                     <span className=" text-muted-foreground duration-500 group-hover:text-white">
-                        With the latest technology, we can create the best products for you
+                        With the latest technology, we can create the best products for your business
                     </span>
                 </div>
             </Reveal>
@@ -33,7 +33,7 @@ function Characteristics() {
                 <div className="flex w-64 flex-col">
                     <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient">Innovation</h1>
                     <span className=" text-muted-foreground duration-500 group-hover:text-white">
-                        With the latest technology, we can create the best products for you
+                        We are always looking for new ways to improve our products and services
                     </span>
                 </div>
             </Reveal>
@@ -65,7 +65,7 @@ function Characteristics() {
                 <div className="flex w-64 flex-col">
                     <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient">Creative idea</h1>
                     <span className=" text-muted-foreground duration-500 group-hover:text-white">
-                        With the latest technology, we can create the best products for you
+                        By combining our knowledge and experience, we create solutions for your business
                     </span>
                 </div>
             </Reveal>

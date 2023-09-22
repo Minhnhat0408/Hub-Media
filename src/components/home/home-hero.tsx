@@ -42,7 +42,7 @@ function HomeHero({ page }: { page: any }) {
                     <div className="super mb-8 text-6xl pb-6 font-bold max-w-[600px]">
                         <TypeWriter
                             options={{
-                                strings: ['Branding Design.', 'Event Photography.', 'Web Development.','Reports & Trailer.'],
+                                strings: ['Branding Design', 'Event Photography', 'Web Development','Reports & Trailer'],
                                 autoStart: true,
                                 loop: true,
                                 deleteSpeed: 20,

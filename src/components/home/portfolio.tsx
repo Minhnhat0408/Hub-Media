@@ -9,7 +9,7 @@ function Portfolio() {
                 <ThumbNailImage
                     href="/about"
                     title="Hub Agency"
-                    description="Provide various customized marketing services for your business"
+                    description="Cung cấp các dịch vụ marketing tùy chỉnh cho từng doanh nghiệp"
                     src="/images/backlog.png"
                     className='w-[30%]'
                 />
@@ -24,7 +24,7 @@ function Portfolio() {
                     href="/livestream"
                     title="Hub Live"
                     description="Với định hướng trở thành nơi kết nối cộng đồng sinh viên với những doanh nghiệp có nhu cầu tìm kiếm model livestream sản phẩm trên các nền tảng mạng xã hội"
-                    src="/images/IMG_5715.jpg"
+                    src="/images/hublive.png"
                     className='w-[30%]'
                 />
             </Reveal>
