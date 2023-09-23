@@ -33,3 +33,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+hub-media-207ea-firebase-adminsdk-gr2n6-f324fff35d.json

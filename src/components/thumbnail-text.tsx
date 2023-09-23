@@ -25,13 +25,14 @@ function ThumbNailText({
                 </h1>
                 <p className="mb-6 max-w-[450px]  text-muted-foreground ">{description}</p>
             </div>
-            <div className="relative flex flex-1 cursor-pointer items-center justify-center ">
+            <Link href={pathRemainLang({ pathname, newpath: href })} className="relative flex flex-1 cursor-pointer items-center justify-center ">
                 <div className=" flex">
                     <Mark horizontal classLine='w-10' classDot='h-2 w-2' />
-                    <h2 className="ml-3 mr-3 text-muted-foreground">Know more</h2>
+                    <h2 className="ml-3 mr-3 text-muted-foreground text-xl">Know more</h2>
                     <Mark horizontal flip classLine='w-10' classDot='h-2 w-2' />
                 </div>
                 <Image
+                    
                     src={src}
                     alt="img"
                     width="0"
@@ -39,7 +40,7 @@ function ThumbNailText({
                     sizes="100vw"
                     className=" absolute h-2/3 w-2/3 object-cover opacity-0 duration-500  group-hover:h-full group-hover:w-full group-hover:opacity-100 "
                 />
-            </div>
+            </Link>
         </article>
     );
 }

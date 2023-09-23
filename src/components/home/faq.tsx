@@ -38,8 +38,8 @@ function FAQ() {
                                     <span className="text-xl"> Quy trình làm việc của chúng tôi như thế nào ?</span>
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>
-                                Yes. It comes with default styles that matches the other components&apos; aesthetic.
+                            <AccordionContent className='text-muted-foreground'>
+                                Quy trinh làm việc của chúng tôi được quy định rõ ràng theo từng dịch vụ, nhằm tối ưu trải nghiệm của khách hàng. 
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-3">
@@ -49,7 +49,7 @@ function FAQ() {
                                     <span className="text-xl">Khách hàng tiềm năng của chúng tôi là ai ?</span>
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>
+                            <AccordionContent className='text-muted-foreground'>
                                 Đội ngũ Hub Media bao gồm những nhân lực trẻ tuổi với tinh thần sáng tạo cao, mong muốn
                                 hỗ trợ các doanh nghiệp trên con đường thực hiện mục tiêu kinh doanh của mình. Đến với
                                 Hub Media, từ các bạn sinh viên, các bạn trẻ cho tới chủ các doanh nghiệp đều có thể tìm
@@ -63,7 +63,7 @@ function FAQ() {
                                     <span className="text-xl">Khách hàng tiềm năng của chúng tôi là ai ?</span>
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>
+                            <AccordionContent className='text-muted-foreground'>
                                 Đội ngũ Hub Media bao gồm những nhân lực trẻ tuổi với tinh thần sáng tạo cao, mong muốn
                                 hỗ trợ các doanh nghiệp trên con đường thực hiện mục tiêu kinh doanh của mình. Đến với
                                 Hub Media, từ các bạn sinh viên, các bạn trẻ cho tới chủ các doanh nghiệp đều có thể tìm
@@ -91,7 +91,7 @@ function FAQ() {
                 </div>
             </div>
             <Image
-                src="/images/IMG_5715.jpg"
+                src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FIMG_5715.jpg?alt=media&token=634bb53d-ce06-40f3-b124-2d40da3dcb58"
                 width={0}
                 height={0}
                 sizes="100vw"

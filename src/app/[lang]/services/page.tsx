@@ -1,7 +1,7 @@
-function ServicesPage() {
+async function ServicesPage() {
     return ( 
         <div>
-            
+         
         </div>
      );
 }

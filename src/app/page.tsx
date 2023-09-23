@@ -1,5 +1,4 @@
 import { Locale } from '@/i18n.config'
-import { Metadata } from 'next';
 
 
 export default async function NotFound({
