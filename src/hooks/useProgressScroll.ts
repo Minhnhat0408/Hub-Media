@@ -29,7 +29,7 @@ const useProgressScroll = (all = false)  => {
       window.removeEventListener('scroll', updateScrollCompletion);
     }
 
-  }, [pathname]);
+  }, [all, pathname]);
 
   return completion;
 }
