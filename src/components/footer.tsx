@@ -4,8 +4,9 @@ import { TbBrandFacebook, TbBrandInstagram, TbBrandLinkedin, TbBrandTiktok, TbBr
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { Locale } from '@/i18n.config';
 
-export async function Footer() {
+export async function Footer({lang}:{lang:Locale}) {
     return (
         <footer id="lienhe" className="relative flex h-fit w-full flex-col bg-background ">
             <div className="md-max:pb-5 flex w-full  pb-14">
@@ -22,7 +23,7 @@ export async function Footer() {
                 </div>
                 <div className="flex flex-1">
                     <div className="md-max:hidden mt-[50px] h-full flex-1  ">
-                        <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">Sitemap</h3>
+                        <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">{lang === 'vi' ? 'Mục Lục': "SITEMAP"}</h3>
                         <div className="mb-3 flex items-start ">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
                             <a
@@ -70,7 +71,7 @@ export async function Footer() {
                         </div>
                     </div>
                     <div className="md-max:hidden mt-[50px] h-full flex-1  ">
-                        <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">Services</h3>
+                        <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">{lang === 'vi' ? 'Dịch vụ': "SERVICES"}</h3>
                         <div className="mb-3 flex items-start">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
 
@@ -114,12 +115,12 @@ export async function Footer() {
                     </div>
                     <div className="md-max:w-3/5 phone:text-sm mt-[50px] h-full flex-[1.5] pr-5 text-white xl:flex xl:flex-col">
                         <h3 className="md-max:text-center phone:text-[20px] mb-5 text-left text-xl font-bold  uppercase text-white">
-                            Liên Hệ
+                        {lang === 'vi' ? 'Liên hệ': "CONTACT"}
                         </h3>
                         <div className="phone:flex-wrap phone:mb-2 mb-1 flex">
                             <div className="phone:w-full mr-2 flex min-w-[120px]">
                                 <FaLocationDot className="mr-3 mt-1 text-base text-white" />
-                                <div className="font-bold">Địa chỉ: </div>
+                                <div className="font-bold">{lang === 'vi' ? 'Địa chỉ:': "Address:"}</div>
                             </div>
                             <div className="phone:w-full leading-7 text-muted-foreground">
                                 Tầng 3, D12, Giảng Võ, Ba Đình, Hà Nội

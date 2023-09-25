@@ -4,8 +4,9 @@ import Mark from '../markup';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 import { PiPaperPlaneRightFill } from 'react-icons/pi';
 import useProgressScroll from '@/hooks/useProgressScroll';
+import { Locale } from '@/i18n.config';
 
-function FAQ() {
+function FAQ({lang}:{lang:Locale}) {
     const scroll = useProgressScroll(true)
     return (
         <section id="faq" className="flex w-full  bg-background py-20 ">
@@ -15,7 +16,7 @@ function FAQ() {
                         <Mark horizontal dotanimate classLine="w-10" />
                         <h1 className="ml-2 text-muted-foreground">{"FAQ's"}</h1>
                     </div>
-                    <h1 className="text-5xl font-bold  ">{"Our Expert's Answer"}</h1>
+                    <h1 className="text-5xl font-bold  ">{lang === 'vi' ? 'Câu hỏi thường gặp': "Our experts's answer"}</h1>
                     <Accordion type="single" collapsible className="mt-10 w-[90%]">
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="py-10 hover:no-underline">
@@ -60,7 +61,7 @@ function FAQ() {
                             <AccordionTrigger className="py-10 hover:no-underline">
                                 <div className="flex ">
                                     <PiPaperPlaneRightFill className=" mr-7 mt-1 text-lg text-gradient" />
-                                    <span className="text-xl">Khách hàng tiềm năng của chúng tôi là ai ?</span>
+                                    <span className="text-xl">Cam kết và đảm bảo về chất lượng cho dịch vụ của bạn ?</span>
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent className='text-muted-foreground'>

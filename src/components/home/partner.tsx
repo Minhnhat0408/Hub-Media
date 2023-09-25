@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import Mark from '../markup';
 import Heading from '../heading';
+import { Locale } from '@/i18n.config';
 
-function Partner() {
+function Partner({lang}:{lang:Locale}) {
     return (
         <section id='partner' className="flex w-full flex-col items-center  bg-muted py-20">
-            <Heading title={'Partner'} description={'Core Partner'} className='pb-10'/>
+            <Heading title={'Partner'} description={lang === 'vi' ? 'Đối tác': "Core Partners"} className='pb-10'/>
             <div className='flex justify-evenly w-full'>
                 <Image
                     src={

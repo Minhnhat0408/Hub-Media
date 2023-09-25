@@ -11,7 +11,7 @@
     },
     "metadata":{
         "title": "Hub Media - Connect your brand to the world",
-        "description": "Internationalization in NextJs 13 App router"
+        "description": "Hub Media is a digital marketing agency that provides livestreaming services, video production, and digital marketing services to connect your brand to the world."
     },
     "pages": {
       "home":{
@@ -20,8 +20,15 @@
         "description": "Hub Media is an agency marketing that provides marketing solutions for businesses targeting the youth demographic"
       },
       "characteristics": {
-        "title": "Các dịch vụ khác",
-        "description": "Các dịch vụ khác"
+        "Modernity": "Harnessing cutting-edge technology to craft innovative solutions for your business",
+        "Creativity": "Infusing imaginative flair into every project to ignite your brand's uniqueness",
+        "Uniqueness":"Crafting distinct experiences that set your brand apart in a crowded market"
+      },
+      "services":{
+        "Brand Design": "We create visually appealing, consistent brand identities encompassing logo and key visuals.",
+        "Event Photography": "Our skilled photographers capture event essence with high-quality images for marketing and memories.",
+        "Recap & Trailers": "We craft concise summaries and dynamic trailers to convey event significance.",
+        "Event Organization": "We ensure seamless, memorable event execution from concept to logistics management."
       }
     },
       "about": {

@@ -1,21 +1,23 @@
 import Counter from '../animations/counter';
 import { TbTools } from 'react-icons/tb';
 import Reveal from '../animations/reveal';
-function Characteristics() {
+function Characteristics({ characteristics }: { characteristics: Object }) {
     return (
-        <section className="flex w-full justify-center gap-x-12 bg-background pb-10 pt-10">
-            <Reveal hiddenY={100} className="group flex items-center gap-x-6 p-8 cursor-default">
+        <section id="char" className="flex w-full justify-center gap-x-12 bg-background pb-10 pt-10">
+            <Reveal hiddenY={100} className="group flex cursor-default items-center gap-x-6 p-8">
                 <div className="text-[80px] text-gradient duration-500 group-hover:scale-110 ">
                     <TbTools />
                 </div>
                 <div className="flex w-64 flex-col">
-                    <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient">Advanced Tools</h1>
+                    <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient">
+                        {Object.keys(characteristics)[0]}
+                    </h1>
                     <span className=" text-muted-foreground duration-500 group-hover:text-white">
-                        With the latest technology, we can create the best products for your business
+                        {Object.values(characteristics)[0]}
                     </span>
                 </div>
             </Reveal>
-            <Reveal hiddenY={100} delay={0.3} className="group flex items-center gap-x-6 p-8 cursor-default">
+            <Reveal hiddenY={100} delay={0.3} className="group flex cursor-default items-center gap-x-6 p-8">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -31,13 +33,13 @@ function Characteristics() {
                 </svg>
 
                 <div className="flex w-64 flex-col">
-                    <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient">Innovation</h1>
+                    <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient"> {Object.keys(characteristics)[1]}</h1>
                     <span className=" text-muted-foreground duration-500 group-hover:text-white">
-                        We are always looking for new ways to improve our products and services
+                    {Object.values(characteristics)[1]}
                     </span>
                 </div>
             </Reveal>
-            <Reveal hiddenY={100} delay={0.6} className="group flex items-center gap-x-6 p-8 cursor-default">
+            <Reveal hiddenY={100} delay={0.6} className="group flex cursor-default items-center gap-x-6 p-8">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -63,9 +65,9 @@ function Characteristics() {
                     <path d="M39.7,75.3c0,0,0,0.1,0,0.1c0.5,1.4,1.7,7.6,2.1,9.6c0.2,1,1,1.6,2,1.6c0.1,0,0.3,0,0.4,0 c1.1-0.2,1.8-1.3,1.6-2.4c0,0,0,0,0,0c-0.2-0.8-1.9-8.2-2.5-10.1c-0.1-0.4-0.2-0.8-1-1l0,0c0-0.5-0.2-1-0.6-1.2 c-6.3-3.8-10.1-10.6-10-17.9c0-11.6,9.3-20.9,20.9-20.9s20.9,9.3,20.9,20.9c0,7-3.5,13.6-9.4,17.5c-0.4,0.3-0.7,0.7-0.8,1.2 c-0.3,0.3-0.5,0.6-0.7,1c-0.5,1.9-1.6,6.1-1.7,6.1c-0.3,1.1,0.4,2.2,1.5,2.5c0.2,0,0.3,0.1,0.5,0.1c0.9,0,1.7-0.6,2-1.5 c0,0,1.1-4.2,1.6-6c0,0,0-0.1,0-0.1c11.4-7.6,14.5-23.1,6.9-34.5s-23.1-14.5-34.5-6.9s-14.5,23.1-6.9,34.5 C33.9,70.8,36.6,73.4,39.7,75.3"></path>
                 </svg>
                 <div className="flex w-64 flex-col">
-                    <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient">Unique</h1>
+                    <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient"> {Object.keys(characteristics)[2]}</h1>
                     <span className=" text-muted-foreground duration-500 group-hover:text-white">
-                        By combining our knowledge and experience, we create solutions for your business
+                    {Object.values(characteristics)[2]}
                     </span>
                 </div>
             </Reveal>

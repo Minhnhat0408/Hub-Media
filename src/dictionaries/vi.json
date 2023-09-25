@@ -11,7 +11,7 @@
     },
     "metadata":{
         "title": "Hub Media - Kết nối thương hiệu",
-        "description": "Kết nối thương hiệu"
+        "description": "Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ."
     },
     "pages": {
       "home": {
@@ -20,8 +20,15 @@
           "description": "Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ."
         },
         "characteristics": {
-          "title": "Các dịch vụ khác",
-          "description": "Các dịch vụ khác"
+          "Hiện đại": "Sử dụng công nghệ tiên tiến để tạo ra các giải pháp đổi mới cho doanh nghiệp của bạn",
+          "Sáng tạo": "Thổi hồn sự sáng tạo vào mọi dự án để thúc đẩy tính độc đáo của thương hiệu của bạn",
+          "Độc Đáo":"Tạo ra những trải nghiệm độc đáo để làm nổi bật thương hiệu của bạn trong thị trường đang cạnh tranh"
+        },
+        "services":{
+          "Thiết Kế Thương Hiệu": "Chuyên thiết kế thương hiệu độc đáo, nhất quán bao gồm logo, key visual, banner và nhiều hơn thế.",
+          "Nhiếp Ảnh Sự Kiện": "Quay chụp các sự kiện với hình ảnh chất lượng cao, sáng tạo nhằm marketing hoặc lưu lại kỷ niệm.",
+          "Tóm Tắt & Trailer": "Dựng lại recap và trailer ngắn gọn xúc tích, để truyền đạt ý nghĩa của sự kiện.",
+          "Tổ Chức Sự Kiện": "Dịch vụ và hoạt động đa dạng giúp tổ chức và quản lý sự kiện chuyên nghiệp và hiệu quả."
         }
         
       },

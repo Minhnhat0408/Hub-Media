@@ -23,12 +23,12 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 sizes="100vw"
                 className=" fixed -z-10 h-[100vh]  w-[100vw] bg-black"
             />
-            <HomeHero pages={pages} lang={lang} />
-            <Characteristics/>
+            <HomeHero home={pages.home['home-hero']} lang={lang} />
+            <Characteristics characteristics={pages.home.characteristics}/>
             <Portfolio lang={lang}/>
-            <FAQ />
-            <Services />
-            <Partner />
+            <FAQ lang={lang} />
+            <Services lang={lang} services={pages.home.services}/>
+            <Partner lang={lang} />
 
         
 

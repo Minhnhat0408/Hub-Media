@@ -7,7 +7,7 @@ import Reveal from '../animations/reveal';
 import Link from 'next/link';
 import MarkupButton from '../markup-button';
 import { Locale } from '@/i18n.config';
-function HomeHero({ pages,lang }: { pages: any,lang:Locale }) {
+function HomeHero({ home,lang }: { home: any,lang:Locale }) {
     return (
         <section id='home-hero' className="flex w-[100vw] pb-20 pl-20 bg-background overflow-x-clip ">
             <div className="flex flex-1  pt-64">
@@ -35,27 +35,26 @@ function HomeHero({ pages,lang }: { pages: any,lang:Locale }) {
                 <Reveal hiddenX={100}  className="w-4/5">
                     <div className="flex">
                         <Mark dotanimate lineanimate horizontal />
-                        <p className="ml-3 text-2xl tracking-wider text-muted-foreground">{lang === 'vi' ? 'Ý tưởng độc đáo.': 'Welcome.'}</p>
+                        <p className="ml-3 text-2xl tracking-wider text-muted-foreground">{lang === 'vi' ? 'Giới thiệu': 'Introduce'}</p>
                     </div>
                     <h1 className="mt-6 text-6xl   font-bold">
-                        <span className="super">Hub Media</span> 
+                        <span className="super">Hub Media</span> offer
                     </h1>
-                    <div className="text-gradient mb-8 text-6xl pb-6 font-bold max-w-[600px]">
+                    <div className="super mb-8 text-6xl pb-6 font-bold max-w-[600px]">
                         <TypeWriter
                             options={{
-                                strings: ['Connect your brand to the world.',],
+                                strings: ['Branding Design', 'Event Photography', 'Web Development','Reports & Trailer'],
                                 autoStart: true,
                                 loop: true,
-                                delay: 30,
+                                delay:40,
                                 deleteSpeed: 20,
-                                
                             }}
                         
                         />
                     </div>
-                    <p className="text-muted-foreground max-w-[550px]">{pages.home["home-hero"].description}</p>
+                    <p className="text-muted-foreground max-w-[550px]">{home.description}</p>
                     <div className='mt-10'>
-                            <MarkupButton href='/' title={lang === 'vi' ? 'Bắt đầu khám phá': 'Get started'}/>
+                            <MarkupButton href='/#char' title={lang === 'vi' ? 'Bắt đầu khám phá': 'Get started'}/>
                             
                     </div>
                 </Reveal>
