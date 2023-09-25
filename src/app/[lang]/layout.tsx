@@ -39,7 +39,7 @@ export default async function LangLayout({
                 <Header lang={params.lang} navigation={navigation} />
                 {children}
                 <Footer lang={params.lang} />
-                {/* <div id="fb-root"></div>
+                <div id="fb-root"></div>
                 <div id="fb-customer-chat" className="fb-customerchat">
                 </div>
                 <Script id="fb" strategy="lazyOnload">
@@ -60,7 +60,7 @@ export default async function LangLayout({
                       js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
                       fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));`}
-                </Script> */}
+                </Script>
             </body>
         </html>
     );

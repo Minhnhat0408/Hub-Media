@@ -29,12 +29,20 @@ function Vision({ vision }: { vision: string[] }) {
                         {vision[0]}{' '}
                         <span className="inline-flex">
                             <Image
-                                src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/content-image-small-size-4.png"
+                                src="/images/1f4c8.png"
                                 width={0}
                                 height={0}
                                 alt="image"
                                 sizes="100vw"
-                                className="h-auto w-[70px] overflow-hidden rounded-full"
+                                className="h-auto w-[40px] rounded-s-full  "
+                            />
+                              <Image
+                                src="/images/1f4c9.png"
+                                width={0}
+                                height={0}
+                                alt="image"
+                                sizes="100vw"
+                                className="h-auto w-[40px] rounded-e-full  "
                             />
                         </span>{' '}
                        {vision[1]} &rdquo;
