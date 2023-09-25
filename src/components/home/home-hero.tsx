@@ -32,32 +32,36 @@ function HomeHero({ home,lang }: { home: any,lang:Locale }) {
                         SCROLL
                     </Link>
                 </Reveal>
-                <Reveal hiddenX={100}  className="w-4/5">
-                    <div className="flex">
-                        <Mark dotanimate lineanimate horizontal />
-                        <p className="ml-3 text-2xl tracking-wider text-muted-foreground">{lang === 'vi' ? 'Giới thiệu': 'Introduce'}</p>
-                    </div>
-                    <h1 className="mt-6 text-6xl   font-bold">
-                        <span className="super">Hub Media</span> offer
-                    </h1>
-                    <div className="super mb-8 text-6xl pb-6 font-bold max-w-[600px]">
-                        <TypeWriter
-                            options={{
-                                strings: ['Branding Design', 'Event Photography', 'Web Development','Reports & Trailer'],
-                                autoStart: true,
-                                loop: true,
-                                delay:40,
-                                deleteSpeed: 20,
-                            }}
-                        
-                        />
-                    </div>
-                    <p className="text-muted-foreground max-w-[550px]">{home.description}</p>
-                    <div className='mt-10'>
-                            <MarkupButton href='/#char' title={lang === 'vi' ? 'Bắt đầu khám phá': 'Get started'}/>
+                <div   className="w-4/5">
+                    <Reveal hiddenX={100}>
+                        <div className="flex">
+                            <Mark dotanimate lineanimate horizontal />
+                            <p className="ml-3 text-2xl tracking-wider text-muted-foreground">{lang === 'vi' ? 'Giới thiệu': 'Introduce'}</p>
+                        </div>
+                        <h1 className="mt-6 text-6xl   font-bold">
+                            <span className="super">Hub Media</span> offer
+                        </h1>
+                        <div className="super mb-8 text-6xl pb-6 font-bold max-w-[600px]">
+                            <TypeWriter
+                                options={{
+                                    strings: ['Branding Design', 'Event Photography', 'Web Development','Reports & Trailer'],
+                                    autoStart: true,
+                                    loop: true,
+                                    delay:40,
+                                    deleteSpeed: 20,
+                                }}
                             
-                    </div>
-                </Reveal>
+                            />
+                        </div>
+                    </Reveal>
+                    <Reveal hiddenX={100} delay={0.3}>
+                        <p className="text-muted-foreground max-w-[550px]">{home.description}</p>
+                        <div className='mt-10'>
+                                <MarkupButton href='/#char' title={lang === 'vi' ? 'Bắt đầu khám phá': 'Get started'}/>
+                                
+                        </div>
+                    </Reveal>
+                </div>
             </div>
             <Image
                 src={'https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Slider-1-Image-1.jpg'}

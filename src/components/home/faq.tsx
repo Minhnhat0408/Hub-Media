@@ -6,7 +6,7 @@ import { PiPaperPlaneRightFill } from 'react-icons/pi';
 import useProgressScroll from '@/hooks/useProgressScroll';
 import { Locale } from '@/i18n.config';
 
-function FAQ({lang}:{lang:Locale}) {
+function FAQ({lang,faq}:{lang:Locale,faq:Object}) {
     const scroll = useProgressScroll(true)
     return (
         <section id="faq" className="flex w-full  bg-background py-20 ">
@@ -18,57 +18,48 @@ function FAQ({lang}:{lang:Locale}) {
                     </div>
                     <h1 className="text-5xl font-bold  ">{lang === 'vi' ? 'Câu hỏi thường gặp': "Our experts's answer"}</h1>
                     <Accordion type="single" collapsible className="mt-10 w-[90%]">
-                        <AccordionItem value="item-1">
-                            <AccordionTrigger className="py-10 hover:no-underline">
+                        <AccordionItem value="item-1" className='border-muted-foreground'>
+                            <AccordionTrigger className="py-10 hover:no-underline ">
                                 <div className="flex ">
                                     <PiPaperPlaneRightFill className=" mr-7 mt-1 text-lg text-gradient" />
-                                    <span className="text-xl">Tại sao bạn nên lựa chọn Hub Media ?</span>
+                                    <span className="text-xl">{Object.keys(faq)[0]}</span>
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent className="text-muted-foreground">
-                                Đội ngũ Hub Media bao gồm những nhân lực trẻ tuổi với tinh thần sáng tạo cao, mong muốn
-                                hỗ trợ các doanh nghiệp trên con đường thực hiện mục tiêu kinh doanh của mình. Đến với
-                                Hub Media, từ các bạn sinh viên, các bạn trẻ cho tới chủ các doanh nghiệp đều có thể tìm
-                                được giải pháp phù hợp với mong muốn của mình trong thế giới Marketing số.
+                            <AccordionContent className="text-muted-foreground ">
+                            {Object.values(faq)[0]}
                             </AccordionContent>
                         </AccordionItem>
-                        <AccordionItem value="item-2">
+                        <AccordionItem value="item-2" className='border-muted-foreground'>
                             <AccordionTrigger className="py-10 hover:no-underline">
                                 <div className="flex ">
                                     <PiPaperPlaneRightFill className=" mr-7 mt-1 text-lg text-gradient" />
-                                    <span className="text-xl"> Quy trình làm việc của chúng tôi như thế nào ?</span>
+                                    <span className="text-xl"> {Object.keys(faq)[1]}</span>
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent className='text-muted-foreground'>
-                                Quy trinh làm việc của chúng tôi được quy định rõ ràng theo từng dịch vụ, nhằm tối ưu trải nghiệm của khách hàng. 
+                            {Object.values(faq)[1]}
                             </AccordionContent>
                         </AccordionItem>
-                        <AccordionItem value="item-3">
+                        <AccordionItem value="item-3" className='border-muted-foreground'>
                             <AccordionTrigger className="py-10 hover:no-underline">
                                 <div className="flex ">
                                     <PiPaperPlaneRightFill className=" mr-7 mt-1 text-lg text-gradient" />
-                                    <span className="text-xl">Khách hàng tiềm năng của chúng tôi là ai ?</span>
+                                    <span className="text-xl">{Object.keys(faq)[2]}</span>
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent className='text-muted-foreground'>
-                                Đội ngũ Hub Media bao gồm những nhân lực trẻ tuổi với tinh thần sáng tạo cao, mong muốn
-                                hỗ trợ các doanh nghiệp trên con đường thực hiện mục tiêu kinh doanh của mình. Đến với
-                                Hub Media, từ các bạn sinh viên, các bạn trẻ cho tới chủ các doanh nghiệp đều có thể tìm
-                                được giải pháp phù hợp với mong muốn của mình trong thế giới Marketing số.
+                            {Object.values(faq)[2]}
                             </AccordionContent>
                         </AccordionItem>
-                        <AccordionItem value="item-4">
+                        <AccordionItem value="item-4" className='border-muted-foreground'>
                             <AccordionTrigger className="py-10 hover:no-underline">
                                 <div className="flex ">
                                     <PiPaperPlaneRightFill className=" mr-7 mt-1 text-lg text-gradient" />
-                                    <span className="text-xl">Cam kết và đảm bảo về chất lượng cho dịch vụ của bạn ?</span>
+                                    <span className="text-xl">{Object.keys(faq)[3]}</span>
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent className='text-muted-foreground'>
-                                Đội ngũ Hub Media bao gồm những nhân lực trẻ tuổi với tinh thần sáng tạo cao, mong muốn
-                                hỗ trợ các doanh nghiệp trên con đường thực hiện mục tiêu kinh doanh của mình. Đến với
-                                Hub Media, từ các bạn sinh viên, các bạn trẻ cho tới chủ các doanh nghiệp đều có thể tìm
-                                được giải pháp phù hợp với mong muốn của mình trong thế giới Marketing số.
+                            {Object.values(faq)[3]}
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

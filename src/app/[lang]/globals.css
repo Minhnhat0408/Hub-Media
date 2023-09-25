@@ -89,9 +89,16 @@ html *::-webkit-scrollbar {
 }
 
 .bg-header {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0,0,0, 0.4));
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.bg-vision{
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.01), rgba(0,0,0, 0.4));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 

@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Heading from '../heading';
-import Mark from '../markup';
-import ThumbNail from '../thumbnail-image';
+
 import ThumbNailText from '../thumbnail-text';
 import { Button } from '../ui/button';
 import { Locale } from '@/i18n.config';
