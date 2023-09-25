@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 function Heading({ title, description,className }: { title: string; description: string,className?:string }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
-    const time = useRef(0);
     return (
         <header ref={ref} className={cn("flex flex-col items-center justify-center pb-20",className)}>
             <div className="mb-2 flex ">
@@ -17,14 +16,15 @@ function Heading({ title, description,className }: { title: string; description:
 
             <div className={cn(' h-fit  relative flex text-6xl justify-center  font-bold ')}>
                 {description.split(' ').map((word, index) => {
+                    let time = index <1 ? 80: index*80*description.split(' ')[index-1].length;
                     return (
                         <span key={index} className="mr-4 flex">
                             {word.split('').map((char, ind) => {
-                                time.current += 80;
+                                time += 80;
                                 return (
                                     <span
                                         className={cn("opacity-0 pt-2 translate-x-[50px] scale-150 duration-700  " ,isInView && ' flex opacity-1 translate-x-0  super scale-100')}
-                                        style={{ transitionDelay: time.current - 1600 + 'ms' }}
+                                        style={{ transitionDelay: time  + 'ms' }}
                                         key={ind}
                                     >
                                         {char}

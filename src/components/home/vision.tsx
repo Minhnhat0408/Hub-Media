@@ -46,6 +46,7 @@ function Vision({ vision }: { vision: string[] }) {
                             />
                         </span>{' '}
                        {vision[1]} &rdquo;
+                       
                 </h2>
             </div>
         </section>
