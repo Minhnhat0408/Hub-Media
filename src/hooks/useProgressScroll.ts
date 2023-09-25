@@ -22,7 +22,7 @@ const useProgressScroll = (all = false)  => {
    
       }
     }
-
+    
     window.addEventListener('scroll', updateScrollCompletion);
 
     return () => {

@@ -1,6 +1,9 @@
 import { FaLocationDot, FaPhone, FaEnvelope } from 'react-icons/fa6';
 import { PiPaperPlaneRightFill } from 'react-icons/pi';
+import { TbBrandFacebook, TbBrandInstagram, TbBrandLinkedin, TbBrandTiktok, TbBrandYoutube } from 'react-icons/tb';
+
 import Image from 'next/image';
+import Link from 'next/link';
 
 export async function Footer() {
     return (
@@ -60,9 +63,9 @@ export async function Footer() {
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
                             <a
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
-                                href="#lienhe"
+                                href="#partner"
                             >
-                                Liên hệ
+                                Partner
                             </a>
                         </div>
                     </div>
@@ -128,10 +131,7 @@ export async function Footer() {
                                 <div className="font-bold">Hotline: </div>
                             </div>
                             <div>
-                                <div className="leading-7 text-muted-foreground">
-                                    {` Ms. Thu Phuong (0965053420)`}
-                                </div>
-                           
+                                <div className="leading-7 text-muted-foreground">{` Ms. Thu Phuong (0965053420)`}</div>
                             </div>
                         </div>
                         <div className="phone:flex-wrap phone:mb-2 mb-1 flex">
@@ -163,7 +163,7 @@ export async function Footer() {
                                     className="phone:mt-1 block no-underline hover:text-white  hover:underline"
                                     href="https://www.facebook.com/GlobalShapersHanoiHub"
                                 >
-                                   Hub Media
+                                    Hub Media
                                 </a>
                             </div>
                         </div>
@@ -172,7 +172,7 @@ export async function Footer() {
             </div>
             <div className="mx-[5%] h-[1px] w-[90%] bg-muted-foreground"></div>
             <div className="flex w-full flex-wrap justify-between bg-background px-[5%] py-6 text-white">
-                <div className="sm-max:w-full sm-max:flex sm-max:flex-col sm-max:items-center phone:text-sm">
+                <div className="sm-max:w-full  sm-max:flex sm-max:flex-col sm-max:items-center phone:text-sm">
                     <div className="mb-1">
                         Designed and Developed by{' '}
                         <span className="font-bold">
@@ -188,7 +188,30 @@ export async function Footer() {
                         </span>
                     </div>
                 </div>
-                <div className="sm-max:w-full sm-max:flex sm-max:flex-col sm-max:items-center sm-max:mt-2 phone:text-sm">
+
+                <ul className="flex gap-x-4 text-2xl  ">
+                    <li className=" cursor-pointer duration-1000 hover:text-gradient">
+                        <Link href={'https://www.facebook.com/HubMediaVN'} target="_blank">
+                            <TbBrandFacebook />
+                        </Link>
+                    </li>
+                    <li className=" cursor-pointer duration-1000 hover:text-gradient">
+                        <Link href={'http://linkedin.com/company/hub-media-vietnam'} target="_blank">
+                            <TbBrandLinkedin />
+                        </Link>
+                    </li>
+                    <li className=" cursor-pointer duration-1000 hover:text-gradient">
+                        <Link href={'https://youtube.com/@HubMedia-Vietnam/'} target="_blank">
+                            <TbBrandYoutube />
+                        </Link>
+                    </li>
+                    <li className=" cursor-pointer duration-1000 hover:text-gradient">
+                        <Link href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}>
+                            <TbBrandTiktok />
+                        </Link>
+                    </li>
+                </ul>
+                <div className="sm-max:w-full sm-max:flex  sm-max:flex-col sm-max:items-center sm-max:mt-2 phone:text-sm">
                     <p>
                         © Copyright 2023 <span className="font-bold tracking-wider">Hub Media</span>
                     </p>

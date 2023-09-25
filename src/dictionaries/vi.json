@@ -13,10 +13,17 @@
         "title": "Hub Media - Kết nối thương hiệu",
         "description": "Kết nối thương hiệu"
     },
-    "page": {
+    "pages": {
       "home": {
-        "title": "Xin chào thế giới",
-        "description": "Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ."
+        "home-hero":{
+          "title": ["cung cấp"],
+          "description": "Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ."
+        },
+        "characteristics": {
+          "title": "Các dịch vụ khác",
+          "description": "Các dịch vụ khác"
+        }
+        
       },
       "about": {
         "title": "Giới thiệu",

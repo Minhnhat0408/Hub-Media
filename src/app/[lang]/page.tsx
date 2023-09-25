@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
-    const { page } = await getDictionary(lang);
+    const { pages } = await getDictionary(lang);
     return (
         <main className="flex min-h-screen flex-col items-center ">
             <Image
@@ -23,9 +23,9 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 sizes="100vw"
                 className=" fixed -z-10 h-[100vh]  w-[100vw] bg-black"
             />
-            <HomeHero page={page} />
+            <HomeHero pages={pages} lang={lang} />
             <Characteristics/>
-            <Portfolio />
+            <Portfolio lang={lang}/>
             <FAQ />
             <Services />
             <Partner />

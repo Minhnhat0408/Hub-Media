@@ -63,7 +63,7 @@ function Characteristics() {
                     <path d="M39.7,75.3c0,0,0,0.1,0,0.1c0.5,1.4,1.7,7.6,2.1,9.6c0.2,1,1,1.6,2,1.6c0.1,0,0.3,0,0.4,0 c1.1-0.2,1.8-1.3,1.6-2.4c0,0,0,0,0,0c-0.2-0.8-1.9-8.2-2.5-10.1c-0.1-0.4-0.2-0.8-1-1l0,0c0-0.5-0.2-1-0.6-1.2 c-6.3-3.8-10.1-10.6-10-17.9c0-11.6,9.3-20.9,20.9-20.9s20.9,9.3,20.9,20.9c0,7-3.5,13.6-9.4,17.5c-0.4,0.3-0.7,0.7-0.8,1.2 c-0.3,0.3-0.5,0.6-0.7,1c-0.5,1.9-1.6,6.1-1.7,6.1c-0.3,1.1,0.4,2.2,1.5,2.5c0.2,0,0.3,0.1,0.5,0.1c0.9,0,1.7-0.6,2-1.5 c0,0,1.1-4.2,1.6-6c0,0,0-0.1,0-0.1c11.4-7.6,14.5-23.1,6.9-34.5s-23.1-14.5-34.5-6.9s-14.5,23.1-6.9,34.5 C33.9,70.8,36.6,73.4,39.7,75.3"></path>
                 </svg>
                 <div className="flex w-64 flex-col">
-                    <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient">Creative idea</h1>
+                    <h1 className="mb-6 text-3xl font-bold duration-500 group-hover:text-gradient">Unique</h1>
                     <span className=" text-muted-foreground duration-500 group-hover:text-white">
                         By combining our knowledge and experience, we create solutions for your business
                     </span>

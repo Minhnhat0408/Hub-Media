@@ -3,12 +3,12 @@ import { useRef } from 'react';
 import Mark from './markup';
 import { useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
-function Heading({ title, description }: { title: string; description: string }) {
+function Heading({ title, description,className }: { title: string; description: string,className?:string }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const time = useRef(0);
     return (
-        <header ref={ref} className="flex flex-col items-center justify-center pb-20">
+        <header ref={ref} className={cn("flex flex-col items-center justify-center pb-20",className)}>
             <div className="mb-3 flex">
                 <Mark horizontal dotanimate />
                 <h2 className="ml-3 mr-3 text-2xl text-muted-foreground ">{title}</h2>

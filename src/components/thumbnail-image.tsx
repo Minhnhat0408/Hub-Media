@@ -10,13 +10,15 @@ function ThumbNailImage({
     title,
     description,
     src,
-    className
+    className,
+    lang,
 }: {
     href: string;
     title: string;
     description: string;
     src: string;
     className?: string;
+    lang?: string;
 }) {
     const pathname = usePathname();
     return (
@@ -31,7 +33,7 @@ function ThumbNailImage({
                 <p className="mb-6 max-w-[450px] translate-y-20 duration-500 group-hover:translate-y-0">
                     {description}
                 </p>
-                <MarkupButton title="Read more" href={pathRemainLang({ pathname, newpath: href })} />
+                <MarkupButton title={lang === 'vi' ? 'Tìm hiểu thêm': 'Read more'} href={pathRemainLang({ pathname, newpath: href })} />
             </div>
         </article>
     );

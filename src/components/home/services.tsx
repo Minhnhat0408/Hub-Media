@@ -1,10 +1,12 @@
 import Heading from '../heading';
+import Mark from '../markup';
 import ThumbNail from '../thumbnail-image';
 import ThumbNailText from '../thumbnail-text';
+import { Button } from '../ui/button';
 function Services() {
     return (
-        <section id="services" className="flex w-full flex-col bg-black/80 py-20 pt-36">
-            <Heading title={'Services'} description={'What We Have to Offer'} />
+        <section id="services" className="flex w-full flex-col bg-black/80 py-20 pt-28">
+            <Heading title={'Services'} description={'Highlight Services'} />
             <div className="flex">
                 <ThumbNailText
                     href="/services/logo-design"
@@ -31,6 +33,13 @@ function Services() {
                     src="https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png"
                 />
             </div>
+            <Button size={'default'} variant={'outline'} className="text-xl mt-10 mx-auto w-fit p-6 rounded-full pl-8 tracking-widest duration-700">
+                <span className="relative mr-3 flex h-2 w-2">
+                    <span className="absolute -left-[2px] -top-[2px] h-3 w-3 animate-ping rounded-full bg-gradient opacity-75"></span>
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-gradient"></span>
+                </span>
+                See more
+            </Button>
         </section>
     );
 }

@@ -8,7 +8,7 @@ import useProgressScroll from '@/hooks/useProgressScroll';
 function FAQ() {
     const scroll = useProgressScroll(true)
     return (
-        <section id="faq" className="flex w-full  bg-background py-20 pt-40">
+        <section id="faq" className="flex w-full  bg-background py-20 ">
             <div className="relative flex flex-1 items-center justify-end    ">
                 <div className="flex h-[80%] w-full translate-x-24 flex-col border-2 border-gradient bg-background p-20">
                     <div className="mb-5 flex">

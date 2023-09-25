@@ -13,11 +13,17 @@
         "title": "Hub Media - Connect your brand to the world",
         "description": "Internationalization in NextJs 13 App router"
     },
-    "page": {
-      "home": {
-        "title": "Connect your brand to the world",
-        "description": "Hub Media is a company that provides marketing solutions for businesses targeting the youth demographic"
+    "pages": {
+      "home":{
+        "home-hero":{
+        "title": ["offer","Branding Design", "Event Photography", "Web Development","Reports & Trailer"],
+        "description": "Hub Media is an agency marketing that provides marketing solutions for businesses targeting the youth demographic"
       },
+      "characteristics": {
+        "title": "Các dịch vụ khác",
+        "description": "Các dịch vụ khác"
+      }
+    },
       "about": {
         "title": "About Us",
         "description": "This is the about page"
