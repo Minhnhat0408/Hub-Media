@@ -3,8 +3,8 @@ import { TbTools } from 'react-icons/tb';
 import Reveal from '../animations/reveal';
 function Characteristics({ characteristics }: { characteristics: Object }) {
     return (
-        <section id="char" className="flex w-full justify-center gap-x-12 bg-background pb-10 pt-10">
-            <Reveal hiddenY={100} className="group flex cursor-default items-center gap-x-6 p-8">
+        <section id="char" className="flex w-full justify-evenly p-10  bg-background ">
+            <Reveal hiddenY={100} className="group flex cursor-default items-center 2xl:gap-x-6 xl:gap-x-3 py-8">
                 <div className="text-[80px] text-gradient duration-500 group-hover:scale-110 ">
                     <TbTools />
                 </div>
@@ -17,7 +17,7 @@ function Characteristics({ characteristics }: { characteristics: Object }) {
                     </span>
                 </div>
             </Reveal>
-            <Reveal hiddenY={100} delay={0.3} className="group flex cursor-default items-center gap-x-6 p-8">
+            <Reveal hiddenY={100} delay={0.3} className="group flex cursor-default items-center 2xl:gap-x-6 xl:gap-x-3 py-8">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -39,7 +39,7 @@ function Characteristics({ characteristics }: { characteristics: Object }) {
                     </span>
                 </div>
             </Reveal>
-            <Reveal hiddenY={100} delay={0.6} className="group flex cursor-default items-center gap-x-6 p-8">
+            <Reveal hiddenY={100} delay={0.6} className="group flex cursor-default items-center 2xl:gap-x-6 xl:gap-x-3 py-8">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"

@@ -17,6 +17,12 @@ html *::-webkit-scrollbar {
   display: none
 }
 
+.silver {
+  background: linear-gradient(to top left, #b3b3b3, #ededed, #b3b3b3,#ededed, #b3b3b3,#ededed, #b3b3b3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .text-stroke {
 
   -webkit-text-stroke-width: 1px;

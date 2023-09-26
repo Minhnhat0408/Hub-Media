@@ -46,11 +46,12 @@ export async function Footer({lang}:{lang:Locale}) {
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
                             <a
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
-                                href="#faq"
+                                href="#partner"
                             >
-                                FAQ
+                                Partner
                             </a>
                         </div>
+            
                         <div className="mb-3 flex items-start">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
                             <a
@@ -64,11 +65,12 @@ export async function Footer({lang}:{lang:Locale}) {
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
                             <a
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
-                                href="#partner"
+                                href="#faq"
                             >
-                                Partner
+                                FAQ
                             </a>
                         </div>
+                      
                     </div>
                     <div className="md-max:hidden mt-[50px] h-full flex-1  ">
                         <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">{lang === 'vi' ? 'Dịch vụ': "SERVICES"}</h3>

@@ -9,8 +9,8 @@ import MarkupButton from '../markup-button';
 import { Locale } from '@/i18n.config';
 function HomeHero({ home,lang }: { home: any,lang:Locale }) {
     return (
-        <section id='home-hero' className="flex w-[100vw] pb-20 pl-20 bg-background overflow-x-clip ">
-            <div className="flex flex-1  pt-64">
+        <section id='home-hero' className="flex w-[100vw] pb-20 2xl:pl-20 xl:pl-7 bg-background overflow-x-clip ">
+            <div className="flex 2xl:flex-1 z-[5]  2xl:pt-64 pt-48 w-[45%]" >
                 <Reveal hiddenY={100} className="flex w-1/5 h-fit flex-col items-center">
                     <ul className="flex flex-col items-center  text-4xl text-muted-foreground duration-1000">
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
@@ -32,7 +32,7 @@ function HomeHero({ home,lang }: { home: any,lang:Locale }) {
                         SCROLL
                     </Link>
                 </Reveal>
-                <div   className="w-4/5">
+                <div   className="w-4/5  ">
                     <Reveal hiddenX={100}>
                         <div className="flex">
                             <Mark dotanimate lineanimate horizontal />
@@ -41,7 +41,7 @@ function HomeHero({ home,lang }: { home: any,lang:Locale }) {
                         <h1 className="mt-6 text-6xl   font-bold">
                             <span className="super">Hub Media</span> offer
                         </h1>
-                        <div className="super mb-8 text-6xl pb-6 font-bold max-w-[600px]">
+                        <div className="super mb-8 text-6xl h-[130px]  font-bold max-w-[600px]">
                             <TypeWriter
                                 options={{
                                     strings: ['Branding Design', 'Event Photography', 'Web Development','Reports & Trailer'],
@@ -68,7 +68,7 @@ function HomeHero({ home,lang }: { home: any,lang:Locale }) {
                 width={600}
                 height={300}
                 alt="bl"
-                className="heartbeat flex-1  w-fit h-[110%]"
+                className="heartbeat flex-1 z-[3] w-fit h-[110%]"
             />
         </section>
     );

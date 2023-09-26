@@ -1,9 +1,13 @@
-function BlogPage() {
-    return ( 
-        <div>
-            
-        </div>
-     );
-}
+import UnderConstruction from '@/components/underconstruction';
+import { Locale } from '@/i18n.config';
+import { getDictionary } from '@/lib/dictionary';
 
-export default BlogPage;
+export default async function BlogPage({ params: { lang } }: { params: { lang: Locale } }) {
+    const {pages} = await getDictionary(lang);
+
+    return (
+        <main className="h-fit w-full bg-background">
+            <UnderConstruction construction={pages.underconstruction} />
+        </main>
+    );
+}

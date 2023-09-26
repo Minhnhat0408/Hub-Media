@@ -10,7 +10,7 @@ function Heading({ title, description,className }: { title: string; description:
         <header ref={ref} className={cn("flex flex-col items-center justify-center pb-20",className)}>
             <div className="mb-2 flex ">
                 <Mark horizontal dotanimate />
-                <h2 className="ml-3 mr-3 text-2xl text-muted-foreground ">{title}</h2>
+                <h2 className="ml-3 mr-3 text-2xl silver ">{title}</h2>
                 <Mark horizontal dotanimate flip />
             </div>
 

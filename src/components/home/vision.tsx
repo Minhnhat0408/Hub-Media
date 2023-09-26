@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Reveal from '../animations/reveal';
 
 function Vision({ vision }: { vision: string[] }) {
     return (
@@ -12,7 +13,7 @@ function Vision({ vision }: { vision: string[] }) {
                 sizes="100vw"
                 className="absolute w-full h-auto   "
             />
-            <div className=" z-[1] bg-vision flex w-[70%] h-fit   justify-center  ">
+            <Reveal scale={0.3} className=" z-[1] bg-vision flex w-[70%] h-fit   justify-center  ">
           
                 <h2 className=" p-16 text-white   text-[45px] font-bold leading-[50px] ">
                         &ldquo; Hub Media{' '}
@@ -48,7 +49,7 @@ function Vision({ vision }: { vision: string[] }) {
                        {vision[1]} &rdquo;
                        
                 </h2>
-            </div>
+            </Reveal>
         </section>
     );
 }

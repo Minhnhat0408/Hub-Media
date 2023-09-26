@@ -1,5 +1,17 @@
+import { Metadata } from "next";
 import Script from "next/script";
 import React from "react";
+
+export const metadata : Metadata = {
+
+        metadataBase: new URL('https://pbhubmedia.vercel.app/'),
+        title: "Hub Media - Kết nối thương hiệu của bạn ra thế giới",
+        openGraph: {
+            images: ['/images/backlog.png'],
+        },
+        description: 'Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ.',
+  
+}
 
 function RootLayout({children} : {children: React.ReactNode}) {
     return ( 

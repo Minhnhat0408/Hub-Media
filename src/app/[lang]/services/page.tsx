@@ -1,9 +1,12 @@
 async function ServicesPage() {
     return ( 
-        <div>
-         
-        </div>
+        <main className="w-full bg-background ">
+            <section className="">
+
+
+            </section>
+        </main>
      );
 }
 
-export default ServicesPage;
+export default ServicesPage;        
