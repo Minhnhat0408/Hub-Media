@@ -1,20 +1,11 @@
 import axios from "axios";
+import { Service } from "../page";
 
-type Service = {
-    title:string,
-    description:string,
-    price:string,
-    thumbnail?:string,
-}
+
 async function Service({params: {title}}:{params:{title:string}}) {
 
-    const response = await axios.get(`${process.env.URL}/api/service`,{
-        params:{
-            title: title
-        }
-    })
+    const response = await axios.get(`${process.env.URL}/api/service/${title}`)
     const data : Service = response.data.service
-
     return ( 
         <main className="w-full h-[100vh] flex flex-col justify-center items-center text-white">
             <h1 className="text-white">{data.title}</h1>

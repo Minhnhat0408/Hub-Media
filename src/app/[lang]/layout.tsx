@@ -5,17 +5,17 @@ import { getDictionary } from '@/lib/dictionary';
 import { Footer } from '@/components/footer';
 import './globals.css';
 
-export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
-    const { metadata } = await getDictionary(params.lang);
-    return {
-        metadataBase: new URL('https://pbhubmedia.vercel.app/'),
-        title: metadata.title,
-        openGraph: {
-            images: ['/images/backlog.png'],
-        },
-        description: metadata.description,
-    };
-}
+// export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
+//     const { metadata } = await getDictionary(params.lang);
+//     return {
+//         metadataBase: new URL('https://pbhubmedia.vercel.app/'),
+//         title: metadata.title,
+//         openGraph: {
+//             images: ['/images/backlog.png'],
+//         },
+//         description: metadata.description,
+//     };
+// }
 
 export async function generateStaticParams() {
     return i18n.locales.map((locale) => ({ lang: locale }));
