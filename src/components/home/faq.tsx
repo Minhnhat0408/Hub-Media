@@ -16,7 +16,7 @@ function FAQ({lang,faq}:{lang:Locale,faq:Object}) {
                         <Mark horizontal dotanimate classLine="w-10" />
                         <h1 className="ml-2 text-muted-foreground">{"FAQ's"}</h1>
                     </div>
-                    <h1 className="2xl:text-5xl text-4xl font-bold  ">{lang === 'vi' ? 'Câu hỏi thường gặp': "Our experts's answer"}</h1>
+                    <h1 className="xl:text-5xl text-4xl font-bold  ">{lang === 'vi' ? 'Câu hỏi thường gặp': "Our experts's answer"}</h1>
                     <Accordion type="single" collapsible className="xl:mt-10 ">
                         <AccordionItem value="item-1" className='border-muted-foreground'>
                             <AccordionTrigger className="xl:py-10 py-8 hover:no-underline ">

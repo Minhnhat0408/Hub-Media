@@ -8,13 +8,6 @@ export const routes = [
       tag: "home"
     },
     {
-      label: 'ABOUT US',
-      // icon: MessageSquare,
-      href: '/about',
-      color: "text-violet-500",
-      tag: "about"
-    },
-    {
       label: 'SERVICES',
       // icon: VideoIcon,
       color: "text-orange-700",

@@ -8,7 +8,7 @@ function Portfolio({lang,portfolio}: {lang:Locale,portfolio: string[]}) {
             <Heading title={'Portfolio'} description={lang === 'vi' ? 'Dự án của chúng tôi': 'Our Project Porfolio'} />
             <Reveal hiddenY={100} className="flex gap-x-8">
                 <ThumbNailImage
-                    href="/about"
+                    href="/services"
                     title="Hub Agency"
                     description={portfolio[0]}
                     src="/images/backlog.png"

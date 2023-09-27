@@ -24,11 +24,13 @@ function getLocale(request: NextRequest): string | undefined {
 export function middleware(request: NextRequest) {
   
   const pathname = request.nextUrl.pathname
+  if (pathname.startsWith("/api")) return NextResponse.next();
   const pathnameIsMissingLocale = i18n.locales.every(
     locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   )  
   
   // Redirect if there is no locale
+
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request)
     const res =  NextResponse.redirect(
@@ -44,5 +46,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [ '/((?!api|_next/static|_next/image|images|logo|favicon.ico).*)',],
+  matcher: [ '/((?!_next/static|_next/image|images|logo|favicon.ico|layout|robot.txt).*)',],
 };  

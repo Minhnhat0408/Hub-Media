@@ -35,7 +35,6 @@ function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
             <Image src={'/logo/logonotext.png'} className="ml-10 h-16 w-[90px]" height={500} width={500} alt="logo" />
             <NavBar lang={lang} navigation={navigation} />
             <div className="flex gap-x-4">
-                {/* <Link href={`/${lang}/about`} className='py-2 px-5 '>{navigation.contact}</Link> */}
                 <Button
                     size={'default'}
                     variant={'outline'}

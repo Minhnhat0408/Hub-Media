@@ -38,10 +38,10 @@ function HomeHero({ home,lang }: { home: any,lang:Locale }) {
                             <Mark dotanimate lineanimate horizontal />
                             <p className="ml-3 text-2xl tracking-wider text-muted-foreground">{lang === 'vi' ? 'Giới thiệu': 'Introduce'}</p>
                         </div>
-                        <h1 className="mt-6 text-6xl   font-bold">
+                        <h1 className="mt-6 2xl:text-6xl text-5xl   font-bold">
                             <span className="super">Hub Media</span> offer
                         </h1>
-                        <div className="super mb-8 text-6xl h-[130px]  font-bold max-w-[600px]">
+                        <div className="super mb-8 2xl:text-6xl text-5xl font-bold max-w-[600px]">
                             <TypeWriter
                                 options={{
                                     strings: ['Branding Design', 'Event Photography', 'Web Development','Reports & Trailer'],
@@ -56,7 +56,7 @@ function HomeHero({ home,lang }: { home: any,lang:Locale }) {
                     </Reveal>
                     <Reveal hiddenX={100} delay={0.3}>
                         <p className="text-muted-foreground max-w-[550px]">{home.description}</p>
-                        <div className='mt-10'>
+                        <div className='mt-16'>
                                 <MarkupButton href='/#char' title={lang === 'vi' ? 'Bắt đầu khám phá': 'Get started'}/>
                                 
                         </div>
