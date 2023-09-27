@@ -19,6 +19,30 @@
         "Trang này đang trong quá trình xây dựng.",
         " Vui lòng quay lại sau!"
       ],
+      "services":{
+        "Thiết Kế Thương Hiệu": {
+          "href":"/services/logo-design",
+            "description":"Chuyên thiết kế thương hiệu độc đáo, nhất quán bao gồm logo, key visual, banner và nhiều hơn thế.",
+            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg"
+        },
+        "Nhiếp Ảnh Sự Kiện":
+        {
+          "href":"/services/event-photography",
+            "description":"Quay chụp các sự kiện với hình ảnh chất lượng cao, sáng tạo nhằm marketing hoặc lưu lại kỷ niệm.",
+            "src":"https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332"
+        }, 
+        "Tóm Tắt & Trailer":{
+          "href":"/services/recap-trailer",
+            "description":"Dựng lại recap và trailer ngắn gọn xúc tích, để truyền đạt ý nghĩa của sự kiện.",
+            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png"
+        }, 
+        "Tổ Chức Sự Kiện":{
+          "href":"/services/event-organizer",
+            "description":"Dịch vụ và hoạt động đa dạng giúp tổ chức và quản lý sự kiện chuyên nghiệp và hiệu quả.",
+            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png"
+        }
+      },
+      
       "home": {
         "home-hero":{
           "title": ["cung cấp"],
@@ -28,12 +52,6 @@
           "Hiện đại": "Sử dụng công nghệ tiên tiến để tạo ra các giải pháp đổi mới cho doanh nghiệp của bạn",
           "Sáng tạo": "Thổi hồn sự sáng tạo vào mọi dự án để thúc đẩy tính độc đáo của thương hiệu của bạn",
           "Độc Đáo":"Tạo ra những trải nghiệm độc đáo để làm nổi bật thương hiệu của bạn trong thị trường đang cạnh tranh"
-        },
-        "services":{
-          "Thiết Kế Thương Hiệu": "Chuyên thiết kế thương hiệu độc đáo, nhất quán bao gồm logo, key visual, banner và nhiều hơn thế.",
-          "Nhiếp Ảnh Sự Kiện": "Quay chụp các sự kiện với hình ảnh chất lượng cao, sáng tạo nhằm marketing hoặc lưu lại kỷ niệm.",
-          "Tóm Tắt & Trailer": "Dựng lại recap và trailer ngắn gọn xúc tích, để truyền đạt ý nghĩa của sự kiện.",
-          "Tổ Chức Sự Kiện": "Dịch vụ và hoạt động đa dạng giúp tổ chức và quản lý sự kiện chuyên nghiệp và hiệu quả."
         },
         "portfolio":[
           "Cung cấp các dịch vụ marketing tùy chỉnh cho từng doanh nghiệp",

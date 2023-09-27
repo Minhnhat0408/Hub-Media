@@ -28,7 +28,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
             <Portfolio lang={lang} portfolio={pages.home.portfolio} />
             <Vision vision={pages.home.vision} />
             <Partner lang={lang} />
-            <Services lang={lang} services={pages.home.services} />
+            <Services lang={lang} services={pages.services} />
             <FAQ lang={lang} faq={pages.home.faq} />
         </main>
     );

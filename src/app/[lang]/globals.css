@@ -61,8 +61,15 @@ html *::-webkit-scrollbar {
 }
 .bg-page-title{
   
-  background: linear-gradient(0deg, rgba(0, 0, 0),rgba(0,0,0, 0.8), transparent);
+  background: linear-gradient(0deg,  hsl(var(--background)) , transparent);
   
+}
+
+.title-img {
+  background-image: url(https://gaaga.wpengine.com/wp-content/uploads/2023/06/services-breadcrumb.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .cl-internal-b3fm6y {

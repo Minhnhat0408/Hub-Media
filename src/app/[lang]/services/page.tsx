@@ -1,31 +1,48 @@
-import PageTitle from "@/components/page-title";
-import axios from "axios";
-export type Service = {
-    title:string,
-    description:string,
-    price:string,
-    thumbnail?:string,
-}
-async function ServicesPage() {
-    const response = await axios.get(`${process.env.URL}/api/service`)
-    const data = response.data.services
-    console.log(data)
-    return ( 
-        <main className="w-full bg-page-title bg-background ">
-            <PageTitle title="Services"/>
-            <section className="py-20 w-full ">
-                {
-                    // data.map((service,ind)  => (
-                    //     <div key={} className="flex flex-col justify-center items-center">
-                    //         <h1 className="text-white">{service.title}</h1>
-                    //         <p className="text-white">{service.description}</p>
-                    //         <p className="text-white">{service.price}</p>
-                    //     </div>
-                    // ))
-                }
+import MarkupButton from '@/components/markup-button';
+import PageTitle from '@/components/page-title';
+import ServiceItem from '@/components/service-item';
+import { Locale } from '@/i18n.config';
+import { getDictionary } from '@/lib/dictionary';
+import { pathRemainLang } from '@/lib/utils';
+import axios from 'axios';
+import Image from 'next/image';
+export type ServiceThumbnail = {
+    [name: string]: {
+        description: string;
+        src: string;
+        href: string;
+    };
+};
+async function ServicesPage({ params: { lang } }: { params: { lang: Locale } }) {
+    // const response = await axios.get(`${process.env.URL}/api/service`)
+    // const data = response.data.services
+    // console.log(data)
+    const { pages } = await getDictionary(lang);
+    return (
+        <main className=" h-fit w-full py-20 ">
+            <PageTitle
+                src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/services-breadcrumb.jpg"
+                title="Services"
+            />
+            
+            <section className=" grid w-full grid-cols-2 p-20 ">
+                {Object.entries(pages.services as ServiceThumbnail).map(([title, infor], index: number) => {
+                    
+                    return (
+                        <ServiceItem
+                            key={index}
+                            title={title}
+                            description={infor.description}
+                            src={infor.src}
+                            href={infor.href}
+                            lang={lang}
+                            className={index % 2 !== 0 ? ' translate-y-20':''}
+                        />
+                    );
+                })}
             </section>
         </main>
-     );
+    );
 }
 
-export default ServicesPage;        
+export default ServicesPage;
