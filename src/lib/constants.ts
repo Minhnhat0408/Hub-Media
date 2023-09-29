@@ -3,7 +3,7 @@ export const routes = [
     {   
       label: 'HOME',
       icon: ImHome,
-      href: '',
+      href: '/',
       color: "text-sky-500",
       tag: "home"
     },

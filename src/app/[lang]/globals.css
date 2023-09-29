@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 html,
 body,
@@ -18,11 +18,12 @@ html *::-webkit-scrollbar {
 }
 
 .silver {
-  background: repeating-linear-gradient(to top left, #b3b3b3 , #ededed,#b3b3b3 , #ededed,#b3b3b3 , #ededed,#b3b3b3   );
+  background: repeating-linear-gradient(to top left, #b3b3b3, #ededed, #b3b3b3, #ededed, #b3b3b3, #ededed, #b3b3b3);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
+
 .text-stroke {
 
   -webkit-text-stroke-width: 1px;
@@ -31,45 +32,18 @@ html *::-webkit-scrollbar {
 }
 
 
-.text-norm {
-  -webkit-text-stroke-width: 0px !important;
-}
-
-
-
-@keyframes fadeLeft {
-  0% {
-
-    transform: translateX(50px);
-    scale: 1.4;
-  }
-
-  100% {
-
-    transform: translateX(0);
-    scale: 1;
-  }
-}
 
 .super {
   background: linear-gradient(to top left, #ea896a, #d9658c, #49ced3);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-
-
-}
-.bg-page-title{
-  
-  background: linear-gradient(0deg,  hsl(var(--background)) , transparent);
-  
 }
 
-.title-img {
-  background-image: url(https://gaaga.wpengine.com/wp-content/uploads/2023/06/services-breadcrumb.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.bg-page-title {
+
+  background: linear-gradient(0deg, hsl(var(--background)), transparent);
+
 }
 
 .cl-internal-b3fm6y {
@@ -107,32 +81,20 @@ html *::-webkit-scrollbar {
 }
 
 .bg-header {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0,0,0, 0.4));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-.bg-vision{
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.01), rgba(0,0,0, 0.4));
+.bg-vision {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.01), rgba(0, 0, 0, 0.4));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-.animate-moveup {
-  animation: moveup 1s ease-in-out;
-}
 
-@keyframes moveup {
-  0% {
-    transform: translateY(-100px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
 
 @keyframes heartbeat {
   0% {

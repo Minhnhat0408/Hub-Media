@@ -1,17 +1,163 @@
-import axios from "axios";
+import BackgroundRotation from '@/components/animations/background-rotation';
+import Slider from '@/components/animations/slider';
+import Heading from '@/components/heading';
+import PageTitle from '@/components/page-title';
+import { Button } from '@/components/ui/button';
+import axios from 'axios';
+import { Coins } from 'lucide-react';
+import Image from 'next/image';
+import { PiPaperPlaneRightFill } from 'react-icons/pi';
 
+async function Service({ params: { title } }: { params: { title: string } }) {
+    const response = await axios.get(`${process.env.URL}/api/service/${title}`);
+    const data = response.data.service;
 
-async function Service({params: {title}}:{params:{title:string}}) {
+    return (
+        <main className=" h-fit w-full py-20 ">
+            <PageTitle
+                src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/services-breadcrumb.jpg"
+                title={data.title}
+            />
+            <section className="flex w-full p-20">
+                <div className="flex h-auto flex-1 flex-col justify-center gap-y-10 pl-10  ">
+                    <div className="w-3/4 ">
+                        <h1 className="mb-4 text-4xl font-bold ">Desription :</h1>
+                        <p className=" font-medium text-muted-foreground pl-4" >
+                            We create visually appealing, consistent brand identities encompassing logo and key visuals.
+                        </p>
+                    </div>
+                    <div className="w-3/4 ">
+                        <h1 className="mb-4 text-4xl font-bold ">Details :</h1>
+                        <ul className=" font-medium text-muted-foreground gap-y-4 pl-4 flex flex-col">
+                            <li className='flex items-center '>
+                                <PiPaperPlaneRightFill className=" mr-2  text-sm  text-gradient " />
+                                Standard: Logo dạng chữ
+                            </li>
+                            <li className='flex items-center '>
+                                <PiPaperPlaneRightFill className=" mr-2  text-sm  text-gradient " />
+                                Advanced: Logo biểu tượng
+                            </li>
+                            <li className='flex items-center '>
+                                <PiPaperPlaneRightFill className=" mr-2  text-sm  text-gradient " />
+                                Professional: Logo kết hợp
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="w-3/4 ">
+                        <h1 className="mb-4 text-4xl font-bold ">Category :</h1>
+                        <p className=" font-medium text-muted-foreground pl-4">
+                            #logo - #branding - #identity - #design - #graphic
+                        </p>
+                    </div>
+                </div>
+                <Slider className="relative  h-[600px] !w-[800px]">
+                    <Image
+                        src={'https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg'}
+                        alt="img"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className=" keen-slider__slide h-full w-full "
+                    />
 
-    const response = await axios.get(`${process.env.URL}/api/service/${title}`)
-    const data  = response.data.service
-    return ( 
-        <main className="w-full h-[100vh] flex flex-col justify-center items-center text-white">
-            <h1 className="text-white">{data.title}</h1>
-            <p className="text-white">{data.description}</p>
-            <p className="text-white">{data.price}</p>
+                    <Image
+                        src={'https://gaaga.wpengine.com/wp-content/uploads/2023/06/portfolio-1.jpg'}
+                        alt="img"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className=" keen-slider__slide h-full w-full "
+                    />
+                    <Image
+                        src={'https://gaaga.wpengine.com/wp-content/uploads/2023/06/portfolio-6.jpg'}
+                        alt="img"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className=" keen-slider__slide h-full w-full "
+                    />  
+                    <Image
+                        src={'https://gaaga.wpengine.com/wp-content/uploads/2023/06/portfolio-8.jpg'}
+                        alt="img"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className=" keen-slider__slide h-full w-full "
+                    />
+                </Slider>
+            </section>
+            <section className="w-full">
+                <Heading title={'Budget Friendly'} description={'Choose your best plan  '} />
+                <div className="flex w-full justify-center  gap-x-20">
+                    <div className="group flex h-[600px] w-[450px] flex-col items-center gap-y-8 border-[1px] border-gradient py-10">
+                        <h3 className="text-3xl text-gradient ">Standard</h3>
+                        <Coins className="h-20 w-20 rounded-full border-[1px] border-gradient p-4  text-gradient duration-500 group-hover:bg-gradient  group-hover:text-white " />
+                        <h3 className="super text-4xl text-gradient  ">
+                            2.000.000 <span className="text-sm ">/ vnđ</span>
+                        </h3>
+                        <ul className="mt-4 flex flex-col items-center gap-y-4 text-muted-foreground">
+                            <li>1 Mẫu Demo</li>
+                            <li>3 lần Chỉnh Sửa</li>
+                            <li>Đội ngũ chuyên nghiệp</li>
+                            <li>Hỗ trợ online, offline</li>
+                        </ul>
+                        <Button
+                            variant={'outline'}
+                            size={'default'}
+                            className="mt-4 rounded-none border-gradient  duration-500 group-hover:bg-gradient  "
+                        >
+                            <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
+                            Choose Plan
+                        </Button>
+                    </div>
+                    <div className="group flex h-[600px] w-[450px] flex-col items-center gap-y-8 border-[1px] border-gradient py-10">
+                        <h3 className="text-3xl text-gradient ">Advanced</h3>
+                        <Coins className="h-20 w-20 rounded-full border-[1px] border-gradient p-4  text-gradient duration-500 group-hover:bg-gradient  group-hover:text-white " />
+                        <h3 className="super text-4xl text-gradient  ">
+                            2.000.000 <span className="text-sm ">/ vnđ</span>
+                        </h3>
+                        <ul className="mt-4 flex flex-col items-center gap-y-4 text-muted-foreground">
+                            <li>1 Mẫu Demo</li>
+                            <li>3 lần Chỉnh Sửa</li>
+                            <li>Đội ngũ chuyên nghiệp</li>
+                            <li>Hỗ trợ online, offline</li>
+                        </ul>
+                        <Button
+                            variant={'outline'}
+                            size={'default'}
+                            className="mt-4 rounded-none border-gradient  duration-500 group-hover:bg-gradient "
+                        >
+                            <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
+                            Choose Plan
+                        </Button>
+                    </div>
+                    <div className="group flex h-[600px] w-[450px] flex-col items-center gap-y-8 border-[1px] border-gradient py-10">
+                        <h3 className="text-3xl text-gradient ">Professtional</h3>
+                        <Coins className="h-20 w-20 rounded-full border-[1px] border-gradient p-4  text-gradient duration-500 group-hover:bg-gradient  group-hover:text-white " />
+
+                        <h3 className="super text-4xl text-gradient ">
+                            2.000.000 <span className="text-sm ">/ vnđ</span>
+                        </h3>
+                        <ul className="mt-4 flex flex-col items-center gap-y-4 text-muted-foreground">
+                            <li>1 Mẫu Demo</li>
+                            <li>3 lần Chỉnh Sửa</li>
+                            <li>Đội ngũ chuyên nghiệp</li>
+                            <li>Hỗ trợ online, offline</li>
+                        </ul>
+                        <Button
+                            variant={'outline'}
+                            size={'default'}
+                            className="mt-4 rounded-none border-gradient duration-500 group-hover:bg-gradient "
+                        >
+                            <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
+                            Choose Plan
+                        </Button>
+                    </div>
+                </div>
+            </section>
+            {/* <BackgroundRotation/> */}
         </main>
-     );
+    );
 }
 
 export default Service;

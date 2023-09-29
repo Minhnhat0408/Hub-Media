@@ -9,11 +9,12 @@ import { Button } from '../ui/button';
 import { Dot } from 'lucide-react';
 import { Locale } from '@/i18n.config';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(false);
-
+    const router = useRouter();
     useMotionValueEvent(scrollY, 'change', (latest) => {
         const previous = scrollY.getPrevious();
         if (latest > previous && latest > 150) {
@@ -22,6 +23,7 @@ function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
             setHidden(false);
         }
     });
+
     return (
         <motion.section
             variants={{
@@ -39,6 +41,9 @@ function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
                     size={'default'}
                     variant={'outline'}
                     className=" rounded-none pl-3 tracking-widest duration-700"
+                    onClick={() => {
+                        router.push('/' + lang + '/contact');
+                    }}
                 >
                     <span className="relative mr-3 flex h-2 w-2">
                         <span className="absolute -left-[2px] -top-[2px] h-3 w-3 animate-ping rounded-full bg-gradient opacity-75"></span>

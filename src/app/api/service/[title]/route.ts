@@ -7,4 +7,4 @@ export async function GET(request: Request, {params : {title}}: {params: {title:
     const res = await getDoc(doc(db,'services',title))
     const service = res.data()
     return NextResponse.json({ service })
-  }
+}

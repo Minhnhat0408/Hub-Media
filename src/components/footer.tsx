@@ -8,21 +8,20 @@ import { Locale } from '@/i18n.config';
 
 export async function Footer({lang}:{lang:Locale}) {
     return (
-        <footer id="lienhe" className="relative flex h-fit w-full flex-col bg-background ">
-            <div className="md-max:pb-5 flex w-full  pb-14">
-                <div className="-ml-20 flex w-[35%]  items-center justify-center ">
+        <footer id="lienhe" className="relative flex h-fit w-full items-center flex-col bg-background ">
+            <div className="md-max:pb-5 flex w-[90%] 2xl:pb-14 pb-8">
+                <div className=" flex w-[30%]  items-center  ">
                     <Image
                         src={'/logo/logo.png'}
                         alt="ava"
                         width={0}
                         height={0}
                         sizes="100vw"
-                        className="h-[200px] w-1/3 "
+                        className="h-[200px] w-auto ml-[20%] "
                     />
-                    {/* <Image src={} alt="ava" width={0} height={0} className="w-1/2 xl:w-2/3 h-fit" /> */}
                 </div>
-                <div className="flex flex-1">
-                    <div className="md-max:hidden mt-[50px] h-full flex-1  ">
+                <div className="flex flex-1 justify-between">
+                    <div className="md-max:hidden mt-[50px] h-full min-w-[150px]  ">
                         <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">{lang === 'vi' ? 'Mục Lục': "SITEMAP"}</h3>
                         <div className="mb-3 flex items-start ">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
@@ -72,7 +71,7 @@ export async function Footer({lang}:{lang:Locale}) {
                         </div>
                       
                     </div>
-                    <div className="md-max:hidden mt-[50px] h-full flex-1  ">
+                    <div className="md-max:hidden mt-[50px] h-full   ">
                         <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">{lang === 'vi' ? 'Dịch vụ': "SERVICES"}</h3>
                         <div className="mb-3 flex items-start">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
@@ -115,7 +114,7 @@ export async function Footer({lang}:{lang:Locale}) {
                             </a>
                         </div>
                     </div>
-                    <div className="md-max:w-3/5 phone:text-sm mt-[50px] h-full flex-[1.5] pr-5 text-white xl:flex xl:flex-col">
+                    <div className="mt-[50px] h-full  text-white xl:flex xl:flex-col">
                         <h3 className="md-max:text-center phone:text-[20px] mb-5 text-left text-xl font-bold  uppercase text-white">
                         {lang === 'vi' ? 'Liên hệ': "CONTACT"}
                         </h3>

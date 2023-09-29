@@ -3,9 +3,6 @@ import PageTitle from '@/components/page-title';
 import ServiceItem from '@/components/service-item';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
-import { pathRemainLang } from '@/lib/utils';
-import axios from 'axios';
-import Image from 'next/image';
 export type ServiceThumbnail = {
     [name: string]: {
         description: string;

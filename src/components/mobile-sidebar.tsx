@@ -27,9 +27,9 @@ function MobileSidebar({ lang, navigation }: { lang: Locale, navigation: any }) 
                     <Menu />
                 </Button>
             </SheetTrigger>
-            <SheetContent className="p-0 w-56">
+            <SheetContent className="p-0 pt-10 w-56">
                 {/* <Sidebar/> */}
-                <aside className="flex flex-col items-start justify-start w-full h-full p-4 pt-10">
+                <aside className="flex flex-col items-start justify-start w-full h-full gap-y-3 p-4 pt-10">
                 
                     {
                         routes.map((route, index) => (
@@ -37,8 +37,8 @@ function MobileSidebar({ lang, navigation }: { lang: Locale, navigation: any }) 
                                 key={route.href}
                                 href={`/${lang + route.href}`}
                                 className={cn(
-                                    "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:bg-white/30 rounded-lg transition",
-                                    pathname === lang + route.href ? "super font-bold " : "",
+                                    "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-gradient duration-500 rounded-lg transition",
+                                    pathname === `/${lang + route.href}` ? ' text-gradient' : '',
                                 )}
                             >
                                 <div className="flex items-center flex-1 justify-between ">

@@ -13,6 +13,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
         openGraph: {
             images: ['/images/backlog.png'],
         },
+        viewport: 'width=device-width, initial-scale=1',
         description: metadata.description,
     };
 }
