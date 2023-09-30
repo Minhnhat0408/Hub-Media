@@ -246,7 +246,7 @@ function ContactPage() {
                     </Form>
                 </div>
                 <div className="flex-1  pl-40 pr-10 ">
-                    <div className="flex h-full flex-col gap-y-5 border-[1px] border-gradient p-[60px]">
+                    <Reveal hiddenY={200} className="flex h-full flex-col gap-y-5 border-[1px] border-gradient p-[60px]">
                         <h2 className="text-[54px] font-bold">Thanks!</h2>
                         <p className="w-[80%] text-muted-foreground">Plz wait for our services to response to you.</p>
                         <Image
@@ -287,7 +287,7 @@ function ContactPage() {
                               Working hour: 8:00 - 17:00
                             </li>
                         </ul>
-                    </div>
+                    </Reveal>
                 </div>
             </section>
             <Map />

@@ -1,4 +1,3 @@
-import BackgroundRotation from '@/components/animations/background-rotation';
 import Slider from '@/components/animations/slider';
 import Heading from '@/components/heading';
 import PageTitle from '@/components/page-title';
