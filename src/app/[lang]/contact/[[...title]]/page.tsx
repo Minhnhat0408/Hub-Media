@@ -1,64 +1,33 @@
-'use client';
 import dynamic from 'next/dynamic';
 import PageTitle from '@/components/page-title';
 import { FaWpforms } from 'react-icons/fa';
 import { BsFillTelephoneFill, BsMessenger } from 'react-icons/bs';
 import Mark from '@/components/markup';
-import * as z from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
 import Link from 'next/link';
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-import { Input } from '@/components/ui/input';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
 import Image from 'next/image';
 import { TbBrandFacebook, TbBrandLinkedin, TbBrandTiktok, TbBrandYoutube } from 'react-icons/tb';
 import LetterAppear from '@/components/animations/letter-appear';
 import Reveal from '@/components/animations/reveal';
-
-const Map = dynamic(() => import('./map'), {
+import ContactForm from '../contact-form';
+import { getDictionary } from '@/lib/dictionary';
+import { Locale } from '@/i18n.config';
+import { redirect } from 'next/navigation';
+const Map = dynamic(() => import('@/components/map'), {
     ssr: false,
 });
-const ContactSchema = z.object({
-    email: z.string().email({
-        message: 'Please enter a valid email.',
-    }),
-    name: z.string({
-        required_error: 'Please enter your name.',
-    }),
-    phone: z
-        .number({
-            required_error: 'Please enter your phone.',
-        })
-        .min(10, {
-            message: 'Please enter a valid phone number.',
-        }),
-    message: z.string({
-        required_error: 'Please enter your message.',
-    }),
-});
-type tContactSchema = z.infer<typeof ContactSchema>;
-function ContactPage() {
-    const form = useForm<tContactSchema>({
-        resolver: zodResolver(ContactSchema),
-    });
 
-    async function onSubmit(values: tContactSchema) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        // const res = await axios.post("/api/auth/sign-in", values);
-        // if (res.data.error) {
-        //   if (res.data.error.message === "Invalid login credentials") {
-        //     setServerError(" Please check your email and password");
-        //   } else {
-        //     setServerError(res.data.error.message);
-        //   }
-        // } else {
-        //   router.push("/");
-        // }
+export default async function ContactPage({ params: { lang, title } }: { params: { lang: Locale; title: string } }) {
+    const { pages } = await getDictionary(lang);
+    let defaultService: string | undefined = undefined;
+    if (title) {
+        Object.entries(pages.services).forEach(([key, value]) => {
+            if (value.href.split('/')[2] === title[0]) {
+                defaultService = key;
+            }
+        });
+        if (!defaultService || title.length > 1) {
+            redirect('/' + lang + '/not-found');
+        }
     }
     return (
         <main className="w-full  ">
@@ -67,12 +36,12 @@ function ContactPage() {
                 title="Contact"
             />
 
-            <section className="w-full p-20 px-40 ">
+            <section  className="w-full p-20 px-40 ">
                 <Reveal hiddenX={200} className="flex justify-center gap-x-20">
                     <div className="group flex flex-1 flex-col items-center  ">
                         <Link
                             href={'https://www.facebook.com/messages/t/102422339523278'}
-                            target='_blank'
+                            target="_blank"
                             className="relative flex items-center justify-center text-8xl text-gradient duration-500 group-hover:scale-[120%] "
                         >
                             <div className="animate-ping-big-slow absolute inline-flex h-16 w-16 rounded-full bg-gradient"></div>
@@ -152,103 +121,26 @@ function ContactPage() {
                 <h2 className="w-[35%] text-6xl font-bold text-gradient ">We&apos;ll response to you in an hour</h2>
                 {/* <p className="w-[30%] text-3xl text-muted-foreground">Thanks for reaching out to us</p> */}
             </Reveal>
-            <section id="form" className="flex  w-full p-20">
+            <section id="form"  className="flex  w-full p-20">
                 <div className="ml-10 flex w-[55%] flex-col">
                     <div className="mb-8 flex gap-x-4 ">
                         <Mark dotanimate lineanimate horizontal classDot="ml-4" />
                         <p className="text-3xl text-muted-foreground">Get In touch</p>
                     </div>
-                    <div className='flex'><LetterAppear className="text-5xl font-[800] !text-white">Reach Out to Us</LetterAppear></div>
-                    <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className={cn('mt-9  w-full space-y-12 ')}>
-                            <FormField
-                                control={form.control}
-                                name="name"
-                                render={({ field }) => (
-                                    <FormItem className="h-[50px]">
-                                        <FormControl>
-                                            <Input
-                                                placeholder="Full Name"
-                                                type="text"
-                                                {...field}
-                                                className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-muted-foreground duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
-                                            />
-                                        </FormControl>
-                                        <FormMessage className="text-red-500" />
-                                    </FormItem>
-                                )}
-                            />
-                            <div className="flex gap-x-20 ">
-                                <FormField
-                                    control={form.control}
-                                    name="email"
-                                    render={({ field }) => (
-                                        <FormItem className="h-[50px] w-full">
-                                            <FormControl>
-                                                <Input
-                                                    placeholder="Email"
-                                                    type="email"
-                                                    {...field}
-                                                    className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-muted-foreground duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
-                                                />
-                                            </FormControl>
-                                            <FormMessage className="text-red-500" />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={form.control}
-                                    name="phone"
-                                    render={({ field }) => (
-                                        <FormItem className="h-[50px] w-full">
-                                            <FormControl>
-                                                <Input
-                                                    placeholder="Phone"
-                                                    type="text"
-                                                    {...field}
-                                                    className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-muted-foreground duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
-                                                />
-                                            </FormControl>
-                                            <FormMessage className="text-red-500" />
-                                        </FormItem>
-                                    )}
-                                />
-                            </div>
-
-                            <FormField
-                                control={form.control}
-                                name="message"
-                                render={({ field }) => (
-                                    <FormItem className="h-[70px]">
-                                        <FormControl>
-                                            <Textarea
-                                                placeholder="Additional Message"
-                                                {...field}
-                                                className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-muted-foreground duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
-                                            />
-                                        </FormControl>
-                                        <FormMessage className="text-red-500" />
-                                    </FormItem>
-                                )}
-                            />
-
-                            <Button
-                                type="submit"
-                                disabled={form.formState.isSubmitting}
-                                className="items-centers !mt-20 flex  font-bold uppercase tracking-widest "
-                            >
-                                Submit
-                                {form.formState.isSubmitting && (
-                                    <AiOutlineLoading3Quarters className="ml-3 animate-spin " />
-                                )}
-                            </Button>
-                        </form>
-                    </Form>
+                    <div className="flex">
+                        <LetterAppear className="text-5xl font-[800] !text-white">Reach Out to Us</LetterAppear>
+                    </div>
+                    <ContactForm  listServices={pages.services} defaultService={defaultService} />
                 </div>
                 <div className="flex-1  pl-40 pr-10 ">
-                    <Reveal hiddenY={200} className="flex h-full flex-col gap-y-5 border-[1px] border-gradient p-[60px]">
+                    <Reveal
+                        hiddenY={200}
+                        className="flex h-full flex-col gap-y-5 border-[1px] border-gradient p-[60px]"
+                    >
                         <h2 className="text-[54px] font-bold">Thanks!</h2>
-                        <p className="w-[80%] text-muted-foreground">Plz wait for our services to response to you.</p>
+                        <p className="w-[80%] text-muted-foreground">
+                            Please wait for our comminuty department to response to you.
+                        </p>
                         <Image
                             src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/career-img.jpg"
                             width={0}
@@ -257,12 +149,12 @@ function ContactPage() {
                             sizes="100vw"
                             className="h-auto w-full"
                         />
-                        <h2 className="text-3xl  font-bold">Enquiries</h2>
+                        <h2 className="mt-12  text-3xl font-bold">Enquiries</h2>
                         <div className="flex justify-between">
                             <p>0965053420</p>
                             <p>hubmedia.vietnam@gmail.com</p>
                         </div>
-                        <ul className="flex gap-x-4 text-muted-foreground text-base items-center  ">
+                        <ul className="flex items-center gap-x-4 text-base text-muted-foreground  ">
                             <li className=" cursor-pointer duration-1000 hover:text-gradient">
                                 <Link href={'https://www.facebook.com/HubMediaVN'} target="_blank">
                                     <TbBrandFacebook />
@@ -283,9 +175,7 @@ function ContactPage() {
                                     <TbBrandTiktok />
                                 </Link>
                             </li>
-                            <li className='text-base flex-1 text-right'>
-                              Working hour: 8:00 - 17:00
-                            </li>
+                            <li className="flex-1 text-right text-base">Working hour: 8:00 - 17:00</li>
                         </ul>
                     </Reveal>
                 </div>
@@ -294,5 +184,3 @@ function ContactPage() {
         </main>
     );
 }
-
-export default ContactPage;

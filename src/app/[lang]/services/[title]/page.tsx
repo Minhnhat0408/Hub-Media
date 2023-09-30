@@ -1,13 +1,14 @@
 import Slider from '@/components/animations/slider';
 import Heading from '@/components/heading';
 import PageTitle from '@/components/page-title';
-import { Button } from '@/components/ui/button';
+import { Locale } from '@/i18n.config';
 import axios from 'axios';
 import { Coins } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { PiPaperPlaneRightFill } from 'react-icons/pi';
 
-async function Service({ params: { title } }: { params: { title: string } }) {
+async function Service({ params: { title, lang } }: { params: { title: string; lang: Locale } }) {
     const response = await axios.get(`${process.env.URL}/api/service/${title}`);
     const data = response.data.service;
 
@@ -21,22 +22,22 @@ async function Service({ params: { title } }: { params: { title: string } }) {
                 <div className="flex h-auto flex-1 flex-col justify-center gap-y-10 pl-10  ">
                     <div className="w-3/4 ">
                         <h1 className="mb-4 text-4xl font-bold ">Desription :</h1>
-                        <p className=" font-medium text-muted-foreground pl-4" >
+                        <p className=" pl-4 font-medium text-muted-foreground">
                             We create visually appealing, consistent brand identities encompassing logo and key visuals.
                         </p>
                     </div>
                     <div className="w-3/4 ">
                         <h1 className="mb-4 text-4xl font-bold ">Details :</h1>
-                        <ul className=" font-medium text-muted-foreground gap-y-4 pl-4 flex flex-col">
-                            <li className='flex items-center '>
+                        <ul className=" flex flex-col gap-y-4 pl-4 font-medium text-muted-foreground">
+                            <li className="flex items-center ">
                                 <PiPaperPlaneRightFill className=" mr-2  text-sm  text-gradient " />
                                 Standard: Logo dạng chữ
                             </li>
-                            <li className='flex items-center '>
+                            <li className="flex items-center ">
                                 <PiPaperPlaneRightFill className=" mr-2  text-sm  text-gradient " />
                                 Advanced: Logo biểu tượng
                             </li>
-                            <li className='flex items-center '>
+                            <li className="flex items-center ">
                                 <PiPaperPlaneRightFill className=" mr-2  text-sm  text-gradient " />
                                 Professional: Logo kết hợp
                             </li>
@@ -44,7 +45,7 @@ async function Service({ params: { title } }: { params: { title: string } }) {
                     </div>
                     <div className="w-3/4 ">
                         <h1 className="mb-4 text-4xl font-bold ">Category :</h1>
-                        <p className=" font-medium text-muted-foreground pl-4">
+                        <p className=" pl-4 font-medium text-muted-foreground">
                             #logo - #branding - #identity - #design - #graphic
                         </p>
                     </div>
@@ -74,7 +75,7 @@ async function Service({ params: { title } }: { params: { title: string } }) {
                         height="0"
                         sizes="100vw"
                         className=" keen-slider__slide h-full w-full "
-                    />  
+                    />
                     <Image
                         src={'https://gaaga.wpengine.com/wp-content/uploads/2023/06/portfolio-8.jpg'}
                         alt="img"
@@ -100,14 +101,14 @@ async function Service({ params: { title } }: { params: { title: string } }) {
                             <li>Đội ngũ chuyên nghiệp</li>
                             <li>Hỗ trợ online, offline</li>
                         </ul>
-                        <Button
-                            variant={'outline'}
-                            size={'default'}
-                            className="mt-4 rounded-none border-gradient  duration-500 group-hover:bg-gradient  "
+                        <a
+                            className="mt-4 rounded-none border-gradient px-4 py-3 justify-center border-[1px] flex items-center  duration-500 group-hover:bg-gradient "
+                            href={'/' + lang + '/contact/' + title + '#form'}
+                        
                         >
                             <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
                             Choose Plan
-                        </Button>
+                        </a>
                     </div>
                     <div className="group flex h-[600px] w-[450px] flex-col items-center gap-y-8 border-[1px] border-gradient py-10">
                         <h3 className="text-3xl text-gradient ">Advanced</h3>
@@ -121,14 +122,13 @@ async function Service({ params: { title } }: { params: { title: string } }) {
                             <li>Đội ngũ chuyên nghiệp</li>
                             <li>Hỗ trợ online, offline</li>
                         </ul>
-                        <Button
-                            variant={'outline'}
-                            size={'default'}
-                            className="mt-4 rounded-none border-gradient  duration-500 group-hover:bg-gradient "
+                        <a
+                            className="mt-4 rounded-none border-gradient px-4 py-3 justify-center border-[1px] flex items-center  duration-500 group-hover:bg-gradient "
+                            href={'/' + lang + '/contact/' + title + '#form'}
                         >
                             <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
                             Choose Plan
-                        </Button>
+                        </a>
                     </div>
                     <div className="group flex h-[600px] w-[450px] flex-col items-center gap-y-8 border-[1px] border-gradient py-10">
                         <h3 className="text-3xl text-gradient ">Professtional</h3>
@@ -143,14 +143,13 @@ async function Service({ params: { title } }: { params: { title: string } }) {
                             <li>Đội ngũ chuyên nghiệp</li>
                             <li>Hỗ trợ online, offline</li>
                         </ul>
-                        <Button
-                            variant={'outline'}
-                            size={'default'}
-                            className="mt-4 rounded-none border-gradient duration-500 group-hover:bg-gradient "
+                        <a
+                            className="mt-4 rounded-none border-gradient px-4 py-3 justify-center border-[1px] flex items-center  duration-500 group-hover:bg-gradient "
+                            href={'/' + lang + '/contact/' + title + '#form'}
                         >
                             <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
                             Choose Plan
-                        </Button>
+                        </a>
                     </div>
                 </div>
             </section>

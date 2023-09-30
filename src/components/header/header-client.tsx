@@ -9,12 +9,14 @@ import { Button } from '../ui/button';
 import { Dot } from 'lucide-react';
 import { Locale } from '@/i18n.config';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(false);
     const router = useRouter();
+    const pathname = usePathname();
     useMotionValueEvent(scrollY, 'change', (latest) => {
         const previous = scrollY.getPrevious();
         if (latest > previous && latest > 150) {
@@ -40,7 +42,7 @@ function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
                 <Button
                     size={'default'}
                     variant={'outline'}
-                    className=" rounded-none pl-3 tracking-widest duration-700"
+                    className={cn(" rounded-none pl-3 tracking-widest duration-700", pathname === '/' + lang + '/contact' ? 'border-gradient text-gradient' : '')}
                     onClick={() => {
                         router.push('/' + lang + '/contact');
                     }}

@@ -21,25 +21,32 @@
       ],
       "services":{
         "Brand Design": {
-          "href":"/services/logo-design",
+          "href":"/services/brand-design",
             "description":"We create visually appealing, consistent brand identities encompassing logo and key visuals.",
-            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg"
+            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg",
+            "packages": ["Standard","Advanced","Professional"]
         },
         "Event Photography":
         {
           "href":"/services/event-photography",
             "description":"Our skilled photographers capture event essence with high-quality images for marketing and memories.",
-            "src":"https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332"
+            "src":"https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332",
+            "packages": ["Standard","Advanced","Professional"]
+
         }, 
         "Video Marketing":{
           "href":"/services/recap-trailer",
             "description":"We craft concise summaries and dynamic trailers to convey event significance or marketing.",
-            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png"
+            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png",
+            "packages": ["Standard","Advanced","Professional"]
+
         }, 
         "Event Organization":{
           "href":"/services/event-organizer",
             "description":"We ensure seamless, memorable event execution from concept to logistics management.",
-            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png"
+            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png",
+            "packages": ["Standard","Advanced","Professional"]
+
         }
       },
       

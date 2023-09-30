@@ -16,3 +16,9 @@ export function getCurrentLocale(pathname: string) {
   const lang = path[1]
   return lang
 }
+export const validateString = (value: unknown,maxLength: number) => {
+  if(!value) return false 
+  if(typeof value !== 'string') return false
+  if(value.length > maxLength) return false
+  return true
+}
