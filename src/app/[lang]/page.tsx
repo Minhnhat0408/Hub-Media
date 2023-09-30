@@ -1,5 +1,3 @@
-import { Footer } from '@/components/footer';
-import Heading from '@/components/heading';
 import Characteristics from '@/components/home/characteristics';
 import FAQ from '@/components/home/faq';
 import HomeHero from '@/components/home/home-hero';

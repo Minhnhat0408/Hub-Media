@@ -1,6 +1,6 @@
 import { FaLocationDot, FaPhone, FaEnvelope } from 'react-icons/fa6';
 import { PiPaperPlaneRightFill } from 'react-icons/pi';
-import { TbBrandFacebook, TbBrandInstagram, TbBrandLinkedin, TbBrandTiktok, TbBrandYoutube } from 'react-icons/tb';
+import { TbBrandFacebook, TbBrandLinkedin, TbBrandTiktok, TbBrandYoutube } from 'react-icons/tb';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -163,7 +163,8 @@ export async function Footer({lang}:{lang:Locale}) {
                             <div className="phone:w-full leading-7 text-gradient ">
                                 <a
                                     className="phone:mt-1 block no-underline hover:text-white  hover:underline"
-                                    href="https://www.facebook.com/GlobalShapersHanoiHub"
+                                    href="https://www.facebook.com/HubMediaVN"
+                                    target='_blank'
                                 >
                                     Hub Media
                                 </a>

@@ -23,7 +23,9 @@ html *::-webkit-scrollbar {
   -webkit-background-clip: text;
   color: transparent;
 }
-
+.icon-super{
+  background-color: #49ced3;
+}
 .text-stroke {
 
   -webkit-text-stroke-width: 1px;
@@ -121,6 +123,10 @@ html *::-webkit-scrollbar {
 
 .animate-ping-big {
   animation: pingbig 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-ping-big-slow{
+  animation: pingbig 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 @layer base {
