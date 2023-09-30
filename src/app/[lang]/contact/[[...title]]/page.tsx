@@ -139,7 +139,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                     >
                         <h2 className="text-[54px] font-bold">Thanks!</h2>
                         <p className="w-[80%] text-muted-foreground">
-                            Please wait for our comminuty department to response to you.
+                            Please wait for our community department to response to you.
                         </p>
                         <Image
                             src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/career-img.jpg"

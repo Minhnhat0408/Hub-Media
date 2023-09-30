@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
 import React from 'react';
+import { Toaster } from 'react-hot-toast';
 
+// ...
 export const metadata: Metadata = {
     metadataBase: new URL('https://pbhubmedia.vercel.app/'),
     title: 'Hub Media - Kết nối thương hiệu của bạn ra thế giới',
@@ -18,7 +20,9 @@ function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="vi">
             <body>
+                <Toaster position='top-right' />
                 {children}
+
                 <div id="fb-root"></div>
                 <div id="fb-customer-chat" className="fb-customerchat"></div>
                 <Script id="fb" strategy="lazyOnload">
@@ -41,7 +45,6 @@ function RootLayout({ children }: { children: React.ReactNode }) {
                             fjs.parentNode.insertBefore(js, fjs);
                           }(document, 'script', 'facebook-jssdk'));`}
                 </Script>
-      
             </body>
         </html>
     );

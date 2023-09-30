@@ -5,6 +5,7 @@ import { getDictionary } from '@/lib/dictionary';
 import { Footer } from '@/components/footer';
 import './globals.css';
 
+
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
     const { metadata } = await getDictionary(params.lang);
     return {
@@ -33,9 +34,11 @@ export default async function LangLayout({
 
     return (
         <>
+         
             <Header lang={params.lang} navigation={navigation} />
             {children}
             <Footer lang={params.lang} />
+ 
         </>
     );
 }

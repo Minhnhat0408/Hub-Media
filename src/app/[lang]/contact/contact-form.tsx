@@ -10,6 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
 // import { sendEmail } from '@/app/api/_fetch/resend';
 const ContactSchema = z.object({
     email: z.string().email({
@@ -25,11 +26,7 @@ const ContactSchema = z.object({
         .min(10, {
             message: 'Please enter a valid phone number.',
         }),
-    message: z
-        .string({
-            required_error: 'Please enter your message.',
-        })
-        .optional(),
+    message: z.string().optional(),
     services: z.string({
         required_error: 'Please select your service.',
     }),
@@ -53,11 +50,49 @@ export default function ContactForm({
         formdata.append('phone', values.phone.toString());
         formdata.append('message', values.message || 'Không có lời nhắn nào từ khách hàng');
         formdata.append('services', values.services);
-        const res = await axios.post('/api/contact', formdata);
-        if (res.status === 200) {
-            console.log(res);
-        }
+
+        const res = await toast.promise(
+            axios.post('/api/contact', formdata),
+            {
+                loading: 'Please wait for a moment',
+                success: (data) => {
+                    form.reset();
+                    return <p> Form has been saved</p>;
+                },
+                error: 'Error while sending form',
+            },
+            {
+                style: {
+                    minWidth: '200px',
+                    minHeight: '50px',
+                    fontSize: '16px',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1))',
+                    color: 'var(--gradient)',
+                },
+                success: {
+                    duration: 3000,
+                    icon: '✅',
+                },
+                error: {
+                    duration: 3000,
+                    icon: '❌',
+                    style: {
+                        minWidth: '250px',
+                        minHeight: '60px',
+                        fontSize: '20px',
+                        backgroundColor: 'var(--primary)',
+                        color: 'red',
+                    },
+                },
+            },
+        );
+        return res
+
     }
+
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className={cn('mt-9  w-full space-y-12 ')}>
