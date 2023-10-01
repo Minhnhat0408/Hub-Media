@@ -1,0 +1,24 @@
+{   
+    "title": "Thiết kế Bộ nhận diện",
+    "href": "/services/cip-design",
+    "details": ["Standard: Logo dạng chữ", 
+    "Advanced: Logo biểu tượng", 
+   "Professional: Logo kết hợp"],
+   "tags": ["#logo", "#branding", "#visual-identity"],
+    "description": "We create visually appealing, consistent brand identities encompassing logo and key visuals.",
+    "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg",
+    "packages": {
+        "Standard": {
+            "price": ["3,000,000"],
+            "details": ["2 mẫu demo", "2 lần chỉnh sửa"]
+        },
+        "Advanced": {
+            "price": ["5,000,000"],
+            "details": ["3 mẫu demo", "3 lần chỉnh sửa"]
+        },
+        "Professional": {
+            "price": ["8,000,000"],
+            "details": ["4 mẫu demo", "4 lần chỉnh sửa"]
+        }
+    }
+}

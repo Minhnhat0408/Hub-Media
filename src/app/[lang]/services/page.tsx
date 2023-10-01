@@ -2,7 +2,7 @@ import MarkupButton from '@/components/markup-button';
 import PageTitle from '@/components/page-title';
 import ServiceItem from '@/components/service-item';
 import { Locale } from '@/i18n.config';
-import { getDictionary } from '@/lib/dictionary';
+import { getDictionary, getServices } from '@/lib/dictionary';
 export type ServiceThumbnail = {
     [name: string]: {
         description: string;
@@ -14,7 +14,7 @@ async function ServicesPage({ params: { lang } }: { params: { lang: Locale } }) 
     // const response = await axios.get(`${process.env.URL}/api/service`)
     // const data = response.data.services
     // console.log(data)
-    const { pages } = await getDictionary(lang);
+    const services = await getServices(lang);
     return (
         <main className=" h-fit w-full py-20 ">
             <PageTitle
@@ -23,7 +23,7 @@ async function ServicesPage({ params: { lang } }: { params: { lang: Locale } }) 
             />
             
             <section className=" grid w-full grid-cols-2 p-20 ">
-                {Object.entries(pages.services as ServiceThumbnail).map(([title, infor], index: number) => {
+                {Object.entries(services as ServiceThumbnail).map(([title, infor], index: number) => {
                     
                     return (
                         <ServiceItem

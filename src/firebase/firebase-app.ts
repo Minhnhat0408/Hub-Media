@@ -1,20 +1,3 @@
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAZ_tvJcm1No3jt3X00JkWyKf9ynOG3cgk",
-//   authDomain: "hub-media-207ea.firebaseapp.com",
-//   projectId: "hub-media-207ea",
-//   storageBucket: "hub-media-207ea.appspot.com",
-//   messagingSenderId: "22814611114",
-//   appId: "1:22814611114:web:fbef248d23771c59e662d3",
-//   measurementId: "G-T5TJWVSDSW"
-// };
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';

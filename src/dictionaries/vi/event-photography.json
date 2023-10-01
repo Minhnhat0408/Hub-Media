@@ -1,0 +1,30 @@
+{   
+    "title": "Nhiếp ảnh sự kiện",
+    "href": "/services/event-photography",
+    "details": ["Standard: Logo dạng chữ", 
+    "Advanced: Logo biểu tượng", 
+   "Professional: Logo kết hợp"],
+   "tags": ["#photography", "#videography", "#edit"],
+    "description": "Our skilled photographers capture event essence with high-quality images for marketing and memories.",
+    "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332",
+    "types": ["Photography", "Videography", "Edit"],
+    "packages": [
+        {
+            "Standard": {
+                "price": ["1,000,000", "máy"],
+                "details": ["100 ảnh chỉnh sửa", "3 lần demo"]
+            }
+        },
+        {
+            "Standard": {
+                "price": ["3,000,000", "máy"]
+            }
+        },
+        {
+            "Standard": {
+                "price": ["1,000,000"],
+                "details": ["1 video recap", "2 lần demo"]
+            }
+        }
+    ]
+}

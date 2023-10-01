@@ -7,58 +7,75 @@ import Reveal from '../animations/reveal';
 import Link from 'next/link';
 import MarkupButton from '../markup-button';
 import { Locale } from '@/i18n.config';
-function HomeHero({ home,lang }: { home: any,lang:Locale }) {
+function HomeHero({ home, lang }: { home: any; lang: Locale }) {
     return (
-        <section id='home-hero' className="flex w-[100vw] pb-20 2xl:pl-20 xl:pl-7 bg-background overflow-x-clip ">
-            <div className="flex 2xl:flex-1 z-[5]  2xl:pt-64 pt-48 w-[45%]" >
-                <Reveal hiddenY={100} className="flex w-1/5 h-fit flex-col items-center">
+        <section
+            id="home-hero"
+            className="relative flex w-[100vw] overflow-x-clip bg-background overflow-y-hidden xl:pb-20 xl:pl-7 2xl:pl-20 "
+        >
+            <div className="z-[5] flex flex-1  bg-[rgba(255,255,255,0.2)] pb-32 pt-36 xl:bg-transparent xl:pb-0 xl:pt-48  2xl:pt-64 ">
+                <Reveal hiddenY={100} className="flex h-fit flex-1 flex-col items-center">
                     <ul className="flex flex-col items-center  text-4xl text-muted-foreground duration-1000">
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <Link href={'https://www.facebook.com/HubMediaVN'} target='_blank'><TbBrandFacebook />
+                            <Link href={'https://www.facebook.com/HubMediaVN'} target="_blank">
+                                <TbBrandFacebook />
                             </Link>
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <Link href={'http://linkedin.com/company/hub-media-vietnam'} target='_blank'><TbBrandLinkedin /></Link>
+                            <Link href={'http://linkedin.com/company/hub-media-vietnam'} target="_blank">
+                                <TbBrandLinkedin />
+                            </Link>
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <Link href={'https://youtube.com/@HubMedia-Vietnam/'} target='_blank'><TbBrandYoutube /></Link>
+                            <Link href={'https://youtube.com/@HubMedia-Vietnam/'} target="_blank">
+                                <TbBrandYoutube />
+                            </Link>
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <Link href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}><TbBrandTiktok /></Link>
+                            <Link href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}>
+                                <TbBrandTiktok />
+                            </Link>
                         </li>
                     </ul>
                     <Mark dotanimate lineanimate />
-                    <Link  href={'#portfolio'} className=" -rotate-90 cursor-pointer text-base tracking-widest text-gradient">
+                    <Link
+                        href={'#portfolio'}
+                        className=" -rotate-90  cursor-pointer text-base tracking-widest text-gradient"
+                    >
                         SCROLL
                     </Link>
                 </Reveal>
-                <div   className="w-4/5  ">
+                <div className="w-10/12 xl:w-4/5 ">
                     <Reveal hiddenX={100}>
                         <div className="flex">
                             <Mark dotanimate lineanimate horizontal />
-                            <p className="ml-3 text-2xl tracking-wider text-muted-foreground">{lang === 'vi' ? 'Giới thiệu': 'Introduce'}</p>
+                            <p className="ml-3 text-2xl  tracking-wider text-muted-foreground">
+                                {lang === 'vi' ? 'Giới thiệu' : 'Introduce'}
+                            </p>
                         </div>
-                        <h1 className="mt-6 2xl:text-6xl text-5xl   font-bold">
-                            <span className="super">Hub Media</span> offer
-                        </h1>
-                        <div className="super mb-8 2xl:text-6xl text-5xl font-bold max-w-[600px]">
-                            <TypeWriter
+                        <div className="my-8 xl:max-w-[600px]   text-5xl font-bold 2xl:text-6xl">
+                            <span className="super ">Hub Media</span> offer
+                            <TypeWriter 
                                 options={{
-                                    strings: ['Branding Design', 'Event Photography', 'Web Development','Reports & Trailer'],
+                                    strings: [
+                                        'Branding Design',
+                                        'Event Photography',
+                                        'Web Development',
+                                        'Reports & Trailer',
+                                    ],
+                                    wrapperClassName: "super ",
                                     autoStart: true,
                                     loop: true,
-                                    delay:40,
+                                    delay: 40,
                                     deleteSpeed: 20,
                                 }}
-                            
                             />
                         </div>
                     </Reveal>
                     <Reveal hiddenX={100} delay={0.3}>
-                        <p className="text-muted-foreground max-w-[550px]">{home.description}</p>
-                        <div className='mt-16'>
-                                <MarkupButton href='/#char' title={lang === 'vi' ? 'Bắt đầu khám phá': 'Get started'}/>
-                                
+                        <p className="max-w-[550px] text-muted-foreground">{home.description}</p>
+                        <div className="mt-16">
+                            <MarkupButton href="/#char" title={lang === 'vi' ? 'Bắt đầu khám phá' : 'Get started'} />
                         </div>
                     </Reveal>
                 </div>
@@ -68,7 +85,7 @@ function HomeHero({ home,lang }: { home: any,lang:Locale }) {
                 width={600}
                 height={300}
                 alt="bl"
-                className="heartbeat flex-1 z-[3] w-fit h-[110%]"
+                className="heartbeat absolute right-0 top-8 z-[3] w-[800px] opacity-70 xl:relative xl:block xl:h-[110%]  xl:w-[55%] xl:opacity-100 "
             />
         </section>
     );

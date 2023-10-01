@@ -2,16 +2,15 @@ import Slider from '@/components/animations/slider';
 import Heading from '@/components/heading';
 import PageTitle from '@/components/page-title';
 import { Locale } from '@/i18n.config';
-import axios from 'axios';
+import { getSpecifiedService } from '@/lib/dictionary';
 import { Coins } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode, Key } from 'react';
 import { PiPaperPlaneRightFill } from 'react-icons/pi';
 
 async function Service({ params: { title, lang } }: { params: { title: string; lang: Locale } }) {
-    const response = await axios.get(`${process.env.URL}/api/service/${title}`);
-    const data = response.data.service;
-
+    const data = await getSpecifiedService(lang, title);
+    console.log(data)
     return (
         <main className=" h-fit w-full py-20 ">
             <PageTitle
@@ -23,30 +22,28 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                     <div className="w-3/4 ">
                         <h1 className="mb-4 text-4xl font-bold ">Desription :</h1>
                         <p className=" pl-4 font-medium text-muted-foreground">
-                            We create visually appealing, consistent brand identities encompassing logo and key visuals.
+                            {data.description}
                         </p>
                     </div>
                     <div className="w-3/4 ">
                         <h1 className="mb-4 text-4xl font-bold ">Details :</h1>
                         <ul className=" flex flex-col gap-y-4 pl-4 font-medium text-muted-foreground">
-                            <li className="flex items-center ">
-                                <PiPaperPlaneRightFill className=" mr-2  text-sm  text-gradient " />
-                                Standard: Logo dạng chữ
-                            </li>
-                            <li className="flex items-center ">
-                                <PiPaperPlaneRightFill className=" mr-2  text-sm  text-gradient " />
-                                Advanced: Logo biểu tượng
-                            </li>
-                            <li className="flex items-center ">
-                                <PiPaperPlaneRightFill className=" mr-2  text-sm  text-gradient " />
-                                Professional: Logo kết hợp
-                            </li>
+                            {
+                                data.details.map((item: string ,index: Key )=>{
+                                    return(
+                                        <li key={index} className="flex items-center ">
+                                            <PiPaperPlaneRightFill className=" mr-2  text-sm  text-gradient " />
+                                            {item}
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                     <div className="w-3/4 ">
                         <h1 className="mb-4 text-4xl font-bold ">Category :</h1>
                         <p className=" pl-4 font-medium text-muted-foreground">
-                            #logo - #branding - #identity - #design - #graphic
+                            {data.tags.join(' - ')}
                         </p>
                     </div>
                 </div>

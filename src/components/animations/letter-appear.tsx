@@ -7,7 +7,7 @@ export default function LetterAppear({children,className} : {children:string,cla
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     return (
-        <div ref={ref} className={cn(' h-fit  relative flex text-6xl justify-center  font-bold ')}>
+        <div ref={ref} className={cn(' h-fit  relative flex xl:text-6xl md:text-5xl text-4xl justify-center  font-bold ')}>
                 {children.split(' ').map((word, index) => {
                     let time = index <1 ? 80: 80*children.split(' ').splice(0,index).reduce((a,b)=>{
                         return a + b.length

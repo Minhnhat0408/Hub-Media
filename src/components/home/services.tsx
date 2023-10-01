@@ -1,44 +1,43 @@
 import Link from 'next/link';
 import Heading from '../heading';
-
 import ThumbNailText from '../thumbnail-text';
 import { Button } from '../ui/button';
 import { Locale } from '@/i18n.config';
-function Services({lang,services}:{lang:Locale,services:Object}) {
+async function Services({lang,services}:{lang:Locale,services:Object}) {
     return (
-        <section id="services" className="flex w-full flex-col bg-black/80 py-20 pt-28">
+        <section id="services" className="flex w-full flex-col bg-black/80 md:py-20 py-10 lg:pt-28">
             <Heading title={'Services'} description={lang === 'vi' ? 'Dịch vụ nổi bật': 'Highlight Services'} />
-            <div className="flex">
+            <div className="flex flex-wrap">
                 <ThumbNailText
                     lang={lang}
-                    href="/services/logo-design"
+                    href={Object.values(services)[0].href}
                     title={Object.keys(services)[0]}
                     description={Object.values(services)[0].description}
-                    src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/home-1-service-1.jpg"
+                    src={Object.values(services)[0].src}
                 />
                 <ThumbNailText
                     lang={lang}
-                    href="/services/event-photography"
+                    href={Object.values(services)[1].href}
                     title={Object.keys(services)[1]}
                     description={Object.values(services)[1].description}
-                    src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332"
+                    src={Object.values(services)[1].src}
                 />
                 <ThumbNailText
                     lang={lang}
-                    href="/services/recap-trailer"
+                    href={Object.values(services)[2].href}
                     title={Object.keys(services)[2]}
                     description={Object.values(services)[2].description}
-                    src="https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png"
+                    src={Object.values(services)[2].src}
                 />
                 <ThumbNailText
                     lang={lang}
-                    href="/services/event-organizer"
+                    href={Object.values(services)[3].href}
                     title={Object.keys(services)[3]}
                     description={Object.values(services)[3].description}
-                    src="https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png"
+                    src={Object.values(services)[3].src}
                 />
             </div>
-            <Button variant={'outline'} size={'default'} className="text-xl mt-10 mx-auto w-fit p-6 rounded-full pl-8 tracking-widest duration-700">
+            <Button variant={'outline'} size={'default'} className="lg:text-xl mt-10 mx-auto w-fit lg:p-6 rounded-full lg:pl-8 tracking-widest duration-700">
                 <Link  href={`${lang}/services`} className='flex items-center'>
                     <span className="relative mr-3 flex h-2 w-2">
                         <span className="absolute -left-[2px] -top-[2px] h-3 w-3 animate-ping rounded-full bg-gradient opacity-75"></span>

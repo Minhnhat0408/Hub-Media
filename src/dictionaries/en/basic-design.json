@@ -1,0 +1,22 @@
+{   
+    "title": "Basic Design",
+    "href": "/services/basic-design",
+    "details": ["Bao gồm post, thư mời, banner,..."],
+    "tags": ["#basic-design", "#post", "#invitation", "#banner"],
+    "description": "Our skilled photographers capture event essence with high-quality images for marketing and memories.",
+    "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332",
+    "packages": {
+        "Standard": {
+            "price": ["300,000"],
+            "details": ["1 mẫu demo", "2 lần chỉnh sửa"]
+        },
+        "Advanced": {
+            "price": ["600,000"],
+            "details": ["2 mẫu demo", "3 lần chỉnh sửa"]
+        },
+        "Professional": {
+            "price": ["1,000,000"],
+            "details": ["3   mẫu demo", "4 lần chỉnh sửa"]
+        }
+    }
+}

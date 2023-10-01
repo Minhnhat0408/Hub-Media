@@ -9,7 +9,7 @@ import { TbBrandFacebook, TbBrandLinkedin, TbBrandTiktok, TbBrandYoutube } from 
 import LetterAppear from '@/components/animations/letter-appear';
 import Reveal from '@/components/animations/reveal';
 import ContactForm from '../contact-form';
-import { getDictionary } from '@/lib/dictionary';
+import { getDictionary, getServices } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 import { redirect } from 'next/navigation';
 const Map = dynamic(() => import('@/components/map'), {
@@ -17,10 +17,10 @@ const Map = dynamic(() => import('@/components/map'), {
 });
 
 export default async function ContactPage({ params: { lang, title } }: { params: { lang: Locale; title: string } }) {
-    const { pages } = await getDictionary(lang);
+    const services  = await getServices(lang);
     let defaultService: string | undefined = undefined;
     if (title) {
-        Object.entries(pages.services).forEach(([key, value]) => {
+        Object.entries(services).forEach(([key, value]) => {
             if (value.href.split('/')[2] === title[0]) {
                 defaultService = key;
             }
@@ -130,7 +130,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                     <div className="flex">
                         <LetterAppear className="text-5xl font-[800] !text-white">Reach Out to Us</LetterAppear>
                     </div>
-                    <ContactForm  listServices={pages.services} defaultService={defaultService} />
+                    <ContactForm  listServices={services} defaultService={defaultService} />
                 </div>
                 <div className="flex-1  pl-40 pr-10 ">
                     <Reveal

@@ -25,7 +25,7 @@ function ThumbNailImage({
         <article
             className={cn('group relative flex  justify-center overflow-hidden', className)}
         >
-            <Image src={src} alt="img" width="0" height="0" sizes="100vw" className="object-cover object-right h-[400px] w-full" />
+            <Image src={src} alt="img" width="0" height="0" sizes="100vw" className="object-cover object-right h-full w-full" />
             <div className="absolute bottom-0 left-0 flex w-full translate-y-10 flex-col justify-center bg-black/50 p-8 opacity-0  backdrop-blur duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                 <h1 className="mb-6 translate-y-20 text-4xl font-bold duration-500 hover:text-gradient group-hover:translate-y-0">
                     <Link href={pathRemainLang({ pathname, newpath: href })}>{title}</Link>

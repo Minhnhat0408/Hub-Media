@@ -10,8 +10,8 @@ function FAQ({lang,faq}:{lang:Locale,faq:Object}) {
     const scroll = useProgressScroll(true)
     return (
         <section id="faq" className="flex w-full  bg-background py-20 ">
-            <div className="relative flex flex-1 items-center justify-end    ">
-                <div className="flex  w-full  xl:translate-x-24 translate-x-8 flex-col border-2 border-gradient bg-background 2xl:p-20 p-10">
+            <div className="relative flex flex-1 items-center justify-end  lg:px-0 px-10  ">
+                <div className="flex  w-full  xl:translate-x-24 lg:translate-x-8  flex-col border-2 border-gradient bg-background 2xl:p-20 p-10">
                     <div className="mb-5 flex">
                         <Mark horizontal dotanimate classLine="w-10" />
                         <h1 className="ml-2 text-muted-foreground">{"FAQ's"}</h1>
@@ -64,7 +64,7 @@ function FAQ({lang,faq}:{lang:Locale,faq:Object}) {
                         </AccordionItem>
                     </Accordion>
                 </div>
-                <div className='absolute xl:-right-36 -right-20 xl:-top-10 top-0 xl:h-48 xl:w-48 text-gradient flex justify-center items-center '>
+                <div className='absolute xl:-right-36 -right-20 lg:block hidden xl:-top-10 top-0 xl:h-48 xl:w-48 text-gradient flex justify-center items-center '>
                     <Image
                         src={
                             'https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Faq-Rotate-Widget-Large-Img.png'
@@ -76,7 +76,7 @@ function FAQ({lang,faq}:{lang:Locale,faq:Object}) {
                         className=" flex w-full h-full  duration-100 "
                         style={{rotate:scroll+'deg'}}
                     />
-                    <div className='text-gradient xl:text-6xl text-4xl absolute -rotate-90'>
+                    <div className='text-gradient xl:text-6xl  text-4xl absolute -rotate-90'>
                     <PiPaperPlaneRightFill />
 
                     </div>
@@ -88,7 +88,7 @@ function FAQ({lang,faq}:{lang:Locale,faq:Object}) {
                 height={0}
                 sizes="100vw"
                 alt="illustrate"
-                className="xl:w-[45%] w-[50%] justify-self-end object-cover"
+                className="xl:w-[45%] w-[50%] lg:block hidden justify-self-end object-cover"
             />
         </section>
     );

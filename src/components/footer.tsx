@@ -9,19 +9,19 @@ import { Locale } from '@/i18n.config';
 export async function Footer({lang}:{lang:Locale}) {
     return (
         <footer id="lienhe" className="relative flex h-fit w-full items-center flex-col bg-background ">
-            <div className="md-max:pb-5 flex w-[90%] 2xl:pb-14 pb-8">
-                <div className=" flex w-[30%]  items-center  ">
+            <div className="md-max:pb-5 flex flex-wrap w-[90%] 2xl:pb-14 pb-8">
+                <div className=" flex lg:w-[30%] w-full   items-center  ">
                     <Image
                         src={'/logo/logo.png'}
                         alt="ava"
                         width={0}
                         height={0}
                         sizes="100vw"
-                        className="h-[200px] w-auto ml-[20%] "
+                        className="h-[200px] w-auto lg:ml-[20%] mx-auto  "
                     />
                 </div>
                 <div className="flex flex-1 justify-between">
-                    <div className="md-max:hidden mt-[50px] h-full min-w-[150px]  ">
+                    <div className="md-max:hidden mt-[50px] h-full min-w-[150px] hidden md:block  ">
                         <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">{lang === 'vi' ? 'Mục Lục': "SITEMAP"}</h3>
                         <div className="mb-3 flex items-start ">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
@@ -71,7 +71,7 @@ export async function Footer({lang}:{lang:Locale}) {
                         </div>
                       
                     </div>
-                    <div className="md-max:hidden mt-[50px] h-full   ">
+                    <div className="md-max:hidden mt-[50px] h-full hidden sm:block  ">
                         <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">{lang === 'vi' ? 'Dịch vụ': "SERVICES"}</h3>
                         <div className="mb-3 flex items-start">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
@@ -175,7 +175,7 @@ export async function Footer({lang}:{lang:Locale}) {
             </div>
             <div className="mx-[5%] h-[1px] w-[90%] bg-muted-foreground"></div>
             <div className="flex w-full flex-wrap justify-between bg-background px-[5%] py-6 text-white">
-                <div className="sm-max:w-full  sm-max:flex sm-max:flex-col sm-max:items-center phone:text-sm">
+                <div className="hidden sm:block">
                     <div className="mb-1">
                         Designed and Developed by{' '}
                         <span className="font-bold">

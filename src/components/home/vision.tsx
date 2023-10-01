@@ -3,7 +3,7 @@ import Reveal from '../animations/reveal';
 
 function Vision({ vision }: { vision: string[] }) {
     return (
-        <section className="relative flex w-full h-[500px] overflow-hidden items-center justify-center bg-muted py-20   text-center">
+        <section className="relative flex w-full xl:h-[500px] h-[400px] overflow-hidden items-center justify-center bg-muted py-20   text-center">
             {/* <h1 className="text-6xl super mb-3 font-bold">Tầm nhìn của Hub Media</h1> */}
             <Image
                 src="https://gaaga.wpengine.com/rtl-demo/wp-content/uploads/sites/3/2023/06/home-portfolio-2.jpg"
@@ -11,11 +11,11 @@ function Vision({ vision }: { vision: string[] }) {
                 height={0}
                 alt="image"
                 sizes="100vw"
-                className="absolute w-full h-auto   "
+                className="absolute w-full object-cover   "
             />
             <Reveal scale={0.3} className=" z-[1] bg-vision flex w-[70%] h-fit   justify-center  ">
           
-                <h2 className=" p-16 text-white   text-[45px] font-bold leading-[50px] ">
+                <h2 className=" xl:p-16 text-white p-10   xl:text-[45px] text-3xl font-bold xl:leading-[50px] ">
                         &ldquo; Hub Media{' '}
                         <span className="inline-flex">
                             <Image

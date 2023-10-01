@@ -5,8 +5,8 @@ import { Locale } from '@/i18n.config';
 function Partner({lang}:{lang:Locale}) {
     return (
         <section id='partner' className="flex w-full flex-col items-center  bg-muted py-20">
-            <Heading title={'Partner'} description={lang === 'vi' ? 'Đối tác': "Core Partners"} className='pb-10'/>
-            <div className='flex justify-evenly w-full'>
+            <Heading title={'Partner'} description={lang === 'vi' ? 'Đối tác': "Core Partners"} className='xl:pb-10 pb-0'/>
+            <div className='flex flex-wrap justify-evenly w-full'>
                 <Image
                     src={
                         'https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fhubnetwork.png?alt=media&token=7230d249-dad2-428f-b95c-f238a178d507'
@@ -14,7 +14,7 @@ function Partner({lang}:{lang:Locale}) {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="w-[200px] object-contain duration-500 hover:scale-125 "
+                    className="lg:w-[200px] w-[30%] object-contain duration-500 hover:scale-125 xl:px-0 px-6 "
                     alt="logo"
                 />
     
@@ -25,7 +25,7 @@ function Partner({lang}:{lang:Locale}) {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="w-[100px] object-contain duration-500 hover:scale-125"
+                    className="lg:w-[100px] w-[20%] object-contain duration-500 hover:scale-125 xl:px-0 px-2"
                     alt="logo"
                 />
     
@@ -36,7 +36,7 @@ function Partner({lang}:{lang:Locale}) {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="w-[200px] object-contain duration-500 hover:scale-125"
+                    className="lg:w-[200px] w-[30%] object-contain duration-500 hover:scale-125 xl:px-0 px-6"
                     alt="logo"
                 />
     
@@ -47,7 +47,7 @@ function Partner({lang}:{lang:Locale}) {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="w-[200px] object-contain duration-500 hover:scale-125"
+                    className="lg:w-[200px] w-[30%] object-contain duration-500 hover:scale-125 xl:px-0 px-6"
                     alt="logo"
                 />
     
@@ -58,7 +58,7 @@ function Partner({lang}:{lang:Locale}) {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="w-[200px] object-contain duration-500 hover:scale-125"
+                    className="lg:w-[200px] w-[30%] object-contain duration-500 hover:scale-125 xl:px-0 px-6"
                     alt="logo"
                 />
             </div>

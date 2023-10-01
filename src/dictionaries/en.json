@@ -1,88 +1,55 @@
 {
-    "navigation": {
-      "home": "HOME",
-      "services": "SERVICES",
-      "livestream": "HUBLIVE",
-      "founder": "FOUNDER'S FRIDAY",
-      "customers": "CUSTOMERS",
-      "blog": "BLOG",
-      "contact": "Contact",
-      "about": "ABOUT US"
-    },
-    "metadata":{
-        "title": "Hub Media - Connect your brand to the world",
-        "description": "Hub Media is a digital marketing agency that provides livestreaming services, video production, and digital marketing services to connect your brand to the world."
-    },
-    "pages": {
-      "not-found":"Page not found.",
-      "underconstruction":[
-        "This page is under construction.",
-        "Please come back later!"
-      ],
-      "services":{
-        "Brand Design": {
-          "href":"/services/brand-design",
-            "description":"We create visually appealing, consistent brand identities encompassing logo and key visuals.",
-            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg",
-            "packages": ["Standard","Advanced","Professional"]
-        },
-        "Event Photography":
-        {
-          "href":"/services/event-photography",
-            "description":"Our skilled photographers capture event essence with high-quality images for marketing and memories.",
-            "src":"https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332",
-            "packages": ["Standard","Advanced","Professional"]
-
-        }, 
-        "Video Marketing":{
-          "href":"/services/recap-trailer",
-            "description":"We craft concise summaries and dynamic trailers to convey event significance or marketing.",
-            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png",
-            "packages": ["Standard","Advanced","Professional"]
-
-        }, 
-        "Event Organization":{
-          "href":"/services/event-organizer",
-            "description":"We ensure seamless, memorable event execution from concept to logistics management.",
-            "src":"https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png",
-            "packages": ["Standard","Advanced","Professional"]
-
-        }
-      },
-      
-      "home":{
-        "home-hero":{
-        "title": ["offer","Branding Design", "Event Photography", "Web Development","Reports & Trailer"],
+  "navigation": {
+    "home": "HOME",
+    "services": "SERVICES",
+    "livestream": "HUBLIVE",
+    "founder": "FOUNDER'S FRIDAY",
+    "customers": "CUSTOMERS",
+    "blog": "BLOG",
+    "contact": "Contact",
+    "about": "ABOUT US"
+  },
+  "metadata": {
+    "title": "Hub Media - Connect your brand to the world",
+    "description": "Hub Media is a digital marketing agency that provides livestreaming services, video production, and digital marketing services to connect your brand to the world."
+  },
+  "pages": {
+    "not-found": "Page not found.",
+    "underconstruction": [
+      "This page is under construction.",
+      "Please come back later!"
+    ],
+    "home": {
+      "home-hero": {
+        "title": [
+          "offer",
+          "Branding Design",
+          "Event Photography",
+          "Web Development",
+          "Reports & Trailer"
+        ],
         "description": "Hub Media is an agency marketing that provides marketing solutions for businesses targeting the youth demographic"
       },
       "characteristics": {
         "Modernity": "Harnessing cutting-edge technology to craft innovative solutions for your business",
         "Creativity": "Infusing imaginative flair into every project to ignite your brand's uniqueness",
-        "Uniqueness":"Crafting distinct experiences that set your brand apart in a crowded market"
+        "Uniqueness": "Crafting distinct experiences that set your brand apart in a crowded market"
       },
-      "services":{
-        "Brand Design": "We create visually appealing, consistent brand identities encompassing logo and key visuals.",
-        "Event Photography": "Our skilled photographers capture event essence with high-quality images for marketing and memories.",
-        "Recap & Trailers": "We craft concise summaries and dynamic trailers to convey event significance.",
-        "Event Organization": "We ensure seamless, memorable event execution from concept to logistics management."
-      },
-      "portfolio":[
+      "portfolio": [
         "Providing customized marketing services tailored to each business",
         "Founder Fridays serves as a bridge between startup founders and aspiring young entrepreneurs, sharing their stories and insights",
         "With the aim to become a hub connecting the student community with businesses seeking product livestream models on social media platforms"
       ],
-      "vision":[
+      "vision": [
         "aspires to become a leading provider of innovative and effective marketing solutions ",
         "through the establishment of a sustainable community."
-
       ],
-      "faq":{
-        "Why should you choose Hub Media?":"The Hub Media team consists of young talents with a high level of creativity, eager to support businesses in achieving their business goals. At Hub Media, everyone, from students to young individuals and business owners, can find solutions that align with their desires in the digital marketing world.",
-        "What is our working process?":"Each service at Hub Media has its own unique process to optimize the customer experience. However, we always follow a common process: Communication - Ideas - Evaluation - Execution - Optimization - Deployment.",
-        "Who are our potential customers?":"Potential customers of Hub Media include businesses looking to reach young customers, those interested in integrating custom marketing solutions to achieve ESG goals, as well as those aiming to differentiate themselves and have a positive impact in their business sector.",
-        "Our commitment and quality assurance about our services?":"We are committed to ensuring top-quality services, prioritizing customer satisfaction, swift improvements, and offering refund policies for each service package"
+      "faq": {
+        "Why should you choose Hub Media?": "The Hub Media team consists of young talents with a high level of creativity, eager to support businesses in achieving their business goals. At Hub Media, everyone, from students to young individuals and business owners, can find solutions that align with their desires in the digital marketing world.",
+        "What is our working process?": "Each service at Hub Media has its own unique process to optimize the customer experience. However, we always follow a common process: Communication - Ideas - Evaluation - Execution - Optimization - Deployment.",
+        "Who are our potential customers?": "Potential customers of Hub Media include businesses looking to reach young customers, those interested in integrating custom marketing solutions to achieve ESG goals, as well as those aiming to differentiate themselves and have a positive impact in their business sector.",
+        "Our commitment and quality assurance about our services?": "We are committed to ensuring top-quality services, prioritizing customer satisfaction, swift improvements, and offering refund policies for each service package"
       }
     }
-     
-    }
   }
+}

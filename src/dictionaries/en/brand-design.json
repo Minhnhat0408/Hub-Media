@@ -1,0 +1,24 @@
+{   
+    "title": "Brand Design",
+    "href": "/services/brand-design",
+    "details": ["Standard: Logo dạng chữ", 
+    "Advanced: Logo biểu tượng", 
+   "Professional: Logo kết hợp"],
+   "tags": ["#logo", "#branding", "#visual"], 
+    "description": "We create visually appealing, consistent brand identities encompassing logo and key visuals.",
+    "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg",
+    "packages": {
+        "Standard": {
+            "price": ["400,000 - 600,000"],
+            "details": ["1 mẫu demo", "3 lần chỉnh sửa"]
+        },
+        "Advanced": {
+            "price": ["600,000 - 1,000,000"],
+            "details": ["2 mẫu demo", "5 lần chỉnh sửa"]
+        },
+        "Professional": {
+            "price": ["1,000,000 - 2,000,000"],
+            "details": ["4 mẫu demo", "Không giới hạn chỉnh sửa"]
+        }
+    }
+}

@@ -6,4 +6,17 @@ const dictionaries = {
   vi: () => import('@/dictionaries/vi.json').then(module => module.default)
 }
 
+const servicesDictionaries = {
+  en: () => import('@/dictionaries/en/services.json').then(module => module.default),
+  vi: () => import('@/dictionaries/vi/services.json').then(module => module.default)
+}
+// fetch from dictionaries/en/services.json
+// fetch from dictionaries/vi/services.json
+export const getServices = async (locale: Locale) => servicesDictionaries[locale]()
 export const getDictionary = async (locale: Locale) => dictionaries[locale]()
+
+export const getSpecifiedService = async (locale: Locale, title: string) => {
+  const dictionary = () => import(`@/dictionaries/${locale}/${title}.json`).then(module => module.default)
+  
+  return dictionary()
+}

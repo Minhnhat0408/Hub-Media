@@ -19,13 +19,7 @@ const ContactSchema = z.object({
     name: z.string({
         required_error: 'Please enter your name.',
     }),
-    phone: z
-        .string({
-            required_error: 'Please enter your phone.',
-        })
-        .min(10, {
-            message: 'Please enter a valid phone number.',
-        }),
+    phone: z.string().regex(/^[0-9]+$/,"Please enter a valid phone number").min(10, { message: 'Please enter a valid phone number'}),
     message: z.string().optional(),
     services: z.string({
         required_error: 'Please select your service.',

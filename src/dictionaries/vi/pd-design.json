@@ -1,0 +1,25 @@
+{   
+    "title": "Thiết kế Pitch Deck",
+    "href": "/services/pd-design",
+    "details": ["1. Đồng bộ màu sắc của toàn bộ slide theo bộ nhận diện", 
+    "2. Thiết kế bố cục slide tinh gọn, hiện đại", 
+   "3. Minh họa chuyên nghiệp, bám sát nội dung", 
+   "4. Add hiệu ứng animation "],
+   "tags":["#pitchdeck", "#design", "#presentation"],
+    "description": "We create visually appealing, consistent brand identities encompassing logo and key visuals.",
+    "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg",
+    "packages": {
+        "Standard": {
+            "price": ["150,000", "slide"],
+            "details": ["1 lần chỉnh sửa", "Tiến độ: 4 slide/ngày"]
+        },
+        "Advanced": {
+            "price": ["180,000", "slide"],
+            "details": ["3 lần chỉnh sửa", "Tiến độ: 4 slide/ngày"]
+        },
+        "Professional": {
+            "price": ["250,000", "slide"],
+            "details": ["Không giới hạn chỉnh sửa", "Tiến độ: không giới hạn"]
+        }
+    }
+}
