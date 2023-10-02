@@ -23,21 +23,21 @@ function Mark({
                     <div className={cn('flex items-center ')}>
                         <div
                             className={cn(
-                                'mr-2 inline-flex h-[10px] w-[10px] rounded-full bg-gradient',
+                                'mr-2 inline-flex sm:h-[10px] sm:w-[10px] rounded-full bg-gradient h-[6px] w-[6px]',
                                 {
                                     dot: dotanimate,
                                 },classDot
                             
                             )}
                         ></div>
-                        <div className={cn('h-[1px] w-16 bg-muted-foreground',classLine )}></div>
+                        <div className={cn('h-[1px] sm:w-16 w-10 bg-muted-foreground',classLine )}></div>
                     </div>
                 ) : (
                     <div className={cn('flex items-center ')}>
-                        <div className={cn('h-[1px] w-16 bg-muted-foreground',classLine )}></div>
+                        <div className={cn('h-[1px] sm:w-16 w-10 bg-muted-foreground',classLine )}></div>
                         <div
                             className={cn(
-                                'ml-2 inline-flex h-[10px] w-[10px] rounded-full bg-gradient',
+                                'ml-2 inline-flex sm:h-[10px] sm:w-[10px] rounded-full bg-gradient h-[6px] w-[6px]',
                                 dotanimate && ' dot',classDot
                            
                             )}
@@ -48,14 +48,14 @@ function Mark({
                 <div className={cn('flex h-28 flex-col items-center')}>
                     <div
                         className={cn(
-                            'mb-2 inline-flex h-[10px] w-[10px] rounded-full bg-gradient',
+                            'mb-2 inline-flex sm:h-[10px] sm:w-[10px] rounded-full bg-gradient h-[6px] w-[6px]',
                             dotanimate && ' dot',
                             classDot
                         )}
                     ></div>
                     <div
                         className={cn(
-                            'h-16 w-[2px] bg-muted-foreground',
+                            'sm:h-16 h-10 w-[1px] bg-muted-foreground',
                             lineanimate && ' line-shrink',classLine
                        
                         )}

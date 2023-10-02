@@ -11,9 +11,7 @@ export type ServiceThumbnail = {
     };
 };
 async function ServicesPage({ params: { lang } }: { params: { lang: Locale } }) {
-    // const response = await axios.get(`${process.env.URL}/api/service`)
-    // const data = response.data.services
-    // console.log(data)
+
     const services = await getServices(lang);
     return (
         <main className=" h-fit w-full py-20 ">

@@ -5,12 +5,12 @@ import { Locale } from '@/i18n.config';
 import { getSpecifiedService } from '@/lib/dictionary';
 import { Coins } from 'lucide-react';
 import Image from 'next/image';
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode, Key } from 'react';
+import {  Key } from 'react';
 import { PiPaperPlaneRightFill } from 'react-icons/pi';
 
 async function Service({ params: { title, lang } }: { params: { title: string; lang: Locale } }) {
     const data = await getSpecifiedService(lang, title);
-    console.log(data)
+
     return (
         <main className=" h-fit w-full py-20 ">
             <PageTitle

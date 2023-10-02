@@ -115,20 +115,20 @@ export async function Footer({lang}:{lang:Locale}) {
                         </div>
                     </div>
                     <div className="mt-[50px] h-full  text-white xl:flex xl:flex-col">
-                        <h3 className="md-max:text-center phone:text-[20px] mb-5 text-left text-xl font-bold  uppercase text-white">
+                        <h3 className=" mb-5 text-left text-xl font-bold  uppercase text-white">
                         {lang === 'vi' ? 'Liên hệ': "CONTACT"}
                         </h3>
-                        <div className="phone:flex-wrap phone:mb-2 mb-1 flex">
-                            <div className="phone:w-full mr-2 flex min-w-[120px]">
+                        <div className="flex-wrap ssm:mb-1 mb-2 flex">
+                            <div className="ssm:w-fit w-full mr-2 flex min-w-[120px]">
                                 <FaLocationDot className="mr-3 mt-1 text-base text-white" />
                                 <div className="font-bold">{lang === 'vi' ? 'Địa chỉ:': "Address:"}</div>
                             </div>
-                            <div className="phone:w-full leading-7 text-muted-foreground">
+                            <div className=" leading-7 text-muted-foreground">
                                 Tầng 3, D12, Giảng Võ, Ba Đình, Hà Nội
                             </div>
                         </div>
-                        <div className="phone:flex-wrap phone:mb-2 mb-1 flex">
-                            <div className="phone:w-full mr-2 flex min-w-[120px]">
+                        <div className="flex-wrap ssm:mb-1 mb-2 flex">
+                            <div className="ssm:w-fit w-full mr-2 flex min-w-[120px]">
                                 <FaPhone className="mr-3 mt-1 text-base text-white" />
                                 <div className="font-bold">Hotline: </div>
                             </div>
@@ -136,17 +136,17 @@ export async function Footer({lang}:{lang:Locale}) {
                                 <div className="leading-7 text-muted-foreground">{` Ms. Thu Phuong (0965053420)`}</div>
                             </div>
                         </div>
-                        <div className="phone:flex-wrap phone:mb-2 mb-1 flex">
-                            <div className="phone:w-full mr-2 flex min-w-[120px]">
+                        <div className="flex-wrap ssm:mb-1 mb-2 flex">
+                            <div className="ssm:w-fit w-full mr-2 flex min-w-[120px]">
                                 <FaEnvelope className="mr-3 mt-1 text-base text-white" />
                                 <div className="font-bold">Email: </div>
                             </div>
-                            <div className="phone:w-full">
+                            <div className="ssm:w-fit w-full">
                                 <div className="leading-7 text-muted-foreground">hubmedia.vietnam@gmail.com</div>
                             </div>
                         </div>
-                        <div className="phone:flex-wrap phone:mb-2 mb-1 flex">
-                            <div className="phone:w-full mr-2 flex min-w-[120px]">
+                        <div className="flex-wrap ssm:mb-1 mb-2 flex">
+                            <div className="ssm:w-fit w-full mr-2 flex min-w-[120px]">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     height="1em"
@@ -192,7 +192,7 @@ export async function Footer({lang}:{lang:Locale}) {
                     </div>
                 </div>
 
-                <ul className="flex gap-x-4 text-2xl  ">
+                <ul className="flex gap-x-4 ssm:text-2xl text-base ">
                     <li className=" cursor-pointer duration-1000 hover:text-gradient">
                         <Link href={'https://www.facebook.com/HubMediaVN'} target="_blank">
                             <TbBrandFacebook />
@@ -214,7 +214,7 @@ export async function Footer({lang}:{lang:Locale}) {
                         </Link>
                     </li>
                 </ul>
-                <div className="sm-max:w-full sm-max:flex  sm-max:flex-col sm-max:items-center sm-max:mt-2 phone:text-sm">
+                <div className="ssm:text-base text-sm">
                     <p>
                         © Copyright 2023 <span className="font-bold tracking-wider">Hub Media</span>
                     </p>

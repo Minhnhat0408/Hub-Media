@@ -13,9 +13,9 @@ function HomeHero({ home, lang }: { home: any; lang: Locale }) {
             id="home-hero"
             className="relative flex w-[100vw] overflow-x-clip bg-background overflow-y-hidden xl:pb-20 xl:pl-7 2xl:pl-20 "
         >
-            <div className="z-[5] flex flex-1  bg-[rgba(255,255,255,0.2)] pb-32 pt-36 xl:bg-transparent xl:pb-0 xl:pt-48  2xl:pt-64 ">
+            <div className="z-[5] flex flex-1  bg-[rgba(255,255,255,0.2)] pb-32 lg:pt-36 pt-44 xl:bg-transparent xl:pb-0 xl:pt-48 backdrop-blur-sm  2xl:pt-64 ">
                 <Reveal hiddenY={100} className="flex h-fit flex-1 flex-col items-center">
-                    <ul className="flex flex-col items-center  text-4xl text-muted-foreground duration-1000">
+                    <ul className="flex flex-col items-center  ssm:text-4xl text-2xl text-muted-foreground duration-1000">
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
                             <Link href={'https://www.facebook.com/HubMediaVN'} target="_blank">
                                 <TbBrandFacebook />
@@ -40,20 +40,20 @@ function HomeHero({ home, lang }: { home: any; lang: Locale }) {
                     <Mark dotanimate lineanimate />
                     <Link
                         href={'#portfolio'}
-                        className=" -rotate-90  cursor-pointer text-base tracking-widest text-gradient"
+                        className=" -rotate-90  cursor-pointer  text-base tracking-widest text-gradient"
                     >
                         SCROLL
                     </Link>
                 </Reveal>
-                <div className="w-10/12 xl:w-4/5 ">
+                <div className="sm:w-10/12 xl:w-4/5 w-11/12  ssm:pr-0 pr-4 ">
                     <Reveal hiddenX={100}>
                         <div className="flex">
-                            <Mark dotanimate lineanimate horizontal />
-                            <p className="ml-3 text-2xl  tracking-wider text-muted-foreground">
+                            <Mark dotanimate lineanimate horizontal classDot='sm:w-2 sm:h-2' />
+                            <p className="ml-3 sm:text-2xl text-base  tracking-wider text-muted-foreground">
                                 {lang === 'vi' ? 'Giới thiệu' : 'Introduce'}
                             </p>
                         </div>
-                        <div className="my-8 xl:max-w-[600px]   text-5xl font-bold 2xl:text-6xl">
+                        <div className="my-8 xl:max-w-[600px]   ssm:text-5xl text-3xl font-bold 2xl:!text-6xl">
                             <span className="super ">Hub Media</span> offer
                             <TypeWriter 
                                 options={{
@@ -85,7 +85,7 @@ function HomeHero({ home, lang }: { home: any; lang: Locale }) {
                 width={600}
                 height={300}
                 alt="bl"
-                className="heartbeat absolute right-0 top-8 z-[3] w-[800px] opacity-70 xl:relative xl:block xl:h-[110%]  xl:w-[55%] xl:opacity-100 "
+                className="heartbeat absolute right-0  top-10  z-[3] md:w-[800px] md:h-auto  h-[70%] w-auto object-cover opacity-70 xl:relative xl:block xl:h-[110%]  xl:w-[55%] xl:opacity-100 "
             />
         </section>
     );

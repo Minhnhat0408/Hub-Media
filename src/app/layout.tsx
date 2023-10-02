@@ -1,8 +1,8 @@
+import ScrollTop from '@/components/scrollTop';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import React from 'react';
 import { Toaster } from 'react-hot-toast';
-
 // ...
 export const metadata: Metadata = {
     metadataBase: new URL('https://pbhubmedia.vercel.app/'),
@@ -20,9 +20,9 @@ function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="vi">
             <body>
-                <Toaster position='top-right' />
+                <Toaster position="top-right" />
                 {children}
-
+                <ScrollTop />
                 <div id="fb-root"></div>
                 <div id="fb-customer-chat" className="fb-customerchat"></div>
                 <Script id="fb" strategy="lazyOnload">
