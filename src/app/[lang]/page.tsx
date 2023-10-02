@@ -24,7 +24,6 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 sizes="100vw"
                 className=" fixed -z-10 h-[100vh] w-auto object-cover  lg:w-[100vw]  bg-black"
             />
-            <NotFound params={{lang}}/>
             <HomeHero home={pages.home['home-hero']} lang={lang} />
             <Characteristics characteristics={pages.home.characteristics} />
             <Portfolio lang={lang} portfolio={pages.home.portfolio} />
