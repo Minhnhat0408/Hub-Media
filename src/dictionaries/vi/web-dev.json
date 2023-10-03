@@ -8,26 +8,19 @@
     "description": "We craft concise summaries and dynamic trailers to convey event significance or marketing.",
     "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png",
     "types": ["Landing Page", "Website"],
-    "packages": [
-        {
-            "Standard": {
-                "price": ["3,500,000"],
-                "details": ["2 mẫu demo", "3 lần chỉnh sửa"]
-            }
+    "packages": 
+    {
+        "Standard/Landing Page": {
+            "price": ["3,500,000"],
+            "details": ["2 mẫu demo", "3 lần chỉnh sửa"]
         },
-        {
-            "Standard": {
-                "price": ["1,000,000"],
-                "details": ["1 mẫu demo", "2 lần chỉnh sửa"]
-            },
-            "Advanced": {
-                "price": ["2,000,000"],
-                "details": ["2 mẫu demo", "3 lần chỉnh sửa"]
-            },
-            "Professional": {
-                "price": ["3,000,000"],
-                "details": ["3 mẫu demo", "4 lần chỉnh sửa"]
-            }
+        "Standard": {
+            "price": ["1,000,000"],
+            "details": ["1 mẫu demo", "2 lần chỉnh sửa"]
+        },
+        "Professional/Website": {
+            "price": ["3,000,000"],
+            "details": ["3 mẫu demo", "4 lần chỉnh sửa"]
         }
-    ]
+    }
 }

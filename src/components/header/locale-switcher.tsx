@@ -20,14 +20,14 @@ export default function LocaleSwitcher({ lang,className,full =  false }: { lang:
       router.push(redirectedPathName(value))
     }}>
       <SelectTrigger className={cn('w-16 ',className)} >
-        <SelectValue placeholder={(full && lang === 'vi') ? "Tiếng Việt" : "English"} className='text-foreground ' />
+        <SelectValue placeholder={full ? ( lang === 'vi' ? "Tiếng Việt" : "English" ): lang} className='text-foreground ' />
       </SelectTrigger>
       <SelectContent className='min-w-0 ' >
         {i18n.locales.map(locale => {
           if (locale !== lang) {
             return (
               <SelectItem key={locale} value={locale} className='flex pl-2' >
-                {(full && locale === 'vi') ? "Tiếng Việt" : "English"}
+                {full ? ( locale === 'vi' ? "Tiếng Việt" : "English" ): locale}
               </SelectItem>
             )
           }

@@ -10,6 +10,7 @@ import { getDictionary, getServices } from '@/lib/dictionary';
 import Image from 'next/image';
 import Loading from './loading';
 import NotFound from './[...not-found]/page';
+import UnderConstruction from '@/components/underconstruction';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
     const { pages } = await getDictionary(lang);

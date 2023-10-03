@@ -36,48 +36,48 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                 title="Contact"
             />
 
-            <section  className="w-full p-20 px-40 ">
-                <Reveal hiddenX={200} className="flex justify-center gap-x-20">
+            <section  className="w-full lg:p-20  xl:px-40 lg:px-28  ssm:p-10 !p-4 !py-10 !pt-20 ">
+                <Reveal hiddenX={200} className="flex justify-center lg:gap-x-20 md:gap-x-16 gap-x-4">
                     <div className="group flex flex-1 flex-col items-center  ">
                         <Link
                             href={'https://www.facebook.com/messages/t/102422339523278'}
                             target="_blank"
-                            className="relative flex items-center justify-center text-8xl text-gradient duration-500 group-hover:scale-[120%] "
+                            className="relative flex items-center justify-center xl:text-8xl md:text-7xl text-5xl text-gradient duration-500 group-hover:scale-[120%] "
                         >
-                            <div className="animate-ping-big-slow absolute inline-flex h-16 w-16 rounded-full bg-gradient"></div>
+                            <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
                             <BsMessenger />
                         </Link>
-                        <p className="mt-10 w-48  text-center text-xl text-muted-foreground ">
+                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base !text-sm text-muted-foreground ">
                             Contact us with Messenger
                         </p>
                     </div>
                     <div className="group flex flex-1 flex-col items-center ">
                         <Link
                             href={'tel:0965053420'}
-                            className="relative flex items-center justify-center text-8xl text-gradient duration-500 group-hover:scale-[120%] "
+                            className="relative flex items-center justify-center xl:text-8xl md:text-7xl text-5xl text-gradient duration-500 group-hover:scale-[120%] "
                         >
-                            <div className="animate-ping-big-slow absolute inline-flex h-16 w-16 rounded-full bg-gradient"></div>
+                            <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
                             <BsFillTelephoneFill />
                         </Link>
-                        <p className="mt-10 w-48  text-center text-xl text-muted-foreground ">
+                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base !text-sm text-muted-foreground ">
                             Make a phone call directly to us
                         </p>
                     </div>
                     <div className="group flex flex-1 flex-col items-center  ">
                         <Link
                             href={'#form'}
-                            className="relative flex items-center justify-center text-8xl text-gradient duration-500 group-hover:scale-[120%] "
+                            className="relative flex items-center justify-center xl:text-8xl md:text-7xl text-5xl text-gradient duration-500 group-hover:scale-[120%] "
                         >
-                            <div className="animate-ping-big-slow absolute inline-flex h-16 w-16 rounded-full bg-gradient"></div>
+                            <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
                             <FaWpforms />
                         </Link>
-                        <p className="mt-10 w-48  text-center text-xl text-muted-foreground ">
-                            Leave information for us to contact you later
+                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base !text-sm text-muted-foreground ">
+                            Fill the form to contact us
                         </p>
                     </div>
                 </Reveal>
             </section>
-            <Reveal hiddenX={-200} className="flex w-full items-center justify-center gap-x-20 p-20">
+            <Reveal hiddenX={-200} className="flex w-full items-center justify-center md:gap-x-20 gap-x-6 xl:p-20 p-10 ssm:px-20 px-4">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -85,7 +85,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                     y="0px"
                     viewBox="0 0 113 113.1"
                     xmlSpace="preserve"
-                    className="h-[120px] w-[120px] fill-white  duration-500 group-hover:scale-110"
+                    className="md:h-[120px] md:w-[120px] w-20 h-20 fill-white  duration-500 group-hover:scale-110"
                 >
                     <g>
                         {' '}
@@ -118,26 +118,26 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                         <path d="M70.9,17.2c-0.2,0-0.5-0.1-0.7-0.2c-0.7-0.4-0.9-1.2-0.5-1.9l2.5-4.4c0.4-0.7,1.2-0.9,1.9-0.5c0.7,0.4,0.9,1.2,0.5,1.9  l-2.5,4.4C71.8,16.9,71.3,17.2,70.9,17.2z"></path>
                     </g>
                 </svg>
-                <h2 className="w-[35%] text-6xl font-bold text-gradient ">We&apos;ll response to you in an hour</h2>
+                <h2 className="xl:w-[600px] sm:!w-[400px] flex-1 xl:text-7xl md:text-5xl text-3xl  font-bold text-gradient ">We&apos;ll response to you in an hour</h2>
                 {/* <p className="w-[30%] text-3xl text-muted-foreground">Thanks for reaching out to us</p> */}
             </Reveal>
-            <section id="form"  className="flex  w-full p-20">
-                <div className="ml-10 flex w-[55%] flex-col">
-                    <div className="mb-8 flex gap-x-4 ">
+            <section id="form"  className="flex flex-wrap  w-full xl:!p-20 ssm:p-10 !p-4 gap-y-20">
+                <div className="xl:ml-10 flex md:w-[55%] w-full  flex-col">
+                    <div className="sm:mb-8  flex gap-x-4 ">
                         <Mark dotanimate lineanimate horizontal classDot="ml-4" />
-                        <p className="text-3xl text-muted-foreground">Get In touch</p>
+                        <p className="sm:text-3xl text-xl text-muted-foreground">Get In touch</p>
                     </div>
                     <div className="flex">
-                        <LetterAppear className="text-5xl font-[800] !text-white">Reach Out to Us</LetterAppear>
+                        <LetterAppear className="xl:!text-5xl ssm:text-4xl text-3xl font-[800] !text-white">Reach Out to Us</LetterAppear>
                     </div>
                     <ContactForm  listServices={services} defaultService={defaultService} />
                 </div>
-                <div className="flex-1  pl-40 pr-10 ">
+                <div className="flex-1  2xl:pl-40 xl:pl-28 md:pl-10  2xl:pr-10  ">
                     <Reveal
                         hiddenY={200}
-                        className="flex h-full flex-col gap-y-5 border-[1px] border-gradient p-[60px]"
+                        className="flex h-full flex-col gap-y-5 border-[1px] border-gradient xl:p-[60px] lg:p-10 p-6" 
                     >
-                        <h2 className="text-[54px] font-bold">Thanks!</h2>
+                        <h2 className="xl:text-[54px] lg:text-5xl text-4xl font-bold">Thanks!</h2>
                         <p className="w-[80%] text-muted-foreground">
                             Please wait for our community department to response to you.
                         </p>
@@ -150,32 +150,34 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                             className="h-auto w-full"
                         />
                         <h2 className="mt-12  text-3xl font-bold">Enquiries</h2>
-                        <div className="flex justify-between">
+                        <div className="flex lg:!flex-row md:!flex-col ssm:flex-row !flex-col justify-between gap-x-4">
                             <p>0965053420</p>
                             <p>hubmedia.vietnam@gmail.com</p>
                         </div>
-                        <ul className="flex items-center gap-x-4 text-base text-muted-foreground  ">
-                            <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                                <Link href={'https://www.facebook.com/HubMediaVN'} target="_blank">
-                                    <TbBrandFacebook />
-                                </Link>
+                        <ul className="flex lg:!items-center md:!items-start ssm:items-center  lg:!flex-row md:!flex-col ssm:flex-row !flex-col gap-x-4 text-base text-muted-foreground  ">
+                            <li className='flex mb-1'>
+                                <div className=" cursor-pointer duration-1000 hover:text-gradient">
+                                    <Link href={'https://www.facebook.com/HubMediaVN'} target="_blank">
+                                        <TbBrandFacebook />
+                                    </Link>
+                                </div>
+                                <div className=" cursor-pointer duration-1000 hover:text-gradient">
+                                    <Link href={'http://linkedin.com/company/hub-media-vietnam'} target="_blank">
+                                        <TbBrandLinkedin />
+                                    </Link>
+                                </div>
+                                <div className=" cursor-pointer duration-1000 hover:text-gradient">
+                                    <Link href={'https://youtube.com/@HubMedia-Vietnam/'} target="_blank">
+                                        <TbBrandYoutube />
+                                    </Link>
+                                </div>
+                                <div className=" cursor-pointer duration-1000 hover:text-gradient">
+                                    <Link href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}>
+                                        <TbBrandTiktok />
+                                    </Link>
+                                </div>
                             </li>
-                            <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                                <Link href={'http://linkedin.com/company/hub-media-vietnam'} target="_blank">
-                                    <TbBrandLinkedin />
-                                </Link>
-                            </li>
-                            <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                                <Link href={'https://youtube.com/@HubMedia-Vietnam/'} target="_blank">
-                                    <TbBrandYoutube />
-                                </Link>
-                            </li>
-                            <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                                <Link href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}>
-                                    <TbBrandTiktok />
-                                </Link>
-                            </li>
-                            <li className="flex-1 text-right text-base">Working hour: 8:00 - 17:00</li>
+                            <li className="flex-1 lg:!text-right md:!text-left ssm:text-right text-base">Working hour: 8:00 - 17:00</li>
                         </ul>
                     </Reveal>
                 </div>

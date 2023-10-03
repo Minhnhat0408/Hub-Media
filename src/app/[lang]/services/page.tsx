@@ -20,7 +20,7 @@ async function ServicesPage({ params: { lang } }: { params: { lang: Locale } }) 
                 title="Services"
             />
             
-            <section className=" grid w-full grid-cols-2 p-20 ">
+            <section className=" grid w-full lg:grid-cols-2 grid-cols-1 2xl:p-20 md:p-10 py-10  ">
                 {Object.entries(services as ServiceThumbnail).map(([title, infor], index: number) => {
                     
                     return (
@@ -31,7 +31,7 @@ async function ServicesPage({ params: { lang } }: { params: { lang: Locale } }) 
                             src={infor.src}
                             href={infor.href}
                             lang={lang}
-                            className={index % 2 !== 0 ? ' translate-y-20':''}
+                            className={index % 2 !== 0 ? ' lg:translate-y-20':''}
                         />
                     );
                 })}

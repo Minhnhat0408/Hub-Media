@@ -53,11 +53,11 @@ export default function Slider({ children, className = '' }: { children: React.R
 
     return (
         <div className="flex flex-col items-center">
-            <div ref={ref} className={'keen-slider ' + className}>
+            <div ref={ref} className={'keen-slider lg:order-none order-1 ' + className}>
                 {children}
             </div>
             {loaded && instanceRef.current && (
-                <div className="mt-6 flex  justify-center">
+                <div className="mt-6 flex lg:order-none order-2  justify-center">
                     {[...Array(instanceRef.current.track.details.slides.length).keys()].map((idx) => {
                         return (
                             <button
@@ -65,11 +65,11 @@ export default function Slider({ children, className = '' }: { children: React.R
                                 onClick={() => {
                                     instanceRef.current?.moveToIdx(idx);
                                 }}
-                                className={'mr-8 h-8 group'}
+                                className={'mx-4 h-8 group'}
                             >
                                 <div
                                     className={
-                                        'h-[2px] w-16 bg-muted-foreground group-hover:!bg-gradient' +
+                                        'h-[2px] sm:w-16 w-10 bg-muted-foreground group-hover:!bg-gradient' +
                                         (currentSlide === idx ? ' !bg-gradient ' : '')
                                     }
                                 ></div>

@@ -7,7 +7,7 @@ export default function Map() {
     return <MapContainer
         center={[21.02719909627587, 105.82105861353911]}
         zoom={18}
-        className="h-[400px] w-full my-20"
+        className="md:h-[400px] ssm:h-[300px] h-[200px] w-full my-20"
         scrollWheelZoom={false  }
     >
         <TileLayer
@@ -27,7 +27,7 @@ export default function Map() {
                 })
             }
         >
-            <Popup className="!bg-gradient">
+            <Popup>
                 <span className="super text-base font-bold">Hub Building </span>
                 <br />
             </Popup>

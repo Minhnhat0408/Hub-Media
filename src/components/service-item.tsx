@@ -20,8 +20,8 @@ export default function ServiceItem({
     className?: string;
 }) {
     return (
-        <article className={cn('flex h-full w-full flex-col items-center p-20 ', className)}>
-            <div className="group relative mb-10 h-[700px] w-full overflow-hidden ">
+        <article className={cn('flex  w-full flex-col items-center 2xl:!p-20 ssm:p-10 p-4 ', className)}>
+            <div className="group relative mb-10 aspect-[20/21]  w-full overflow-hidden ">
                 <Image
                     src={src}
                     alt="img"
@@ -31,10 +31,10 @@ export default function ServiceItem({
                     className="h-full w-full duration-500 hover:scale-125 "
                 />
                 <div className="absolute bottom-0  flex w-full translate-y-10 flex-col items-center justify-center bg-black/50 p-8 opacity-0  backdrop-blur duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                    <MarkupButton title={lang === 'vi' ? 'Tìm hiểu thêm' : 'Read more'} href={'/' + lang + href} className="py-6" />
+                    <MarkupButton title={lang === 'vi' ? 'Tìm hiểu thêm' : 'Read more'} href={'/' + lang + href} className="sm:py-6" />
                 </div>
             </div>
-            <h1 className="mb-6 cursor-pointer text-center text-4xl font-bold duration-500 hover:text-gradient ">
+            <h1 className="mb-6 cursor-pointer text-center sm:text-4xl text-3xl font-bold duration-500 hover:text-gradient ">
             <Link href={'/' + lang + href}>{title}</Link>
             </h1>
             <p className="mb-6 max-w-[450px] text-center  text-muted-foreground ">{description}</p>

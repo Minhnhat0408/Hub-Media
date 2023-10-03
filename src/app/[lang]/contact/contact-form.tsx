@@ -89,7 +89,7 @@ export default function ContactForm({
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className={cn('mt-9  w-full space-y-12 ')}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className={cn('mt-9  w-full sm:space-y-12 space-y-6 ')}>
                 <FormField
                     control={form.control}
                     name="name"
@@ -100,14 +100,14 @@ export default function ContactForm({
                                     placeholder="Full Name"
                                     type="text"
                                     {...field}
-                                    className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-white duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
+                                    className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
                                 />
                             </FormControl>
                             <FormMessage className="text-gradient" />
                         </FormItem>
                     )}
                 />
-                <div className="flex gap-x-20 ">
+                <div className="flex ssm:flex-row  !flex-col gap-x-20 gap-y-6">
                     <FormField
                         control={form.control}
                         name="email"
@@ -118,7 +118,7 @@ export default function ContactForm({
                                         placeholder="Email"
                                         type="email"
                                         {...field}
-                                        className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-white duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
+                                        className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
                                     />
                                 </FormControl>
                                 <FormMessage className="text-gradient" />
@@ -135,7 +135,7 @@ export default function ContactForm({
                                         placeholder="Phone"
                                         type="text"
                                         {...field}
-                                        className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-white duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
+                                        className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
                                     />
                                 </FormControl>
                                 <FormMessage className="text-gradient" />
@@ -153,7 +153,7 @@ export default function ContactForm({
                                     <SelectTrigger
                                         className={cn(
                                             'rounded-none border-[2px] border-l-0 border-r-0 border-t-0 border-muted-foreground text-base text-muted-foreground placeholder:text-muted-foreground',
-                                            (form.getValues().services || defaultService) && ' text-white',
+                                            (form.getValues().services || defaultService) && ' text-gradient',
                                         )}
                                     >
                                         <SelectValue placeholder="Select a Services of your choice" />
@@ -181,7 +181,7 @@ export default function ContactForm({
                                 <Textarea
                                     placeholder="Additional Message"
                                     {...field}
-                                    className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-white duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
+                                    className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
                                 />
                             </FormControl>
                             <FormMessage className="text-gradient" />
