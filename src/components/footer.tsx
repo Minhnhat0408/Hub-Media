@@ -76,42 +76,42 @@ export async function Footer({lang}:{lang:Locale}) {
                         <div className="mb-3 flex items-start">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
 
-                            <a
+                            <Link
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
-                                href="#home-hero"
+                                href={'/' + lang + '/services/brand-design'}
                             >
-                                Branding & Identity
-                            </a>
+                                Branding Design
+                            </Link>
                         </div>
                         <div className="mb-3 flex items-start">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
 
-                            <a
+                            <Link
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
-                                href="#portfolio"
+                                href={'/' + lang + '/services/event-photography'}
                             >
-                                Digital Marketing
-                            </a>
+                                Event Photography
+                            </Link>
                         </div>
                         <div className="mb-3 flex items-start">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
 
-                            <a
+                            <Link
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
-                                href="#faq"
+                                href={'/' + lang + '/services/web-dev'}
                             >
                                 Web Design & Development
-                            </a>
+                            </Link>
                         </div>
                         <div className="mb-3 flex items-start">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
 
-                            <a
+                            <Link
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
-                                href="#services"
+                                href={'/' + lang + '/services/pd-design'}
                             >
-                                UI & UX Designing
-                            </a>
+                                Pitch Deck Design
+                            </Link>
                         </div>
                     </div>
                     <div className="mt-[50px] h-full  text-white xl:flex xl:flex-col">
@@ -204,7 +204,7 @@ export async function Footer({lang}:{lang:Locale}) {
                         </Link>
                     </li>
                     <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                        <Link href={'https://youtube.com/@HubMedia-Vietnam/'} target="_blank">
+                        <Link href={'https://www.youtube.com/@FoundersFridayVN'} target="_blank">
                             <TbBrandYoutube />
                         </Link>
                     </li>

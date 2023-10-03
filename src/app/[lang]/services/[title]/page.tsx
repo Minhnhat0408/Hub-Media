@@ -47,7 +47,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                         <p className=" pl-4 font-medium text-muted-foreground">{data.tags.join(' - ')}</p>
                     </div>
                 </div>
-                <Slider className="relative  aspect-[4/3] !w-full lg:!w-[50vw] xl:!w-[45vw]">
+                <Slider className="relative  xl:aspect-[4/3] lg:aspect-square md:aspect-[4/3] aspect-square !w-full lg:!w-[50vw] xl:!w-[45vw]">
                     <Image
                         src={'https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg'}
                         alt="img"

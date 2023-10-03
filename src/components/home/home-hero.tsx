@@ -27,7 +27,7 @@ function HomeHero({ home, lang }: { home: any; lang: Locale }) {
                             </Link>
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <Link href={'https://youtube.com/@HubMedia-Vietnam/'} target="_blank">
+                            <Link href={'https://www.youtube.com/@FoundersFridayVN'} target="_blank">
                                 <TbBrandYoutube />
                             </Link>
                         </li>

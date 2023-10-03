@@ -167,7 +167,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                                     </Link>
                                 </div>
                                 <div className=" cursor-pointer duration-1000 hover:text-gradient">
-                                    <Link href={'https://youtube.com/@HubMedia-Vietnam/'} target="_blank">
+                                    <Link href={'https://www.youtube.com/@FoundersFridayVN'} target="_blank">
                                         <TbBrandYoutube />
                                     </Link>
                                 </div>

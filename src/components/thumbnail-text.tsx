@@ -23,7 +23,7 @@ function ThumbNailText({
 }) {
     const pathname = usePathname();
     return (
-        <article className={cn('md:group relative flex h-[500px] md:py-0 py-6 xl:flex-1 md:w-1/2 w-full   flex-col border-r-[1px] border-muted-foreground',className)}>
+        <article className={cn('group relative flex h-[500px] md:py-0 py-6 xl:flex-1 md:w-1/2 w-full   flex-col border-r-[1px] border-muted-foreground',className)}>
             <div className="flex h-fit w-full flex-col justify-center xl:items-start lg:items-center sm:px-[40px] px-4  pb-5 ">
                 <h1 className="mb-6 cursor-pointer sm:text-4xl text-2xl  font-bold duration-500 group-hover:text-gradient ">
                     <Link href={pathRemainLang({ pathname, newpath: href })}>{title}</Link>
