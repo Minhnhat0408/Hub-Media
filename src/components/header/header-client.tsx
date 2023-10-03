@@ -34,9 +34,9 @@ function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
             }}
             animate={hidden ? 'hidden' : 'visible'}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="bg-header z-0 flex items-center md:h-[90px] h-[76px] justify-between sm:px-8 px-2 font-[500]"
+            className="bg-header z-0 flex items-center md:h-[90px] h-[60px] justify-between sm:px-8 px-2 font-[500]"
         >
-            <Image src={'/logo/logonotext.png'} className="md:!ml-10 ssm:h-16 h-[80%] w-auto ssm:w-[90px] " height={500} width={500} alt="logo" />
+            <Image src={'/logo/logonotext.png'} className="md:!ml-10 ml-4  h-[80%] w-auto  " height={500} width={500} alt="logo" />
             <NavBar lang={lang} navigation={navigation} />
             <div className="flex gap-x-4">
                 <Button

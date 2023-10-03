@@ -107,7 +107,7 @@ export default function ContactForm({
                         </FormItem>
                     )}
                 />
-                <div className="flex ssm:flex-row  !flex-col gap-x-20 gap-y-6">
+                <div className="flex ssm:flex-row  flex-col gap-x-20 gap-y-6">
                     <FormField
                         control={form.control}
                         name="email"

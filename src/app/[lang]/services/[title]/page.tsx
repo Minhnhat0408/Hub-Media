@@ -17,7 +17,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                 src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/services-breadcrumb.jpg"
                 title={data.title}
             />
-            <section className="flex w-full flex-col gap-y-10 ssm:px-10 !px-4 py-20 lg:flex-row xl:!px-20">
+            <section className="flex w-full flex-col gap-y-10 ssm:px-10 px-4 py-20 lg:flex-row xl:!px-20">
                 <div className="order-2 flex h-auto flex-1 flex-col justify-center gap-y-8 pl-0 lg:order-none lg:gap-y-12 lg:pl-10  ">
                     <div className="w-3/4 ">
                         <h1 className="mb-2 text-3xl font-bold lg:mb-4 lg:text-4xl ">
@@ -105,7 +105,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                 <TabsContent
                                     key={index}
                                     value={item}
-                                    className="flex flex-wrap w-full justify-center gap-y-20  gap-x-20 px-10"
+                                    className="flex flex-wrap w-full justify-center gap-y-20  gap-x-20 ssm:px-10 px-4"
                                 >
                                     {Object.entries(data.packages)
                                         .filter((val) => {
@@ -159,7 +159,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                         <TabsContent value="password"></TabsContent> */}
                     </Tabs>
                 ) : (
-                    <div className="flex flex-wrap w-full justify-center gap-y-20  xl:gap-x-20 gap-x-10   ssm:px-10 !px-4">
+                    <div className="flex flex-wrap w-full justify-center gap-y-20  xl:gap-x-20 gap-x-10   ssm:px-10 px-4">
                         {Object.entries(data.packages).map((item, index: Key) => {
                             const [pkg, type] = item[0].split('/');
                             const infor = item[1] as any;

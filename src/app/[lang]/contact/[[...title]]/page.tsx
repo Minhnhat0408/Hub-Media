@@ -47,7 +47,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                             <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
                             <BsMessenger />
                         </Link>
-                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base !text-sm text-muted-foreground ">
+                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base text-sm text-muted-foreground ">
                             Contact us with Messenger
                         </p>
                     </div>
@@ -59,7 +59,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                             <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
                             <BsFillTelephoneFill />
                         </Link>
-                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base !text-sm text-muted-foreground ">
+                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base text-sm text-muted-foreground ">
                             Make a phone call directly to us
                         </p>
                     </div>
@@ -71,7 +71,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                             <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
                             <FaWpforms />
                         </Link>
-                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base !text-sm text-muted-foreground ">
+                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base text-sm text-muted-foreground ">
                             Fill the form to contact us
                         </p>
                     </div>
@@ -121,7 +121,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                 <h2 className="xl:w-[600px] sm:!w-[400px] flex-1 xl:text-7xl md:text-5xl text-3xl  font-bold text-gradient ">We&apos;ll response to you in an hour</h2>
                 {/* <p className="w-[30%] text-3xl text-muted-foreground">Thanks for reaching out to us</p> */}
             </Reveal>
-            <section id="form"  className="flex flex-wrap  w-full xl:!p-20 ssm:p-10 !p-4 gap-y-20">
+            <section id="form"  className="flex flex-wrap  w-full xl:!p-20 ssm:p-10 p-4 gap-y-20">
                 <div className="xl:ml-10 flex md:w-[55%] w-full  flex-col">
                     <div className="sm:mb-8  flex gap-x-4 ">
                         <Mark dotanimate lineanimate horizontal classDot="ml-4" />
@@ -150,11 +150,11 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                             className="h-auto w-full"
                         />
                         <h2 className="mt-12  text-3xl font-bold">Enquiries</h2>
-                        <div className="flex lg:!flex-row md:!flex-col ssm:flex-row !flex-col justify-between gap-x-4">
+                        <div className="flex lg:!flex-row md:!flex-col ssm:flex-row flex-col justify-between gap-x-4">
                             <p>0965053420</p>
                             <p>hubmedia.vietnam@gmail.com</p>
                         </div>
-                        <ul className="flex lg:!items-center md:!items-start ssm:items-center  lg:!flex-row md:!flex-col ssm:flex-row !flex-col gap-x-4 text-base text-muted-foreground  ">
+                        <ul className="flex lg:!items-center md:!items-start ssm:items-center  lg:!flex-row md:!flex-col ssm:flex-row flex-col gap-x-4 text-base text-muted-foreground  ">
                             <li className='flex mb-1'>
                                 <div className=" cursor-pointer duration-1000 hover:text-gradient">
                                     <Link href={'https://www.facebook.com/HubMediaVN'} target="_blank">

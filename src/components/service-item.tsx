@@ -34,7 +34,7 @@ export default function ServiceItem({
                     <MarkupButton title={lang === 'vi' ? 'Tìm hiểu thêm' : 'Read more'} href={'/' + lang + href} className="sm:py-6" />
                 </div>
             </div>
-            <h1 className="mb-6 cursor-pointer text-center sm:text-4xl text-3xl font-bold duration-500 hover:text-gradient ">
+            <h1 className="mb-6 cursor-pointer text-center sm:text-4xl text-2xl font-bold duration-500 hover:text-gradient ">
             <Link href={'/' + lang + href}>{title}</Link>
             </h1>
             <p className="mb-6 max-w-[450px] text-center  text-muted-foreground ">{description}</p>
