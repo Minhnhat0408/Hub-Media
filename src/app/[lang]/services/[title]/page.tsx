@@ -9,9 +9,10 @@ import { Key } from 'react';
 import { PiPaperPlaneRightFill } from 'react-icons/pi';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Metadata } from 'next';
+import Package from '@/components/services/package';
 
-export async function generateMetadata({ params }: { params: {  title: string; lang: Locale }}): Promise<Metadata> {
-    const { title,description  } = await getSpecifiedService(params.lang, params.title);
+export async function generateMetadata({ params }: { params: { title: string; lang: Locale } }): Promise<Metadata> {
+    const { title, description } = await getSpecifiedService(params.lang, params.title);
     return {
         title: 'Hub Media - ' + title,
         openGraph: {
@@ -23,14 +24,14 @@ export async function generateMetadata({ params }: { params: {  title: string; l
 
 async function Service({ params: { title, lang } }: { params: { title: string; lang: Locale } }) {
     const data = await getSpecifiedService(lang, title);
-    let countService = -1
+    let countService = -1;
     return (
-        <main className=" h-fit w-full py-20 ">
+        <main className=" h-fit w-full md:py-20 py-[60px] ">
             <PageTitle
                 src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/services-breadcrumb.jpg"
                 title={data.title}
             />
-            <section className="flex w-full flex-col gap-y-10 ssm:px-10 px-4 py-20 lg:flex-row xl:!px-20">
+            <section className="flex w-full flex-col gap-y-10 px-4 py-20 lg:flex-row xl:!px-20 ssm:px-10">
                 <div className="order-2 flex h-auto flex-1 flex-col justify-center gap-y-8 pl-0 lg:order-none lg:gap-y-12 lg:pl-10  ">
                     <div className="w-3/4 ">
                         <h1 className="mb-2 text-3xl font-bold lg:mb-4 lg:text-4xl ">
@@ -60,7 +61,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                         <p className=" pl-4 font-medium text-muted-foreground">{data.tags.join(' - ')}</p>
                     </div>
                 </div>
-                <Slider className="relative  xl:aspect-[4/3] lg:aspect-square md:aspect-[4/3] aspect-square !w-full lg:!w-[50vw] xl:!w-[45vw]">
+                <Slider className="relative  aspect-square !w-full md:aspect-[4/3] lg:aspect-square lg:!w-[50vw] xl:aspect-[4/3] xl:!w-[45vw]">
                     <Image
                         src={'https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg'}
                         alt="img"
@@ -97,14 +98,14 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                 </Slider>
             </section>
             <section className="w-full">
-                <Heading title={'Budget Friendly'} description={'Choose your best plan'} />
+                <Heading title={'Budget Friendly'} description= {lang === 'vi' ? 'Chọn gói của bạn' : 'Choose your best plan'} />
                 {data?.types ? (
                     <Tabs defaultValue={data.types[0]} className="flex w-full flex-col items-center ">
-                        <TabsList className="flex  h-fit w-fit text-white mb-10 ">
+                        <TabsList className="mb-10  flex h-fit w-fit text-white ">
                             {data.types.map((item: string, index: Key) => {
                                 return (
                                     <TabsTrigger
-                                        className="h-12 w-40 data-[state=active]:bg-gradient "
+                                        className="h-8 w-24 text-sm data-[state=active]:bg-gradient sm:h-12 sm:w-40 sm:text-base "
                                         key={index}
                                         value={item}
                                     >
@@ -118,101 +119,48 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                 <TabsContent
                                     key={index}
                                     value={item}
-                                    className="flex flex-wrap w-full justify-center gap-y-20  gap-x-20 ssm:px-10 px-4"
+                                    className="flex w-full flex-wrap justify-center gap-x-20  gap-y-20 px-4 ssm:px-10"
                                 >
                                     {Object.entries(data.packages)
                                         .filter((val) => {
                                             return val[0].includes(item);
                                         })
                                         .map((item, index: Key) => {
-                                            countService +=1
+                                            countService += 1;
                                             const [pkg, type] = item[0].split('/');
                                             const infor = item[1] as any;
                                             return (
-                                                <div
+                                                <Package
                                                     key={index}
-                                                    className="group flex md:h-[600px]   w-[450px] flex-col items-center gap-y-8 border-[1px] border-gradient py-10"
-                                                >
-                                                    <div className="flex h-fit flex-col items-center ">
-                                                        {/* {type && <h3 className="silver mb-2 text-3xl">{type}</h3>} */}
-                                                        <h3 className="text-3xl text-gradient ">{pkg}</h3>
-                                                    </div>
-
-                                                    <Coins className="h-20 w-20 rounded-full border-[1px] border-gradient p-4  text-gradient duration-500 group-hover:bg-gradient  group-hover:text-white " />
-                                                    <h3 className="super ssm:text-4xl !text-3xl text-gradient  ">
-                                                        {infor.price[0]}
-                                                        <span className="text-sm "> vnd</span>
-                                                        <span className="text-sm ">
-                                                            {infor.price.length > 1 && ' / ' + infor.price[1]}
-                                                        </span>
-                                                    </h3>
-                                                    <ul className="mt-4 flex flex-col items-center gap-y-4 text-muted-foreground">
-                                                        {infor?.details ? (
-                                                            infor.details.map((item: string, ind: Key) => {
-                                                                return <li key={ind}>{item}</li>;
-                                                            })
-                                                        ) : (
-                                                            <li>No specific details</li>
-                                                        )}
-                                                    </ul>
-                                                    <a
-                                                        className="mt-4 flex items-center justify-center rounded-none border-[1px] border-gradient px-4 py-3  duration-500 group-hover:bg-gradient "
-                                                        href={'/' + lang + '/contact/' + title + '/' + countService  + '#form'}
-                                                    >
-                                                        <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
-                                                        Choose Plan
-                                                    </a>
-                                                </div>
+                                                    title={title}
+                                                    pkg={pkg}
+                                                    price={infor.price}
+                                                    details={infor.details}
+                                                    lang={lang}
+                                                    countService={countService}
+                                                />
                                             );
                                         })}
                                 </TabsContent>
                             );
                         })}
-
-                        {/* <TabsContent value="account"></TabsContent>
-                        <TabsContent value="password"></TabsContent> */}
                     </Tabs>
                 ) : (
-                    <div className="flex flex-wrap w-full justify-center gap-y-20  xl:gap-x-20 gap-x-10   ssm:px-10 px-4">
+                    <div className="flex w-full flex-wrap justify-center gap-x-10  gap-y-20 px-4   xl:gap-x-20 ssm:px-10">
                         {Object.entries(data.packages).map((item, index: Key) => {
-                            countService +=1
+                            countService += 1;
                             const [pkg, type] = item[0].split('/');
                             const infor = item[1] as any;
                             return (
-                                <div
+                                <Package
                                     key={index}
-                                    className="group flex md:h-[600px]  w-[450px] flex-col items-center gap-y-8 border-[1px] border-gradient py-10"
-                                >
-                                    <div className="flex h-fit flex-col items-center ">
-                                        {type && <h3 className="silver mb-2 text-3xl">{type}</h3>}
-                                        <h3 className="text-3xl text-gradient ">{pkg}</h3>
-                                    </div>
-
-                                    <Coins className="h-20 w-20 rounded-full border-[1px] border-gradient p-4  text-gradient duration-500 group-hover:bg-gradient  group-hover:text-white " />
-                                    <h3 className="super ssm:text-4xl !text-3xl text-gradient  ">
-                                        {infor.price[0]}
-                                        <span className="text-sm "> vnd</span>
-                                        <span className="text-sm ">
-                                            {infor.price.length > 1 && ' / ' + infor.price[1]}
-                                        </span>
-                                    </h3>
-                                    <ul className="mt-4 flex flex-col items-center gap-y-4 text-muted-foreground">
-                                        {infor?.details ? (
-                                            infor.details.map((item: string, ind: Key) => {
-                                                return <li key={ind}>{item}</li>;
-                                            })
-                                        ) : (
-                                            <li>No specific details</li>
-                                        )}
-                                    </ul>
-                                    <a
-                                        className="mt-4 flex items-center justify-center rounded-none border-[1px] border-gradient px-4 py-3  duration-500 group-hover:bg-gradient "
-                                        href={'/' + lang + '/contact/' + title + '/' + countService  + '#form'}
-                                    >
-                                        <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
-                                        Choose Plan
-                                    </a>
-                                </div>
+                                    title={title}
+                                    pkg={pkg}
+                                    price={infor.price}
+                                    details={infor.details}
+                                    lang={lang}
+                                    countService={countService}
+                                />
                             );
                         })}
                     </div>

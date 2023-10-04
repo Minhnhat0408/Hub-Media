@@ -17,6 +17,10 @@
     "services": {
       "title": "Hub Media - Dịch vụ",
       "description": "Tổng hợp các dịch vụ của Hub Media" 
+    },
+    "contact": {
+      "title": "Hub Media - Liên hệ",
+      "description": "Liên hệ với Hub Media để được tư vấn và hỗ trợ." 
     }
     
   },

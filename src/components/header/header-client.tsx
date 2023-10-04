@@ -10,6 +10,7 @@ import { Locale } from '@/i18n.config';
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import useHandleScrollEvent from '@/hooks/useHandleScrollEvent';
 
 function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
     const { scrollY } = useScroll();

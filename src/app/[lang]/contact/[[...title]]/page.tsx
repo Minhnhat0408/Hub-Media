@@ -12,10 +12,21 @@ import ContactForm from '../contact-form';
 import { getDictionary, getServices, getSpecifiedService } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 import { redirect } from 'next/navigation';
+import { Metadata } from 'next';
 const Map = dynamic(() => import('@/components/map'), {
     ssr: false,
 });
 
+export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
+    const { metadata } = await getDictionary(params.lang);
+    return {
+        title: metadata.contact.title,
+        openGraph: {
+            images: ['/images/backlog.png'],
+        },
+        description: metadata.contact.description,
+    };
+}
 
 export default async function ContactPage({ params: { lang, title } }: { params: { lang: Locale; title: string } }) {
     const services  = await getServices(lang);
@@ -42,7 +53,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
         <main className="w-full  ">
             <PageTitle
                 src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/services-breadcrumb.jpg"
-                title="Contact"
+                title={lang === 'vi' ? 'Liện hệ' : 'Contact'}
             />
 
             <section  className="w-full lg:!p-20  xl:!px-40 lg:!px-28  ssm:p-10 !p-4 !py-10 !pt-20 ">
@@ -56,8 +67,8 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                             <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
                             <BsMessenger />
                         </Link>
-                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base text-sm text-muted-foreground ">
-                            Contact us with Messenger
+                        <p className="mt-10 md:!w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base text-sm text-muted-foreground ">
+                        {lang === 'vi' ? 'Liên lạc với chúng tôi bằng Messenger' : 'Contact us via Facebook Messenger'}
                         </p>
                     </div>
                     <div className="group flex flex-1 flex-col items-center ">
@@ -68,8 +79,8 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                             <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
                             <BsFillTelephoneFill />
                         </Link>
-                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base text-sm text-muted-foreground ">
-                            Make a phone call directly to us
+                        <p className="mt-10 md:!w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base text-sm text-muted-foreground ">
+                         {lang === 'vi' ? 'Gọi trực tiếp cho chúng tôi' : 'Make a phone call directly to us'}
                         </p>
                     </div>
                     <div className="group flex flex-1 flex-col items-center  ">
@@ -80,8 +91,9 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                             <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
                             <FaWpforms />
                         </Link>
-                        <p className="mt-10 md:w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base text-sm text-muted-foreground ">
-                            Fill the form to contact us
+                        <p className="mt-10 md:!w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base text-sm text-muted-foreground ">
+                         {lang === 'vi' ? 'Điền vào form và gửi cho chúng tôi' : 'Fill the form to contact us'}
+                      
                         </p>
                     </div>
                 </Reveal>
@@ -127,19 +139,22 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                         <path d="M70.9,17.2c-0.2,0-0.5-0.1-0.7-0.2c-0.7-0.4-0.9-1.2-0.5-1.9l2.5-4.4c0.4-0.7,1.2-0.9,1.9-0.5c0.7,0.4,0.9,1.2,0.5,1.9  l-2.5,4.4C71.8,16.9,71.3,17.2,70.9,17.2z"></path>
                     </g>
                 </svg>
-                <h3 className="xl:max-w-[600px] block  sm:max-w-[400px] flex-1 xl:text-7xl md:text-5xl text-3xl  font-bold text-gradient ">We&apos;ll response to you in an hour</h3>
+                <h3 className="xl:max-w-[600px] block  sm:max-w-[400px] flex-1 xl:text-7xl md:text-5xl text-3xl  font-bold text-gradient ">
+                         {lang === 'vi' ? 'Phản hồi trong vòng 1 tiếng' : "We'll response to you in an hour"}
+
+                    </h3>
                 {/* <p className="w-[30%] text-3xl text-muted-foreground">Thanks for reaching out to us</p> */}
             </Reveal>
             <section id="form"  className="flex md:flex-nowrap flex-wrap  w-full xl:!p-20 ssm:p-10 p-4 gap-y-20">
                 <div className="xl:ml-10 flex md:w-[55%] w-full  flex-col">
                     <div className="sm:mb-8  flex gap-x-4 ">
                         <Mark dotanimate lineanimate horizontal classDot="ml-4" />
-                        <p className="sm:text-3xl text-xl text-muted-foreground">Get In touch</p>
+                        <p className="sm:text-3xl text-xl text-muted-foreground">{lang === 'vi' ? 'Kết nối' : "Get in touch"}</p>
                     </div>
                     <div className="flex">
-                        <LetterAppear className="xl:!text-5xl ssm:text-4xl text-3xl font-[800] !text-white">Reach Out to Us</LetterAppear>
+                        <LetterAppear className="xl:!text-5xl ssm:text-4xl text-3xl font-bold !text-white">{lang === 'vi' ? 'Liên hệ qua Email' : "Reach out to us"}</LetterAppear>
                     </div>
-                    <ContactForm  listServices={services} defaultService={defaultService} defaultMsg={defaultMsg} />
+                    <ContactForm lang={lang}  listServices={services} defaultService={defaultService} defaultMsg={defaultMsg} />
                 </div>
                 <div className="flex-1  2xl:pl-40 xl:pl-28 md:pl-10  2xl:pr-10  ">
                     <Reveal
@@ -148,7 +163,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                     >
                         <h2 className="xl:text-[54px] lg:text-5xl text-4xl font-bold">Thanks!</h2>
                         <p className="w-[80%] text-muted-foreground">
-                            Please wait for our community department to response to you.
+                          {lang === 'vi' ? 'Xin hãy đợi chúng tôi phản hồi.' : "Please wait for our community department to response to you."}
                         </p>
                         <Image
                             src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/career-img.jpg"
@@ -158,7 +173,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                             sizes="100vw"
                             className="h-auto w-full"
                         />
-                        <h2 className="mt-12  text-3xl font-bold">Enquiries</h2>
+                        <h2 className="mt-12  text-3xl font-bold"> {lang === 'vi' ? 'Góp ý' : "Enquiries"}</h2>
                         <div className="flex lg:!flex-row md:!flex-col ssm:flex-row flex-col justify-between gap-x-4">
                             <p>0965053420</p>
                             <p>hubmedia.vietnam@gmail.com</p>
@@ -186,7 +201,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                                     </Link>
                                 </div>
                             </li>
-                            <li className="flex-1 lg:!text-right md:!text-left ssm:text-right text-base">Working hour: 8:00 - 17:00</li>
+                            <li className="flex-1 lg:!text-right md:!text-left ssm:text-right text-base"> {lang === 'vi' ? 'Giờ làm việc: 8:00 - 17:00' : "Working hour: 8:00 - 17:00"}</li>
                         </ul>
                     </Reveal>
                 </div>

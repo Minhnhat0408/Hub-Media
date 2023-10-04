@@ -11,6 +11,7 @@ import { useForm } from 'react-hook-form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
+import { Locale } from '@/i18n.config';
 // import { sendEmail } from '@/app/api/_fetch/resend';
 const ContactSchema = z.object({
     email: z.string().email({
@@ -29,11 +30,13 @@ type tContactSchema = z.infer<typeof ContactSchema>;
 export default function ContactForm({
     listServices,
     defaultService,
-    defaultMsg
+    defaultMsg,
+    lang
 }: {
     listServices: Object;
     defaultService: string | undefined;
     defaultMsg: string ;
+    lang: Locale
 }) {
     const form = useForm<tContactSchema>({
         resolver: zodResolver(ContactSchema),
@@ -50,10 +53,10 @@ export default function ContactForm({
         const res = await toast.promise(
             axios.post('/api/contact', formdata),
             {
-                loading: 'Please wait for a moment',
+                loading:  <p>{lang === 'vi' ? 'Xin hãy đợi 1 chút' : 'Please wait for a moment'}</p>,
                 success: (data) => {
                     form.reset();
-                    return <p> Form has been saved</p>;
+                    return <p> {lang === 'vi' ? 'Form đã được gửi' : "Form has been sent"}</p>;
                 },
                 error: 'Error while sending form',
             },
@@ -99,7 +102,7 @@ export default function ContactForm({
                         <FormItem className="h-[50px]">
                             <FormControl>
                                 <Input
-                                    placeholder="Full Name"
+                                    placeholder={lang === 'vi' ? 'Tên đầy đủ' : "Full Name"}
                                     type="text"
                                     {...field}
                                     className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
@@ -134,7 +137,7 @@ export default function ContactForm({
                             <FormItem className="h-[50px] w-full">
                                 <FormControl>
                                     <Input
-                                        placeholder="Phone"
+                                        placeholder={lang === 'vi' ? 'Số điện thoại' : "Phone"}
                                         type="text"
                                         {...field}
                                         className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
@@ -158,7 +161,7 @@ export default function ContactForm({
                                             (form.getValues().services || defaultService) && ' text-gradient',
                                         )}
                                     >
-                                        <SelectValue placeholder="Select a Services of your choice" />
+                                        <SelectValue placeholder={lang === 'vi' ? 'Chọn dịch vụ của bạn' : "Select a Services of your choice"} />
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent className="bg-background">
@@ -181,7 +184,7 @@ export default function ContactForm({
                         <FormItem className="h-[70px]">
                             <FormControl>
                                 <Textarea
-                                    placeholder="Additional Message"
+                                    placeholder={lang === 'vi' ? 'Thông tin đi kèm' :"Additional Message"}
                                     {...field}
                                     defaultValue={defaultMsg}
                                     className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
@@ -197,7 +200,7 @@ export default function ContactForm({
                     disabled={form.formState.isSubmitting}
                     className="items-centers !mt-20 flex  font-bold uppercase tracking-widest "
                 >
-                    Submit
+                    {lang === 'vi' ? 'Gửi' : "Submit"}
                     {form.formState.isSubmitting && <AiOutlineLoading3Quarters className="ml-3 animate-spin " />}
                 </Button>
             </form>

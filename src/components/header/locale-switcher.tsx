@@ -22,11 +22,11 @@ export default function LocaleSwitcher({ lang,className,full =  false }: { lang:
       <SelectTrigger className={cn('w-16 ',className)} >
         <SelectValue placeholder={full ? ( lang === 'vi' ? "Tiếng Việt" : "English" ): lang} className='text-foreground ' />
       </SelectTrigger>
-      <SelectContent className='min-w-0 ' >
+      <SelectContent className='min-w-0  ' >
         {i18n.locales.map(locale => {
           if (locale !== lang) {
             return (
-              <SelectItem key={locale} value={locale} className='flex pl-2' >
+              <SelectItem key={locale} value={locale} className='flex pl-2 cursor-pointer' >
                 {full ? ( locale === 'vi' ? "Tiếng Việt" : "English" ): locale}
               </SelectItem>
             )

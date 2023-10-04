@@ -17,6 +17,10 @@
     "services": {
       "title": "Hub Media - Services",
       "description": "All services provided by Hub Media Corporation." 
+    },
+    "contact": {
+      "title": "Hub Media - Contact",
+      "description": "Contact with Hub Media to get more information and services." 
     }
     
   },

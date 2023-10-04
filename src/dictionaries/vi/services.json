@@ -1,5 +1,5 @@
 {
-    "Pitch Deck Design": {
+    "Thiết Kế Pitch Deck": {
         "href": "/services/pd-design",
         "details": ["1. Đồng bộ màu sắc của toàn bộ slide theo bộ nhận diện", 
         "2. Thiết kế bố cục slide tinh gọn, hiện đại", 
@@ -16,7 +16,7 @@
         "description": "Chuyên thiết kế thương hiệu độc đáo, nhất quán bao gồm logo, key visual, banner và nhiều hơn thế.",
         "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg"
     },
-    "CIP Design": {
+    "Thiết Kế Bộ Nhận Diện": {
         "href": "/services/cip-design",
         "details": ["Standard: Logo dạng chữ", 
         "Advanced: Logo biểu tượng", 
@@ -32,13 +32,13 @@
         "description": "Quay chụp các sự kiện với hình ảnh chất lượng cao, sáng tạo nhằm marketing hoặc lưu lại kỷ niệm.",
         "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332"
     },
-    "Basic Design": {
+    "Thiết Kế Cơ Bản": {
         "href": "/services/basic-design",
         "details": ["Bao gồm post, thư mời, banner,..."],
         "description": "Our skilled photographers capture event essence with high-quality images for marketing and memories.",
         "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332"
     },
-    "Web Development": {
+    "Xây Dựng Website": {
         "href": "/services/web-dev",
         "details": ["Standard: Logo dạng chữ", 
         "Advanced: Logo biểu tượng", 
@@ -46,7 +46,7 @@
         "description": "We craft concise summaries and dynamic trailers to convey event significance or marketing.",
         "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png"
     },
-    "Video Quảng Cáo": {
+    "Video Quảng Bá": {
         "href": "/services/recap-trailer",
         "details": ["Standard: Logo dạng chữ", 
         "Advanced: Logo biểu tượng", 
