@@ -17,22 +17,22 @@ function HomeHero({ home, lang }: { home: any; lang: Locale }) {
                 <Reveal hiddenY={100} className="flex h-fit flex-1 flex-col items-center">
                     <ul className="flex flex-col items-center  ssm:text-4xl text-2xl text-muted-foreground duration-1000">
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <Link href={'https://www.facebook.com/HubMediaVN'} target="_blank">
+                            <Link aria-label="Go to Hub Media's Fanpage" href={'https://www.facebook.com/HubMediaVN'} target="_blank">
                                 <TbBrandFacebook />
                             </Link>
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <Link href={'http://linkedin.com/company/hub-media-vietnam'} target="_blank">
+                            <Link aria-label="Go to Hub Media's Linkedin" href={'http://linkedin.com/company/hub-media-vietnam'} target="_blank">
                                 <TbBrandLinkedin />
                             </Link>
                         </li>
-                        <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
+                        <li  aria-label="Go to Hub Media's Youtube" className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
                             <Link href={'https://www.youtube.com/@FoundersFridayVN'} target="_blank">
                                 <TbBrandYoutube />
                             </Link>
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <Link href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}>
+                            <Link aria-label="Go to Hub Media's Tiktok" href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}>
                                 <TbBrandTiktok />
                             </Link>
                         </li>

@@ -194,22 +194,22 @@ export async function Footer({lang}:{lang:Locale}) {
 
                 <ul className="flex gap-x-4 ssm:text-2xl text-base ">
                     <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                        <Link href={'https://www.facebook.com/HubMediaVN'} target="_blank">
+                        <Link aria-label='Go to Hub Media Fanpage' href={'https://www.facebook.com/HubMediaVN'} target="_blank">
                             <TbBrandFacebook />
                         </Link>
                     </li>
                     <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                        <Link href={'http://linkedin.com/company/hub-media-vietnam'} target="_blank">
+                        <Link aria-label="Go to Hub Media's Linkedin" href={'http://linkedin.com/company/hub-media-vietnam'} target="_blank">
                             <TbBrandLinkedin />
                         </Link>
                     </li>
                     <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                        <Link href={'https://www.youtube.com/@FoundersFridayVN'} target="_blank">
+                        <Link aria-label="Go to Hub Media's Youtube Channel" href={'https://www.youtube.com/@FoundersFridayVN'} target="_blank">
                             <TbBrandYoutube />
                         </Link>
                     </li>
                     <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                        <Link href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}>
+                        <Link aria-label="Go to Hub Media's Tiktok" href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}>
                             <TbBrandTiktok />
                         </Link>
                     </li>

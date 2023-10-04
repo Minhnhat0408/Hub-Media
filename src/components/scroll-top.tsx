@@ -16,7 +16,7 @@ export default function ScrollTop() {
 
 
     return (
-        <a className={" bottom-20 right-6 text-[42px] text-gradient hover:opacity-80 z-[1000]" +( display ? ' fixed' : ' hidden') } href="#">
+        <a aria-label="Go to Top" className={" bottom-20 right-6 text-[42px] text-gradient hover:opacity-80 z-[1000]" +( display ? ' fixed' : ' hidden') } href="#">
             <BsArrowUpCircleFill />
         </a>
     );

@@ -16,11 +16,11 @@ export default function LocaleSwitcher({ lang,className,full =  false }: { lang:
   
   return (
 
-    <Select onValueChange={(value) => {
+    <Select name='locale-switcher' onValueChange={(value) => {
       router.push(redirectedPathName(value))
     }}>
       <SelectTrigger className={cn('w-16 ',className)} >
-        <SelectValue placeholder={full ? ( lang === 'vi' ? "Tiếng Việt" : "English" ): lang} className='text-foreground ' />
+        <SelectValue placeholder={full ? ( lang === 'vi' ? "Tiếng Việt" : "English" ): (lang !== 'vi' && lang !== 'en' ? i18n.defaultLocale : lang)} className='text-foreground ' />
       </SelectTrigger>
       <SelectContent className='min-w-0  ' >
         {i18n.locales.map(locale => {

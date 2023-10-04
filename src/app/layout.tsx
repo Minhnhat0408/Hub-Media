@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     openGraph: {
         images: ['/images/backlog.png'],
     },
+    themeColor: '##d9658c',
     viewport: 'width=device-width, initial-scale=1',
     description:
         'Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ.',

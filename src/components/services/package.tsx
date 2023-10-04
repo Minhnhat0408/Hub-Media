@@ -21,7 +21,7 @@ export default function Package({
         <div className="group flex w-[450px]  flex-col items-center gap-y-8 border-[1px] border-gradient py-10 md:h-[600px]">
             <div className="flex h-fit flex-col items-center ">
                 {/* {type && <h3 className="silver mb-2 text-3xl">{type}</h3>} */}
-                <h3 className="text-3xl text-gradient ">{pkg}</h3>
+                <h2 className="text-3xl text-gradient ">{pkg}</h2>
             </div>
 
             <Coins className="h-20 w-20 rounded-full border-[1px] border-gradient p-4  text-gradient duration-500 group-hover:bg-gradient  group-hover:text-white " />

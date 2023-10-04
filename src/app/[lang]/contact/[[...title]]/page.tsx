@@ -60,6 +60,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                 <Reveal hiddenX={200} className="flex justify-center lg:gap-x-20 md:gap-x-16 gap-x-4">
                     <div className="group flex flex-1 flex-col items-center  ">
                         <Link
+                            aria-label='Messenger'
                             href={'https://www.facebook.com/messages/t/102422339523278'}
                             target="_blank"
                             className="relative flex items-center justify-center xl:text-8xl md:text-7xl text-5xl text-gradient duration-500 group-hover:scale-[120%] "
@@ -73,12 +74,14 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                     </div>
                     <div className="group flex flex-1 flex-col items-center ">
                         <Link
+                            aria-label='Phone'
                             href={'tel:0965053420'}
                             className="relative flex items-center justify-center xl:text-8xl md:text-7xl text-5xl text-gradient duration-500 group-hover:scale-[120%] "
                         >
                             <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
                             <BsFillTelephoneFill />
                         </Link>
+
                         <p className="mt-10 md:!w-48 ssm:w-28 w-16  text-center xl:!text-xl ssm:text-base text-sm text-muted-foreground ">
                          {lang === 'vi' ? 'Gọi trực tiếp cho chúng tôi' : 'Make a phone call directly to us'}
                         </p>
@@ -86,6 +89,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                     <div className="group flex flex-1 flex-col items-center  ">
                         <Link
                             href={'#form'}
+                            aria-label='Form'
                             className="relative flex items-center justify-center xl:text-8xl md:text-7xl text-5xl text-gradient duration-500 group-hover:scale-[120%] "
                         >
                             <div className="animate-ping-big-slow absolute inline-flex xl:h-16 xl:w-16 md:h-12 md:w-12 h-8 w-8 rounded-full bg-gradient"></div>
