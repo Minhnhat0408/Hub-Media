@@ -11,13 +11,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: {  title: string; lang: Locale }}): Promise<Metadata> {
-    const { service  } = await getSpecifiedService(params.lang, params.title);
+    const { title,description  } = await getSpecifiedService(params.lang, params.title);
     return {
-        title: 'Hub Media' + service.title,
+        title: 'Hub Media - ' + title,
         openGraph: {
             images: ['/images/backlog.png'],
         },
-        description: service.description,
+        description: description,
     };
 }
 
