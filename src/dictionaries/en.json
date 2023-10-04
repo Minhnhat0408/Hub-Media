@@ -10,8 +10,15 @@
     "about": "ABOUT US"
   },
   "metadata": {
-    "title": "Hub Media - Connect your brand to the world",
+    "home": {
+      "title": "Hub Media - Connect your brand to the world",
     "description": "Hub Media is a digital marketing agency that provides livestreaming services, video production, and digital marketing services to connect your brand to the world."
+    },
+    "services": {
+      "title": "Hub Media - Services",
+      "description": "All services provided by Hub Media Corporation." 
+    }
+    
   },
   "pages": {
     "not-found": "Page not found.",
@@ -21,13 +28,6 @@
     ],
     "home": {
       "home-hero": {
-        "title": [
-          "offer",
-          "Branding Design",
-          "Event Photography",
-          "Web Development",
-          "Reports & Trailer"
-        ],
         "description": "Hub Media is an agency marketing that provides marketing solutions for businesses targeting the youth demographic"
       },
       "characteristics": {

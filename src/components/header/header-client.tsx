@@ -6,7 +6,6 @@ import Image from 'next/image';
 import NavBar from './navbar';
 import MobileSidebar from '../mobile-sidebar';
 import { Button } from '../ui/button';
-import { Dot } from 'lucide-react';
 import { Locale } from '@/i18n.config';
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
@@ -42,7 +41,7 @@ function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
                 <Button
                     size={'default'}
                     variant={'outline'}
-                    className={cn(" rounded-none pl-3 tracking-widest duration-700", pathname === '/' + lang + '/contact' ? 'border-gradient text-gradient' : '')}
+                    className={cn(" rounded-none pl-3 tracking-widest duration-700", pathname.includes('/contact') ? 'border-gradient text-gradient' : '')}
                     onClick={() => {
                         router.push('/' + lang + '/contact');
                     }}

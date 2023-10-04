@@ -19,5 +19,7 @@
             "price": ["1,500,000"],
             "details": ["Thời lượng: 1 phút", "3 lần chỉnh sửa"]
         }
-    }
+    },
+    "msg": ["Tôi muốn book gói Phóng sự Standard", "Tôi muốn book gói Recap Advanced"]
+
 }

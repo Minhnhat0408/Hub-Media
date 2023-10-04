@@ -5,17 +5,14 @@ import { getDictionary } from '@/lib/dictionary';
 import { Footer } from '@/components/footer';
 import './globals.css';
 
-
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
     const { metadata } = await getDictionary(params.lang);
     return {
-        metadataBase: new URL('https://pbhubmedia.vercel.app/'),
-        title: metadata.title,
+        title: metadata.home.title,
         openGraph: {
             images: ['/images/backlog.png'],
         },
-        viewport: 'width=device-width, initial-scale=1',
-        description: metadata.description,
+        description: metadata.home.description,
     };
 }
 
@@ -34,11 +31,9 @@ export default async function LangLayout({
 
     return (
         <>
-         
             <Header lang={params.lang} navigation={navigation} />
             {children}
             <Footer lang={params.lang} />
- 
         </>
     );
 }

@@ -29,9 +29,11 @@ type tContactSchema = z.infer<typeof ContactSchema>;
 export default function ContactForm({
     listServices,
     defaultService,
+    defaultMsg
 }: {
     listServices: Object;
     defaultService: string | undefined;
+    defaultMsg: string ;
 }) {
     const form = useForm<tContactSchema>({
         resolver: zodResolver(ContactSchema),
@@ -181,6 +183,7 @@ export default function ContactForm({
                                 <Textarea
                                     placeholder="Additional Message"
                                     {...field}
+                                    defaultValue={defaultMsg}
                                     className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
                                 />
                             </FormControl>

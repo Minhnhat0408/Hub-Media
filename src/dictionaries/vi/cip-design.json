@@ -20,5 +20,7 @@
             "price": ["8,000,000"],
             "details": ["4 mẫu demo", "4 lần chỉnh sửa"]
         }
-    }
+    },
+    "msg":["Tôi muốn book gói Standard","Tôi muốn book gói Advanced","Tôi muốn book gói Professional"]
+
 }

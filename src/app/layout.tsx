@@ -1,4 +1,4 @@
-import ScrollTop from '@/components/scrollTop';
+import ScrollTop from '@/components/scroll-top';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import React from 'react';
@@ -11,7 +11,6 @@ export const metadata: Metadata = {
         images: ['/images/backlog.png'],
     },
     viewport: 'width=device-width, initial-scale=1',
-
     description:
         'Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ.',
 };
@@ -22,7 +21,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
             <body>
                 <Toaster position="top-right" />
                 {children}
-                <ScrollTop />
+                <ScrollTop/>
                 <div id="fb-root"></div>
                 <div id="fb-customer-chat" className="fb-customerchat"></div>
                 <Script id="fb" strategy="lazyOnload">

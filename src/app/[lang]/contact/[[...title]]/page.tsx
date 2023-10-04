@@ -9,26 +9,35 @@ import { TbBrandFacebook, TbBrandLinkedin, TbBrandTiktok, TbBrandYoutube } from 
 import LetterAppear from '@/components/animations/letter-appear';
 import Reveal from '@/components/animations/reveal';
 import ContactForm from '../contact-form';
-import { getDictionary, getServices } from '@/lib/dictionary';
+import { getDictionary, getServices, getSpecifiedService } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 import { redirect } from 'next/navigation';
 const Map = dynamic(() => import('@/components/map'), {
     ssr: false,
 });
 
+
 export default async function ContactPage({ params: { lang, title } }: { params: { lang: Locale; title: string } }) {
     const services  = await getServices(lang);
     let defaultService: string | undefined = undefined;
-    if (title) {
+    let defaultMsg: string = ''
+   if (title) {
+        if (title[1] && Number(title[1]) < 3) {
+            const s = await getSpecifiedService(lang, title[0]);
+            defaultMsg = s.msg[Number(title[1])]
+        } 
         Object.entries(services).forEach(([key, value]) => {
             if (value.href.split('/')[2] === title[0]) {
                 defaultService = key;
             }
+            
         });
-        if (!defaultService || title.length > 1) {
-            redirect('/' + lang + '/not-found');
+        if(!defaultService || Number(title[1]) >2 ) {
+            redirect('/' + lang + '/not-found')
         }
+        
     }
+
     return (
         <main className="w-full  ">
             <PageTitle
@@ -36,7 +45,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                 title="Contact"
             />
 
-            <section  className="w-full lg:p-20  xl:px-40 lg:px-28  ssm:p-10 !p-4 !py-10 !pt-20 ">
+            <section  className="w-full lg:!p-20  xl:!px-40 lg:!px-28  ssm:p-10 !p-4 !py-10 !pt-20 ">
                 <Reveal hiddenX={200} className="flex justify-center lg:gap-x-20 md:gap-x-16 gap-x-4">
                     <div className="group flex flex-1 flex-col items-center  ">
                         <Link
@@ -118,10 +127,10 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                         <path d="M70.9,17.2c-0.2,0-0.5-0.1-0.7-0.2c-0.7-0.4-0.9-1.2-0.5-1.9l2.5-4.4c0.4-0.7,1.2-0.9,1.9-0.5c0.7,0.4,0.9,1.2,0.5,1.9  l-2.5,4.4C71.8,16.9,71.3,17.2,70.9,17.2z"></path>
                     </g>
                 </svg>
-                <h2 className="xl:w-[600px] sm:!w-[400px] flex-1 xl:text-7xl md:text-5xl text-3xl  font-bold text-gradient ">We&apos;ll response to you in an hour</h2>
+                <h3 className="xl:max-w-[600px] block  sm:max-w-[400px] flex-1 xl:text-7xl md:text-5xl text-3xl  font-bold text-gradient ">We&apos;ll response to you in an hour</h3>
                 {/* <p className="w-[30%] text-3xl text-muted-foreground">Thanks for reaching out to us</p> */}
             </Reveal>
-            <section id="form"  className="flex flex-wrap  w-full xl:!p-20 ssm:p-10 p-4 gap-y-20">
+            <section id="form"  className="flex md:flex-nowrap flex-wrap  w-full xl:!p-20 ssm:p-10 p-4 gap-y-20">
                 <div className="xl:ml-10 flex md:w-[55%] w-full  flex-col">
                     <div className="sm:mb-8  flex gap-x-4 ">
                         <Mark dotanimate lineanimate horizontal classDot="ml-4" />
@@ -130,7 +139,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                     <div className="flex">
                         <LetterAppear className="xl:!text-5xl ssm:text-4xl text-3xl font-[800] !text-white">Reach Out to Us</LetterAppear>
                     </div>
-                    <ContactForm  listServices={services} defaultService={defaultService} />
+                    <ContactForm  listServices={services} defaultService={defaultService} defaultMsg={defaultMsg} />
                 </div>
                 <div className="flex-1  2xl:pl-40 xl:pl-28 md:pl-10  2xl:pr-10  ">
                     <Reveal

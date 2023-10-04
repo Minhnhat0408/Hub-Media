@@ -1,24 +1,21 @@
-{   
+{
     "title": "Video Marketing",
     "href": "/services/recap-trailer",
-    "details": ["Standard: Logo dạng chữ", 
-    "Advanced: Logo biểu tượng", 
-   "Professional: Logo kết hợp"],
-   "tags": ["#recap", "#trailer", "#event", "#marketing"],
+    "details": ["Standard: Logo dạng chữ", "Advanced: Logo biểu tượng", "Professional: Logo kết hợp"],
+    "tags": ["#recap", "#trailer", "#event", "#marketing"],
     "description": "We craft concise summaries and dynamic trailers to convey event significance or marketing.",
     "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png",
-    "types":["Phóng sự", "Trailer"],
-    "packages": 
-        {
-            "Standard/Phóng sự": {
-                "price": ["2,500,000"],
-                "details": ["Thời lượng: 5 phút", "3 lần chỉnh sửa"]
-            },
-      
-            "Standard/Trailer": {
-                "price": ["1,500,000"],
-                "details": ["Thời lượng: 1 phút", "3 lần chỉnh sửa"]
-            }
+    "types": ["Phóng sự", "Trailer"],
+    "packages": {
+        "Standard/Phóng sự": {
+            "price": ["2,500,000"],
+            "details": ["Thời lượng: 5 phút", "3 lần chỉnh sửa"]
+        },
+
+        "Standard/Trailer": {
+            "price": ["1,500,000"],
+            "details": ["Thời lượng: 1 phút", "3 lần chỉnh sửa"]
         }
-    
+    },
+    "msg": ["Tôi muốn book gói Phóng sự Standard", "Tôi muốn book gói Recap Advanced"]
 }

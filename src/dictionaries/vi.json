@@ -10,8 +10,15 @@
     "contact": "Liên hệ"
   },
   "metadata": {
-    "title": "Hub Media - Kết nối thương hiệu",
-    "description": "Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ."
+    "home": {
+      "title": "Hub Media - Kết nối thương hiệu",
+      "description": "Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ."
+    },
+    "services": {
+      "title": "Hub Media - Dịch vụ",
+      "description": "Tổng hợp các dịch vụ của Hub Media" 
+    }
+    
   },
   "pages": {
     "not-found": "Không tìm thấy trang.",
@@ -21,9 +28,6 @@
     ],
     "home": {
       "home-hero": {
-        "title": [
-          "cung cấp"
-        ],
         "description": "Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ."
       },
       "characteristics": {

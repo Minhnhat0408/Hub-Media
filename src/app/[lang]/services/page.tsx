@@ -1,8 +1,8 @@
-import MarkupButton from '@/components/markup-button';
 import PageTitle from '@/components/page-title';
 import ServiceItem from '@/components/service-item';
 import { Locale } from '@/i18n.config';
 import { getDictionary, getServices } from '@/lib/dictionary';
+import { Metadata } from 'next';
 export type ServiceThumbnail = {
     [name: string]: {
         description: string;
@@ -10,6 +10,18 @@ export type ServiceThumbnail = {
         href: string;
     };
 };
+
+export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
+    const { metadata } = await getDictionary(params.lang);
+    return {
+        title: metadata.services.title,
+        openGraph: {
+            images: ['/images/backlog.png'],
+        },
+        description: metadata.services.description,
+    };
+}
+
 async function ServicesPage({ params: { lang } }: { params: { lang: Locale } }) {
 
     const services = await getServices(lang);

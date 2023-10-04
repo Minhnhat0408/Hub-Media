@@ -8,9 +8,22 @@ import Image from 'next/image';
 import { Key } from 'react';
 import { PiPaperPlaneRightFill } from 'react-icons/pi';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: {  title: string; lang: Locale }}): Promise<Metadata> {
+    const { service  } = await getSpecifiedService(params.lang, params.title);
+    return {
+        title: 'Hub Media' + service.title,
+        openGraph: {
+            images: ['/images/backlog.png'],
+        },
+        description: service.description,
+    };
+}
+
 async function Service({ params: { title, lang } }: { params: { title: string; lang: Locale } }) {
     const data = await getSpecifiedService(lang, title);
-
+    let countService = -1
     return (
         <main className=" h-fit w-full py-20 ">
             <PageTitle
@@ -112,6 +125,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                             return val[0].includes(item);
                                         })
                                         .map((item, index: Key) => {
+                                            countService +=1
                                             const [pkg, type] = item[0].split('/');
                                             const infor = item[1] as any;
                                             return (
@@ -143,7 +157,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                                     </ul>
                                                     <a
                                                         className="mt-4 flex items-center justify-center rounded-none border-[1px] border-gradient px-4 py-3  duration-500 group-hover:bg-gradient "
-                                                        href={'/' + lang + '/contact/' + title + '#form'}
+                                                        href={'/' + lang + '/contact/' + title + '/' + countService  + '#form'}
                                                     >
                                                         <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
                                                         Choose Plan
@@ -161,6 +175,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                 ) : (
                     <div className="flex flex-wrap w-full justify-center gap-y-20  xl:gap-x-20 gap-x-10   ssm:px-10 px-4">
                         {Object.entries(data.packages).map((item, index: Key) => {
+                            countService +=1
                             const [pkg, type] = item[0].split('/');
                             const infor = item[1] as any;
                             return (
@@ -192,7 +207,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                     </ul>
                                     <a
                                         className="mt-4 flex items-center justify-center rounded-none border-[1px] border-gradient px-4 py-3  duration-500 group-hover:bg-gradient "
-                                        href={'/' + lang + '/contact/' + title + '#form'}
+                                        href={'/' + lang + '/contact/' + title + '/' + countService  + '#form'}
                                     >
                                         <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
                                         Choose Plan

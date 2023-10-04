@@ -16,7 +16,7 @@ function Counter({
     const nodeRef = useRef<HTMLSpanElement>(null);
     const ref = useRef(null);
     const inView = useInView(ref, {
-        once: true, // Only trigger once when the element comes into view
+        once: true, 
     });
 
     useEffect(() => {

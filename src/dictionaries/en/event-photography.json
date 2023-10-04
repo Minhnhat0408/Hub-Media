@@ -22,6 +22,8 @@
                 "price": ["1,000,000"],
                 "details": ["1 video recap", "2 lần demo"]
             }
-        }
+        },
+    "msg": ["Tôi muốn book gói Chụp ảnh Standard", "Tôi muốn book gói Quay video Standard", "Tôi muốn book gói Edit Standard"]
+
     
 }
