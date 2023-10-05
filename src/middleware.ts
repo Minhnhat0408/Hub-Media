@@ -31,9 +31,9 @@ export function middleware(request: NextRequest) {
   const pathnameIsMissingLocale = middlewareRoutes.some((route) => pathname.startsWith(route))
   // console.log(pathnameIsMissingLocale,'fe')
   const locale = getLocale(request)
-  const localeIstrue = i18n.locales.some((locale) => {
-    return pathname.startsWith(`/${locale}`)})
-  // Redirect if there is no locale
+  // const localeIstrue = i18n.locales.some((locale) => {
+  //   return pathname.startsWith(`/${locale}`)})
+  // // Redirect if there is no locale
 
   if (pathname === '/') {
     return NextResponse.redirect(new URL(`/${locale}`, request.url))
@@ -47,9 +47,10 @@ export function middleware(request: NextRequest) {
         )
         return res
           }
-  }else if(!localeIstrue) {
-    return NextResponse.redirect(new URL(`/${locale}/not-found`, request.url))
-  } 
+  }
+  // else if(!localeIstrue) {
+  //   return NextResponse.redirect(new URL(`/${locale}/not-found`, request.url))
+  // } 
 }
 
 // export const config = {
