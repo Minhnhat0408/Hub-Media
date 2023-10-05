@@ -31,6 +31,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.7,
+      },
+      {
+        url: 'https://pbhubmedia.vercel.app/en/services',
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.8,
+      },
+      {
+        url: 'https://pbhubmedia.vercel.app/en/contact',
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.7,
       }
   ]
 }

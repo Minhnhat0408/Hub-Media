@@ -9,9 +9,15 @@ export const metadata: Metadata = {
     title: 'Hub Media - Kết nối thương hiệu của bạn ra thế giới',
     openGraph: {
         images: ['/images/backlog.png'],
+        title: 'Hub Media - Kết nối thương hiệu của bạn ra thế giới',
+        description:
+            'Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ.',
+        type: 'website',
+        url: 'https://pbhubmedia.vercel.app/',
     },
-    themeColor: '##d9658c',
+    themeColor: '#d9658c',
     viewport: 'width=device-width, initial-scale=1',
+    creator: 'Bùi Thu Phương',
     description:
         'Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ.',
 };

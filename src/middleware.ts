@@ -21,7 +21,7 @@ function getLocale(request: NextRequest): string | undefined {
 
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   
   const pathname = request.nextUrl.pathname
   if (pathname.startsWith("/api")) return NextResponse.next();
@@ -39,12 +39,14 @@ export function middleware(request: NextRequest) {
         request.url
       )
     )
-    return res
+    setTimeout(() => {
+      return res
+    }, 1000)
   }
   const res = NextResponse.next()
   return res
 }
 
 export const config = {
-  matcher: [ '/((?!_next/static|_next/image|images|logo|favicon.ico|layout|robots.txt|sitemap.xml|manifest.json).*)',],
+  matcher: [ '/((?!_next/static|_next/image|images|logo|favicon.ico|robots.txt|sitemap.xml|manifest.json).*)',],
 };  
