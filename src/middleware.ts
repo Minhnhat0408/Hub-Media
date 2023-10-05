@@ -29,11 +29,11 @@ export function middleware(request: NextRequest) {
   if (pathname.startsWith("/api")) return NextResponse.next();
   
   const pathnameIsMissingLocale = middlewareRoutes.some((route) => pathname.startsWith(route))
-  // console.log(pathnameIsMissingLocale,'fe')
+  console.log(pathnameIsMissingLocale,'fds')
   const locale = getLocale(request)
-  // const localeIstrue = i18n.locales.some((locale) => {
-  //   return pathname.startsWith(`/${locale}`)})
-  // // Redirect if there is no locale
+  const localeIstrue = i18n.locales.some((locale) => {
+    return pathname.startsWith(`/${locale}`)})
+  // Redirect if there is no locale
 
   if (pathname === '/') {
     return NextResponse.redirect(new URL(`/${locale}`, request.url))
@@ -46,16 +46,13 @@ export function middleware(request: NextRequest) {
           )
         )
         return res
-          }
+          } 
   }
-  // else if(!localeIstrue) {
-  //   return NextResponse.redirect(new URL(`/${locale}/not-found`, request.url))
-  // } 
 }
 
 // export const config = {
 //   matcher: [ '/((?!_next/static|_next/image|images|logo|favicon.ico|robots.txt|sitemap.xml|manifest.json).*)',],
 // };  
 export const config = {
-  matcher: [ '/((?!_next/static|_next/image|images|logo|favicon.ico|robots.txt|sitemap.xml|manifest.json).*)',]
+  matcher: [ '/:lang*']
 }
