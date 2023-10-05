@@ -42,3 +42,7 @@ export const routes = [
     //   tag: "contact",
     // },
   ];
+
+export const middlewareRoutes = [
+  '/services','/livestream','/founder','/blog','/contact'
+]

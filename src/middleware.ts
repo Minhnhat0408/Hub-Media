@@ -4,6 +4,8 @@ import { i18n } from '@/i18n.config'
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { type } from 'os'
+import { get } from 'http'
+import { middlewareRoutes, routes } from './lib/constants'
 
 function getLocale(request: NextRequest): string | undefined {
 
@@ -21,32 +23,38 @@ function getLocale(request: NextRequest): string | undefined {
 
 }
 
-export async function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
   
   const pathname = request.nextUrl.pathname
   if (pathname.startsWith("/api")) return NextResponse.next();
-  const pathnameIsMissingLocale = i18n.locales.every(
-    locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-  )  
   
+  const pathnameIsMissingLocale = middlewareRoutes.some((route) => pathname.startsWith(route))
+  // console.log(pathnameIsMissingLocale,'fe')
+  const locale = getLocale(request)
+  const localeIstrue = i18n.locales.some((locale) => {
+    return pathname.startsWith(`/${locale}`)})
   // Redirect if there is no locale
 
-  if (pathnameIsMissingLocale) {
-    const locale = getLocale(request)
-    const res =  NextResponse.redirect(
-      new URL(
-        `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-        request.url
-      )
-    )
-    setTimeout(() => {
-      return res
-    }, 1000)
-  }
-  const res = NextResponse.next()
-  return res
+  if (pathname === '/') {
+    return NextResponse.redirect(new URL(`/${locale}`, request.url))
+  }else if(pathnameIsMissingLocale) {
+      if(pathname.split('/')[3] !== 'not-found') {
+        const res =  NextResponse.redirect(
+          new URL(
+            `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+            request.url
+          )
+        )
+        return res
+          }
+  }else if(!localeIstrue) {
+    return NextResponse.redirect(new URL(`/${locale}/not-found`, request.url))
+  } 
 }
 
+// export const config = {
+//   matcher: [ '/((?!_next/static|_next/image|images|logo|favicon.ico|robots.txt|sitemap.xml|manifest.json).*)',],
+// };  
 export const config = {
-  matcher: [ '/((?!_next/static|_next/image|images|logo|favicon.ico|robots.txt|sitemap.xml|manifest.json).*)',],
-};  
+  matcher: [ '/((?!_next/static|_next/image|images|logo|favicon.ico|robots.txt|sitemap.xml|manifest.json).*)',]
+}
