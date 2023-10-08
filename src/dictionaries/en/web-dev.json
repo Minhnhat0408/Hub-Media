@@ -1,9 +1,10 @@
 {
     "title": "Web Development",
     "href": "/services/web-dev",
-    "details": ["Standard: Logo dạng chữ", "Advanced: Logo biểu tượng", "Professional: Logo kết hợp"],
-    "tags": ["#logo", "#branding", "#design"],
-    "description": "We craft concise summaries and dynamic trailers to convey event significance or marketing.",
+    "details": ["Thiết kế landing page","Thiết kế website "	],
+    "tags": ["#landing-page", "#Website"],
+    "portfolio": ["https://hubforum.hubglobal.network/","https://www.data4life.network/"],
+    "description": "Làm thế nào để nổi bật giữa hàng ngàn trang web? Đội ngũ thiết kế tài năng của chúng tôi tự hào mang đến những sản phẩm độc đáo và chất lượng, giúp bạn tạo ra một dấu ấn chuyên nghiệp và độc đáo, mang lại trải nghiệm tốt nhất cho khách hàng.",
     "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png",
     "types": ["Landing Page", "Website"],
     "packages": {
@@ -12,11 +13,11 @@
             "details": ["2 mẫu demo", "3 lần chỉnh sửa"]
         },
         "Standard/Website": {
-            "price": ["1,000,000"],
+            "price": ["7,000,000"],
             "details": ["1 mẫu demo", "2 lần chỉnh sửa"]
         },
         "Professional/Website": {
-            "price": ["3,000,000"],
+            "price": ["15,000,000"],
             "details": ["3 mẫu demo", "4 lần chỉnh sửa"]
         }
     },

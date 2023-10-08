@@ -42,7 +42,7 @@ function Partner({lang}:{lang:Locale}) {
                     alt="logo"
                 />
     
-                <Image
+                {/* <Image
                     src={
                         'https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FTiktok_Logo.png?alt=media&token=2baafe9e-9b4c-4bff-9ffd-bee319f33423'
                     }
@@ -52,7 +52,7 @@ function Partner({lang}:{lang:Locale}) {
                     className="lg:!w-[200px] ssm:w-[30%] w-1/2 object-contain duration-500 hover:scale-125 xl:px-0 px-6"
                     alt="logo"
                 />
-    
+     */}
                 <Image
                     src={
                         'https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Ftt.png?alt=media&token=026e7732-ca74-4163-b955-c461820d32da'

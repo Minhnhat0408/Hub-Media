@@ -11,7 +11,7 @@ function Portfolio({lang,portfolio}: {lang:Locale,portfolio: string[]}) {
                     href="/services"
                     title="Hub Agency"
                     description={portfolio[0]}
-                    src="/images/backlog.png"
+                    src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2F345329692_191612113793014_5846958053862937696_n.jpg?alt=media&token=f57c40d7-d18b-4f39-81b5-7abbeb973d80&_gl=1*11j8j1z*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUyOTYxLjU4LjAuMA.."
                     className='xl:w-[28%] xl:h-[400px] md:w-[48%] w-full md:px-0 px-4  md:h-[300px] h-auto max-h-[400px] min-h-[200px] '
                     lang={lang}
                 />

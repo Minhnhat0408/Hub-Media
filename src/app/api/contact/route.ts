@@ -24,7 +24,7 @@ export async function POST(request: Request ) {
 
     const res = await resend.emails.send({
         from: 'Hub Media <onboarding@resend.dev>',
-        to: 'kurominhnhat@gmail.com',
+        to: 'phuongbt.hubmedia@gmail.com',
         subject: 'Liên hệ từ website Hub Media',
         reply_to: email as string,
         react: React.createElement(Email,{email,phone,name,message,services})

@@ -65,7 +65,7 @@ export default function Slider({ children, className = '' }: { children: React.R
                                 onClick={() => {
                                     instanceRef.current?.moveToIdx(idx);
                                 }}
-                                className={'mx-4 h-8 group'}
+                                className={'mx-2 h-8 group'}
                             >
                                 <div
                                     className={

@@ -17,7 +17,7 @@ function Vision({ vision }: { vision: string[] }) {
           
                 <h2 className=" xl:!p-16 text-white ssm:p-10 p-4   xl:!text-[45px] ssm:text-3xl text-2xl font-bold xl:!leading-[50px] ">
                         &ldquo; Hub Media{' '}
-                        <span className="inline-flex">
+                        {/* <span className="inline-flex">
                             <Image
                                 src="/logo/logonotext.png"
                                 width={0}
@@ -26,9 +26,9 @@ function Vision({ vision }: { vision: string[] }) {
                                 sizes="100vw"
                                 className="h-auto xl:!w-[40px] md:!w-[30px] ssm:w-7 w-4  overflow-hidden "
                             />
-                        </span>{' '}
+                        </span>{' '} */}
                         {vision[0]}{' '}
-                        <span className="inline-flex">
+                        {/* <span className="inline-flex">
                             <Image
                                 src="/images/1f4c8.png"
                                 width={0}
@@ -45,7 +45,7 @@ function Vision({ vision }: { vision: string[] }) {
                                 sizes="100vw"
                                 className="h-auto xl:!w-[40px] md:!w-[30px] ssm:w-7 w-4  rounded-e-full  "
                             />
-                        </span>{' '}
+                        </span>{' '} */}
                        {vision[1]} &rdquo;
                        
                 </h2>

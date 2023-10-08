@@ -35,7 +35,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
    if (title) {
         if (title[1] && Number(title[1]) < 3) {
             const s = await getSpecifiedService(lang, title[0]);
-            defaultMsg = s.msg[Number(title[1])]
+            defaultMsg = s?.msg ? s.msg[Number(title[1])] : ''
         } 
         Object.entries(services).forEach(([key, value]) => {
             if (value.href.split('/')[2] === title[0]) {
@@ -52,7 +52,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
     return (
         <main className="w-full  ">
             <PageTitle
-                src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/services-breadcrumb.jpg"
+                src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fbghub.JPG?alt=media&token=07da7fd8-9f51-479c-848a-691c6972c227&_gl=1*3zs0og*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUxNzE1LjQ0LjAuMA.."
                 title={lang === 'vi' ? 'Liện hệ' : 'Contact'}
             />
 
@@ -170,7 +170,7 @@ export default async function ContactPage({ params: { lang, title } }: { params:
                           {lang === 'vi' ? 'Xin hãy đợi chúng tôi phản hồi.' : "Please wait for our community department to response to you."}
                         </p>
                         <Image
-                            src="https://gaaga.wpengine.com/wp-content/uploads/2023/06/career-img.jpg"
+                            src="/images/IMG_5712.jpg"
                             width={0}
                             height={0}
                             alt="image"

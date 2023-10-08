@@ -53,23 +53,10 @@ function HomeHero({ home, lang }: { home: any; lang: Locale }) {
                                 {lang === 'vi' ? 'Giới thiệu' : 'Introduce'}
                             </p>
                         </div>
-                        <div className="my-8 xl:max-w-[600px]   ssm:text-5xl text-3xl font-bold 2xl:!text-6xl">
-                            <span className="super ">Hub Media</span> offer
-                            <TypeWriter 
-                                options={{
-                                    strings: [
-                                        'Branding Design',
-                                        'Event Photography',
-                                        'Web Development',
-                                        'Reports & Trailer',
-                                    ],
-                                    wrapperClassName: "super ",
-                                    autoStart: true,
-                                    loop: true,
-                                    delay: 40,
-                                    deleteSpeed: 20,
-                                }}
-                            />
+                        <div className="my-8 xl:max-w-[600px] silver  ssm:text-5xl text-3xl font-bold 2xl:!text-6xl">
+                            <span className="super ">Hub Media</span>{" "}
+                            connect your <span className="super w-full ">Brand</span> to the <span className="super w-full ">World.</span> 
+                            
                         </div>
                     </Reveal>
                     <Reveal hiddenX={100} delay={0.3}>

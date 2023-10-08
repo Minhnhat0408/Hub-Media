@@ -1,64 +1,26 @@
 {
-    "Thiết Kế Pitch Deck": {
-        "href": "/services/pd-design",
-        "details": ["1. Đồng bộ màu sắc của toàn bộ slide theo bộ nhận diện", 
-        "2. Thiết kế bố cục slide tinh gọn, hiện đại", 
-       "3. Minh họa chuyên nghiệp, bám sát nội dung", 
-       "4. Add hiệu ứng animation "],
-        "description": "We create visually appealing, consistent brand identities encompassing logo and key visuals.",
+    "Thiết Kế Đồ Họa": {
+        "href": "/services/graphic-design",
+        "description": "Tạo ra các thiết kế hấp dẫn và hiệu quả, phù hợp với nhu cầu của thương hiệu bạn.",
         "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg"
-    },
-    "Thiết Kế Thương Hiệu": {
-        "href": "/services/brand-design",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "Chuyên thiết kế thương hiệu độc đáo, nhất quán bao gồm logo, key visual, banner và nhiều hơn thế.",
-        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg"
-    },
-    "Thiết Kế Bộ Nhận Diện": {
-        "href": "/services/cip-design",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "We create visually appealing, consistent brand identities encompassing logo and key visuals.",
-        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg"
-    },
-    "Nhiếp Ảnh Sự Kiện": {
-        "href": "/services/event-photography",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "Quay chụp các sự kiện với hình ảnh chất lượng cao, sáng tạo nhằm marketing hoặc lưu lại kỷ niệm.",
-        "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332"
-    },
-    "Thiết Kế Cơ Bản": {
-        "href": "/services/basic-design",
-        "details": ["Bao gồm post, thư mời, banner,..."],
-        "description": "Our skilled photographers capture event essence with high-quality images for marketing and memories.",
-        "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332"
     },
     "Xây Dựng Website": {
         "href": "/services/web-dev",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "We craft concise summaries and dynamic trailers to convey event significance or marketing.",
-        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png"
+        "description": "Xây dựng các trang web chức năng và thân thiện với người dùng, phù hợp với mục tiêu kinh doanh của bạn.",
+        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-5.jpg"
     },
-    "Video Quảng Bá": {
-        "href": "/services/recap-trailer",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "Dựng lại recap và trailer, video truyền đạt ý nghĩa của sự kiện hoặc để quảng bá.",
-        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png"
+    "Booking Influencer": {
+        "href": "/services/booking-influencer",
+        "description": "Kết nối với các cá nhân trẻ có tiềm năng để tối ưu giải pháp marketing của thương hiệu bạn.",
+        "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fpexels-mizuno-k-13929798.jpg?alt=media&token=69477ab4-55ee-4ce0-90ab-71db00fe3b11&_gl=1*1h4cg93*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUwNzIwLjE0LjAuMA."
+    },
+    "Brand Co-Host": {
+        "href": "/services/brand-co-host",
+        "description": "Hợp tác cùng Hub Media trong việc triển khai giải pháp Inbound Marketing cho doanh nghiệp.",
+        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Home-1-Faq-Bg-Img-Ps.png"
     },
     "Tổ Chức Sự Kiện": {
-        "href": "/services/event-organizer",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
+        "href": "/services/event-organizing",
         "description": "Dịch vụ và hoạt động đa dạng giúp tổ chức và quản lý sự kiện chuyên nghiệp và hiệu quả.",
         "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png"
     }

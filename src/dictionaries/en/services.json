@@ -1,66 +1,28 @@
 {
-    "Pitch Deck Design": {
-        "href": "/services/pd-design",
-        "details": ["1. Đồng bộ màu sắc của toàn bộ slide theo bộ nhận diện", 
-        "2. Thiết kế bố cục slide tinh gọn, hiện đại", 
-       "3. Minh họa chuyên nghiệp, bám sát nội dung", 
-       "4. Add hiệu ứng animation "],
-        "description": "We create visually appealing, consistent brand identities encompassing logo and key visuals.",
+    "Graphic Design": {
+        "href": "/services/graphic-design",
+        "description": "Craft visually appealing and effective designs tailored to your brand's needs.",
         "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg"
     },
-    "Brand Design": {
-        "href": "/services/brand-design",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "We create visually appealing, consistent brand identities encompassing logo and key visuals.",
-        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg"
-    },
-    "CIP Design": {
-        "href": "/services/cip-design",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "We create visually appealing, consistent brand identities encompassing logo and key visuals.",
-        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg"
-    },
-    "Event Photography": {
-        "href": "/services/event-photography",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "Our skilled photographers capture event essence with high-quality images for marketing and memories.",
-        "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332"
-    },
-    "Basic Design": {
-        "href": "/services/basic-design",
-        "details": ["Bao gồm post, thư mời, banner,..."],
-        "description": "Our skilled photographers capture event essence with high-quality images for marketing and memories.",
-        "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FStreet%20photography.jpg?alt=media&token=2b10f1ba-f976-4df2-acee-4534f9cee332"
-    },
-    "Web Development": {
+    "Web Develop": {
         "href": "/services/web-dev",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "We craft concise summaries and dynamic trailers to convey event significance or marketing.",
-        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png"
+        "description": "Build functional, user-friendly websites that align with your business goals.",
+        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-5.jpg"
         
     },
-    "Video Marketing": {
-        "href": "/services/recap-trailer",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "We craft concise summaries and dynamic trailers to convey event significance or marketing.",
-        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-5.png"
+    "Booking Influencer": {
+        "href": "/services/booking-influencer",
+        "description": "Connect with young potential individuals to enhance your brand's reach and engagement.",
+        "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fpexels-mizuno-k-13929798.jpg?alt=media&token=69477ab4-55ee-4ce0-90ab-71db00fe3b11&_gl=1*1h4cg93*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUwNzIwLjE0LjAuMA."
     },
-    "Event Organization": {
-        "href": "/services/event-organizer",
-        "details": ["Standard: Logo dạng chữ", 
-        "Advanced: Logo biểu tượng", 
-       "Professional: Logo kết hợp"],
-        "description": "We ensure seamless, memorable event execution from concept to logistics management.",
+    "Brand Co-Host": {
+        "href": "/services/brand-co-host",  
+        "description": "Collaborate with industry experts to co-host events and boost brand credibility.",
+        "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/Gaaga-Home-1-Faq-Bg-Img-Ps.png"
+    },
+    "Event Organizing": {
+        "href": "/services/event-organizing",
+        "description": "Seamlessly plan and execute events, leaving a lasting impression on attendees.",
         "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png"
     }
 }

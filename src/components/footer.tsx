@@ -78,19 +78,9 @@ export async function Footer({lang}:{lang:Locale}) {
 
                             <Link
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
-                                href={'/' + lang + '/services/brand-design'}
+                                href={'/' + lang + '/services/graphic-design'}
                             >
-                                Branding Design
-                            </Link>
-                        </div>
-                        <div className="mb-3 flex items-start">
-                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
-
-                            <Link
-                                className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
-                                href={'/' + lang + '/services/event-photography'}
-                            >
-                                Event Photography
+                                Graphic Design
                             </Link>
                         </div>
                         <div className="mb-3 flex items-start">
@@ -100,7 +90,7 @@ export async function Footer({lang}:{lang:Locale}) {
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
                                 href={'/' + lang + '/services/web-dev'}
                             >
-                                Web Design & Development
+                                 Web Develop
                             </Link>
                         </div>
                         <div className="mb-3 flex items-start">
@@ -108,9 +98,19 @@ export async function Footer({lang}:{lang:Locale}) {
 
                             <Link
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
-                                href={'/' + lang + '/services/pd-design'}
+                                href={'/' + lang + '/services/booking-influencer'}
                             >
-                                Pitch Deck Design
+                                Booking Influencer
+                            </Link>
+                        </div>
+                        <div className="mb-3 flex items-start">
+                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
+
+                            <Link
+                                className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
+                                href={'/' + lang + '/services/brand-co-host'}
+                            >
+                                Brand Co-Host
                             </Link>
                         </div>
                     </div>

@@ -23,10 +23,8 @@ function MobileSidebar({ lang, navigation }: { lang: Locale; navigation: any }) 
     }
     return (
         <Sheet>
-            <SheetTrigger>
-                <Button variant={'ghost'} size={'icon'} className="justify-center xl:hidden ">
-                    <Menu />
-                </Button>
+            <SheetTrigger className="justify-center xl:hidden px-2 ">
+                <Menu />
             </SheetTrigger>
             <SheetContent className="w-56 p-0 pt-10">
                 {/* <Sidebar/> */}

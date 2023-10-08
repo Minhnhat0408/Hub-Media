@@ -7,7 +7,7 @@ export default async function Header({lang,navigation} : {lang: Locale,navigatio
     return (
         <header className="fixed z-10 w-full">
             <ProgressIndicator />
-            <HeaderUI lang={lang} navigation={navigation} />
+     <HeaderUI lang={lang} navigation={navigation} />
         </header>
     );
 }   

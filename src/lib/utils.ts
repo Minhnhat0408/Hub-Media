@@ -4,6 +4,12 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+export function isImageUrl(url: string) {
+  const format = ['jpg','jpeg','png','gif','svg','JPG']
+  return format.some((dat) => {
+      return url.includes(`.${dat}`)
+  })
+}
 
 export function pathRemainLang({pathname,newpath} : {pathname: string, newpath: string}) {
   const path = pathname.split('/')
