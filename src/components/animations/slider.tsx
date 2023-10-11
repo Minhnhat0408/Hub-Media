@@ -53,6 +53,7 @@ export default function Slider({ children, className = '' }: { children: React.R
 
     return (
         <div className="flex flex-col items-center">
+            <h3 className='text-4xl mb-10 silver font-bold'>Portfolio</h3>
             <div ref={ref} className={'keen-slider cursor-grab lg:order-none order-1 ' + className}>
                 {children}
             </div>

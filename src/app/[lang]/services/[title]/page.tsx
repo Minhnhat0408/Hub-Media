@@ -34,13 +34,13 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
             <section className="flex w-full flex-col gap-y-10 px-4 py-20 lg:flex-row xl:!px-20 ssm:px-10">
                 <div className="order-2 flex h-auto flex-1 flex-col justify-center gap-y-8 pl-0 lg:order-none lg:gap-y-12 lg:pl-10  ">
                     <div className="w-full lg:w-3/4 ">
-                        <h1 className="mb-2 text-3xl font-bold lg:mb-4 lg:text-4xl ">
+                        <h1 className="mb-2 text-3xl font-bold text-gradient lg:mb-4 lg:text-4xl ">
                             {lang === 'vi' ? 'Mô tả:' : 'Desription:'}
                         </h1>
                         <p className=" pl-4 font-medium text-muted-foreground">{data.description}</p>
                     </div>
                     <div className="w-3/4 ">
-                        <h1 className="mb-2 text-3xl font-bold lg:mb-4 lg:text-4xl ">
+                        <h1 className="mb-2 text-3xl font-bold text-gradient lg:mb-4 lg:text-4xl ">
                             {lang === 'vi' ? 'Chi tiết:' : 'Details:'}
                         </h1>
                         <ul className=" flex flex-col gap-y-4 pl-4 font-medium text-muted-foreground">
@@ -55,7 +55,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                         </ul>
                     </div>
                     <div className="w-3/4 ">
-                        <h1 className="mb-2 text-3xl font-bold lg:mb-4 lg:text-4xl ">
+                        <h1 className="mb-2 text-3xl font-bold text-gradient lg:mb-4 lg:text-4xl ">
                             {lang === 'vi' ? 'Danh mục:' : 'Categories:'}
                         </h1>
                         <p className=" pl-4 font-medium text-muted-foreground">{data.tags.join(' - ')}</p>
@@ -72,7 +72,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                     width="0"
                                     height="0"
                                     sizes="100vw"
-                                    className=" keen-slider__slide h-full w-auto object-cover "
+                                    className=" keen-slider__slide h-full object-top w-auto object-cover "
                                 />
                             ) : (
                                 <iframe
@@ -133,11 +133,11 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                 />
                 {data?.types ? (
                     <Tabs defaultValue={data.types[0]} className="flex w-full flex-col items-center ">
-                        <TabsList className="mb-10  flex h-fit w-fit text-white ">
+                        <TabsList className="mb-10  flex h-fit w-fit text-white gap-x-4 ">
                             {data.types.map((item: string, index: Key) => {
                                 return (
                                     <TabsTrigger
-                                        className="h-8 w-24 text-sm data-[state=active]:bg-gradient sm:h-12 sm:w-40 sm:text-base "
+                                        className="h-8 w-24 text-sm data-[state=active]:bg-gradient bg-gray-800  sm:h-12 font-bold sm:w-40 sm:text-base "
                                         key={index}
                                         value={item}
                                     >
@@ -197,8 +197,8 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                 );
                             })
                         ) : (
-                            <div className="flex flex-col items-center">
-                                <p className="silver text-4xl mb-10">{lang === 'vi' ? 'Liên hệ để biết thêm chi tiết' : 'Contact us for more information'}  </p>
+                            <div className="flex flex-col items-center space-y-8 mb-8">
+                                <p className="silver md:text-4xl text-2xl text-center">{lang === 'vi' ? 'Liên hệ để biết thêm chi tiết' : 'Contact us for more information'}  </p>
                                 <a
                                     className="mt-4 flex w-fit group hover:bg-gradient items-center justify-center rounded-none border-[1px] border-gradient px-4 py-3  duration-500 group-hover:bg-gradient "
                                     href={'/' + lang + '/contact/' + title + '/' + countService + '#form'}

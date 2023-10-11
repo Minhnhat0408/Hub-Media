@@ -1,5 +1,5 @@
 {
-    "Thiết Kế Đồ Họa": {
+    "Dịch vụ Marketing Tổng thể": {
         "href": "/services/graphic-design",
         "description": "Tạo ra các thiết kế hấp dẫn và hiệu quả, phù hợp với nhu cầu của thương hiệu bạn.",
         "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg"
@@ -22,6 +22,11 @@
     "Tổ Chức Sự Kiện": {
         "href": "/services/event-organizing",
         "description": "Dịch vụ và hoạt động đa dạng giúp tổ chức và quản lý sự kiện chuyên nghiệp và hiệu quả.",
+        "src": "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fevent.JPG?alt=media&token=9aba2450-6569-4384-9926-aac468be6ed0&_gl=1*2oeyev*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc4NTY2NC4yODcuMS4xNjk2Nzg1Njk2LjI4LjAuMA.."
+    },
+    "Hỗ Trợ Truyền Thông":{
+        "href": "/services/media-support",
+        "description": "Hỗ trợ triển khai các chiến dịch của nhãn hàng đến các khách hàng trẻ, sinh viên các trường đại học.",
         "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png"
     }
 }

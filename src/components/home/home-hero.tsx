@@ -13,7 +13,7 @@ function HomeHero({ home, lang }: { home: any; lang: Locale }) {
             id="home-hero"
             className="relative flex w-[100vw] overflow-x-clip bg-background overflow-y-hidden xl:pb-20 xl:pl-7 2xl:pl-20 "
         >
-            <div className="z-[5] flex flex-1  bg-[rgba(255,255,255,0.2)] pb-32 lg:pt-36 pt-44 xl:bg-transparent xl:pb-0 xl:pt-48 backdrop-blur-sm  2xl:pt-64 ">
+            <div className="z-[5] flex flex-1  bg-[rgba(255,255,255,0.1)] pb-32 lg:pt-36 pt-44 xl:bg-transparent xl:pb-0 xl:pt-48 backdrop-blur-sm  2xl:pt-64 ">
                 <Reveal hiddenY={100} className="flex h-fit flex-1 flex-col items-center">
                     <ul className="flex flex-col items-center  ssm:text-4xl text-2xl text-muted-foreground duration-1000">
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
@@ -60,9 +60,9 @@ function HomeHero({ home, lang }: { home: any; lang: Locale }) {
                         </div>
                     </Reveal>
                     <Reveal hiddenX={100} delay={0.3}>
-                        <p className="max-w-[550px] text-muted-foreground">{home.description}</p>
+                        <p className="max-w-[550px] xl:text-muted-foreground text-white">{home.description}</p>
                         <div className="mt-16">
-                            <MarkupButton href="/#char" title={lang === 'vi' ? 'Bắt đầu khám phá' : 'Get started'} />
+                            <MarkupButton href={"/" + lang +"/#char"} title={lang === 'vi' ? 'Bắt đầu khám phá' : 'Get started'} />
                         </div>
                     </Reveal>
                 </div>
