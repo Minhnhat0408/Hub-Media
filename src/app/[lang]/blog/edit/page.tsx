@@ -106,12 +106,13 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                 },
             },
         );
-        await addDoc(collection(db, 'blogs'), {
+        const docRef = await addDoc(collection(db, 'content'), {
             title: title,
             content: value,
             date: new Date(),
             cover: res,
         });
+        console.log(docRef.id)
     };
     const handleImagePreview = (e) => {
         const file = e.target.files[0];
