@@ -1,5 +1,6 @@
 import 'server-only'
 import { Locale } from '@/i18n.config'
+import { services } from './constants'
 
 const dictionaries = {
   en: () => import('@/dictionaries/en.json').then(module => module.default),
@@ -20,7 +21,13 @@ export const getDictionary = async (locale: Locale) => {
 };
 
 export const getSpecifiedService = async (locale: Locale, title: string) => {
-  const dictionary = () => import(`@/dictionaries/${locale}/${title}.json`).then(module => module.default)
-  
+  if(services.includes(title)){
+
+  const dictionary = () => import(`@/dictionaries/${locale}/${title}.json`).then((module)  => module.default)
   return dictionary()
+}else{
+  return {error: 'not found'}
+}
+  
+ 
 }

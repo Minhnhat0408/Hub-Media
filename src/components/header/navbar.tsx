@@ -9,7 +9,7 @@ function NavBar({ lang, navigation }: { lang: Locale; navigation: any }) {
     const location = usePathname();
     const core = location.split('/') as string[]
     return (    
-        <nav className=" hidden items-center justify-between bg-transparent  py-5 text-base md:text-sm xl:flex">
+        <nav className=" hidden items-center justify-between bg-transparent  py-5 text-md md:text-[15px] xl:flex">
             <ul className={cn('flex uppercase tracking-widest ', lang === 'vi' ? ' gap-x-4' : ' gap-x-6')}>
                 {routes.map((route, index) => (
                     <li key={index} className=" duration-1000 hover:text-gradient">

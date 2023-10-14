@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Metadata } from 'next';
 import Package from '@/components/services/package';
 import { isImageUrl } from '@/lib/utils';
+import { redirect } from 'next/navigation'
 
 export async function generateMetadata({ params }: { params: { title: string; lang: Locale } }): Promise<Metadata> {
     const { title, description } = await getSpecifiedService(params.lang, params.title);
@@ -24,6 +25,9 @@ export async function generateMetadata({ params }: { params: { title: string; la
 
 async function Service({ params: { title, lang } }: { params: { title: string; lang: Locale } }) {
     const data = await getSpecifiedService(lang, title);
+    if(data?.error) {
+        redirect('/not-found')
+    }
     let countService = -1;
     return (
         <main className=" h-fit w-full py-[60px] md:py-20 ">

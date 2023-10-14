@@ -36,7 +36,7 @@ function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             className="bg-header z-0 flex items-center md:h-[90px] h-[60px] justify-between sm:px-8 px-2 font-[500]"
         >
-            <Image src={'/logo/logonotext.png'} className="md:!ml-10 ml-4  h-[80%] w-auto  " height={500} width={500} onClick={() => {
+            <Image src={'/logo/logonotext.png'} className="md:!ml-10 ml-4  h-[80%] w-auto cursor-pointer " height={500} width={500} onClick={() => {
                 router.push('/' + lang);
             }} alt="logo" />
             <NavBar lang={lang} navigation={navigation} />

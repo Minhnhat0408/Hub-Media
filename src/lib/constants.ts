@@ -1,4 +1,11 @@
+import { Timestamp } from "firebase/firestore";
 import { ImHome } from "react-icons/im";
+export type Blog = {
+  title:string,
+  cover:string,
+  date:Timestamp,
+  contentId:string
+}
 export const routes = [
     {   
       label: 'HOME',
@@ -21,13 +28,13 @@ export const routes = [
     //   href: '/livestream',
     //   tag: "livestream"
     // },
-    // {
-    //   label: "FOUNDER'S FRIDAY",
-    //   // icon: Music,
-    //   color: "text-emerald-500",
-    //   href: '/founder',
-    //   tag: "founder"
-    // },
+    {
+      label: "FOUNDER'S FRIDAY",
+      // icon: Music,
+      color: "text-emerald-500",
+      href: '/founder',
+      tag: "founder"
+    },
     {
       label: 'BLOG',
       // icon: Code,
@@ -45,4 +52,13 @@ export const routes = [
 
 export const middlewareRoutes = [
   '/services','/livestream','/founder','/blog','/contact'
+]
+
+export const services = [
+  'web-dev',
+  'graphic-design',
+  'booking-influencer',
+  'brand-co-host',
+  'event-organizing',
+  'media-support'
 ]

@@ -89,6 +89,9 @@ html *::-webkit-scrollbar {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+.search-box{
+  box-shadow: 0 -1px 8px 3px rgba(255,255,255,0.08);
+}
 .bg-vision {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
   backdrop-filter: blur(10px);
@@ -120,6 +123,7 @@ html *::-webkit-scrollbar {
     opacity: 0;
   }
 }
+
 
 .animate-ping-big {
   animation: pingbig 1s cubic-bezier(0, 0, 0.2, 1) infinite;
@@ -181,3 +185,96 @@ html *::-webkit-scrollbar {
     @apply bg-background text-foreground;
   }
 }
+
+/* .ql-editor.ql-blank::before {
+  color: white;
+} */
+
+.ql-editor {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+  font-family: 'Prompt', sans-serif;
+  
+  /* color: red; */
+}
+
+.ql-bubble .ql-editor pre {
+  padding: 24px;
+  border-radius: 10px;
+}
+
+.ql-bubble .ql-editor pre.ql-syntax {
+  color: #49ced3;
+  background: #1b181b;
+}
+
+.ql-formats {
+  color: white ;
+  font-size: 16px;
+  
+}
+.ql-snow .ql-picker{
+  color:white !important;
+  font-size: 16px;
+  
+}
+.ql-snow .ql-picker-options {
+  background-color: black !important;
+}
+.ql-snow .ql-stroke{
+  stroke: #fff !important;
+  font-size: 16px;
+  
+}
+.ql-fill{
+  fill:white  !important;
+  font-size: 16px;
+  
+}
+.ql-snow .ql-fill, .ql-snow .ql-stroke.ql-fill {
+  fill:white  !important;
+  font-size: 16px;
+  
+}
+.invalid .ql-toolbar.ql-snow {
+  border: 1px solid rgb(239, 68, 68);
+}
+.invalid .ql-container.ql-snow {
+  border: 1px solid rgb(239, 68, 68);
+}
+.invalid .ql-editor.ql-blank::before {
+  color:rgb(239, 68, 68) ;
+}
+.invalid .ql-snow .ql-picker{
+  color:rgb(239, 68, 68) !important;
+  font-size: 16px;
+  
+}
+.invalid .ql-snow .ql-stroke{
+  stroke: rgb(239, 68, 68) !important;
+  font-size: 16px;
+  
+}
+/* .ql-editor {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+  color: lightgray;
+}
+
+.ql-bubble .ql-editor pre {
+  padding: 24px;
+  border-radius: 10px;
+}
+
+.ql-bubble .ql-editor pre.ql-syntax {
+  color: #ab9bab;
+  background: #1b181b;
+}
+
+.ql-editor.ql-blank::before {
+  color: white;
+} */

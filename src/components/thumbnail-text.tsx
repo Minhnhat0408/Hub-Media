@@ -43,7 +43,7 @@ function ThumbNailText({
                     width="0"
                     height="0"
                     sizes="100vw"
-                    className=" absolute  md:h-2/3 md:w-2/3 w-full md:px-0 px-4 h-full  object-cover md:opacity-0  duration-500  group-hover:h-full group-hover:w-full group-hover:opacity-100 "
+                    className=" absolute object-bottom  md:h-2/3 md:w-2/3 w-full md:px-0 px-4 h-full  object-cover md:opacity-0  duration-500  group-hover:h-full group-hover:w-full group-hover:opacity-100 "
                 />
             </Link>
         </article>
