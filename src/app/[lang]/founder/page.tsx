@@ -6,7 +6,7 @@ export default async function FounderPage({ params: { lang } }: { params: { lang
     const {pages} = await getDictionary(lang);
 
     return (
-        <main className="h-fit w-full bg-background">
+        <main className="h-fit w-full py-[60px] md:py-[90px] bg-background">
             <UnderConstruction construction={pages.underconstruction} />
         </main>
     );

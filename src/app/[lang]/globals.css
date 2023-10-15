@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-
 html,
 body,
 :root {
@@ -189,6 +188,13 @@ html *::-webkit-scrollbar {
 /* .ql-editor.ql-blank::before {
   color: white;
 } */
+/*!
+ * Quill Editor v1.3.7
+ * https://quilljs.com/
+ * Copyright (c) 2014, Jason Chen
+ * Copyright (c) 2013, salesforce.com
+ */
+ 
 
 .ql-editor {
   font-size: 16px;
@@ -196,7 +202,7 @@ html *::-webkit-scrollbar {
   letter-spacing: 0.5px;
   line-height: 30px;
   font-family: 'Prompt', sans-serif;
-  
+  padding:0px !important;
   /* color: red; */
 }
 
@@ -257,24 +263,4 @@ html *::-webkit-scrollbar {
   font-size: 16px;
   
 }
-/* .ql-editor {
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  line-height: 30px;
-  color: lightgray;
-}
 
-.ql-bubble .ql-editor pre {
-  padding: 24px;
-  border-radius: 10px;
-}
-
-.ql-bubble .ql-editor pre.ql-syntax {
-  color: #ab9bab;
-  background: #1b181b;
-}
-
-.ql-editor.ql-blank::before {
-  color: white;
-} */

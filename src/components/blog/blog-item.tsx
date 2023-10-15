@@ -4,13 +4,14 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import MarkupButton from '../markup-button';
 import Link from 'next/link';
+import { Locale } from '@/i18n.config';
 
-export default function BlogItem({title,cover,date, short }: { short?: boolean,title:string,cover:string,date:string }) {
+export default function BlogItem({title,cover,date, short,lang,id }: { short?: boolean,title:string,cover:string,date:string,id:string,lang:Locale }) {
     return (
         <>
             {short ? (
                 <article className='flex w-full gap-x-4'>
-                    <Link href={'/'} className="flex h-[110px] w-[110px] items-center overflow-hidden ">
+                    <Link href={'/' + lang + '/blog/' + id} className="flex h-[110px] w-[110px] items-center overflow-hidden ">
                         <Image
                             src={cover}
                             alt="img"
@@ -22,12 +23,12 @@ export default function BlogItem({title,cover,date, short }: { short?: boolean,t
                     </Link>
                     <div className="space-y-2 flex-1 flex flex-col justify-center">
                         <p className="text-xs font-bold uppercase text-gradient">{date}</p>
-                        <Link  href={'/'} className="text-lg font-bold hover:text-gradient duration-500">{title}</Link>
+                        <Link  href={'/' + lang + '/blog/' + id} className="text-lg font-bold hover:text-gradient duration-500">{title}</Link>
                     </div>
                 </article>
             ) : (
                 <article  className={cn('flex w-full flex-col gap-y-6 pb-10  ')}>
-                    <Link href={'/'} className="flex h-[280px] w-full items-center overflow-hidden ">
+                    <Link href={'/' + lang + '/blog/' + id} className="flex h-[280px] w-full items-center overflow-hidden ">
                         <Image
                             src={cover}
                             alt="img"
@@ -39,13 +40,13 @@ export default function BlogItem({title,cover,date, short }: { short?: boolean,t
                     </Link>
                     <div className="flex flex-col gap-y-2">
                         <p className="text-xs font-bold uppercase text-gradient">{date}</p>
-                        <Link href={'/'} className="text-2xl font-bold hover:text-gradient duration-500 ">{title}</Link>
+                        <Link href={'/' + lang + '/blog/' + id} className="text-2xl font-bold hover:text-gradient duration-500 ">{title}</Link>
                     </div>
                     <p className="text-muted-foreground ">
                         Phasellus faucibus scelerisque eleifend donec. Sit amet aliquam id diam. Scelerisque varius
                         morbi enim...
                     </p>
-                    <MarkupButton title="Read more" href="/blog" />
+                    <MarkupButton title="Read more"  href={'/' + lang + '/blog/' + id} />
                 </article>
             )}
         </>

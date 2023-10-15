@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import useDebounce from '@/hooks/useDebounce';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Link from 'next/link';
+import { BlogType } from '@/lib/constants';
 const data = [
     {
         title: 'Creative marketing campaign',
@@ -22,18 +23,23 @@ const data = [
         date: 'June 21, 2021',
     },
 ];
-export default function BlogTools({ lang }: { lang: Locale }) {
+export default function BlogTools({ lang,defaultRecent = [],allPosts }: { lang: Locale,defaultRecent?:BlogType[],allPosts:BlogType[] }) {
     const [searchValue, setSearchValue] = useState('');
     const [showResult, setShowResult] = useState(true);
-    const [searchResult, setSearchResult] = useState<{ title: string; date: string }[]>([]);
+    const [searchResult, setSearchResult] = useState<BlogType[]>([]);
     const [loading, setLoading] = useState(false);
     const debounce = useDebounce(searchValue.trim(), 1000);
+    const [recentPosts, setRecentPosts] =useState<BlogType[]>()
+    useEffect(() => {
+        const res = localStorage.getItem('recentpost') ? JSON.parse(localStorage.getItem('recentpost') as string) : defaultRecent;
+        setRecentPosts(res)
+    },[])
 
     useEffect(() => {
         if (searchValue.trim()) {
             setLoading(true);
             const fetchData = async (value: string) => {
-                let res = data.filter((item: { title: string; date: string }) =>
+                let res = allPosts.filter((item) =>
                     item.title.toLowerCase().includes(value.toLowerCase()),
                 );
                 setTimeout(() => {
@@ -49,7 +55,7 @@ export default function BlogTools({ lang }: { lang: Locale }) {
     }, [debounce]);
 
     return (
-        <div className="h-full w-full space-y-12 border-2 border-gradient px-10 py-16 ">
+        <div className="h-full xl:w-[400px] w-[350px] space-y-12 border-2 border-gradient px-10 py-16 ">
             <div className="relative ">
                 <Input
                     placeholder={lang === 'vi' ? 'Tìm kiếm' : 'Search'}
@@ -73,15 +79,17 @@ export default function BlogTools({ lang }: { lang: Locale }) {
                     <div className="search-box absolute  top-10 bg-background ">
                         {
                             searchResult.map((item, index) => (
-                                <Link href={'/'} className="flex  w-full items-center gap-x-3 p-4" key={index}>
-                                    <Image
-                                        src={'/logo/logo.png'}
-                                        className="h-[46px] w-[46px] rounded-full   "
-                                        height={0}
-                                        width={0}
-                                        sizes="100vw"
-                                        alt="logo"
-                                    />
+                                <Link href={'/' + lang + "/blog/" + item.contentId} className="flex  w-full items-center gap-x-3 p-4" key={index}>
+                                    <div className='h-[46px] w-[46px] rounded-full overflow-hidden'>
+                                        <Image 
+                                            src={item.cover}
+                                            className="  h-full w-auto object-cover  "
+                                            height={0}
+                                            width={0}
+                                            sizes="100vw"
+                                            alt="logo"
+                                        />
+                                    </div>
                                     <h2>{item.title}</h2>
                                 </Link>
                             ))
@@ -91,10 +99,13 @@ export default function BlogTools({ lang }: { lang: Locale }) {
                 }
             </div>
             <div className="flex w-full flex-col gap-y-4">
-                <h2 className="text-2xl font-bold">Recent Post</h2>
-                {/* <BlogItem short />
-                <BlogItem short />
-                <BlogItem short /> */}
+                <h2 className="text-2xl font-bold">{lang === 'vi' ? 'Mới Đọc' : 'Recent Blogs'}</h2>
+                {
+                    recentPosts?.map((item, index) => (
+                        <BlogItem lang={lang} key={index} title={item.title} id={item.contentId} cover={item.cover} date={item.date} short />
+                    ))
+                }
+         
             </div>
             <Image
                 src={

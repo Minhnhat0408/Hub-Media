@@ -29,6 +29,7 @@
     "eslint-config-next": "13.4.19",
     "firebase": "^10.5.0",
     "framer-motion": "^10.16.4",
+    "html-react-parser": "^4.2.2",
     "keen-slider": "^6.8.6",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.276.0",

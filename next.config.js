@@ -5,13 +5,7 @@ const nextConfig = {
         domains: ['gaaga.wpengine.com', 'firebasestorage.googleapis.com'],
     },
     pageExtensions: ['ts', 'tsx'],
-    typescript: {
-        // !! WARN !!
-        // Dangerously allow production builds to successfully complete even if
-        // your project has type errors.
-        // !! WARN !!
-        ignoreBuildErrors: true,
-    },
+    reactStrictMode: false,
 };
 
 module.exports = nextConfig;

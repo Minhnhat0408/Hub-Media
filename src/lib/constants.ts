@@ -1,10 +1,16 @@
 import { Timestamp } from "firebase/firestore";
 import { ImHome } from "react-icons/im";
-export type Blog = {
+export type BlogType = {
   title:string,
   cover:string,
-  date:Timestamp,
+  date:string,
   contentId:string
+}
+export type BlogContentType = {
+  title:string,
+  content:string,
+  cover:string,
+  date:string,
 }
 export const routes = [
     {   

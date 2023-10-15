@@ -42,7 +42,7 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
             return;
         }
         // const res = await toast.promise(
-        const res = await toast.promise(
+        await toast.promise(
             new Promise((resolve, reject) => {
                 const storageRef = ref(storage, `images/${cover.file.name}`);
                 const uploadTask = uploadBytesResumable(storageRef, cover.file, metadata.contentType as UploadMetadata);
@@ -67,7 +67,20 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                     },
                     async () => {
                         const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-                        resolve(downloadURL); // resolve the Promise with the downloaded URL
+                        const docRef = await addDoc(collection(db, 'contents'), {
+                            title: title,
+                            content: value,
+                            date: new Date(),
+                            cover: downloadURL,
+                        });
+
+                        const result = await addDoc(collection(db, 'blogs'), {
+                            contentId: docRef.id,
+                            title: title,
+                            cover: downloadURL,
+                            date: new Date(),
+                        });
+                        resolve(result);
                     },
                 );
             }),
@@ -106,13 +119,12 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                 },
             },
         );
-        const docRef = await addDoc(collection(db, 'content'), {
-            title: title,
-            content: value,
-            date: new Date(),
-            cover: res,
-        });
-        console.log(docRef.id)
+        reset();
+    };
+    const reset = () => {
+        setCover(undefined);
+        setTitle('');
+        setValue('');
     };
     const handleImagePreview = (e) => {
         const file = e.target.files[0];
@@ -121,53 +133,57 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
     return (
         <>
             {display && (
-                <main className="flex h-fit w-full flex-col items-center gap-y-10 py-20">
+                <main className="flex h-fit w-full flex-col items-center gap-y-10 py-[60px] md:py-[90px]">
                     <PageTitle
                         src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fbghub.JPG?alt=media&token=07da7fd8-9f51-479c-848a-691c6972c227&_gl=1*3zs0og*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUxNzE1LjQ0LjAuMA."
                         title="Edit Blog"
                     />
-                    <section className="mt-10 flex w-2/3 gap-x-8">
-                        <Input
-                            type="text"
-                            className="text-2xl  font-bold "
-                            value={title}
-                            placeholder="Enter title"
-                            onChange={(e) => setTitle(e.target.value)}
-                        />
-                        <Button
-                            className="w-1/3  cursor-pointer font-bold"
-                            variant={validated ? 'default' : 'destructive'}
-                        >
-                            <label htmlFor="cover" className="w-full cursor-pointer">
-                                Choose Cover
-                            </label>
-                        </Button>
-                        <Input
-                            type="file"
-                            className="hidden"
-                            id="cover"
-                            accept="image/*"
-                            onChange={handleImagePreview}
-                        />
-                    </section>
-                    {cover && (
-                        <div className="aspect-[3/2] w-1/3 overflow-hidden">
-                            {' '}
-                            <Image
-                                src={cover.url}
-                                width={0}
-                                height={0}
-                                sizes="100vw"
-                                alt="preview"
-                                className="w-full object-cover"
-                            />
+                    <section className=' flex w-full 2xl:space-x-32 xl:space-x-20 space-x-10 2xl:px-20 xl:px-10 px-4  py-20 xl:py-0'>
+                        <div className="flex-1 space-y-10 w-full">
+                            <div className="mt-10 flex w-full gap-x-8">
+                                <Input
+                                    type="text"
+                                    className="text-2xl  font-bold "
+                                    value={title}
+                                    placeholder="Enter title"
+                                    onChange={(e) => setTitle(e.target.value)}
+                                />
+                                <Button
+                                    className="w-1/3  cursor-pointer font-bold"
+                                    variant={validated ? 'default' : 'destructive'}
+                                >
+                                    <label htmlFor="cover" className="w-full cursor-pointer">
+                                        Choose Cover
+                                    </label>
+                                </Button>
+                                <Input
+                                    type="file"
+                                    className="hidden"
+                                    id="cover"
+                                    accept="image/*"
+                                    onChange={handleImagePreview}
+                                />
+                            </div>
+                            {cover && (
+                                <div className="aspect-[2/1] w-full overflow-hidden">
+                                    <Image
+                                        src={cover.url}
+                                        width={0}
+                                        height={0}
+                                        sizes="100vw"
+                                        alt="preview"
+                                        className="w-full object-cover"
+                                    />
+                                </div>
+                            )}
+                            <TextEditor value={value} setValue={setValue} validated={validated} />
+    
+                            <Button onClick={handlePostBlog} size={'lg'} className="text-lg font-bold">
+                                Post
+                            </Button>
                         </div>
-                    )}
-                    <TextEditor value={value} setValue={setValue} validated={validated} />
-
-                    <Button onClick={handlePostBlog} size={'lg'} className="text-lg font-bold">
-                        Post
-                    </Button>
+                        <div className="w-[400px] lg:block hidden"></div>
+                    </section>
                 </main>
             )}
         </>

@@ -149,13 +149,13 @@ export default function TextEditor({
     }, []);
 
     return (
-        <section className="w-[70%]  p-1   px-2  text-white placeholder:text-white">
+        <section className="w-full  text-white placeholder:text-white">
             {editorLoaded  && (
                 <ReactQuill
                     theme="snow"
                     value={value}
                     style={{
-                        height: '800px',
+                        height: '700px',
                         marginBottom: '80px',
                         borderColor: validated ? 'white' : 'red !important',
                     }}
