@@ -25,6 +25,7 @@ const formats = [
     'list',
     'bullet',
     'indent',
+    'align',
     'link',
     'code-block',
     'background',
@@ -62,6 +63,7 @@ export default function TextEditor({
                     [{ size: [] }],
                     [{ header: [1, 2, 3, 4, 5, false] }, 'bold', 'italic', 'underline', 'strike', 'blockquote'],
                     [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
+                    [{ align: '' }, { align: 'center' }, { align: 'right' }, { align: 'justify' }],
                     [
                         {
                             color: [

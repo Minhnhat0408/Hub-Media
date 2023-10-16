@@ -1,6 +1,7 @@
 "use client"
 import BlogItem from '@/components/blog/blog-item';
 import BlogTools from '@/components/blog/blog-tools';
+import Search from '@/components/blog/search';
 import PageTitle from '@/components/page-title';
 import { BlogContext } from '@/contexts/context';
 import { Locale } from '@/i18n.config';
@@ -23,11 +24,11 @@ export default function BlogPage({ params: { lang } }: { params: { lang: Locale 
             />
             {/* <UnderConstruction construction={pages.underconstruction} />
              */}
-
-            <section className='w-full flex  space-x-20 px-20'>
-                <div className='flex-1  grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 '>
+            <Search lang={lang} allPosts={blogs} className='xl:hidden'/>
+            <section className='flex w-full space-x-10 px-4 lg:py-20 pb-20 xl:space-x-20 xl:px-10 xl:py-0  2xl:px-20'>
+                <div className='flex-1  grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 '>
                     {
-                        blogs.map((blog,ind) => <BlogItem lang={lang} key={ind} title={blog.title} id={blog.contentId} cover={blog.cover} date={blog.date}  />)
+                        blogs.map((blog,ind) => <BlogItem lang={lang} key={ind} title={blog.title} id={blog.contentId} preview={blog.preview} cover={blog.cover} date={blog.date}  />)
                     }
                         {/* <BlogItem/>
                         <BlogItem/>
@@ -37,7 +38,7 @@ export default function BlogPage({ params: { lang } }: { params: { lang: Locale 
                         <BlogItem/> */}
 
                 </div>
-                <div className=' h-fit'>
+                <div className=' h-fit xl:block hidden'>
                     <BlogTools lang={lang} defaultRecent={recentBlog} allPosts={blogs} />
                 </div>
 

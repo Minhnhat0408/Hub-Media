@@ -4,7 +4,8 @@ export type BlogType = {
   title:string,
   cover:string,
   date:string,
-  contentId:string
+  contentId:string,
+  preview:string
 }
 export type BlogContentType = {
   title:string,
@@ -13,6 +14,9 @@ export type BlogContentType = {
   date:string,
   blogId:string
 }
+
+
+
 export const routes = [
     {   
       label: 'HOME',
@@ -63,7 +67,7 @@ export const middlewareRoutes = [
 
 export const services = [
   'web-dev',
-  'graphic-design',
+  'mkt-services',
   'booking-influencer',
   'brand-co-host',
   'event-organizing',

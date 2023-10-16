@@ -26,9 +26,11 @@ export async function generateMetadata({ params }: { params: { title: string; la
 async function Service({ params: { title, lang } }: { params: { title: string; lang: Locale } }) {
     const data = await getSpecifiedService(lang, title);
     if(data?.error) {
+
         redirect('/not-found')
     }
     let countService = -1;
+
     return (
         <main className=" h-fit w-full py-[60px] md:py-[90px] ">
             <PageTitle
@@ -163,10 +165,11 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                         .filter((val) => {
                                             return val[0].includes(item);
                                         })
-                                        .map((item, index: Key) => {
+                                        .map((item , index: Key) => {
                                             countService += 1;
                                             const [pkg, type] = item[0].split('/');
                                             const infor = item[1] as any;
+                                  
                                             return (
                                                 <Package
                                                     key={index}
@@ -174,6 +177,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                                     pkg={pkg}
                                                     price={infor.price}
                                                     details={infor.details}
+                                                    unit={infor.unit}
                                                     lang={lang}
                                                     countService={countService}
                                                 />
@@ -196,6 +200,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                         title={title}
                                         pkg={pkg}
                                         price={infor.price}
+                                        unit={infor.unit}
                                         details={infor.details}
                                         lang={lang}
                                         countService={countService}

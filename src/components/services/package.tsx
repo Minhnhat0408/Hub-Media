@@ -8,15 +8,18 @@ export default function Package({
     price,
     details,
     lang,
+    unit,
     countService,
 }: {
     title: string;
     pkg: string;
+    unit:boolean | undefined;
     price: string[];
     details: string[];
     lang: Locale;
     countService: number;
 }) {
+
     return (
         <div className="group flex w-[450px]  flex-col items-center gap-y-8 border-[1px] border-gradient py-10 md:h-[600px]">
             <div className="flex h-fit flex-col items-center ">
@@ -27,7 +30,7 @@ export default function Package({
             <Coins className="h-20 w-20 rounded-full border-[1px] border-gradient p-4  text-gradient duration-500 group-hover:bg-gradient   group-hover:text-white " />
             <h3 className="super !text-3xl text-gradient ssm:text-4xl  ">
                 {price[0]}
-                <span className="text-sm "> vnd</span>
+                <span className="text-sm ">{unit === false ? '' : 'vnd'}</span>
                 <span className="text-sm ">{price.length > 1 && ' / ' + price[1]}</span>
             </h3>
             <ul className="mt-4 flex flex-col items-center gap-y-4 text-muted-foreground">

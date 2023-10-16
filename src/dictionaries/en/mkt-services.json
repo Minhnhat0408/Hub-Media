@@ -1,0 +1,74 @@
+{
+    "title": "Marketing Services",
+    "href": "/services/mkt-services",
+    "details": [
+        "Kế hoạch marketing tổng thể",
+        "Quản lý social media",
+        "Content Marketing",
+        "Chạy ads",
+        "Thiết kế brandkit (logo, kv)",
+        "Thiết kế ấn phẩm",
+        "Thiết kế pitchdeck  "
+    ],
+    "tags": ["#logo", "#branding", "#visual"],
+    "description": "Đội ngũ trẻ tài năng của chúng tôi không ngừng sáng tạo để tạo ra các thiết kế trẻ trung và thú vị, sát với thị hiếu của giới trẻ. Những tác phẩm nghệ thuật này không chỉ đẹp mắt mà còn sâu sắc với thông điệp và câu chuyện đặc trưng cho mỗi nhãn hàng.",
+    "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg",
+    "portfolio": [
+        "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2F363333842_172052645893853_1317132984985247017_n.jpg?alt=media&token=31077ac2-11ff-40f4-adbe-13d5a1b60e26&_gl=1*1kqvskb*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUyODY0LjMuMC4w",
+        "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2F366169595_109333385592181_7297837858959776471_n.jpg?alt=media&token=62d447a2-b205-4318-9878-139ed115fc6d&_gl=1*27l9pu*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5NjczNTAyOS4yODIuMS4xNjk2NzM1MjE0LjU3LjAuMA.",
+        "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2F383335407_333365615874178_6558554192669494276_n.jpg?alt=media&token=f03979db-8923-4585-8f48-a7f82caafee0&_gl=1*yvxk7g*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5NjczNTAyOS4yODIuMS4xNjk2NzM1MjY5LjIuMC4w",
+        "https://drive.google.com/file/d/1r4ffeaUeBhg1yBxsPUyZ-iW_2YPHJErb/preview",
+        "https://drive.google.com/file/d/1uMhP4OuN8UL39IDpl05YPHQbVg5lqNBZ/preview",
+        "https://drive.google.com/file/d/15e89kskyhEQ0LIC16uSSmGZrE19Nsrnu/preview"
+    ],
+    "types": ["Brandkit", "Ấn Phẩm", "Pitch deck"],
+    "packages": {
+        "Standard/Brandkit": {
+            "price": ["15,000,000"],
+            "details": ["1 mẫu demo", "3 lần chỉnh sửa","2 hạng mục"]
+        },
+        "Advanced/Brandkit": {
+            "price": ["20,000,000"],
+            "details": ["2 mẫu demo", "5 lần chỉnh sửa","5 hạng mục"]
+        },
+        "Professional/Brandkit": {
+            "price": ["30,000,000"],
+            "details": ["4 mẫu demo", "Không giới hạn chỉnh sửa","10 hạng mục"]
+        },
+        "Standard/Ấn Phẩm": {
+            "price": ["300,000"],
+            "details": ["1 mẫu demo", "2 lần chỉnh sửa"]
+        },
+        "Advanced/Ấn Phẩm": {
+            "price": ["600,000"],
+            "details": ["2 mẫu demo", "3 lần chỉnh sửa"]
+        },
+        "Professional/Ấn Phẩm": {
+            "price": ["1,000,000"],
+            "details": ["3   mẫu demo", "4 lần chỉnh sửa"]
+        },
+        "Standard/Pitch deck": {
+            "price": ["200,000", "slide"],
+            "details": ["1 lần chỉnh sửa", "Tiến độ: 4 slide/ngày"]
+        },
+        "Advanced/Pitch deck": {
+            "price": ["300,000", "slide"],
+            "details": ["3 lần chỉnh sửa", "Tiến độ: 4 slide/ngày"]
+        },
+        "Professional/Pitch deck": {
+            "price": ["400,000", "slide"],
+            "details": ["Không giới hạn chỉnh sửa", "Tiến độ: không giới hạn"]
+        }
+    },
+    "msg": [
+        "Tôi muốn book gói Standard của Brandkit",
+        "Tôi muốn book gói Advanced của Brandkit",
+        "Tôi muốn book gói Professional của Brandkit",
+        "Tôi muốn book gói Standard của Ấn Phẩm",
+        "Tôi muốn book gói Advanced của Ấn Phẩm",
+        "Tôi muốn book gói Professional của Ấn Phẩm",
+        "Tôi muốn book gói Standard của Pitch deck",
+        "Tôi muốn book gói Advanced của Pitch deck",
+        "Tôi muốn book gói Professional của Pitch deck"
+    ]
+}

@@ -6,7 +6,7 @@ import MarkupButton from '../markup-button';
 import Link from 'next/link';
 import { Locale } from '@/i18n.config';
 
-export default function BlogItem({title,cover,date, short,lang,id }: { short?: boolean,title:string,cover:string,date:string,id:string,lang:Locale }) {
+export default function BlogItem({title,cover,date, short,lang,id,preview }: { short?: boolean,title:string,cover:string,date:string,id:string,lang:Locale ,preview:string}) {
     return (
         <>
             {short ? (
@@ -42,9 +42,8 @@ export default function BlogItem({title,cover,date, short,lang,id }: { short?: b
                         <p className="text-xs font-bold uppercase text-gradient">{date}</p>
                         <Link href={'/' + lang + '/blog/' + id} className="text-2xl font-bold hover:text-gradient duration-500 ">{title}</Link>
                     </div>
-                    <p className="text-muted-foreground ">
-                        Phasellus faucibus scelerisque eleifend donec. Sit amet aliquam id diam. Scelerisque varius
-                        morbi enim...
+                    <p className="text-muted-foreground line-clamp-2">
+                        {preview}...
                     </p>
                     <MarkupButton title="Read more"  href={'/' + lang + '/blog/' + id} />
                 </article>

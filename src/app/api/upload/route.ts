@@ -3,10 +3,6 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request ) {
     const formData = await request.formData()
     formData.append('upload_preset',`${process.env.CLOUDINARY_UPLOAD_PRESET}`)
-
-    console.log(`https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload`)
-    console.log(formData)
-  
     const response = await fetch(`https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload`, {
       method: 'POST',
       body: formData

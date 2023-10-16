@@ -9,6 +9,7 @@ import BlogTools from './blog-tools';
 import { useContext, useEffect, useState } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import { BlogContext, IBlogContext } from '@/contexts/context';
+import Search from './search';
 
 export default function BlogDetailsUI({ content, lang, id }: { content: BlogContentType; lang: Locale; id: string }) {
     const parser = (input: string) =>
@@ -19,7 +20,7 @@ export default function BlogDetailsUI({ content, lang, id }: { content: BlogCont
                 }
             },
         });
-    const {allBlogs} = useContext<IBlogContext>(BlogContext);
+    const { allBlogs } = useContext<IBlogContext>(BlogContext);
     useEffect(() => {
         const recentPosts = localStorage.getItem('recentpost')
             ? JSON.parse(localStorage.getItem('recentpost') as string)
@@ -44,7 +45,6 @@ export default function BlogDetailsUI({ content, lang, id }: { content: BlogCont
                     ...recentPosts,
                 ]),
             );
-     
         } else {
             if (recentPosts.find((item: { contentId: string }) => item.contentId === id)) {
                 //switch it to the top
@@ -65,13 +65,15 @@ export default function BlogDetailsUI({ content, lang, id }: { content: BlogCont
                     ...recentPosts.slice(0, 2),
                 ]),
             );
-
         }
-   
+     
     }, []);
+    
     return (
-        <section className="flex w-full 2xl:space-x-32 xl:space-x-20 space-x-10 2xl:px-20 xl:px-10 px-4  py-20 xl:py-0">
-            <div className="flex-1 w-full ">
+        <>
+        <Search lang={lang} allPosts={allBlogs} className="lg:hidden"/>
+        <section className="flex w-full space-x-10 px-4 lg:py-20 xl:space-x-20 xl:px-10 xl:py-0  2xl:space-x-32 2xl:px-20">
+            <div className="w-full flex-1 ">
                 <div className="aspect-[2/1] w-full overflow-hidden">
                     <Image
                         src={content.cover}
@@ -88,9 +90,10 @@ export default function BlogDetailsUI({ content, lang, id }: { content: BlogCont
                 </div>
                 <div className="ql-editor h-fit ">{parser(content.content)}</div>
             </div>
-            <div className="h-fit lg:block hidden ">
+            <div className="hidden h-fit lg:block ">
                 <BlogTools lang={lang} allPosts={allBlogs} />
             </div>
         </section>
+        </>
     );
 }

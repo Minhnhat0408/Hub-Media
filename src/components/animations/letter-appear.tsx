@@ -16,8 +16,8 @@ export default function LetterAppear({ children, className }: { children: string
             {children.split(' ').map((word, index) => {
                 let time =
                     index < 1
-                        ? 80
-                        : 80 *
+                        ? 60
+                        : 60 *
                           children
                               .split(' ')
                               .splice(0, index)
@@ -31,7 +31,7 @@ export default function LetterAppear({ children, className }: { children: string
                             return (
                                 <span
                                     className={cn(
-                                        'translate-x-[50px] scale-150 py-2 opacity-0 duration-700  ',
+                                        'translate-x-[50px] scale-150 py-2 opacity-0 duration-500  ',
                                         isInView && ' opacity-1 super flex  translate-x-0 scale-100',
                                         className,
                                     )}

@@ -9,18 +9,14 @@ import useDebounce from '@/hooks/useDebounce';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Link from 'next/link';
 import { BlogType } from '@/lib/constants';
+import { cn } from '@/lib/utils';
 
-export default function BlogTools({ lang,defaultRecent = [],allPosts }: { lang: Locale,defaultRecent?:BlogType[],allPosts:BlogType[] }) {
+export default function Search({ lang,allPosts ,className}: { lang: Locale,allPosts:BlogType[] ,className?:string}) {
     const [searchValue, setSearchValue] = useState('');
     const [showResult, setShowResult] = useState(true);
     const [searchResult, setSearchResult] = useState<BlogType[]>([]);
     const [loading, setLoading] = useState(false);
     const debounce = useDebounce(searchValue.trim(), 1000);
-    const [recentPosts, setRecentPosts] =useState<BlogType[]>()
-    useEffect(() => {
-        const res = localStorage.getItem('recentpost') ? JSON.parse(localStorage.getItem('recentpost') as string) : defaultRecent;
-        setRecentPosts(res)
-    },[])
 
     useEffect(() => {
         if (searchValue.trim()) {
@@ -42,7 +38,7 @@ export default function BlogTools({ lang,defaultRecent = [],allPosts }: { lang: 
     }, [debounce]);
 
     return (
-        <div className="h-full xl:w-[400px] w-[350px] space-y-12 border-2 border-gradient px-10 py-16 ">
+        <div className={cn("h-full   w-full px-10 py-10 sm:mt-0 mt-10 ",className)}>
             <div className="relative ">
                 <Input
                     placeholder={lang === 'vi' ? 'Tìm kiếm' : 'Search'}
@@ -63,7 +59,7 @@ export default function BlogTools({ lang,defaultRecent = [],allPosts }: { lang: 
                 )}
 
                 {showResult && searchResult.length > 0 &&
-                    <div className="search-box absolute  top-10 bg-background ">
+                    <div className="search-box absolute  z-10 top-10 bg-background ">
                         {
                             searchResult.map((item, index) => (
                                 <Link href={'/' + lang + "/blog/" + item.contentId} className="flex  w-full items-center gap-x-3 p-4" key={index}>
@@ -85,25 +81,8 @@ export default function BlogTools({ lang,defaultRecent = [],allPosts }: { lang: 
                     </div>
                 }
             </div>
-            <div className="flex w-full flex-col gap-y-4">
-                <h2 className="text-2xl font-bold">{lang === 'vi' ? 'Mới Đọc' : 'Recent Blogs'}</h2>
-                {
-                    recentPosts?.map((item, index) => (
-                        <BlogItem lang={lang} key={index} title={item.title} id={item.contentId} preview={item.preview} cover={item.cover} date={item.date} short />
-                    ))
-                }
-         
-            </div>
-            <Image
-                src={
-                    'https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FIMG_5566.jpg?alt=media&token=078020b3-6035-4e21-aaf1-aad62f14510e&_gl=1*cfjgkq*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5NzA5Njg3NS4yODkuMS4xNjk3MDk2OTgwLjMzLjAuMA..'
-                }
-                className="h-[500px] w-auto object-cover  mix-blend-luminosity "
-                height={0}
-                width={0}
-                sizes="100vw"
-                alt="logo"
-            />
+           
+           
         </div>
     );
 }

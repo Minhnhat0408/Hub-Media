@@ -6,20 +6,18 @@ import { Locale } from '@/i18n.config';
 import dynamic from 'next/dynamic';
 import PageTitle from '@/components/page-title';
 import { Button } from '@/components/ui/button';
-import { db, storage } from '@/firebase/firebase-app';
+import { db } from '@/firebase/firebase-app';
 import { addDoc, collection, deleteDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
-import { set } from 'react-hook-form';
-import { BlogContentType } from '@/lib/constants';
 
 export default function EditBlog({ params: { lang } }: { params: { lang: Locale } }) {
     const searchParams = useSearchParams();
     const key = searchParams.get('key');
     const id = searchParams.get('id');
     const [title, setTitle] = useState<string>('');
-    const [contentId,setContentId] = useState<string>('');
+    const [contentId, setContentId] = useState<string>('');
     const [validated, setValidated] = useState(true);
     const [cover, setCover] = useState<{ url: string; file?: File }>();
     const router = useRouter();
@@ -27,7 +25,6 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
     const [value, setValue] = useState('');
     const [displayDelete, setDisplayDelete] = useState(false);
     const [display, setDisplay] = useState(false);
-
     const TextEditor = useMemo(() => dynamic(() => import('@/components/text-editor'), { ssr: false }), []);
     useEffect(() => {
         async function confirmKey() {
@@ -38,7 +35,7 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                 setDisplay(true);
                 if (id) {
                     const res = await getDoc(doc(db, 'contents', id));
-                    const data = res.data() ;
+                    const data = res.data();
 
                     if (data) {
                         setTitle(data.title);
@@ -52,7 +49,7 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
             }
         }
         confirmKey();
-    });
+    }, []);
     const handlePostBlog = async () => {
         if (!value || !cover || !title) {
             setValidated(false);
@@ -70,8 +67,18 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                         const res = await axios.post('/api/upload', file);
                         cover_url = res.data;
                     }
+                    const textWithoutStrongTags = value.replace(/<strong[^>]*>.*?<\/strong>/g, '');
 
-                    if(contentId && id) {
+                    const textContent = textWithoutStrongTags.replace(/<[^>]*>/g, '');
+
+                    // Split the text into words
+                    const words = textContent.split(/\s+/);
+
+                    // Extract the first 20 words
+                    const first20Words = words.slice(0, 20).join(' ');
+                    if (contentId && id) {
+                       
+                        
                         const res = await updateDoc(doc(db, 'contents', id), {
                             title: title,
                             content: value,
@@ -82,8 +89,9 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                             title: title,
                             cover: cover_url,
                             date: new Date(),
+                            preview: first20Words,
                         });
-                    }else{
+                    } else {
                         const docRef = await addDoc(collection(db, 'contents'), {
                             title: title,
                             content: value,
@@ -95,12 +103,13 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                             title: title,
                             cover: cover_url,
                             date: new Date(),
+                            preview: first20Words,
                         });
                         const res = await updateDoc(doc(db, 'contents', docRef.id), {
                             blogId: result.id,
                         });
                     }
-                    
+
                     resolve('ok');
                 })();
             }),
@@ -145,17 +154,20 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
         setCover(undefined);
         setTitle('');
         setValue('');
+        setDisplayDelete(false);
+        setValidated(true);
     };
     const handleImagePreview = (e) => {
         const file = e.target.files[0];
         setCover({ url: URL.createObjectURL(file), file: file });
     };
     const handleDelete = async () => {
-        if(id) {
+        if (id) {
             await deleteDoc(doc(db, 'contents', id));
             await deleteDoc(doc(db, 'blogs', contentId));
+            reset();
         }
-    }
+    };
     return (
         <>
             {display && (
@@ -188,7 +200,7 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                                         variant={validated ? 'default' : 'destructive'}
                                         onClick={handleDelete}
                                     >
-                                            Delete
+                                        Delete
                                     </Button>
                                 )}
                                 <Input

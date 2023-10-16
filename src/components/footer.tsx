@@ -80,7 +80,7 @@ export async function Footer({lang}:{lang:Locale}) {
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
                                 href={'/' + lang + '/services/graphic-design'}
                             >
-                                Graphic Design
+                                Marketing Services
                             </Link>
                         </div>
                         <div className="mb-3 flex items-start">
