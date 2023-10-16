@@ -9,20 +9,7 @@ import useDebounce from '@/hooks/useDebounce';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Link from 'next/link';
 import { BlogType } from '@/lib/constants';
-const data = [
-    {
-        title: 'Creative marketing campaign',
-        date: 'May 21, 2023',
-    },
-    {
-        title: 'Design your apps in your own way',
-        date: 'May 11, 2021',
-    },
-    {
-        title: 'Fix your business problems with these tips',
-        date: 'June 21, 2021',
-    },
-];
+
 export default function BlogTools({ lang,defaultRecent = [],allPosts }: { lang: Locale,defaultRecent?:BlogType[],allPosts:BlogType[] }) {
     const [searchValue, setSearchValue] = useState('');
     const [showResult, setShowResult] = useState(true);

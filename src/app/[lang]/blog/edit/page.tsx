@@ -6,32 +6,49 @@ import { Locale } from '@/i18n.config';
 import dynamic from 'next/dynamic';
 import PageTitle from '@/components/page-title';
 import { Button } from '@/components/ui/button';
-import { UploadMetadata, getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { db, storage } from '@/firebase/firebase-app';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { Input } from '@/components/ui/input';
 import Image from 'next/image';
-import { metadata } from '@/components/text-editor';
 import toast from 'react-hot-toast';
+import { set } from 'react-hook-form';
+import { BlogContentType } from '@/lib/constants';
 
 export default function EditBlog({ params: { lang } }: { params: { lang: Locale } }) {
     const searchParams = useSearchParams();
     const key = searchParams.get('key');
-    const slug = searchParams.get('title');
+    const id = searchParams.get('id');
     const [title, setTitle] = useState<string>('');
+    const [contentId,setContentId] = useState<string>('');
     const [validated, setValidated] = useState(true);
-    const [cover, setCover] = useState<{ url: string; file: File }>();
+    const [cover, setCover] = useState<{ url: string; file?: File }>();
     const router = useRouter();
+    const [defaultContent, setDefaultContent] = useState('');
     const [value, setValue] = useState('');
+    const [displayDelete, setDisplayDelete] = useState(false);
     const [display, setDisplay] = useState(false);
+
     const TextEditor = useMemo(() => dynamic(() => import('@/components/text-editor'), { ssr: false }), []);
     useEffect(() => {
         async function confirmKey() {
-            const res = await axios.get('/api/edit/?key=' + key + '&title=' + slug);
+            const res = await axios.get('/api/edit/?key=' + key + '&id=' + id);
             if (res.data?.error) {
                 router.push('/blog');
             } else {
                 setDisplay(true);
+                if (id) {
+                    const res = await getDoc(doc(db, 'contents', id));
+                    const data = res.data() ;
+
+                    if (data) {
+                        setTitle(data.title);
+                        setDefaultContent(data.content);
+                        setValue(data.content);
+                        setCover({ url: data.cover });
+                        setDisplayDelete(true);
+                        setContentId(data.blogId);
+                    }
+                }
             }
         }
         confirmKey();
@@ -44,45 +61,48 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
         // const res = await toast.promise(
         await toast.promise(
             new Promise((resolve, reject) => {
-                const storageRef = ref(storage, `images/${cover.file.name}`);
-                const uploadTask = uploadBytesResumable(storageRef, cover.file, metadata.contentType as UploadMetadata);
+                (async () => {
+                    let file: any = cover.file;
+                    let cover_url = cover.url;
+                    if (cover.file) {
+                        file = new FormData();
+                        file.append('file', cover.file);
+                        const res = await axios.post('/api/upload', file);
+                        cover_url = res.data;
+                    }
 
-                uploadTask.on(
-                    'state_changed',
-                    (snapshot) => {
-                        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-                        // const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                        // console.log('Upload is ' + progress + '% done');
-                        // switch (snapshot.state) {
-                        //   case 'paused':
-                        //     console.log('Upload is paused');
-                        //     break;
-                        //   case 'running':
-                        //     console.log('Upload is running');
-                        //     break;
-                        // }
-                    },
-                    (error) => {
-                        reject(error);
-                    },
-                    async () => {
-                        const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                    if(contentId && id) {
+                        const res = await updateDoc(doc(db, 'contents', id), {
+                            title: title,
+                            content: value,
+                            date: new Date(),
+                            cover: cover_url,
+                        });
+                        const result = await updateDoc(doc(db, 'blogs', contentId), {
+                            title: title,
+                            cover: cover_url,
+                            date: new Date(),
+                        });
+                    }else{
                         const docRef = await addDoc(collection(db, 'contents'), {
                             title: title,
                             content: value,
                             date: new Date(),
-                            cover: downloadURL,
+                            cover: cover_url,
                         });
-
                         const result = await addDoc(collection(db, 'blogs'), {
                             contentId: docRef.id,
                             title: title,
-                            cover: downloadURL,
+                            cover: cover_url,
                             date: new Date(),
                         });
-                        resolve(result);
-                    },
-                );
+                        const res = await updateDoc(doc(db, 'contents', docRef.id), {
+                            blogId: result.id,
+                        });
+                    }
+                    
+                    resolve('ok');
+                })();
             }),
             {
                 loading: <p>{lang === 'vi' ? 'Xin hãy đợi 1 chút' : 'Please wait for a moment'}</p>,
@@ -130,6 +150,12 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
         const file = e.target.files[0];
         setCover({ url: URL.createObjectURL(file), file: file });
     };
+    const handleDelete = async () => {
+        if(id) {
+            await deleteDoc(doc(db, 'contents', id));
+            await deleteDoc(doc(db, 'blogs', contentId));
+        }
+    }
     return (
         <>
             {display && (
@@ -138,8 +164,8 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                         src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fbghub.JPG?alt=media&token=07da7fd8-9f51-479c-848a-691c6972c227&_gl=1*3zs0og*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUxNzE1LjQ0LjAuMA."
                         title="Edit Blog"
                     />
-                    <section className=' flex w-full 2xl:space-x-32 xl:space-x-20 space-x-10 2xl:px-20 xl:px-10 px-4  py-20 xl:py-0'>
-                        <div className="flex-1 space-y-10 w-full">
+                    <section className=" flex w-full space-x-10 px-4 py-20 xl:space-x-20 xl:px-10 xl:py-0  2xl:space-x-32 2xl:px-20">
+                        <div className="w-full flex-1 space-y-10">
                             <div className="mt-10 flex w-full gap-x-8">
                                 <Input
                                     type="text"
@@ -149,13 +175,22 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                                     onChange={(e) => setTitle(e.target.value)}
                                 />
                                 <Button
-                                    className="w-1/3  cursor-pointer font-bold"
+                                    className="  cursor-pointer font-bold"
                                     variant={validated ? 'default' : 'destructive'}
                                 >
                                     <label htmlFor="cover" className="w-full cursor-pointer">
-                                        Choose Cover
+                                        Cover
                                     </label>
                                 </Button>
+                                {displayDelete && (
+                                    <Button
+                                        className=" cursor-pointer font-bold"
+                                        variant={validated ? 'default' : 'destructive'}
+                                        onClick={handleDelete}
+                                    >
+                                            Delete
+                                    </Button>
+                                )}
                                 <Input
                                     type="file"
                                     className="hidden"
@@ -176,13 +211,18 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                                     />
                                 </div>
                             )}
-                            <TextEditor value={value} setValue={setValue} validated={validated} />
-    
+                            <TextEditor
+                                value={value}
+                                setValue={setValue}
+                                validated={validated}
+                                defaultValue={defaultContent}
+                            />
+
                             <Button onClick={handlePostBlog} size={'lg'} className="text-lg font-bold">
                                 Post
                             </Button>
                         </div>
-                        <div className="w-[400px] lg:block hidden"></div>
+                        <div className="hidden w-[400px] lg:block"></div>
                     </section>
                 </main>
             )}

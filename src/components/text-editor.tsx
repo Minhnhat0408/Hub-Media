@@ -1,10 +1,10 @@
 'use client';
 import 'react-quill/dist/quill.snow.css';
 import 'quill-image-uploader/dist/quill.imageUploader.min.css';
-import { UploadMetadata, getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { storage } from '@/firebase/firebase-app';
+// import { UploadMetadata, getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import dynamic from 'next/dynamic';
-import {  useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import axios from 'axios';
 // import { Quill } from 'react-quill';
 // import ImageUploader from 'quill-image-uploader';
 // import ImageResize from 'quill-image-resize-module-react';
@@ -121,25 +121,18 @@ export default function TextEditor({
                 },
                 imageUploader: {
                     upload: (file) => {
+                        const formData = new FormData();
+                        formData.append('file', file);
                         return new Promise((resolve, reject) => {
-                            const storageRef = ref(storage, `images/${file.name}`);
-                            const uploadTask = uploadBytesResumable(
-                                storageRef,
-                                file,
-                                metadata.contentType as UploadMetadata,
-                            );
-
-                            uploadTask.on(
-                                'state_changed',
-                                (snapshot) => {},
-                                (error) => {
-                                    reject(error);
-                                },
-                                async () => {
-                                    const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-                                    resolve(downloadURL); // resolve the Promise with the downloaded URL
-                                },
-                            );
+                            axios
+                                .post('/api/upload', formData)
+                                .then((res) => {
+                                   
+                                    resolve(res.data);
+                                })
+                                .catch((err) => {
+                                    reject(err);
+                                });
                         });
                     },
                 },
@@ -150,7 +143,7 @@ export default function TextEditor({
 
     return (
         <section className="w-full  text-white placeholder:text-white">
-            {editorLoaded  && (
+            {editorLoaded && (
                 <ReactQuill
                     theme="snow"
                     value={value}

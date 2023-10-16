@@ -69,15 +69,17 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                     {data?.portfolio ? (
                         data.portfolio.map((item: string, index: Key) => {
                             return isImageUrl(item) ? (
-                                <Image
-                                    src={item}
-                                    key={index}
-                                    alt="img"
-                                    width="0"
-                                    height="0"
-                                    sizes="100vw"
-                                    className=" keen-slider__slide h-full object-top w-auto object-cover "
-                                />
+                                <div className=' keen-slider__slide flex justify-center h-full w-full overflow-hidden'>
+                                    <Image
+                                        src={item}
+                                        key={index}
+                                        alt="img"
+                                        width="0"
+                                        height="0"
+                                        sizes="100vw"
+                                        className="  h-full object-top w-auto object-cover "
+                                    />
+                                </div>
                             ) : (
                                 <iframe
                                     loading="lazy"
@@ -96,7 +98,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                 src={'https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg'}
                                 alt="img"
                                 width="0"
-                                height="0"
+                                height="0"  
                                 sizes="100vw"
                                 className=" keen-slider__slide h-full w-full "
                             />

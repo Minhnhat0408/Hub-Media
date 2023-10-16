@@ -11,6 +11,7 @@ export type BlogContentType = {
   content:string,
   cover:string,
   date:string,
+  blogId:string
 }
 export const routes = [
     {   
