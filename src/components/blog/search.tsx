@@ -38,7 +38,7 @@ export default function Search({ lang,allPosts ,className}: { lang: Locale,allPo
     }, [debounce]);
 
     return (
-        <div className={cn("h-full   w-full px-10 py-10 sm:mt-0 mt-10 ",className)}>
+        <div className={cn("h-full   w-full px-10 py-10 sm:mt-0 mt-10    ",className)}>
             <div className="relative ">
                 <Input
                     placeholder={lang === 'vi' ? 'Tìm kiếm' : 'Search'}
@@ -73,7 +73,7 @@ export default function Search({ lang,allPosts ,className}: { lang: Locale,allPo
                                             alt="logo"
                                         />
                                     </div>
-                                    <h2>{item.title}</h2>
+                                    <h2 className='line-clamp-2'>{item.title}</h2>
                                 </Link>
                             ))
                         }

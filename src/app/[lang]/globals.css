@@ -43,7 +43,7 @@ html *::-webkit-scrollbar {
 
 .bg-page-title {
 
-  background: linear-gradient(0deg, hsl(var(--background)), transparent);
+  background: linear-gradient(0deg,rgb(17, 18, 24), transparent);
 
 }
 

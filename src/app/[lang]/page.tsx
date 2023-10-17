@@ -4,6 +4,7 @@ import HomeHero from '@/components/home/home-hero';
 import Partner from '@/components/home/partner';
 import Portfolio from '@/components/home/portfolio';
 import Services from '@/components/home/services';
+import Team from '@/components/home/team';
 import Vision from '@/components/home/vision';
 import { Locale } from '@/i18n.config';
 import { getDictionary, getServices } from '@/lib/dictionary';
@@ -30,6 +31,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
             <Partner lang={lang} />
             <Services lang={lang} services={services} />
             <FAQ lang={lang} faq={pages.home.faq} />
+            <Team />
         </main>
     );
 }

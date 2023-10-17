@@ -31,7 +31,7 @@ async function ServicesPage({ params: { lang } }: { params: { lang: Locale } }) 
                 title={lang === 'vi' ? 'Dịch vụ' : 'Services'}
             />
 
-            <section className=" grid w-full grid-cols-1 py-10 md:p-10 lg:grid-cols-2 2xl:p-20  ">
+            <section className=" grid w-full grid-cols-1 py-10 md:p-10 lg:grid-cols-2 xl:p-20  ">
                 {Object.entries(services as ServiceThumbnail).map(([title, infor], index: number) => {
                     return (
                         <ServiceItem

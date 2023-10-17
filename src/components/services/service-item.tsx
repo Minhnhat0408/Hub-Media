@@ -20,7 +20,7 @@ export default function ServiceItem({
     className?: string;
 }) {
     return (
-        <article className={cn('flex  w-full flex-col items-center p-4 2xl:!p-20 ssm:p-10 ', className)}>
+        <article className={cn('flex  w-full flex-col items-center p-4 xl:!p-20  ssm:p-10 ', className)}>
             <div className="group relative mb-10 aspect-[20/21]  w-full overflow-hidden ">
                 <Image
                     src={src}
@@ -28,7 +28,7 @@ export default function ServiceItem({
                     width="0"
                     height="0"
                     sizes="100vw"
-                    className="w-full object-bottom object-cover duration-500 hover:scale-125 "
+                    className="w-full object-bottom h-full object-cover duration-500 hover:scale-125 "
                 />
                 <div className="absolute bottom-0  flex w-full translate-y-10 flex-col items-center justify-center bg-black/50 p-8 opacity-0  backdrop-blur duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                     <MarkupButton

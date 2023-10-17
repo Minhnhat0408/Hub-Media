@@ -150,7 +150,7 @@ export default function TextEditor({
                     theme="snow"
                     value={value}
                     style={{
-                        height: '700px',
+                        height: '80vh',
                         marginBottom: '80px',
                         borderColor: validated ? 'white' : 'red !important',
                     }}

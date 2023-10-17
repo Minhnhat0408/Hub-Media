@@ -23,7 +23,7 @@ export default function BlogItem({title,cover,date, short,lang,id,preview }: { s
                     </Link>
                     <div className="space-y-2 flex-1 flex flex-col justify-center">
                         <p className="text-xs font-bold uppercase text-gradient">{date}</p>
-                        <Link  href={'/' + lang + '/blog/' + id} className="text-lg font-bold hover:text-gradient duration-500">{title}</Link>
+                        <Link  href={'/' + lang + '/blog/' + id} className="text-lg font-bold hover:text-gradient duration-500 line-clamp-2">{title}</Link>
                     </div>
                 </article>
             ) : (
