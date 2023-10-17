@@ -11,6 +11,7 @@ import { addDoc, collection, deleteDoc, doc, getDoc, updateDoc } from 'firebase/
 import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
+import Loading from '../../loading';
 
 export default function EditBlog({ params: { lang } }: { params: { lang: Locale } }) {
     const searchParams = useSearchParams();
@@ -77,8 +78,6 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                     // Extract the first 20 words
                     const first20Words = words.slice(0, 20).join(' ');
                     if (contentId && id) {
-                       
-                        
                         const res = await updateDoc(doc(db, 'contents', id), {
                             title: title,
                             content: value,
@@ -170,7 +169,7 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
     };
     return (
         <>
-            {display && (
+            {display ? (
                 <main className="flex h-fit w-full flex-col items-center gap-y-10 py-[60px] md:py-[90px]">
                     <PageTitle
                         src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fbghub.JPG?alt=media&token=07da7fd8-9f51-479c-848a-691c6972c227&_gl=1*3zs0og*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUxNzE1LjQ0LjAuMA."
@@ -237,6 +236,8 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                         <div className="hidden w-[400px] lg:block"></div>
                     </section>
                 </main>
+            ) : (
+                <Loading />
             )}
         </>
     );
