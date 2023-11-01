@@ -92,32 +92,7 @@ function FAQ({ lang, faq }: { lang: Locale; faq: Object }) {
                     alt="illustrate"
                     className="hidden h-full !w-[50%] z-0 overflow-hidden justify-self-end lg:block xl:!w-[45%]  "
                 />
-            {/* <Slider classNameTop="relative  ">
-                <Image
-                    src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FIMG_5715.jpg?alt=media&token=634bb53d-ce06-40f3-b124-2d40da3dcb58"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    alt="illustrate"
-                    className="keen-slider__slide h-full  overflow-hidden object-cover  "
-                />
-                <Image
-                    src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FIMG_5715.jpg?alt=media&token=634bb53d-ce06-40f3-b124-2d40da3dcb58"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    alt="illustrate"
-                    className="keen-slider__slide h-full  overflow-hidden object-cover "
-                />
-                <Image
-                    src="https://res.cloudinary.com/dtbvalhlc/image/upload/v1697548129/hub-media/mmop7t67vej81j9vluvk.jpg"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    alt="illustrate"
-                    className="keen-slider__slide h-full  overflow-hidden object-cover  "
-                />
-            </Slider> */}
+           ``
         </section>
     );
 }

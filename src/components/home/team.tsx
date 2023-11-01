@@ -2,6 +2,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import SliderMultiple from '../animations/slider-multiple';
+import 'keen-slider/keen-slider.min.css';
+
 export default function Team() {
     const [open, setOpen] = useState('');
     return (

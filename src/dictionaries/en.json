@@ -1,59 +1,66 @@
 {
-  "navigation": {
-    "home": "HOME",
-    "services": "SERVICES",
-    "livestream": "HUBLIVE",
-    "founder": "FOUNDER'S FRIDAY",
-    "customers": "CUSTOMERS",
-    "blog": "BLOG",
-    "contact": "Contact",
-    "about": "ABOUT US"
-  },
-  "metadata": {
-    "home": {
-      "title": "Hub Media - Connect your brand to the world",
-    "description": "Hub Media is a digital marketing agency that provides livestreaming services, video production, and digital marketing services to connect your brand to the world."
+    "navigation": {
+        "home": "HOME",
+        "services": "SERVICES",
+        "livestream": "HUBLIVE",
+        "founder": "FOUNDER'S FRIDAY",
+        "customers": "CUSTOMERS",
+        "blog": "BLOG",
+        "contact": "Contact",
+        "about": "ABOUT US"
     },
-    "services": {
-      "title": "Hub Media - Services",
-      "description": "All services provided by Hub Media Corporation." 
+    "metadata": {
+        "home": {
+            "title": "Hub Media - Connect your brand to the world",
+            "description": "Hub Media is a digital marketing agency that provides livestreaming services, video production, and digital marketing services to connect your brand to the world."
+        },
+        "services": {
+            "title": "Hub Media - Services",
+            "description": "All services provided by Hub Media Corporation."
+        },
+        "contact": {
+            "title": "Hub Media - Contact",
+            "description": "Contact with Hub Media to get more information and services."
+        },
+        "founder": {
+            "title": "Founder's Friday",
+            "description": "Founder's Friday is a series of interviews with startup founders, sharing their stories and insights."
+        }
     },
-    "contact": {
-      "title": "Hub Media - Contact",
-      "description": "Contact with Hub Media to get more information and services." 
+    "pages": {
+        "not-found": "Page not found.",
+        "underconstruction": ["This page is under construction.", "Please come back later!"],
+        "founder": {
+            "vision": "Founder Fridays is a channel for sharing the stories and entrepreneurial journeys of founders with the goal of becoming the leading source of information and inspiration for Vietnamese startup founders.",
+            "products": "Podcast broadcasts every Friday on YouTube and Spotify.",
+            "faq": {
+                "Who is the target audience for Founder's Friday?": "The target audience of Founder's Friday includes young aspiring entrepreneurs (18-25 years old) seeking inspiration, knowledge, and guidance from successful individuals to advance their entrepreneurial goals. It also includes business founders and owners (25-35 years old) looking to develop leadership skills, manage their businesses, and expand their business networks.",
+                "How can I join the Founder's Friday community?": "You can join the Founder's Friday community on the Facebook Group. Founder's Friday community hopes to work together to develop themselves, build meaningful values on their business and entrepreneurial journey, and connect with others.",
+                "Can I contribute content to Founder's Friday?": "Yes, we are always open to suggestions and contributions from you. You can contribute to Founder's Friday here: Community Builders | Survey Form.",
+                "Does Founder's Friday have plans to develop more content or new projects in the future?": "We are constantly working to improve our products to provide you with the best possible experience. Follow Founder's Friday on social media platforms to stay updated on our upcoming developments!"
+            }
+        },
+        "home": {
+            "home-hero": {
+                "description": "Hub Media is an agency marketing that provides marketing solutions for businesses targeting the youth demographic"
+            },
+            "characteristics": {
+                "Modernity": "Harnessing cutting-edge technology to craft innovative solutions for your business",
+                "Creativity": "Infusing imaginative flair into every project to ignite your brand's uniqueness",
+                "Uniqueness": "Crafting distinct experiences that set your brand apart in a crowded market"
+            },
+            "portfolio": [
+                "Providing customized marketing services tailored to each business",
+                "Founder Fridays serves as a bridge between startup founders and aspiring young entrepreneurs, sharing their stories and insights",
+                "With the aim to become a hub connecting the student community with businesses seeking product livestream models on social media platforms"
+            ],
+            "vision": "Hub Media aspires to become a leading provider of innovative and effective marketing solutions through the establishment of a sustainable community",
+            "faq": {
+                "Why should you choose Hub Media?": "The Hub Media team consists of young talents with a high level of creativity, eager to support businesses in achieving their business goals. At Hub Media, everyone, from students to young individuals and business owners, can find solutions that align with their desires in the digital marketing world.",
+                "What is our working process?": "Each service at Hub Media has its own unique process to optimize the customer experience. However, we always follow a common process: Communication - Ideas - Evaluation - Execution - Optimization - Deployment.",
+                "Who are our potential customers?": "Potential customers of Hub Media include businesses looking to reach young customers, those interested in integrating custom marketing solutions to achieve ESG goals, as well as those aiming to differentiate themselves and have a positive impact in their business sector.",
+                "Our commitment and quality assurance about our services?": "We are committed to ensuring top-quality services, prioritizing customer satisfaction, swift improvements, and offering refund policies for each service package"
+            }
+        }
     }
-    
-  },
-  "pages": {
-    "not-found": "Page not found.",
-    "underconstruction": [
-      "This page is under construction.",
-      "Please come back later!"
-    ],
-    "home": {
-      "home-hero": {
-        "description": "Hub Media is an agency marketing that provides marketing solutions for businesses targeting the youth demographic"
-      },
-      "characteristics": {
-        "Modernity": "Harnessing cutting-edge technology to craft innovative solutions for your business",
-        "Creativity": "Infusing imaginative flair into every project to ignite your brand's uniqueness",
-        "Uniqueness": "Crafting distinct experiences that set your brand apart in a crowded market"
-      },
-      "portfolio": [
-        "Providing customized marketing services tailored to each business",
-        "Founder Fridays serves as a bridge between startup founders and aspiring young entrepreneurs, sharing their stories and insights",
-        "With the aim to become a hub connecting the student community with businesses seeking product livestream models on social media platforms"
-      ],
-      "vision": [
-        "aspires to become a leading provider of innovative and effective marketing solutions ",
-        "through the establishment of a sustainable community"
-      ],
-      "faq": {
-        "Why should you choose Hub Media?": "The Hub Media team consists of young talents with a high level of creativity, eager to support businesses in achieving their business goals. At Hub Media, everyone, from students to young individuals and business owners, can find solutions that align with their desires in the digital marketing world.",
-        "What is our working process?": "Each service at Hub Media has its own unique process to optimize the customer experience. However, we always follow a common process: Communication - Ideas - Evaluation - Execution - Optimization - Deployment.",
-        "Who are our potential customers?": "Potential customers of Hub Media include businesses looking to reach young customers, those interested in integrating custom marketing solutions to achieve ESG goals, as well as those aiming to differentiate themselves and have a positive impact in their business sector.",
-        "Our commitment and quality assurance about our services?": "We are committed to ensuring top-quality services, prioritizing customer satisfaction, swift improvements, and offering refund policies for each service package"
-      }
-    }
-  }
 }

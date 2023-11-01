@@ -1,7 +1,7 @@
 import { validateString } from '@/lib/utils'
 import {Resend} from 'resend'
 import { NextResponse } from 'next/server'
-import Email from '@/app/[lang]/contact/email'
+import Email from '@/app/[lang]/(hubmedia)/contact/email'
 import React from 'react'
 
 const resend = new Resend(process.env.RESEND_API_KEY)

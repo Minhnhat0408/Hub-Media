@@ -15,8 +15,6 @@ export const metadata: Metadata = {
         type: 'website',
         url: 'https://pbhubmedia.vercel.app/',
     },
-    themeColor: '#d9658c',
-    viewport: 'width=device-width, initial-scale=1',
     creator: 'Bùi Thu Phương',
     description:
         'Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ.',
@@ -25,10 +23,11 @@ export const metadata: Metadata = {
 function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="vi">
+            
             <body>
                 <Toaster position="top-right" />
                 {children}
-                <ScrollTop/>
+                <ScrollTop />
                 <div id="fb-root"></div>
                 <div id="fb-customer-chat" className="fb-customerchat"></div>
                 <Script id="fb" strategy="lazyOnload">

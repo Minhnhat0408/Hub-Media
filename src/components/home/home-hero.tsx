@@ -32,7 +32,7 @@ function HomeHero({ home, lang }: { home: any; lang: Locale }) {
                             </Link>
                         </li>
                         <li className="mb-10 cursor-pointer duration-1000 hover:text-gradient">
-                            <Link aria-label="Go to Hub Media's Tiktok" href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}>
+                            <Link aria-label="Go to Hub Media's Tiktok" href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'} target="_blank">
                                 <TbBrandTiktok />
                             </Link>
                         </li>

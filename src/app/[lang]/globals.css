@@ -88,8 +88,71 @@ html *::-webkit-scrollbar {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+.bg-speaker{
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow: -10px 15px 15px 5px rgba(0, 0, 0, 0.6);
+}
 .search-box{
   box-shadow: 0 -1px 8px 3px rgba(255,255,255,0.08);
+}
+.text-shadow{
+  text-shadow: -8px 6px 6px  rgba(0, 0, 0, 0.9) ;
+}
+.ff-super{
+  
+  background: linear-gradient(45deg, #66b09f, #008aa3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.phuong{
+  background: url(/images/phuong.png) no-repeat black;
+  border-radius: 35px;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+
+.phuong::before{
+  content: '';
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 1;
+  z-index: -1;
+  position: absolute;
+  background: inherit;
+  filter:blur(15px);
+  
+}
+
+.hung{
+  background: url(/images/hung.png) no-repeat black;
+  border-radius: 35px;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+
+.hung::before{
+  content: '';
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 1;
+  z-index: -1;
+  position: absolute;
+  background: inherit;
+  filter:blur(15px);
+  
 }
 .bg-vision {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
@@ -160,8 +223,8 @@ html *::-webkit-scrollbar {
     --primary: -21 60% 62%;
     --primary-foreground: -21 6% 6.2%;
 
-    --secondary: -21 30% 18.6%;
-    --secondary-foreground: -21 6% 98.1%;
+    --secondary: 190 40% 42%;
+    --secondary-foreground: 181 24% 58%;
 
     --accent: -21 30% 18.6%;
     --accent-foreground: -21 6% 98.1%;
