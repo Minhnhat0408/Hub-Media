@@ -3,43 +3,31 @@
 import { useInView } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
-import { BsSpotify, BsYoutube } from 'react-icons/bs';
 
 export default function FounderHero() {
-    const ref = useRef<HTMLVideoElement>(null);
-    const isInView = useInView(ref);
-    const [manual, setManual] = useState(false);
-    useEffect(() => {
-        if (ref.current) {
-            console.log(manual);
-            if (isInView) {
-                ref.current.play();
-            } else {
-                
-                ref.current.pause();
-            }
-        }
-    }, [isInView]);
-    console.log(manual);
+    // console.log(manual);
     return (
         <section
             id="hero"
             style={{
-                backgroundImage: "url('/images/bg-ff.png')",
+                backgroundImage: "url('https://utfs.io/f/c234207f-fca0-4293-8a30-87a4a402c53a-1jqloo.png')",
                 boxShadow: '0px 0px 22px 10px rgba(0,0,0,0.8) inset',
             }}
-            className="relative mt-24  flex w-[100vw]  overflow-y-hidden    overflow-x-clip p-10 py-24 "
+            className="relative  flex w-[100vw]  overflow-y-hidden    overflow-x-clip pl-10 lg:pr-0 pr-10  py-24 "
         >
             <video
-                ref={ref}
                 autoPlay
+                muted
                 controls
-                style={{ width: '60%', height: 'auto', boxShadow: '10px 10px 15px 5px rgba(0,0,0,0.6)' }}
+                className='lg:w-[60%] h-auto w-full md:block hidden '
+                style={{  boxShadow: '10px 10px 15px 5px rgba(0,0,0,0.6)' }}
             >
-                <source src="/images/trailer.mp4" type="video/mp4" />
+                <source
+                    src="https://res.cloudinary.com/dtbvalhlc/video/upload/v1698891032/hub-media/gk9yf63bot7lapgt1tby.mp4"
+                    type="video/mp4"
+                />
             </video>
-            <div className="flex w-full flex-col items-center   ">
+            <div className=" w-full flex-col items-center md:px-10 lg:flex md:hidden flex  ">
                 <Image
                     src={'/logo/logoff.png'}
                     alt="img"

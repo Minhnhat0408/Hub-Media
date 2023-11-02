@@ -21,7 +21,7 @@ function NavBar({ lang, navigation }: { lang: Locale; navigation: any }) {
                                 'px-5 py-2 font-[500] ' +
                                 ('/' + core.at(1) + '/' + (core.at(2) ? core.at(2) : '') === `/${lang + route.href}`
                                     ? route.href === '/founder'
-                                        ? 'text-secondary-foreground'
+                                        ? 'text-secondary'
                                         : 'text-gradient'
                                     : '')
                             }

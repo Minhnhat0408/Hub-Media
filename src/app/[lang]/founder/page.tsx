@@ -13,7 +13,7 @@ export default async function FounderPage({ params: { lang } }: { params: { lang
     const { pages } = await getDictionary(lang);
 
     return (
-        <main className=" min-h-screen  overflow-hidden ">
+        <main className=" min-h-screen  overflow-hidden pt-[60px] md:pt-[90px] ">
             <Image
                 src={'/images/ffbg.png'}
                 alt="img"
@@ -25,13 +25,13 @@ export default async function FounderPage({ params: { lang } }: { params: { lang
             <FounderHero />
             <Vision
                 vision={pages.founder.vision}
-                src="/images/visionff.png"
+                src="https://utfs.io/f/48c10290-b3c1-4515-80e4-3f83afa68383-q7e1m0.png"
             />
             <Products lang={lang} products={pages.founder.products} />
             <Guests lang={lang} />
-            <FounderHosts lang={lang}/>
+            <FounderHosts lang={lang} />
             <FounderFAQ faq={pages.founder.faq} lang={lang} />
-          
+
             {/* <UnderConstruction construction={pages.underconstruction} /> */}
         </main>
     );

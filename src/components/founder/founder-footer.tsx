@@ -10,14 +10,14 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
     return (
         <footer
             style={{
-                backgroundImage: "url('/images/bg-ff.png')",
+                backgroundImage: "url('https://utfs.io/f/c234207f-fca0-4293-8a30-87a4a402c53a-1jqloo.png')",
                 boxShadow: '0px 0px 22px 10px rgba(0,0,0,0.8) inset',
             }}
             id="lienhe"
             className="relative flex h-fit w-full flex-col items-center bg-background "
         >
             <div className="md-max:pb-5 flex w-[90%] flex-wrap pb-8 2xl:pb-14">
-                <div className=" flex w-[40%] items-center   lg:w-[30%]  ">
+                <div className=" flex w-full items-center   lg:w-[30%]  ">
                     <Image
                         src={'/logo/logoff.png'}
                         alt="ava"
@@ -27,13 +27,13 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                         className=" h-[300px] w-auto lg:ml-[20%]  "
                     />
                 </div>
-                <div className="flex flex-1  justify-evenly">
+                <div className="flex flex-1  justify-evenly px-4 sm:px-0">
                     <div className="md-max:hidden mt-[50px]  hidden h-full min-w-[150px] md:block  ">
                         <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">
                             {lang === 'vi' ? 'Mục Lục' : 'SITEMAP'}
                         </h3>
                         <div className="mb-3 flex items-start ">
-                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-[#66b09f]" />
+                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-secondary" />
                             <a
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
                                 href="#hero"
@@ -42,7 +42,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                             </a>
                         </div>
                         <div className="mb-3 flex items-start">
-                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-[#66b09f]" />
+                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-secondary" />
                             <a
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
                                 href="#products"
@@ -51,7 +51,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                             </a>
                         </div>
                         <div className="mb-3 flex items-start">
-                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-[#66b09f]" />
+                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-secondary" />
                             <a
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
                                 href="#guests"
@@ -61,7 +61,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                         </div>
 
                         <div className="mb-3 flex items-start">
-                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-[#66b09f]" />
+                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-secondary" />
                             <a
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
                                 href="#hosts"
@@ -70,7 +70,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                             </a>
                         </div>
                         <div className="mb-3 flex items-start">
-                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-[#66b09f]" />
+                            <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-secondary" />
                             <a
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
                                 href="#faq"
@@ -80,7 +80,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                         </div>
                     </div>
 
-                    <div className="mt-[50px] h-full   text-white xl:flex xl:flex-col">
+                    <div className="mt-[50px] h-full   text-white flex flex-col">
                         <h3 className=" mb-5 text-left text-xl font-bold  uppercase text-white">
                             {lang === 'vi' ? 'Liên hệ' : 'CONTACT'}
                         </h3>
@@ -126,7 +126,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                                 </svg>
                                 <div className="font-bold">Fanpage: </div>
                             </div>
-                            <div className="phone:w-full leading-7 text-[#66b09f] ">
+                            <div className="phone:w-full leading-7 text-secondary ">
                                 <a
                                     className="phone:mt-1 block no-underline hover:text-white  hover:underline"
                                     href="http://facebook.com/foundersfriday.vn"
@@ -138,7 +138,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                         </div>
                         <a
                             href={'/' + lang + '/contact/brand-co-host/-1#form'}
-                            className="mt-2 w-fit rounded-2xl bg-[#66b09f] px-4 py-2 font-bold duration-500 hover:bg-[#008aa3] "
+                            className=" w-fit rounded-2xl bg-secondary sm:mx-0 sm:my-2 my-10 mx-auto px-4 py-2 font-bold duration-500 hover:bg-[#008aa3] "
                         >
                             Liên hệ brand co-host
                         </a>
@@ -164,7 +164,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                 </div>
 
                 <ul className="flex gap-x-4 text-base ssm:text-2xl ">
-                    <li className=" cursor-pointer duration-1000 hover:text-[#66b09f]">
+                    <li className=" cursor-pointer duration-1000 hover:text-secondary">
                         <Link
                             aria-label="Go to Hub Media Fanpage"
                             href={'http://facebook.com/foundersfriday.vn'}
@@ -173,7 +173,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                             <TbBrandFacebook />
                         </Link>
                     </li>
-                    <li className=" cursor-pointer duration-1000 hover:text-[#66b09f]">
+                    <li className=" cursor-pointer duration-1000 hover:text-secondary">
                         <Link
                             aria-label="Go to Hub Media's Linkedin"
                             href={'http://open.spotify.com/show/foundersfriday'}
@@ -182,7 +182,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                             <TbBrandSpotify />
                         </Link>
                     </li>
-                    <li className=" cursor-pointer duration-1000 hover:text-[#66b09f]">
+                    <li className=" cursor-pointer duration-1000 hover:text-secondary">
                         <Link
                             aria-label="Go to Hub Media's Youtube Channel"
                             href={'https://www.youtube.com/@FoundersFridayVN'}
@@ -191,7 +191,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                             <TbBrandYoutube />
                         </Link>
                     </li>
-                    <li className=" cursor-pointer duration-1000 hover:text-[#66b09f]">
+                    <li className=" cursor-pointer duration-1000 hover:text-secondary">
                         <Link aria-label="Go to Hub Media's Tiktok" href={'http://tiktok.com/@foundersfridayvn'}>
                             <TbBrandTiktok />
                         </Link>

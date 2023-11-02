@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="vi">
-            
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
             <body>
                 <Toaster position="top-right" />
                 {children}

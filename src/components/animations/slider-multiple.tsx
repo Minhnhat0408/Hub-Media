@@ -74,8 +74,8 @@ export default function SliderMultiple({
     return (
         <>
             {
-                <div className=" group relative w-full px-20">
-                    <div ref={ref} className={cn('keen-slider ', className)}>
+                <div className={cn(' group relative w-full', className)}>
+                    <div ref={ref} className={cn('keen-slider ')}>
                         {children}
                     </div>
                     {loaded && instanceRef.current && (
@@ -104,7 +104,7 @@ function Arrow(props: { disabled: boolean; left?: boolean; onClick: (e: any) => 
         <svg
             onClick={props.onClick}
             className={`absolute top-1/2  h-10 w-10 -translate-y-[50%] cursor-pointer fill-white opacity-0 duration-500 group-hover:opacity-100 ${
-                props.left ? ' left-5' : ' right-5'
+                props.left ? ' -left-10' : ' -right-10'
             } ${disabeld}`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

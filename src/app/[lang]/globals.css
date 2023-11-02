@@ -100,6 +100,9 @@ html *::-webkit-scrollbar {
 .text-shadow{
   text-shadow: -8px 6px 6px  rgba(0, 0, 0, 0.9) ;
 }
+.text-shadow-sm{
+  text-shadow: -4px 3px 3px  rgba(0, 0, 0, 0.9) ;
+}
 .ff-super{
   
   background: linear-gradient(45deg, #66b09f, #008aa3);
@@ -108,7 +111,7 @@ html *::-webkit-scrollbar {
   color: transparent;
 }
 .phuong{
-  background: url(/images/phuong.png) no-repeat black;
+  background: url("https://utfs.io/f/5e4e911f-1b74-4a1e-8f2e-32ff062c4e8a-gcqpmd.png") no-repeat black;
   border-radius: 35px;
   background-size: cover;
   position: relative;
@@ -132,7 +135,7 @@ html *::-webkit-scrollbar {
 }
 
 .hung{
-  background: url(/images/hung.png) no-repeat black;
+  background: url("https://utfs.io/f/693ccc51-62f5-48b4-b386-1c38ed1897c0-1ww3q.png") no-repeat black;
   border-radius: 35px;
   background-size: cover;
   position: relative;
@@ -223,7 +226,7 @@ html *::-webkit-scrollbar {
     --primary: -21 60% 62%;
     --primary-foreground: -21 6% 6.2%;
 
-    --secondary: 190 40% 42%;
+    --secondary: 166 32% 55%;
     --secondary-foreground: 181 24% 58%;
 
     --accent: -21 30% 18.6%;
