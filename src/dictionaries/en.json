@@ -16,7 +16,7 @@
         },
         "services": {
             "title": "Hub Media - Services",
-            "description": "All services provided by Hub Media Corporation."
+            "description": "All services provided by Hub Media."
         },
         "contact": {
             "title": "Hub Media - Contact",
@@ -25,6 +25,10 @@
         "founder": {
             "title": "Founder's Friday",
             "description": "Founder's Friday is a series of interviews with startup founders, sharing their stories and insights."
+        },
+        "blogs":{
+            "title": "Hub Media - Blogs",
+            "description": "Blogs and News from Hub Media."
         }
     },
     "pages": {

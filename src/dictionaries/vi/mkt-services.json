@@ -23,18 +23,6 @@
     "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg",
     "types": ["Brandkit", "Ấn Phẩm", "Pitch deck"],
     "packages": {
-        "Standard/Brandkit": {
-            "price": ["15,000,000"],
-            "details": ["1 mẫu demo", "3 lần chỉnh sửa", "2 hạng mục"]
-        },
-        "Advanced/Brandkit": {
-            "price": ["20,000,000"],
-            "details": ["2 mẫu demo", "5 lần chỉnh sửa", "5 hạng mục"]
-        },
-        "Professional/Brandkit": {
-            "price": ["30,000,000"],
-            "details": ["4 mẫu demo", "Không giới hạn chỉnh sửa", "10 hạng mục"]
-        },
         "Standard/Ấn Phẩm": {
             "price": ["300,000"],
             "details": ["1 mẫu demo", "2 lần chỉnh sửa"]

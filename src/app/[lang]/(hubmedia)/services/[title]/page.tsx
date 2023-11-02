@@ -10,7 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Metadata } from 'next';
 import Package from '@/components/services/package';
 import { isImageUrl } from '@/lib/utils';
-import { redirect } from 'next/navigation'
+import { redirect } from 'next/navigation';
 
 export async function generateMetadata({ params }: { params: { title: string; lang: Locale } }): Promise<Metadata> {
     const { title, description } = await getSpecifiedService(params.lang, params.title);
@@ -25,9 +25,8 @@ export async function generateMetadata({ params }: { params: { title: string; la
 
 async function Service({ params: { title, lang } }: { params: { title: string; lang: Locale } }) {
     const data = await getSpecifiedService(lang, title);
-    if(data?.error) {
-
-        redirect('/not-found')
+    if (data?.error) {
+        redirect('/not-found');
     }
     let countService = -1;
 
@@ -71,15 +70,15 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                     {data?.portfolio ? (
                         data.portfolio.map((item: string, index: Key) => {
                             return isImageUrl(item) ? (
-                                <div className=' keen-slider__slide flex justify-center h-full w-full overflow-hidden'>
+                                <div key={index} className=" keen-slider__slide flex h-full w-full justify-center overflow-hidden">
                                     <Image
                                         src={item}
-                                        key={index}
+                                        
                                         alt="img"
                                         width="0"
                                         height="0"
                                         sizes="100vw"
-                                        className="  h-full object-top w-auto object-cover "
+                                        className="  h-full w-auto object-cover object-top "
                                     />
                                 </div>
                             ) : (
@@ -100,7 +99,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                 src={'https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg'}
                                 alt="img"
                                 width="0"
-                                height="0"  
+                                height="0"
                                 sizes="100vw"
                                 className=" keen-slider__slide h-full w-full "
                             />
@@ -141,11 +140,11 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                 />
                 {data?.types ? (
                     <Tabs defaultValue={data.types[0]} className="flex w-full flex-col items-center ">
-                        <TabsList className="mb-10  flex h-fit w-fit text-white gap-x-4 ">
+                        <TabsList className="mb-10  flex h-fit w-fit gap-x-4 text-white ">
                             {data.types.map((item: string, index: Key) => {
                                 return (
                                     <TabsTrigger
-                                        className="h-8 w-24 text-sm data-[state=active]:bg-gradient bg-gray-800  sm:h-12 font-bold sm:w-40 sm:text-base "
+                                        className="h-8 w-24 bg-gray-800 text-sm font-bold  data-[state=active]:bg-gradient sm:h-12 sm:w-40 sm:text-base "
                                         key={index}
                                         value={item}
                                     >
@@ -155,34 +154,53 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                             })}
                         </TabsList>
                         {data.types.map((item: string, index: Key) => {
+                            countService += 1;
                             return (
                                 <TabsContent
                                     key={index}
                                     value={item}
                                     className="flex w-full flex-wrap justify-center gap-x-20  gap-y-20 px-4 ssm:px-10"
                                 >
-                                    {Object.entries(data.packages)
-                                        .filter((val) => {
-                                            return val[0].includes(item);
-                                        })
-                                        .map((item , index: Key) => {
-                                            countService += 1;
-                                            const [pkg, type] = item[0].split('/');
-                                            const infor = item[1] as any;
-                                  
-                                            return (
-                                                <Package
-                                                    key={index}
-                                                    title={title}
-                                                    pkg={pkg}
-                                                    price={infor.price}
-                                                    details={infor.details}
-                                                    unit={infor.unit}
-                                                    lang={lang}
-                                                    countService={countService}
-                                                />
-                                            );
-                                        })}
+                                    {Object.entries(data.packages).filter((val) => {
+                                        return val[0].includes(item);
+                                    }).length > 0 ? (
+                                        Object.entries(data.packages)
+                                            .filter((val) => {
+                                                return val[0].includes(item);
+                                            })
+                                            .map((item, index: Key) => {
+                                                const [pkg, type] = item[0].split('/');
+                                                const infor = item[1] as any;
+
+                                                return (
+                                                    <Package
+                                                        key={index}
+                                                        title={title}
+                                                        pkg={pkg}
+                                                        price={infor.price}
+                                                        details={infor.details}
+                                                        unit={infor.unit}
+                                                        lang={lang}
+                                                        countService={countService}
+                                                    />
+                                                );
+                                            })
+                                    ) : (
+                                        <div key={index} className="mb-8 flex flex-col items-center space-y-8">
+                                            <p className="silver text-center text-2xl md:text-4xl">
+                                                {lang === 'vi'
+                                                    ? 'Liên hệ để biết thêm chi tiết'
+                                                    : 'Contact us for more information'}{' '}
+                                            </p>
+                                            <a
+                                                className="group mt-4 flex w-fit items-center justify-center rounded-none border-[1px] border-gradient px-4 py-3 duration-500  hover:bg-gradient group-hover:bg-gradient "
+                                                href={'/' + lang + '/contact/' + title + '/' + countService + '#form'}
+                                            >
+                                                <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>
+                                                Service Form
+                                            </a>
+                                        </div>
+                                    )}
                                 </TabsContent>
                             );
                         })}
@@ -208,10 +226,14 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
                                 );
                             })
                         ) : (
-                            <div className="flex flex-col items-center space-y-8 mb-8">
-                                <p className="silver md:text-4xl text-2xl text-center">{lang === 'vi' ? 'Liên hệ để biết thêm chi tiết' : 'Contact us for more information'}  </p>
+                            <div className="mb-8 flex flex-col items-center space-y-8">
+                                <p className="silver text-center text-2xl md:text-4xl">
+                                    {lang === 'vi'
+                                        ? 'Liên hệ để biết thêm chi tiết'
+                                        : 'Contact us for more information'}{' '}
+                                </p>
                                 <a
-                                    className="mt-4 flex w-fit group hover:bg-gradient items-center justify-center rounded-none border-[1px] border-gradient px-4 py-3  duration-500 group-hover:bg-gradient "
+                                    className="group mt-4 flex w-fit items-center justify-center rounded-none border-[1px] border-gradient px-4 py-3 duration-500  hover:bg-gradient group-hover:bg-gradient "
                                     href={'/' + lang + '/contact/' + title + '/' + countService + '#form'}
                                 >
                                     <div className="dot mr-4 h-2 w-2 rounded-full bg-gradient  duration-500  group-hover:bg-white"></div>

@@ -5,23 +5,41 @@ import { db } from '@/firebase/firebase-app';
 import { Locale } from '@/i18n.config';
 import { BlogContentType } from '@/lib/constants';
 import { doc, getDoc } from 'firebase/firestore';
+import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
+export async function generateMetadata({
+    params: { lang, id },
+}: {
+    params: { id: string; lang: Locale };
+}): Promise<Metadata> {
+    const res = await getDoc(doc(db, 'contents', id));
 
-
+    if (!res || !res.exists()) {
+        redirect('/' + lang + '/not-found');
+    }
+    let content: BlogContentType | [] = res.data() as BlogContentType;
+    const textWithoutStrongTags = content.content.replace(/<strong[^>]*>.*?<\/strong>/g, '');
+    const textContent = textWithoutStrongTags.replace(/<[^>]*>/g, '');
+    const words = textContent.split(/\s+/);
+    const first20Words = words.slice(0, 20).join(' ');
+    return {
+        title: 'Hub Media - ' + content.title,
+        openGraph: {
+            images: [content.cover],
+        },
+        description: first20Words + '...',
+    };
+}
 export default async function BlogDetail({ params: { lang, id } }: { params: { lang: Locale; id: string } }) {
     const res = await getDoc(doc(db, 'contents', id));
     let content: BlogContentType | [] = [];
-    if(!res || !res.exists() ){
-        redirect('/' +lang + '/not-found')
-    }else{
-        content = {...res.data(),date:new Date(res.data().date.toDate()).toLocaleDateString()} as BlogContentType;
+    if (!res || !res.exists()) {
+        redirect('/' + lang + '/not-found');
+    } else {
+        content = { ...res.data(), date: new Date(res.data().date.toDate()).toLocaleDateString() } as BlogContentType;
     }
 
-     
-
-  
-    // const [recentPosts, setRecentPosts] = useLocalStorage('recentpost', []);
     return (
         <main className="w-full py-[60px] md:py-[90px]">
             <PageTitle
@@ -29,8 +47,7 @@ export default async function BlogDetail({ params: { lang, id } }: { params: { l
                 title={content.title}
             />
 
-            <BlogDetailsUI content={content} id={res.id} lang={lang}/>
-           
+            <BlogDetailsUI content={content} id={res.id} lang={lang} />
         </main>
     );
 }

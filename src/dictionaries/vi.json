@@ -25,6 +25,10 @@
         "founder": {
             "title": "Founder's Friday",
             "description": "Founder's Friday là cầu nối giữa startup founder với các bạn trẻ có niềm đam mê với kinh doanh khởi thông qua các câu chuyện, chia sẻ của họ."
+        },
+        "blogs":{
+            "title": "Hub Media - Blogs",
+            "description": "Blog và tin tức mới nhất của Hub Media."
         }
     },
     "pages": {
