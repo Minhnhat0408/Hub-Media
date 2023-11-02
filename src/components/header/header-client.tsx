@@ -42,7 +42,7 @@ function HeaderUI({ lang, navigation }: { lang: Locale; navigation: any }) {
                             height={500}
                             width={500}
                             onClick={() => {
-                                router.push('/' + lang);
+                                router.push('/' + lang + '/founder');
                             }}
                             alt="logo"
                         />

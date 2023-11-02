@@ -80,7 +80,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                         </div>
                     </div>
 
-                    <div className="mt-[50px] h-full   text-white flex flex-col">
+                    <div className="mt-[50px] flex   h-full flex-col text-white">
                         <h3 className=" mb-5 text-left text-xl font-bold  uppercase text-white">
                             {lang === 'vi' ? 'Liên hệ' : 'CONTACT'}
                         </h3>
@@ -138,7 +138,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                         </div>
                         <a
                             href={'/' + lang + '/contact/brand-co-host/-1#form'}
-                            className=" w-fit rounded-2xl bg-secondary sm:mx-0 sm:my-2 my-10 mx-auto px-4 py-2 font-bold duration-500 hover:bg-[#008aa3] "
+                            className=" mx-auto my-10 w-fit rounded-2xl bg-secondary px-4 py-2 font-bold duration-500 hover:bg-[#008aa3] sm:mx-0 sm:my-2 "
                         >
                             Liên hệ brand co-host
                         </a>
@@ -192,7 +192,11 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                         </Link>
                     </li>
                     <li className=" cursor-pointer duration-1000 hover:text-secondary">
-                        <Link aria-label="Go to Hub Media's Tiktok" href={'http://tiktok.com/@foundersfridayvn'}>
+                        <Link
+                            aria-label="Go to Hub Media's Tiktok"
+                            href={'http://tiktok.com/@foundersfridayvn'}
+                            target="_blank"
+                        >
                             <TbBrandTiktok />
                         </Link>
                     </li>

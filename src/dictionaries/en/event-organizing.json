@@ -1,10 +1,15 @@
 {
     "title": "Event Organizing",
     "href": "/services/event-organizing",
-    "details": ["Hỗ trợ sự kiện tổng thể","Format, nội dung sự kiện","Quay chụp sự kiện"],
+    "details": ["Hỗ trợ sự kiện tổng thể", "Format, nội dung sự kiện", "Quay chụp sự kiện"],
     "tags": ["#event", "#organizer", "#eventorganizer"],
     "description": "Với nền tảng kinh nghiệm đáng kể trong việc tổ chức và quản lý một loạt các cuộc thi, hội thảo và diễn đàn hàng đầu, Hub Media tự tin khẳng định khả năng và sự chuyên nghiệp của chúng tôi trong lĩnh vực tổ chức sự kiện. Bằng cách làm việc cẩn thận với đội ngũ chuyên nghiệp và sáng tạo của chúng tôi, chúng tôi cam kết mang đến giải pháp tổ chức sự kiện tối ưu nhất, giúp sự kiện của bạn nổi bật và thành công.",
-    "portfolio": ["https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2F6.png?alt=media&token=d5b16025-a800-4285-99ba-87a92e5d1547&_gl=1*txs0yc*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUzMDYwLjQxLjAuMA..","https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2F15.png?alt=media&token=239fb495-e7ff-45f0-b6c4-369b3ca42cbf&_gl=1*1du9jhu*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUzMDQxLjYwLjAuMA..","https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FIMG_5566.jpg?alt=media&token=078020b3-6035-4e21-aaf1-aad62f14510e&_gl=1*11830kr*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5NzA5Njg3NS4yODkuMS4xNjk3MDk2OTgwLjMzLjAuMA..","https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FIMG_6314.JPG?alt=media&token=b949e2b3-28a0-485f-827a-96efd9561153&_gl=1*mm2ft7*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUzMzc4LjUwLjAuMA.."],
+    "portfolio": [
+        "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2F6.png?alt=media&token=d5b16025-a800-4285-99ba-87a92e5d1547&_gl=1*txs0yc*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUzMDYwLjQxLjAuMA..",
+        "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2F15.png?alt=media&token=239fb495-e7ff-45f0-b6c4-369b3ca42cbf&_gl=1*1du9jhu*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUzMDQxLjYwLjAuMA..",
+        "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FIMG_8302.JPG?alt=media&token=f318bef8-861d-4499-b4b5-8e8a2064e530&_gl=1*6vzl6e*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5ODkzOTIwNS4zMTkuMS4xNjk4OTM5MzY2LjQ0LjAuMA..",
+        "https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2FIMG_6314.JPG?alt=media&token=b949e2b3-28a0-485f-827a-96efd9561153&_gl=1*mm2ft7*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUzMzc4LjUwLjAuMA.."
+    ],
     "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png",
     "packages": {
         "Video sự kiện": {
@@ -12,10 +17,8 @@
             "details": ["100 ảnh chỉnh sửa", "3 lần demo"]
         },
         "Quay chụp": {
-     
             "price": ["3,500,000", "máy"],
             "details": ["Liên hệ để biết thêm chi tiết"]
-            
         },
         "Trọn gói": {
             "price": ["Tính phí theo yêu cầu"],
@@ -24,5 +27,4 @@
         }
     },
     "msg": ["Tôi muốn book gói Video", "Tôi muốn book gói Quay chụp", "Tôi muốn book trọn gói"]
-
 }

@@ -23,7 +23,7 @@ function MobileSidebar({ lang, navigation }: { lang: Locale; navigation: any }) 
     }
     return (
         <Sheet>
-            <SheetTrigger className="justify-center xl:hidden px-2 ">
+            <SheetTrigger className="justify-center px-2 xl:hidden ">
                 <Menu />
             </SheetTrigger>
             <SheetContent className="w-56 p-0 pt-10">
@@ -39,7 +39,12 @@ function MobileSidebar({ lang, navigation }: { lang: Locale; navigation: any }) 
                                     pathname === `/${lang + route.href}` ? ' text-gradient' : '',
                                 )}
                             >
-                                <div className="flex flex-1 items-center justify-between ">
+                                <div
+                                    className={cn(
+                                        'flex flex-1 items-center justify-between ',
+                                        pathname.includes('/founder') && route.href === '/founder' && 'text-secondary',
+                                    )}
+                                >
                                     {navigation[route.tag]}
                                     <ArrowRight />
                                 </div>

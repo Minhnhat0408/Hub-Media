@@ -6,23 +6,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Locale } from '@/i18n.config';
 
-export async function Footer({lang}:{lang:Locale}) {
+export async function Footer({ lang }: { lang: Locale }) {
     return (
-        <footer id="lienhe" className="relative flex h-fit w-full items-center flex-col bg-background ">
-            <div className="md-max:pb-5 flex flex-wrap w-[90%] 2xl:pb-14 pb-8">
-                <div className=" flex lg:w-[30%] w-full   items-center  ">
+        <footer id="lienhe" className="relative flex h-fit w-full flex-col items-center bg-background ">
+            <div className="md-max:pb-5 flex w-[90%] flex-wrap pb-8 2xl:pb-14">
+                <div className=" flex w-full items-center   lg:w-[30%]  ">
                     <Image
                         src={'/logo/logo.png'}
                         alt="ava"
                         width={0}
                         height={0}
                         sizes="100vw"
-                        className="h-[200px] w-auto lg:ml-[20%] mx-auto  "
+                        className="mx-auto h-[200px] w-auto lg:ml-[20%]  "
                     />
                 </div>
                 <div className="flex flex-1 justify-between">
-                    <div className="md-max:hidden mt-[50px] h-full min-w-[150px] hidden md:block  ">
-                        <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">{lang === 'vi' ? 'Mục Lục': "SITEMAP"}</h3>
+                    <div className="md-max:hidden mt-[50px] hidden h-full min-w-[150px] md:block  ">
+                        <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">
+                            {lang === 'vi' ? 'Mục Lục' : 'SITEMAP'}
+                        </h3>
                         <div className="mb-3 flex items-start ">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
                             <a
@@ -50,7 +52,7 @@ export async function Footer({lang}:{lang:Locale}) {
                                 Partner
                             </a>
                         </div>
-            
+
                         <div className="mb-3 flex items-start">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
                             <a
@@ -69,10 +71,11 @@ export async function Footer({lang}:{lang:Locale}) {
                                 FAQ
                             </a>
                         </div>
-                      
                     </div>
-                    <div className="md-max:hidden mt-[50px] h-full hidden sm:block  ">
-                        <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">{lang === 'vi' ? 'Dịch vụ': "SERVICES"}</h3>
+                    <div className="md-max:hidden mt-[50px] hidden h-full sm:block  ">
+                        <h3 className="mb-5 text-left text-xl font-bold  uppercase text-white">
+                            {lang === 'vi' ? 'Dịch vụ' : 'SERVICES'}
+                        </h3>
                         <div className="mb-3 flex items-start">
                             <PiPaperPlaneRightFill className="mr-3 mt-2 text-base text-gradient" />
 
@@ -90,7 +93,7 @@ export async function Footer({lang}:{lang:Locale}) {
                                 className="leading-7 text-muted-foreground no-underline hover:text-white hover:underline"
                                 href={'/' + lang + '/services/web-dev'}
                             >
-                                 Web Develop
+                                Web Develop
                             </Link>
                         </div>
                         <div className="mb-3 flex items-start">
@@ -116,37 +119,37 @@ export async function Footer({lang}:{lang:Locale}) {
                     </div>
                     <div className="mt-[50px] h-full  text-white xl:flex xl:flex-col">
                         <h3 className=" mb-5 text-left text-xl font-bold  uppercase text-white">
-                        {lang === 'vi' ? 'Liên hệ': "CONTACT"}
+                            {lang === 'vi' ? 'Liên hệ' : 'CONTACT'}
                         </h3>
-                        <div className="flex-wrap ssm:mb-1 mb-2 flex">
-                            <div className="ssm:w-fit w-full mr-2 flex min-w-[120px]">
+                        <div className="mb-2 flex flex-wrap ssm:mb-1">
+                            <div className="mr-2 flex w-full min-w-[120px] ssm:w-fit">
                                 <FaLocationDot className="mr-3 mt-1 text-base text-white" />
-                                <div className="font-bold">{lang === 'vi' ? 'Địa chỉ:': "Address:"}</div>
+                                <div className="font-bold">{lang === 'vi' ? 'Địa chỉ:' : 'Address:'}</div>
                             </div>
                             <div className=" leading-7 text-muted-foreground">
                                 Tầng 3, D12, Giảng Võ, Ba Đình, Hà Nội
                             </div>
                         </div>
-                        <div className="flex-wrap ssm:mb-1 mb-2 flex">
-                            <div className="ssm:w-fit w-full mr-2 flex min-w-[120px]">
+                        <div className="mb-2 flex flex-wrap ssm:mb-1">
+                            <div className="mr-2 flex w-full min-w-[120px] ssm:w-fit">
                                 <FaPhone className="mr-3 mt-1 text-base text-white" />
                                 <div className="font-bold">Hotline: </div>
                             </div>
                             <div>
-                                <div className="leading-7 text-muted-foreground">{` Ms. Thu Phuong (0965053420)`}</div>
+                                <Link href={'https://www.facebook.com/phoebe.acc'} target="_blank" className="leading-7 text-gradient hover:underline">{` Ms. Thu Phuong (0965053420)`}</Link>
                             </div>
                         </div>
-                        <div className="flex-wrap ssm:mb-1 mb-2 flex">
-                            <div className="ssm:w-fit w-full mr-2 flex min-w-[120px]">
+                        <div className="mb-2 flex flex-wrap ssm:mb-1">
+                            <div className="mr-2 flex w-full min-w-[120px] ssm:w-fit">
                                 <FaEnvelope className="mr-3 mt-1 text-base text-white" />
                                 <div className="font-bold">Email: </div>
                             </div>
-                            <div className="ssm:w-fit w-full">
+                            <div className="w-full ssm:w-fit">
                                 <div className="leading-7 text-muted-foreground">hubmedia.vietnam@gmail.com</div>
                             </div>
                         </div>
-                        <div className="flex-wrap ssm:mb-1 mb-2 flex">
-                            <div className="ssm:w-fit w-full mr-2 flex min-w-[120px]">
+                        <div className="mb-2 flex flex-wrap ssm:mb-1">
+                            <div className="mr-2 flex w-full min-w-[120px] ssm:w-fit">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     height="1em"
@@ -164,7 +167,7 @@ export async function Footer({lang}:{lang:Locale}) {
                                 <a
                                     className="phone:mt-1 block no-underline hover:text-white  hover:underline"
                                     href="https://www.facebook.com/HubMediaVN"
-                                    target='_blank'
+                                    target="_blank"
                                 >
                                     Hub Media
                                 </a>
@@ -192,29 +195,45 @@ export async function Footer({lang}:{lang:Locale}) {
                     </div>
                 </div>
 
-                <ul className="flex gap-x-4 ssm:text-2xl text-base ">
+                <ul className="flex gap-x-4 text-base ssm:text-2xl ">
                     <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                        <Link aria-label='Go to Hub Media Fanpage' href={'https://www.facebook.com/HubMediaVN'} target="_blank">
+                        <Link
+                            aria-label="Go to Hub Media Fanpage"
+                            href={'https://www.facebook.com/HubMediaVN'}
+                            target="_blank"
+                        >
                             <TbBrandFacebook />
                         </Link>
                     </li>
                     <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                        <Link aria-label="Go to Hub Media's Linkedin" href={'http://linkedin.com/company/hub-media-vietnam'} target="_blank">
+                        <Link
+                            aria-label="Go to Hub Media's Linkedin"
+                            href={'http://linkedin.com/company/hub-media-vietnam'}
+                            target="_blank"
+                        >
                             <TbBrandLinkedin />
                         </Link>
                     </li>
                     <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                        <Link aria-label="Go to Hub Media's Youtube Channel" href={'https://www.youtube.com/@FoundersFridayVN'} target="_blank">
+                        <Link
+                            aria-label="Go to Hub Media's Youtube Channel"
+                            href={'https://www.youtube.com/@FoundersFridayVN'}
+                            target="_blank"
+                        >
                             <TbBrandYoutube />
                         </Link>
                     </li>
                     <li className=" cursor-pointer duration-1000 hover:text-gradient">
-                        <Link aria-label="Go to Hub Media's Tiktok" href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1'}>
+                        <Link
+                            aria-label="Go to Hub Media's Tiktok"
+                            href={'https://www.tiktok.com/@hubmedia_?_t=8frc2o4VZGE&_r=1 '}
+                            target="_blank"
+                        >
                             <TbBrandTiktok />
                         </Link>
                     </li>
                 </ul>
-                <div className="ssm:text-base text-sm">
+                <div className="text-sm ssm:text-base">
                     <p>
                         © Copyright 2023 <span className="font-bold tracking-wider">Hub Media</span>
                     </p>

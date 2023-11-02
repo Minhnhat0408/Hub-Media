@@ -15,7 +15,10 @@ export default function Guests({ lang }: { lang: Locale }) {
         }
     }, []);
     return (
-        <section id="guests" className="flex w-full flex-col items-center bg-cover bg-center bg-no-repeat py-20   ">
+        <section
+            id="guests"
+            className="flex w-full flex-col items-center bg-cover bg-center bg-no-repeat py-10 sm:py-20  "
+        >
             {/* <Heading title='Guests' description='Our Guests' /> */}
             <LetterAppear className="sm:text-shadow text-shadow-sm mb-10 text-4xl font-bold tracking-widest !text-secondary sm:text-6xl">
                 {lang === 'en' ? 'Our Guests' : 'Khách mời'}
@@ -32,7 +35,7 @@ export default function Guests({ lang }: { lang: Locale }) {
             ) : (
                 <>
                     <Image
-                        src={'/images/1.png'}
+                        src={'https://utfs.io/f/d9c785db-331c-4aea-b11d-d5253b7afac8-1d.png'}
                         alt="img"
                         width={0}
                         height={0}
@@ -40,12 +43,12 @@ export default function Guests({ lang }: { lang: Locale }) {
                         className="mb-10 h-auto w-[100%] "
                     />
                     <Image
-                        src={'/images/2.png'}
+                        src={'https://utfs.io/f/22417fa4-6bae-4650-b0a9-94284f677460-1e.png'}
                         alt="img"
                         width={0}
                         height={0}
                         sizes="100vw"
-                        className="h-auto w-[100%] "
+                        className=" h-auto w-[100%] "
                     />
                 </>
             )}
