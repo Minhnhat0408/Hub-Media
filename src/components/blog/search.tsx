@@ -38,7 +38,7 @@ export default function Search({ lang,allPosts ,className}: { lang: Locale,allPo
     }, [debounce]);
 
     return (
-        <div className={cn("h-full   w-full px-10 py-10 sm:mt-0 mt-10    ",className)}>
+        <div className={cn("h-full   w-full px-10 py-10 sm:mt-0 mt-20    ",className)}>
             <div className="relative ">
                 <Input
                     placeholder={lang === 'vi' ? 'Tìm kiếm' : 'Search'}

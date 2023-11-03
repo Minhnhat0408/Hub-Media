@@ -12,7 +12,7 @@ export default function PageTitle({ title, src }: { title: string; src: string }
                 className=" bg-page-title absolute left-0 top-0 -z-10 h-full w-full object-cover opacity-[0.6] mix-blend-luminosity    "
             />
             <h1 className="silver xl:mt-40 text-center md:mt-28 mt-16 mb-6 md:!text-6xl ssm:text-5xl text-[34px] font-bold py-2">{title}</h1>
-            <p className="super ">Hub Media / {title}</p>
+            <p className="super text-center ">Hub Media / {title}</p>
         </section>
     );
 }

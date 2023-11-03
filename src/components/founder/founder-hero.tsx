@@ -23,7 +23,7 @@ export default function FounderHero() {
                 style={{  boxShadow: '10px 10px 15px 5px rgba(0,0,0,0.6)' }}
             >
                 <source
-                    src="https://res.cloudinary.com/dtbvalhlc/video/upload/v1698891032/hub-media/gk9yf63bot7lapgt1tby.mp4"
+                    src="/images/trailer.mp4"
                     type="video/mp4"
                 />
             </video>

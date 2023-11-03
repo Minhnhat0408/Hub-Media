@@ -7,7 +7,8 @@ import Reveal from '../animations/reveal';
 import Link from 'next/link';
 import MarkupButton from '../markup-button';
 import { Locale } from '@/i18n.config';
-function HomeHero({ home, lang }: { home: any; lang: Locale }) {
+function 
+HomeHero({ home, lang }: { home: any; lang: Locale }) {
     return (
         <section
             id="home-hero"
