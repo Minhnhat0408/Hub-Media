@@ -20,7 +20,7 @@ export default async function FounderPage({ params: { lang } }: { params: { lang
                 width="0"
                 height="0"
                 sizes="100vw"
-                className=" fixed -z-10 h-[100vh] w-auto bg-black  object-cover  lg:w-[100vw]"
+                className=" fixed -z-10 h-[100vh] w-auto bg-black top-0  object-cover  lg:w-[100vw]"
             />
             <FounderHero />
             <Vision
