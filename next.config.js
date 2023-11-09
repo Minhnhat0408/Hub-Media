@@ -1,24 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'gaaga.wpengine.com',
-            },
-            {
-                protocol: 'https',
-                hostname: 'firebasestorage.googleapis.com',
-            },
-            {
-                protocol: 'https',
-                hostname: 'res.cloudinary.com',
-            },
-            {
-                protocol: 'https',
-                hostname: 'utfs.io'
-            }
-        ],
+        formats: ['image/avif', 'image/webp'],
+        domains: ['gaaga.wpengine.com', 'firebasestorage.googleapis.com', 'res.cloudinary.com','utfs.io'],
     },
     pageExtensions: ['ts', 'tsx'],
     reactStrictMode: false,

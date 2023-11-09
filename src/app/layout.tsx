@@ -15,6 +15,7 @@ export const metadata: Metadata = {
         type: 'website',
         url: 'https://pbhubmedia.vercel.app/',
     },
+    viewport: 'width=device-width, initial-scale=1',
     creator: 'Bùi Thu Phương',
     description:
         'Hub Media là một công ty cung cấp giải pháp marketing dành cho các doanh nghiệp hướng tới đối tượng là giới trẻ.',
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="vi">
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
+           
             <body>
                 <Toaster position="top-right" />
                 {children}
