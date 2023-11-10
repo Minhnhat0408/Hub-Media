@@ -13,11 +13,13 @@
     "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/05/Gaaga-Insta-Img-1.png",
     "packages": {
         "Video sự kiện": {
-            "price": ["1,000,000", "máy"],
-            "details": ["100 ảnh chỉnh sửa", "3 lần demo"]
+            "price": ["Tính phí theo yêu cầu"],
+            "unit": false,
+            "details": ["Liên hệ để biết thêm chi tiết"]
         },
         "Quay chụp": {
-            "price": ["3,500,000"],
+            "price": ["Tính phí theo yêu cầu"],
+            "unit": false,
             "details": ["Liên hệ để biết thêm chi tiết"]
         },
         "Trọn gói": {

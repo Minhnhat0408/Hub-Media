@@ -43,7 +43,7 @@ export const routes = [
       label: "FOUNDER'S FRIDAY",
       // icon: Music,
       color: "text-emerald-500",
-      href: '/founder',
+      href: '/founder-friday',
       tag: "founder"
     },
     {
@@ -62,7 +62,7 @@ export const routes = [
   ];
 
 export const middlewareRoutes = [
-  '/services','/livestream','/founder','/blog','/contact'
+  '/services','/livestream','/founder-friday','/blog','/contact'
 ]
 
 export const services = [

@@ -20,7 +20,7 @@ function NavBar({ lang, navigation }: { lang: Locale; navigation: any }) {
                             className={
                                 'px-5 py-2 font-[500] ' +
                                 ('/' + core.at(1) + '/' + (core.at(2) ? core.at(2) : '') === `/${lang + route.href}`
-                                    ? route.href === '/founder'
+                                    ? route.href === '/founder-friday'
                                         ? 'text-secondary'
                                         : 'text-gradient'
                                     : '')

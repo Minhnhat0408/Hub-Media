@@ -24,39 +24,19 @@
     "types": ["Brandkit", "Ấn Phẩm", "Pitch deck"],
     "packages": {
         "Standard/Ấn Phẩm": {
-            "price": ["300,000"],
-            "details": ["1 mẫu demo", "2 lần chỉnh sửa"]
-        },
-        "Advanced/Ấn Phẩm": {
-            "price": ["600,000"],
-            "details": ["2 mẫu demo", "3 lần chỉnh sửa"]
-        },
-        "Professional/Ấn Phẩm": {
-            "price": ["1,000,000"],
-            "details": ["3   mẫu demo", "4 lần chỉnh sửa"]
+            "price": ["Tính phí theo yêu cầu"],
+            "unit": false,
+            "details": ["Liên hệ để biết thêm chi tiết"]
         },
         "Standard/Pitch deck": {
-            "price": ["200,000", "slide"],
-            "details": ["1 lần chỉnh sửa", "Tiến độ: 4 slide/ngày"]
-        },
-        "Advanced/Pitch deck": {
-            "price": ["300,000", "slide"],
-            "details": ["3 lần chỉnh sửa", "Tiến độ: 4 slide/ngày"]
-        },
-        "Professional/Pitch deck": {
-            "price": ["400,000", "slide"],
-            "details": ["Không giới hạn chỉnh sửa", "Tiến độ: không giới hạn"]
+            "price": ["Tính phí theo yêu cầu"],
+            "unit": false,
+            "details": ["Liên hệ để biết thêm chi tiết"]
         }
     },
     "msg": [
         "Tôi muốn book gói Standard của Brandkit",
-        "Tôi muốn book gói Advanced của Brandkit",
-        "Tôi muốn book gói Professional của Brandkit",
         "Tôi muốn book gói Standard của Ấn Phẩm",
-        "Tôi muốn book gói Advanced của Ấn Phẩm",
-        "Tôi muốn book gói Professional của Ấn Phẩm",
-        "Tôi muốn book gói Standard của Pitch deck",
-        "Tôi muốn book gói Advanced của Pitch deck",
-        "Tôi muốn book gói Professional của Pitch deck"
+        "Tôi muốn book gói Standard của Pitch deck"
     ]
 }

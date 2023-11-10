@@ -20,18 +20,7 @@
     ],
 
     "packages": {
-        "Standard": {
-            "price": ["30,000,000"],
-            "details": ["1-2 post", "60.000 reach/view", "Cam kết >50 like mỗi post"]
-        },
-        "Advanced": {
-            "price": ["50,000,000"],
-            "details": ["3 post", "75.000 reach/view", "Cam kết >70 like mỗi post"]
-        },
-        "Professional": {
-            "price": ["70,000,000"],
-            "details": ["5 post", "90.000 reach/view", "Cam kết >80 like mỗi post"]
-        }
+
     },
     "msg": [
         "Tôi muốn book gói Standard",
