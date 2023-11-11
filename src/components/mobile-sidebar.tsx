@@ -42,7 +42,7 @@ function MobileSidebar({ lang, navigation }: { lang: Locale; navigation: any }) 
                                 <div
                                     className={cn(
                                         'flex flex-1 items-center justify-between ',
-                                        pathname.includes('/founder') && route.href === '/founder' && 'text-secondary',
+                                        pathname.includes('/founder-friday') && route.href === '/founder-friday' && 'text-secondary',
                                     )}
                                 >
                                     {navigation[route.tag]}
