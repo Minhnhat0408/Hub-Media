@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     return {
         title: metadata.home.title,
         openGraph: {
-            images: ['https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2F345329692_191612113793014_5846958053862937696_n.jpg?alt=media&token=f57c40d7-d18b-4f39-81b5-7abbeb973d80&_gl=1*11j8j1z*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUyOTYxLjU4LjAuMA..'],
+            images: ['/images/og.png'],
         },
         description: metadata.home.description,
     };
