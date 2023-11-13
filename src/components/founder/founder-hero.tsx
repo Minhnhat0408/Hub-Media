@@ -1,11 +1,18 @@
 'use client';
 
-import { useInView } from 'framer-motion';
+import useInteraction from '@/hooks/useInteraction';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import VideoPlayer from '../video-player';
 
 export default function FounderHero() {
     // console.log(manual);
+    // const interacted = useInteraction();
+    // const [display, setDisplay] = useState(interacted);
+    // useEffect(() => {
+    //     console.log(interacted);
+    // }, [interacted]);
     return (
         <section
             id="hero"
@@ -13,21 +20,17 @@ export default function FounderHero() {
                 backgroundImage: "url('https://utfs.io/f/c234207f-fca0-4293-8a30-87a4a402c53a-1jqloo.png')",
                 boxShadow: '0px 0px 22px 10px rgba(0,0,0,0.8) inset',
             }}
-            className="relative  flex w-[100vw]  overflow-y-hidden    overflow-x-clip pl-10 lg:pr-0 pr-10  py-24 "
+            className="relative  flex w-[100vw]  overflow-y-hidden    overflow-x-clip py-24 pl-10 pr-10  lg:pr-0 "
         >
-            <video
-                autoPlay
-                muted
-                controls
-                className='lg:w-[60%] h-auto w-full md:block hidden '
-                style={{  boxShadow: '10px 10px 15px 5px rgba(0,0,0,0.6)' }}
-            >
-                <source
-                    src="/images/trailer.mp4"
-                    type="video/mp4"
-                />
-            </video>
-            <div className=" w-full flex-col items-center md:px-10 lg:flex md:hidden flex  ">
+            <VideoPlayer
+                src={'/images/trailer.mp4'}
+                className="hidden h-auto w-full md:block lg:w-[60%] lg:min-w-[60%] "
+
+                options={{
+                    autoplay: true,
+                }}
+            />
+            <div className=" flex w-full flex-col items-center md:hidden md:px-10 lg:flex  ">
                 <Image
                     src={'/logo/logoff.png'}
                     alt="img"
@@ -54,7 +57,7 @@ export default function FounderHero() {
                     </Link>
                     <Link
                         target="_blank"
-                        href={'http://open.spotify.com/show/foundersfriday'}
+                        href={'https://open.spotify.com/show/5ArHCz9zZIL4XkvP04sHnM?si=8fc6c8437a294a4d'}
                         className="flex h-20 cursor-pointer items-center     justify-center text-green-600 duration-500  hover:scale-110"
                     >
                         <Image
@@ -68,7 +71,7 @@ export default function FounderHero() {
                     </Link>
                     <Link
                         target="_blank"
-                        href={'http://tiktok.com/@foundersfridayvn'}
+                        href={'https://www.tiktok.com/@foundersfriday.vn'}
                         className="flex h-20 cursor-pointer items-center     justify-center text-green-600 duration-500  hover:scale-110"
                     >
                         <Image

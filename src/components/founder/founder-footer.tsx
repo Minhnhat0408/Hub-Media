@@ -176,7 +176,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                     <li className=" cursor-pointer duration-1000 hover:text-secondary">
                         <Link
                             aria-label="Go to Hub Media's Linkedin"
-                            href={'http://open.spotify.com/show/foundersfriday'}
+                            href={'https://open.spotify.com/show/5ArHCz9zZIL4XkvP04sHnM?si=8fc6c8437a294a4d'}
                             target="_blank"
                         >
                             <TbBrandSpotify />
@@ -194,7 +194,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
                     <li className=" cursor-pointer duration-1000 hover:text-secondary">
                         <Link
                             aria-label="Go to Hub Media's Tiktok"
-                            href={'http://tiktok.com/@foundersfridayvn'}
+                            href={'https://www.tiktok.com/@foundersfriday.vn'}
                             target="_blank"
                         >
                             <TbBrandTiktok />

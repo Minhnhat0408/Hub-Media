@@ -172,17 +172,6 @@ export default function Products({ lang, products }: { lang: Locale; products: s
                         <iframe
                             width="100%"
                             height="auto"
-                            className='ssm:h-[350px] h-[200px]'
-                            src="https://www.youtube.com/embed/Nsja-nPKZMY?si=0iXtLDsDrtcU3wZu"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                        ></iframe>
-                    </div>
-                    <div className="keen-slider__slide ">
-                        <iframe
-                            width="100%"
-                            height="auto"
                             className='sm:h-[350px] h-[200px]'
                             src="https://www.youtube.com/embed/X0wculkTlDI?si=vyKCYlxZrP5QjnoY"
                             title="YouTube video player"
