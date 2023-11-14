@@ -35,7 +35,7 @@ export default function BlogItem({title,cover,date, short,lang,id,preview }: { s
                             width="0"
                             height="0"
                             sizes="100vw"
-                            className=" h-auto w-full  scale-125 object-cover object-center duration-500  hover:scale-100"
+                            className=" h-auto w-full  xl:scale-125 object-cover object-center duration-500  xl:hover:scale-100"
                         />
                     </Link>
                     <div className="flex flex-col gap-y-2">

@@ -50,7 +50,7 @@ export default function BlogTools({
     }, [debounce]);
 
     return (
-        <div className="h-full w-[350px] space-y-12 border-2 border-gradient px-10 py-16 xl:w-[400px] ">
+        <div className="h-full w-[350px]  space-y-12 border-2  border-gradient px-10 py-16 xl:w-[400px] ">
             <div className="relative ">
                 <Input
                     placeholder={lang === 'vi' ? 'Tìm kiếm' : 'Search'}

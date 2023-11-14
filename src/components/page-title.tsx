@@ -1,8 +1,9 @@
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-export default function PageTitle({ title, src }: { title: string; src: string }) {
+export default function PageTitle({ title, src, className }: { title: string; src: string; className?: string }) {
     return (
-        <section className="bg-page-title relative flex  w-full xl:h-[400px] md:h-[250px] h-[180px]  flex-col  items-center ">
+        <section className="bg-page-title relative flex  h-fit w-full flex-col items-center   xl:h-[400px] ">
             <Image
                 src={src}
                 alt="img"
@@ -11,8 +12,15 @@ export default function PageTitle({ title, src }: { title: string; src: string }
                 sizes="100vw"
                 className=" bg-page-title absolute left-0 top-0 -z-10 h-full w-full object-cover opacity-[0.6] mix-blend-luminosity    "
             />
-            <h1 className="silver xl:mt-40 text-center md:mt-28 mt-16 mb-6 md:!text-6xl ssm:text-5xl text-[34px] font-bold py-2">{title}</h1>
-            <p className="super text-center ">Hub Media / {title}</p>
+            <h1
+                className={cn(
+                    'silver mb-6 mt-16 py-2 text-center text-[34px] lg:px-20 font-bold md:mt-28 md:!text-6xl xl:mt-40 ssm:text-5xl ',
+                    className,
+                )}
+            >
+                {title}
+            </h1>
+            <p className="super text-center sm:text-base text-sm ">Hub Media / {title}</p>
         </section>
     );
 }

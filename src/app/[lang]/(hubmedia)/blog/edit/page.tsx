@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import Loading from '@/app/[lang]/loading';
+import { Textarea } from '@/components/ui/textarea';
 
 export default function EditBlog({ params: { lang } }: { params: { lang: Locale } }) {
     const searchParams = useSearchParams();
@@ -229,8 +230,7 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                     <section className=" flex w-full space-x-10 px-4 py-20 xl:space-x-20 xl:px-10 xl:py-0  2xl:space-x-32 2xl:px-20">
                         <div className="w-full flex-1 space-y-10">
                             <div className="mt-10 flex w-full gap-x-8">
-                                <Input
-                                    type="text"
+                                <Textarea
                                     className="text-2xl  font-bold "
                                     value={title}
                                     placeholder="Enter title"

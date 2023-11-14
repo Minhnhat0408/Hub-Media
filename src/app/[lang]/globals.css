@@ -189,6 +189,13 @@ html *::-webkit-scrollbar {
   }
 }
 
+.line-trim-2{
+  
+    overflow-x: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
 
 .animate-ping-big {
   animation: pingbig 1s cubic-bezier(0, 0, 0.2, 1) infinite;
@@ -309,6 +316,18 @@ html *::-webkit-scrollbar {
   fill:white  !important;
   font-size: 16px;
   
+}
+.ql-snow .ql-editor blockquote {
+  background: linear-gradient(0deg,rgba(255,255,255,0.4), #d9658cad );
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
+  border-left: 0px solid #ccc !important;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+
 }
 .invalid .ql-toolbar.ql-snow {
   border: 1px solid rgb(239, 68, 68);

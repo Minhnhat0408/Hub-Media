@@ -61,7 +61,10 @@ export default function SliderMultiple({
                         mouseOver = true;
                         clearNextTimeout();
                     });
-
+                    slider.container.addEventListener('mouseout', () => {
+                        mouseOver = false;
+                        nextTimeout();
+                    });
                     nextTimeout();
                 });
                 slider.on('dragStarted', clearNextTimeout);
