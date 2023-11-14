@@ -10,6 +10,7 @@ import Search from './search';
 
 export default function BlogAll({ lang }: { lang: Locale }) {
     const { allBlogs: blogs } = useContext(BlogContext);
+    console.log(blogs)
     let recentBlog: BlogType[] = blogs;
     recentBlog = recentBlog.slice(0, 3);
     return (

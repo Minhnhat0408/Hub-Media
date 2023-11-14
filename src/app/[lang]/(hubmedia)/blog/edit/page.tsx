@@ -115,9 +115,9 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
             {
                 loading: <p>{lang === 'vi' ? 'Xin hãy đợi 1 chút' : 'Please wait for a moment'}</p>,
                 success: (data) => {
-                    return <p> {lang === 'vi' ? 'Ảnh bìa đã up' : 'Cover has been uploaded'}</p>;
+                    return <p> {lang === 'vi' ? 'Blog đã được đăng' : 'Blog has been uploaded'}</p>;
                 },
-                error: 'Error while sending form',
+                error: 'Error while posting blog',
             },
             {
                 style: {
@@ -162,9 +162,60 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
     };
     const handleDelete = async () => {
         if (id) {
-            await deleteDoc(doc(db, 'contents', id));
-            await deleteDoc(doc(db, 'blogs', contentId));
-            reset();
+            await toast.promise(
+                new Promise((resolve, reject) => {
+                    (async () => {
+                        await deleteDoc(doc(db, 'contents', id));
+                        await deleteDoc(doc(db, 'blogs', contentId));
+                    })();
+                    reset();
+                    const recentPosts = localStorage.getItem('recentpost')
+                        ? JSON.parse(localStorage.getItem('recentpost') as string)
+                        : [];
+                    if (recentPosts.length > 0) {
+                        const newRecentPosts = recentPosts.filter(
+                            (item: { contentId: string }) => item.contentId !== id,
+                        );
+                        localStorage.setItem('recentpost', JSON.stringify(newRecentPosts));
+                    }
+                    resolve('ok');
+                    router.push('/blog');
+                }),
+                {
+                    loading: <p>{lang === 'vi' ? 'Xin hãy đợi 1 chút' : 'Please wait for a moment'}</p>,
+                    success: (data) => {
+                        return <p> {lang === 'vi' ? 'Xóa bài thành công' : 'Blog has been deleted'}</p>;
+                    },
+                    error: 'Error while delete blog',
+                },
+                {
+                    style: {
+                        minWidth: '200px',
+                        minHeight: '50px',
+                        fontSize: '16px',
+                        backdropFilter: 'blur(20px)',
+                        WebkitBackdropFilter: 'blur(20px)',
+                        boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                        background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1))',
+                        color: 'var(--gradient)',
+                    },
+                    success: {
+                        duration: 3000,
+                        icon: '✅',
+                    },
+                    error: {
+                        duration: 3000,
+                        icon: '❌',
+                        style: {
+                            minWidth: '250px',
+                            minHeight: '60px',
+                            fontSize: '20px',
+                            backgroundColor: 'var(--primary)',
+                            color: 'red',
+                        },
+                    },
+                },
+            );
         }
     };
     return (
