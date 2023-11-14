@@ -95,19 +95,21 @@ export default function BlogTools({
                 )}
             </div>
             <div className="flex w-full flex-col gap-y-4">
-                <h2 className="text-2xl font-bold">{lang === 'vi' ? 'Mới Đọc' : 'Recent Blogs'}</h2>
-                {recentPosts?.map((item, index) => (
-                    <BlogItem
-                        lang={lang}
-                        key={index}
-                        title={item.title}
-                        id={item.contentId}
-                        preview={item.preview}
-                        cover={item.cover}
-                        date={item.date}
-                        short
-                    />
-                ))}
+                {recentPosts && recentPosts.length> 0 && <h2 className="text-2xl font-bold">{lang === 'vi' ? 'Mới Đọc' : 'Recent Blogs'}</h2>}
+                { (
+                    recentPosts?.map((item, index) => (
+                        <BlogItem
+                            lang={lang}
+                            key={index}
+                            title={item.title}
+                            id={item.contentId}
+                            preview={item.preview}
+                            cover={item.cover}
+                            date={item.date}
+                            short
+                        />
+                    ))
+                )}
             </div>
             <Image
                 src={

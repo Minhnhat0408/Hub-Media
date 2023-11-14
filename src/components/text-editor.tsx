@@ -68,6 +68,7 @@ export default function TextEditor({
                         {
                             color: [
                                 '#111111',
+                            '#ffffff',
                                 '#FF0000',
                                 '#d9658c',
                                 '#001F3F',
