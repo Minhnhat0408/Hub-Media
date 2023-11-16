@@ -6,12 +6,12 @@ import MarkupButton from '../markup-button';
 import Link from 'next/link';
 import { Locale } from '@/i18n.config';
 
-export default function BlogItem({title,cover,date, short,lang,id,preview }: { short?: boolean,title:string,cover:string,date:string,id:string,lang:Locale ,preview:string}) {
+export default function BlogItem({title,cover,date, short,lang,id,preview,edit }: { short?: boolean,title:string,cover:string,date:string,id:string,lang:Locale ,preview:string,edit?:boolean}) {
     return (
         <>
             {short ? (
                 <article className='flex w-full gap-x-4'>
-                    <Link href={'/' + lang + '/blog/' + id} className="flex h-[110px] w-[110px] items-center overflow-hidden ">
+                    <Link href={!edit ? ('/' + lang + '/blog/' + id) : ('/api/edit-blog/?id=' + id)} className="flex h-[110px] w-[110px] items-center overflow-hidden ">
                         <Image
                             src={cover}
                             alt="img"

@@ -1,23 +1,27 @@
 'use client';
 import axios from 'axios';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+import { use, useContext, useEffect, useMemo, useState } from 'react';
 import { Locale } from '@/i18n.config';
 import dynamic from 'next/dynamic';
 import PageTitle from '@/components/page-title';
 import { Button } from '@/components/ui/button';
 import { db } from '@/firebase/firebase-app';
-import { addDoc, collection, deleteDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, orderBy, query, updateDoc } from 'firebase/firestore';
 import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import Loading from '@/app/[lang]/loading';
 import { Textarea } from '@/components/ui/textarea';
+import { BlogContext, IBlogContext } from '@/contexts/context';
+import { BlogType } from '@/lib/constants';
+import BlogItem from '@/components/blog/blog-item';
 
 export default function EditBlog({ params: { lang } }: { params: { lang: Locale } }) {
     const searchParams = useSearchParams();
     const key = searchParams.get('key');
     const id = searchParams.get('id');
+    const [editBlogs, setEditBlogs] = useState<BlogType[]>([]);
     const [title, setTitle] = useState<string>('');
     const [contentId, setContentId] = useState<string>('');
     const [validated, setValidated] = useState(true);
@@ -28,13 +32,14 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
     const [displayDelete, setDisplayDelete] = useState(false);
     const [display, setDisplay] = useState(false);
     const TextEditor = useMemo(() => dynamic(() => import('@/components/text-editor'), { ssr: false }), []);
+
     useEffect(() => {
+        setDisplay(false);
         async function confirmKey() {
             const res = await axios.get('/api/edit/?key=' + key + '&id=' + id);
             if (res.data?.error) {
                 router.push('/blog');
             } else {
-                setDisplay(true);
                 if (id) {
                     const res = await getDoc(doc(db, 'contents', id));
                     const data = res.data();
@@ -49,8 +54,23 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                     }
                 }
             }
+            setDisplay(true);
         }
+
         confirmKey();
+    }, [id, key]);
+
+    useEffect(() => {
+        (async () => {
+            (async () => {
+                const res = await getDocs(query(collection(db, 'blogs'), orderBy('date', 'desc')));
+                const tmp: BlogType[] = res.docs.map((doc) => {
+                    const newDate = new Date(doc.data().date.toDate()).toLocaleDateString();
+                    return { ...doc.data(), date: newDate };
+                }) as BlogType[];
+                setEditBlogs(tmp);
+            })();
+        })();
     }, []);
     const handlePostBlog = async () => {
         if (!value || !cover || !title) {
@@ -227,7 +247,7 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                         src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fbghub.JPG?alt=media&token=07da7fd8-9f51-479c-848a-691c6972c227&_gl=1*3zs0og*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUxNzE1LjQ0LjAuMA."
                         title="Edit Blog"
                     />
-                    <section className=" flex w-full space-x-10 px-4 py-20 xl:space-x-20 xl:px-10 xl:py-0  2xl:space-x-32 2xl:px-20">
+                    <section className=" relative flex w-full flex-col space-x-10 px-4 py-20 lg:flex-row xl:space-x-20 xl:px-10 xl:py-0  2xl:space-x-32 2xl:px-20">
                         <div className="w-full flex-1 space-y-10">
                             <div className="mt-10 flex w-full gap-x-8">
                                 <Textarea
@@ -284,7 +304,31 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                                 Post
                             </Button>
                         </div>
-                        <div className="hidden w-[400px] lg:block"></div>
+                        <div className=" flex flex-col sticky top-10 h-[90vh] w-[400px]    border-2 border-gradient px-10 py-16">
+                           <div className='space-y-8 flex-1 overflow-y-scroll '>
+                                {editBlogs?.map((item, index) => (
+                                    <BlogItem
+                                        lang={lang}
+                                        key={index}
+                                        title={item.title}
+                                        id={item.contentId}
+                                        preview={item.preview}
+                                        cover={item.cover}
+                                        date={item.date}
+                                        short
+                                        edit
+                                    />
+                                ))}
+                           </div>
+                            <Button
+                                className="w-full mt-10"
+                                onClick={() => { 
+                                    console.log(key)
+                                    router.push('/vi/blog/edit?key=' + key );
+                                }}>
+                                    New Blog
+                                </Button>
+                        </div>
                     </section>
                 </main>
             ) : (
