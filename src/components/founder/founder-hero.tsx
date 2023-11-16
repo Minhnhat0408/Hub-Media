@@ -1,10 +1,10 @@
 'use client';
 
-import useInteraction from '@/hooks/useInteraction';
+// import useInteraction from '@/hooks/useInteraction';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import VideoPlayer from '../video-player';
+// import { useEffect, useState } from 'react';
+// import VideoPlayer from '../video-player';
 
 export default function FounderHero() {
     // console.log(manual);
@@ -22,17 +22,35 @@ export default function FounderHero() {
             }}
             className="relative  flex w-[100vw]  overflow-y-hidden    overflow-x-clip py-24 pl-10 pr-10  lg:pr-0 "
         >
-            <VideoPlayer
-                src={'/images/trailer.mp4'}
-                className="hidden h-auto w-full md:block lg:w-[60%] lg:min-w-[60%] "
-
-                options={{
-                    autoplay: true,
-                }}
-            />
+            <div className="hidden  w-full  pl-10 flex-col justify-evenly md:flex lg:w-[60%] lg:min-w-[60%]">
+                <Image
+                    src={'/images/1.png'}
+                    alt="img"
+                    width="0"
+                    height="0"
+                    sizes="100vw"
+                    className="h-auto w-1/2 ml-2  "
+                />
+                <Image
+                    src={'/images/2.png'}
+                    alt="img"
+                    width="0"
+                    height="0"
+                    sizes="100vw"
+                    className="h-auto w-full  "
+                />
+                <Image
+                    src={'/images/3.png'}
+                    alt="img"
+                    width="0"
+                    height="0"
+                    sizes="100vw"
+                    className="h-auto w-full "
+                />
+            </div>
             <div className=" flex w-full flex-col items-center md:hidden md:px-10 lg:flex  ">
                 <Image
-                    src={'/logo/logoff.png'}
+                    src={'/logo/logoff2.png'}
                     alt="img"
                     width="0"
                     height="0"
@@ -44,15 +62,16 @@ export default function FounderHero() {
                     <Link
                         target="_blank"
                         href={'http://youtube.com/@FoundersFridayVN'}
-                        className="flex h-20 cursor-pointer items-center     justify-center text-red-500 duration-500  hover:scale-110"
+                        className="flex h-20 cursor-pointer items-center justify-center text-red-500 duration-500  hover:scale-110"
                     >
                         <Image
-                            src={'/logo/Youtube_logo.png'}
+                            src={'/logo/yt.png'}
                             alt="img"
                             width="0"
                             height="0"
                             sizes="100vw"
-                            className="h-auto w-[74px] "
+                            className="h-auto w-16 rounded-2xl"
+                            style={{  boxShadow: '5px 5px 10px 3px rgba(0,0,0,0.6)' }}
                         />
                     </Link>
                     <Link
@@ -66,7 +85,8 @@ export default function FounderHero() {
                             width="0"
                             height="0"
                             sizes="100vw"
-                            className="h-auto w-16 "
+                            className="h-auto w-16 rounded-2xl"
+                            style={{  boxShadow: '5px 5px 10px 3px rgba(0,0,0,0.6)' }}
                         />
                     </Link>
                     <Link
@@ -75,12 +95,13 @@ export default function FounderHero() {
                         className="flex h-20 cursor-pointer items-center     justify-center text-green-600 duration-500  hover:scale-110"
                     >
                         <Image
-                            src={'/logo/tiktok.png'}
+                            src={'/logo/tik.png'}
                             alt="img"
                             width="0"
                             height="0"
                             sizes="100vw"
-                            className="h-auto w-16 "
+                            className="h-auto w-16 rounded-2xl"
+                            style={{  boxShadow: '5px 5px 10px 3px rgba(0,0,0,0.6)' }}
                         />
                     </Link>
                 </div>
