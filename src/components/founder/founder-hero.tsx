@@ -20,7 +20,7 @@ export default function FounderHero() {
                 backgroundImage: "url('https://utfs.io/f/c234207f-fca0-4293-8a30-87a4a402c53a-1jqloo.png')",
                 boxShadow: '0px 0px 22px 10px rgba(0,0,0,0.8) inset',
             }}
-            className="relative  flex w-[100vw]  overflow-y-hidden    overflow-x-clip py-24 pl-10 pr-10  lg:pr-0 "
+            className="relative  flex w-[100vw]  overflow-y-hidden    overflow-x-clip py-36  pl-10 pr-10  lg:pr-0 "
         >
             <div className="hidden  w-full  pl-10 flex-col justify-evenly md:flex lg:w-[60%] lg:min-w-[60%]">
                 <Image
@@ -55,10 +55,10 @@ export default function FounderHero() {
                     width="0"
                     height="0"
                     sizes="100vw"
-                    className="h-auto w-[400px] "
+                    className="h-auto w-[400px]  "
                 />
 
-                <div className="flex gap-x-16">
+                <div className="flex gap-x-16 mb-10">
                     <Link
                         target="_blank"
                         href={'http://youtube.com/@FoundersFridayVN'}
