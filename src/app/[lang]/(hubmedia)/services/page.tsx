@@ -27,7 +27,7 @@ async function ServicesPage({ params: { lang } }: { params: { lang: Locale } }) 
     return (
         <main className=" h-fit w-full py-[60px] md:py-[90px] ">
             <PageTitle
-                src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fbghub.JPG?alt=media&token=07da7fd8-9f51-479c-848a-691c6972c227&_gl=1*3zs0og*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUxNzE1LjQ0LjAuMA."
+                src="/images/bg-title.jpg"
                 title={lang === 'vi' ? 'Dịch vụ' : 'Services'}
             />
 

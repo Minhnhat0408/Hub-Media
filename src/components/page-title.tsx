@@ -10,7 +10,7 @@ export default function PageTitle({ title, src, className }: { title: string; sr
                 width="0"
                 height="0"
                 sizes="100vw"
-                className=" bg-page-title absolute left-0 top-0 -z-10 h-full w-full object-cover opacity-[0.6] mix-blend-luminosity    "
+                className=" bg-page-title absolute left-0 top-0 -z-10 h-full w-full object-cover opacity-[0.1] mix-blend-luminosity    "
             />
             <h1
                 className={cn(

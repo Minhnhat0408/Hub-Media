@@ -33,7 +33,7 @@ async function Service({ params: { title, lang } }: { params: { title: string; l
     return (
         <main className=" h-fit w-full py-[60px] md:py-[90px] ">
             <PageTitle
-                src="https://firebasestorage.googleapis.com/v0/b/hub-media-207ea.appspot.com/o/images%2Fbghub.JPG?alt=media&token=07da7fd8-9f51-479c-848a-691c6972c227&_gl=1*3zs0og*_ga*MjEzMTY3MzA4MS4xNjkxMzM2Nzk5*_ga_CW55HF8NVT*MTY5Njc0OTk2NC4yODMuMS4xNjk2NzUxNzE1LjQ0LjAuMA.."
+                src="/images/bg-title.jpg"
                 title={data.title}
             />
             <section className="flex w-full flex-col gap-y-10 px-4 py-20 lg:flex-row xl:!px-20 ssm:px-10">

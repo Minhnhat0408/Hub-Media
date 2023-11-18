@@ -118,6 +118,18 @@ export default function Products({ lang, products }: { lang: Locale; products: s
                             width="100%"
                             height="auto"
                             className="h-[200px] ssm:h-[350px]"
+                            src="https://www.youtube.com/embed/GdazDlvYln8?si=4JufRvjWw7YUsfYH"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+
+                    <div className="keen-slider__slide ">
+                        <iframe
+                            width="100%"
+                            height="auto"
+                            className="h-[200px] ssm:h-[350px]"
                             src="https://www.youtube.com/embed/pkWk7MBSZN8?si=CrWBH5mHRj5nUAgF"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
