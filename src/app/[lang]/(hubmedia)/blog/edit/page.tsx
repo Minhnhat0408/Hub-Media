@@ -13,9 +13,9 @@ import Image from 'next/image';
 import toast from 'react-hot-toast';
 import Loading from '@/app/[lang]/loading';
 import { Textarea } from '@/components/ui/textarea';
-import { BlogContext, IBlogContext } from '@/contexts/context';
 import { BlogType } from '@/lib/constants';
 import BlogItem from '@/components/blog/blog-item';
+import dayjs from 'dayjs';
 
 export default function EditBlog({ params: { lang } }: { params: { lang: Locale } }) {
     const searchParams = useSearchParams();
@@ -65,7 +65,7 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
             (async () => {
                 const res = await getDocs(query(collection(db, 'blogs'), orderBy('date', 'desc')));
                 const tmp: BlogType[] = res.docs.map((doc) => {
-                    const newDate = new Date(doc.data().date.toDate()).toLocaleDateString();
+                    const newDate = dayjs(doc.data().date.toDate()).format('DD/MM/YYYY');
                     return { ...doc.data(), date: newDate };
                 }) as BlogType[];
                 setEditBlogs(tmp);
@@ -102,13 +102,11 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                         const res = await updateDoc(doc(db, 'contents', id), {
                             title: title,
                             content: value,
-                            date: new Date(),
                             cover: cover_url,
                         });
                         const result = await updateDoc(doc(db, 'blogs', contentId), {
                             title: title,
                             cover: cover_url,
-                            date: new Date(),
                             preview: first20Words,
                         });
                     } else {
@@ -304,8 +302,8 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                                 Post
                             </Button>
                         </div>
-                        <div className=" flex flex-col sticky top-10 h-[90vh] w-[400px]    border-2 border-gradient px-10 py-16">
-                           <div className='space-y-8 flex-1 overflow-y-scroll '>
+                        <div className=" sticky top-10 flex h-[90vh] w-[400px] flex-col    border-2 border-gradient px-10 py-16">
+                            <div className="flex-1 space-y-8 overflow-y-scroll ">
                                 {editBlogs?.map((item, index) => (
                                     <BlogItem
                                         lang={lang}
@@ -319,15 +317,16 @@ export default function EditBlog({ params: { lang } }: { params: { lang: Locale 
                                         edit
                                     />
                                 ))}
-                           </div>
+                            </div>
                             <Button
-                                className="w-full mt-10"
-                                onClick={() => { 
-                                    console.log(key)
-                                    router.push('/vi/blog/edit?key=' + key );
-                                }}>
-                                    New Blog
-                                </Button>
+                                className="mt-10 w-full"
+                                onClick={() => {
+                                    console.log(key);
+                                    router.push('/vi/blog/edit?key=' + key);
+                                }}
+                            >
+                                New Blog
+                            </Button>
                         </div>
                     </section>
                 </main>

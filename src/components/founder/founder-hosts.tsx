@@ -10,7 +10,7 @@ export default function FounderHosts({ lang }: { lang: Locale }) {
         <section
             id="hosts"
             style={{
-                backgroundImage: "url('https://utfs.io/f/c234207f-fca0-4293-8a30-87a4a402c53a-1jqloo.png')",
+                backgroundImage: "url('/images/bg-ff.png')",
                 boxShadow: '0px 0px 22px 10px rgba(0,0,0,0.8) inset',
             }}
             className="flex  h-fit w-full flex-col px-4  py-20 text-white md:px-10 "

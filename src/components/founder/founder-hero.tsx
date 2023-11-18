@@ -3,6 +3,7 @@
 // import useInteraction from '@/hooks/useInteraction';
 import Image from 'next/image';
 import Link from 'next/link';
+import Reveal from '../animations/reveal';
 // import { useEffect, useState } from 'react';
 // import VideoPlayer from '../video-player';
 
@@ -17,38 +18,44 @@ export default function FounderHero() {
         <section
             id="hero"
             style={{
-                backgroundImage: "url('https://utfs.io/f/c234207f-fca0-4293-8a30-87a4a402c53a-1jqloo.png')",
+                backgroundImage: "url('/images/bg-ff.png')",
                 boxShadow: '0px 0px 22px 10px rgba(0,0,0,0.8) inset',
             }}
             className="relative  flex w-[100vw]  overflow-y-hidden    overflow-x-clip py-36  pl-10 pr-10  lg:pr-0 "
         >
             <div className="hidden  w-full  pl-10 flex-col justify-evenly md:flex lg:w-[60%] lg:min-w-[60%]">
-                <Image
-                    src={'/images/1.png'}
-                    alt="img"
-                    width="0"
-                    height="0"
-                    sizes="100vw"
-                    className="h-auto w-1/2 ml-2  "
-                />
-                <Image
-                    src={'/images/2.png'}
-                    alt="img"
-                    width="0"
-                    height="0"
-                    sizes="100vw"
-                    className="h-auto w-full  "
-                />
-                <Image
-                    src={'/images/3.png'}
-                    alt="img"
-                    width="0"
-                    height="0"
-                    sizes="100vw"
-                    className="h-auto w-full "
-                />
+                <Reveal hiddenX={100} className='w-1/2 ml-2 '>
+                    <Image
+                        src={'/images/1.png'}
+                        alt="img"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className="h-auto w-full  "
+                    />
+                </Reveal>
+                <Reveal hiddenX={100} delay={0.3} className='w-full' >
+                    <Image
+                        src={'/images/2.png'}
+                        alt="img"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className="h-auto w-full  "
+                    />
+                </Reveal>
+               <Reveal className='w-full' hiddenX={100} delay={0.6}>
+                    <Image
+                        src={'/images/3.png'}
+                        alt="img"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className="h-auto w-full "
+                    />
+               </Reveal>
             </div>
-            <div className=" flex w-full flex-col items-center md:hidden md:px-10 lg:flex  ">
+            <Reveal scale={0.5} className=" flex w-full flex-col items-center md:hidden md:px-10 lg:flex  ">
                 <Image
                     src={'/logo/logoff2.png'}
                     alt="img"
@@ -105,7 +112,7 @@ export default function FounderHero() {
                         />
                     </Link>
                 </div>
-            </div>
+            </Reveal>
         </section>
     );
 }
