@@ -25,6 +25,7 @@ export default async function FounderPage({ params: { lang } }: { params: { lang
             <FounderHero />
             <Vision
                 vision={pages.founder.vision}
+                ff
                 src="https://utfs.io/f/48c10290-b3c1-4515-80e4-3f83afa68383-q7e1m0.png"
             />
             <Products lang={lang} products={pages.founder.products} />

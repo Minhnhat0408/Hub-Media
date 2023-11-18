@@ -19,10 +19,10 @@ export default function FounderHosts({ lang }: { lang: Locale }) {
                 Hosts
             </LetterAppear>
             <div className="flex w-full flex-col flex-wrap gap-x-10 lg:flex-row">
-                <div className="  flex h-full flex-1 flex-col items-center justify-center ">
+                <div className="  mb-10 flex h-full flex-1 flex-col items-center justify-center ">
                     <Host name={'Trần Quang Hưng'} title={'Phó Bí thư Thành đoàn Hà Nội'} img="hung" />
                 </div>
-                <div className="   mb-10 flex h-full flex-1 flex-col items-center justify-center lg:mb-0">
+                <div className="  mb-10  flex h-full flex-1 flex-col items-center justify-center lg:mb-0">
                     <Host name={'Phoebe'} title={'Phó Chủ tịch Hub Network'} img="phuong" />
                 </div>
             </div>
