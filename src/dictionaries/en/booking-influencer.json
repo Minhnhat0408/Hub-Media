@@ -1,14 +1,15 @@
-{   
+{
     "title": "Booking Influencer",
     "href": "/services/booking-influencer",
-    "details": ["Review sản phẩm", 
-    "Quảng bá thương hiệu", 
-   "Livetream bán hàng"],
-   "tags":["#booking", "#influencer", "#review"],
+    "details": ["Review sản phẩm", "Quảng bá thương hiệu", "Livetream bán hàng"],
+    "tags": ["#booking", "#influencer", "#review"],
     "description": "Micro influencer là một giải pháp Marketing hiệu quả và tối ưu cho các doanh nghiệp. Với mạng lưới cộng đồng sinh viên trải dài khắp cả nước, chúng tôi thấu hiểu giá trị của việc kết nối với những tài năng trẻ đầy tiềm năng. Chúng tôi đang tạo ra sự ảnh hưởng trong cộng đồng và hướng đến mục tiêu hỗ trợ các doanh nghiệp thiết lập liên kết với những tài năng trẻ này.",
     "src": "https://gaaga.wpengine.com/wp-content/uploads/2023/06/service-image-1-1.jpg",
-    "packages": {
-        
-    }
-    
+    "portfolio": [
+        "https://utfs.io/f/13b924fb-5445-49df-9738-d70a54931b0f-c764hj.jpg",
+        "https://utfs.io/f/76eac04d-8946-43ba-b573-f851427a5a5d-98cbq8.jpg",
+        "https://utfs.io/f/b6ba4c59-6008-4666-9d0e-5f099efc6837-716o6h.jpg",
+        "https://utfs.io/f/8a57e20a-bdf8-4188-9463-182f0b2a8a18-bwar72.jpg"
+    ],
+    "packages": {}
 }

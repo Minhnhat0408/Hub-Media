@@ -12,7 +12,7 @@ function Vision({ vision, src,ff }: { vision: string; src: string,ff?:boolean })
                 height={0}
                 alt="image"
                 sizes="100vw"
-                className={cn("absolute h-full w-auto object-cover  top-0   ",!ff && 'md:w-full md:h-auto' )}
+                className={cn("absolute h-full w-auto 2xl:w-full 2xl:h-auto object-cover    ",!ff && 'md:w-full md:h-auto' )}
             />
             <Reveal scale={0.3} className=" bg-vision z-[1] flex h-fit w-[90%] justify-center   md:w-[70%]  ">
                 <h2 className=" p-4 text-2xl font-bold text-white   xl:!p-16 xl:!text-[45px] xl:!leading-[50px] ssm:p-10 ssm:text-3xl ">
