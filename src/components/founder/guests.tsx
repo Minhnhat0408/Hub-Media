@@ -40,7 +40,7 @@ export default function Guests({ lang }: { lang: Locale }) {
                         width={0}
                         height={0}
                         sizes="100vw"
-                        className="mb-10 h-auto w-[100%] "
+                        className="mb-10 h-auto w-[80%] "
                     />
                     <Image
                         src={'https://utfs.io/f/0b575820-0368-458c-a338-2ea07bb6d7d4-ukc7e.png'}

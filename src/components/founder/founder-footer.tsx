@@ -17,7 +17,7 @@ export async function FounderFooter({ lang }: { lang: Locale }) {
             className="relative flex h-fit w-full flex-col items-center bg-background "
         >
             <div className="md-max:pb-5 flex w-[90%] flex-wrap pb-8 2xl:pb-14">
-                <div className=" flex w-full items-center   lg:w-[30%]  ">
+                <div className=" flex w-full items-center justify-center  lg:w-[30%]  ">
                     <Image
                         src={'/logo/logoff.png'}
                         alt="ava"
