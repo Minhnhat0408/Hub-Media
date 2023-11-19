@@ -25,17 +25,17 @@ export default function Guests({ lang }: { lang: Locale }) {
             </LetterAppear>
             {!split ? (
                 <Image
-                    src={'https://utfs.io/f/1c778c5a-4a2d-40d4-b2f7-9a2aaa3152a3-b5nwb5.png'}
+                    src={'https://utfs.io/f/185c2842-c3cf-46f0-9dd8-df533297646f-gedtg.png'}
                     alt="img"
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="h-auto w-[100%] "
+                    className="h-auto w-[98%] "
                 />
             ) : (
                 <>
                     <Image
-                        src={'https://utfs.io/f/d9c785db-331c-4aea-b11d-d5253b7afac8-1d.png'}
+                        src={'https://utfs.io/f/03e2f06e-cea0-4b52-9c42-f345bb1ef590-prb7ml.png'}
                         alt="img"
                         width={0}
                         height={0}
@@ -43,12 +43,12 @@ export default function Guests({ lang }: { lang: Locale }) {
                         className="mb-10 h-auto w-[100%] "
                     />
                     <Image
-                        src={'https://utfs.io/f/22417fa4-6bae-4650-b0a9-94284f677460-1e.png'}
+                        src={'https://utfs.io/f/0b575820-0368-458c-a338-2ea07bb6d7d4-ukc7e.png'}
                         alt="img"
                         width={0}
                         height={0}
                         sizes="100vw"
-                        className=" h-auto w-[100%] "
+                        className=" h-auto w-[100%] mb-10 "
                     />
                 </>
             )}

@@ -5,7 +5,7 @@ import ThumbNailImage from '../thumbnail-image';
 function Portfolio({lang,portfolio}: {lang:Locale,portfolio: string[]}) {
     return (
         <section id="portfolio" className="flex  w-full flex-col bg-background xl:pt-28 xl:py-20 pb-10   ">
-            <Heading title={'Portfolio'} description={lang === 'vi' ? 'Dự án của chúng tôi': 'Our Project Porfolio'} />
+            <Heading title={'Portfolio'} description={lang === 'vi' ? 'Sản phẩm của chúng tôi': 'Our Project Porfolio'} />
             <Reveal hiddenY={100} className="flex flex-wrap md:justify-between justify-center  gap-y-4">
                 <ThumbNailImage
                     href="/services"
