@@ -20,7 +20,7 @@ export default function Products({ lang, products }: { lang: Locale; products: s
                 </div>
                 <div className=" flex w-full items-center   md:w-[60%] ">
                     <SliderMultiple
-                        className="w-full"
+                        className=" w-full"
                         view={() => {
                             if (window.innerWidth < 1150) {
                                 return 1;

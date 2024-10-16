@@ -30,7 +30,7 @@ export default async function LangLayout({
     const { navigation } = await getDictionary(params.lang);
 
     return (
-        <>
+        <>  
             <Header lang={params.lang} navigation={navigation} />
             {children}
         </>

@@ -68,7 +68,7 @@ export default function TextEditor({
                         {
                             color: [
                                 '#111111',
-                            '#ffffff',
+                                '#ffffff',
                                 '#FF0000',
                                 '#d9658c',
                                 '#001F3F',
@@ -130,7 +130,6 @@ export default function TextEditor({
                             axios
                                 .post('/api/upload', formData)
                                 .then((res) => {
-                                   
                                     resolve(res.data);
                                 })
                                 .catch((err) => {

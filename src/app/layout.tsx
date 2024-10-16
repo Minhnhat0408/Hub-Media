@@ -7,6 +7,7 @@ import { Toaster } from 'react-hot-toast';
 export const metadata: Metadata = {
     metadataBase: new URL('https://pbhubmedia.vercel.app/'),
     title: 'Hub Media - Kết nối thương hiệu của bạn ra thế giới',
+    manifest: "./manifest.ts",
     openGraph: {
         images: ['/images/og.png'],
         title: 'Hub Media - Kết nối thương hiệu của bạn ra thế giới',

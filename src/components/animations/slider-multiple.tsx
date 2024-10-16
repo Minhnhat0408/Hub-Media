@@ -78,7 +78,7 @@ export default function SliderMultiple({
         <>
             {
                 <div className={cn(' group relative w-full', className)}>
-                    <div ref={ref} className={cn('keen-slider ')}>
+                    <div ref={ref} className={cn('keen-slider  ')}>
                         {children}
                     </div>
                     {loaded && instanceRef.current && (

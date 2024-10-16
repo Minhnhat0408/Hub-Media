@@ -9,5 +9,5 @@ export async function GET(request: Request ) {
         return NextResponse.json({title:title,key:key})
     }else{
         return NextResponse.json({error: "Invalid key"})
-    }
+    }   
 }

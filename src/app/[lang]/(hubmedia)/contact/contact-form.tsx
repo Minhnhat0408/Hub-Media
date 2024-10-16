@@ -20,7 +20,10 @@ const ContactSchema = z.object({
     name: z.string({
         required_error: 'Please enter your name.',
     }),
-    phone: z.string().regex(/^[0-9]+$/,"Please enter a valid phone number").min(10, { message: 'Please enter a valid phone number'}),
+    phone: z
+        .string()
+        .regex(/^[0-9]+$/, 'Please enter a valid phone number')
+        .min(10, { message: 'Please enter a valid phone number' }),
     message: z.string().optional(),
     services: z.string({
         required_error: 'Please select your service.',
@@ -31,12 +34,12 @@ export default function ContactForm({
     listServices,
     defaultService,
     defaultMsg,
-    lang
+    lang,
 }: {
     listServices: Object;
     defaultService: string | undefined;
-    defaultMsg: string ;
-    lang: Locale
+    defaultMsg: string;
+    lang: Locale;
 }) {
     const form = useForm<tContactSchema>({
         resolver: zodResolver(ContactSchema),
@@ -53,10 +56,10 @@ export default function ContactForm({
         const res = await toast.promise(
             axios.post('/api/contact', formdata),
             {
-                loading:  <p>{lang === 'vi' ? 'Xin hãy đợi 1 chút' : 'Please wait for a moment'}</p>,
+                loading: <p>{lang === 'vi' ? 'Xin hãy đợi 1 chút' : 'Please wait for a moment'}</p>,
                 success: (data) => {
                     form.reset();
-                    return <p> {lang === 'vi' ? 'Form đã được gửi' : "Form has been sent"}</p>;
+                    return <p> {lang === 'vi' ? 'Form đã được gửi' : 'Form has been sent'}</p>;
                 },
                 error: 'Error while sending form',
             },
@@ -88,13 +91,12 @@ export default function ContactForm({
                 },
             },
         );
-        return res
-
+        return res;
     }
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className={cn('mt-9  w-full sm:space-y-12 space-y-6 ')}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className={cn('mt-9  w-full space-y-6 sm:space-y-12 ')}>
                 <FormField
                     control={form.control}
                     name="name"
@@ -102,7 +104,7 @@ export default function ContactForm({
                         <FormItem className="h-[50px]">
                             <FormControl>
                                 <Input
-                                    placeholder={lang === 'vi' ? 'Tên đầy đủ' : "Full Name"}
+                                    placeholder={lang === 'vi' ? 'Tên đầy đủ' : 'Full Name'}
                                     type="text"
                                     {...field}
                                     className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
@@ -112,7 +114,7 @@ export default function ContactForm({
                         </FormItem>
                     )}
                 />
-                <div className="flex ssm:flex-row  flex-col gap-x-20 gap-y-6">
+                <div className="flex flex-col  gap-x-20 gap-y-6 ssm:flex-row">
                     <FormField
                         control={form.control}
                         name="email"
@@ -137,7 +139,7 @@ export default function ContactForm({
                             <FormItem className="h-[50px] w-full">
                                 <FormControl>
                                     <Input
-                                        placeholder={lang === 'vi' ? 'Số điện thoại' : "Phone"}
+                                        placeholder={lang === 'vi' ? 'Số điện thoại' : 'Phone'}
                                         type="text"
                                         {...field}
                                         className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
@@ -161,7 +163,13 @@ export default function ContactForm({
                                             (form.getValues().services || defaultService) && ' text-gradient',
                                         )}
                                     >
-                                        <SelectValue placeholder={lang === 'vi' ? 'Chọn dịch vụ của bạn' : "Select a Services of your choice"} />
+                                        <SelectValue
+                                            placeholder={
+                                                lang === 'vi'
+                                                    ? 'Chọn dịch vụ của bạn'
+                                                    : 'Select a Services of your choice'
+                                            }
+                                        />
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent className="bg-background">
@@ -184,7 +192,7 @@ export default function ContactForm({
                         <FormItem className="h-[70px]">
                             <FormControl>
                                 <Textarea
-                                    placeholder={lang === 'vi' ? 'Thông tin đi kèm' :"Additional Message"}
+                                    placeholder={lang === 'vi' ? 'Thông tin đi kèm' : 'Additional Message'}
                                     {...field}
                                     defaultValue={defaultMsg}
                                     className="rounded-none border-l-0 border-r-0 border-t-0 border-white bg-transparent text-base tracking-wider text-gradient duration-500 placeholder:text-muted-foreground focus-visible:border-b-primary focus-visible:!ring-0 focus-visible:!ring-offset-0  focus-visible:placeholder:text-primary"
@@ -200,7 +208,7 @@ export default function ContactForm({
                     disabled={form.formState.isSubmitting}
                     className="items-centers !mt-20 flex  font-bold uppercase tracking-widest "
                 >
-                    {lang === 'vi' ? 'Gửi' : "Submit"}
+                    {lang === 'vi' ? 'Gửi' : 'Submit'}
                     {form.formState.isSubmitting && <AiOutlineLoading3Quarters className="ml-3 animate-spin " />}
                 </Button>
             </form>

@@ -8,6 +8,7 @@ import Team from '@/components/home/team';
 import Vision from '@/components/vision';
 import { Locale } from '@/i18n.config';
 import { getDictionary, getServices } from '@/lib/dictionary';
+import axios from 'axios';
 import Image from 'next/image';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
